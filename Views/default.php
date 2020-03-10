@@ -1,6 +1,6 @@
 <?php
 
-echo $content_for_layout;
+echo $content_for_default;
 
-include('includes/layout_footer.php');
+include('admin/includes/_footer.php');
 ?>

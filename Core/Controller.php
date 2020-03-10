@@ -4,9 +4,9 @@
     {
         var $vars = [];
         var $menu = "_menu";
-        var $func = "myUntils";
-        var $layout = "default";
-        var $layout_header ="admin/includes/layout_header";
+        var $myUntils = "myUntils";
+        var $default = "default";
+        var $layout_header ="includes/_header";
 
         // function __construct(){
         //     // require(ROOT . 'Models/DAO/menuDAO.php');
@@ -34,33 +34,40 @@
         {
             extract($this->vars);
 
-            // ob_start();
-            // require(ROOT . "Views/" . $this->func . '.php');
-            // $content_for_Func = ob_get_clean();
+            $ex='';
+            $explode_filename = explode('/', $filename);
+            if($explode_filename[0]=='admin'){
+                $ex = 'admin/';
+            }else{
+
+                ob_start();
+                require(ROOT . "Views/includes/" . $this->menu . '.php');
+                $content_for_Menu = ob_get_clean();
+            }
+
+            ob_start();
+            require(ROOT . "Views/" . $this->myUntils . '.php');
+            $content_for_myUntils = ob_get_clean();
 
             ob_start();
             require(ROOT . "Views/" . $filename . '.php');
-            $content_for_layout = ob_get_clean();
+            $content_for_default = ob_get_clean();
 
-            // ob_start();
-            // require(ROOT . "Views/includes/" . $this->menu . '.php');
-            // $content_for_Menu = ob_get_clean();
 
-            if ($this->layout == false)
+
+            if ($this->default == false)
             {
 
-                // $content_for_Func; 
+                isset($content_for_myUntils)?$content_for_myUntils:''; 
 
-                if($this->layout == false)
-                $content_for_layout;
+                $content_for_default;
 
-                // if($this->layout_header == false)
-                // $content_for_Menu;
+                isset($content_for_Menu)?$content_for_Menu:''; 
             }
             else
             {
-                require(ROOT . "Views/" . $this->layout_header . '.php');
-                require(ROOT . "Views/" . $this->layout . '.php');
+                require(ROOT . "Views/" . $ex . $this->layout_header . '.php');
+                require(ROOT . "Views/" . $ex . $this->default . '.php');
             }
         }
 
