@@ -16,10 +16,10 @@
         {
 
             // $this->link = mysqli_connect("cit.cit","root","","cit_db") or die ();
-            $this->link =  mysqli_connect("localhost","root","","cit_db") or die ("Kết nối thất bại thử lại sau - Connect Fail, please try agian late !");
+            $this->link =  mysqli_connect("localhost","root","","codosupp") or die ("Kết nối thất bại thử lại sau - Connect Fail, please try agian late !");
             mysqli_set_charset($this->link,"utf8");
         }
-
+ 
         /**
          * [insert description] hàm insert 
          * @param  $table
@@ -156,9 +156,10 @@
         }
         
          //lấy toàn bộ dữ liệu của id có trong bảng
-         public function fetchByColOther($table , $col, $colval )
+         public function fetchByCol($table , $col, $colval )
          {
-            $sql = "SELECT * FROM {$table} as tb WHERE $col != $colval ORDER BY tb.`sort_order` ASC";
+            $sql = "SELECT * FROM {$table} as tb WHERE $col = $colval";
+           
             $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn fetchID " .mysqli_error($this->link));
             $data = [];
             if( $result)
@@ -178,6 +179,7 @@
             $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn fetchID " .mysqli_error($this->link));
             return mysqli_fetch_assoc($result);
         }
+        
         /**
          * String query active join between two table
          * read all col in table 1

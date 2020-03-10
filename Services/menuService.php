@@ -3,6 +3,10 @@ $db = new Database();
 require(ROOT . 'Models/DAO/menuDAO.php');
 class MenuService extends Service{
 
+    /**
+     * List all child menu
+     * return array[][]
+     */
     function listMenuByParent($db){
        
         $menu = new MenuDAO();
@@ -47,7 +51,26 @@ class MenuService extends Service{
         // }
         // die();
         return $data;
-    }   
+    }  
+    
+    /**
+     * List all menu
+     */
+    function listMenu($db){
+
+        $menu = new MenuDAO();
+        $menus =  $menu->fetchAll($db); 
+        return $menus;
+    }
+    /**
+     * Edit menu by ID
+     */
+    function findMenu($db, $id){
+        $menu = new MenuDAO();
+        $menus =  $menu->fetchByCol($db, $id); 
+
+        return $menus;
+    }
 }
 
 ?>

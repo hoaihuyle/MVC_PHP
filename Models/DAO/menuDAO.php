@@ -6,8 +6,8 @@ class MenuDAO extends Model
         return $db->fetchAll('menu');
     }
 
-    public function fetchID($db,$id){
-        return $db->fetchID('menu',$id);
+    public function fetchByCol($db,$id){
+        return $db->fetchByCol('menu','id_menu',$id);
     }
 
     function fetchByColOther($db){
