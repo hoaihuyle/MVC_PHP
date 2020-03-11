@@ -14,7 +14,7 @@ class MenuController extends Controller
 
         $this->render($this->index.__FUNCTION__);
     }
-
+ 
     function create()
     {
         $this->render($this->index.__FUNCTION__);
@@ -27,14 +27,13 @@ class MenuController extends Controller
         
         $d['menuInfo'] = $news->findMenu($db, $id); 
         
-        if (!empty($_POST["name_menu"]))
+        if (!empty($_POST))
         {
-            var_dump($_POST);
-            die();
-            // if ($task->edit($id, $_POST["title"], $_POST["description"]))
-            // {
-            //     header("Location: " . WEBROOT . "tasks/index");
-            // }
+           
+            if ($news->editMenu($db, $id, $_POST))
+            {
+                header("Location: " . WEBROOT . "menu/index");
+            }
         }
         
         $this->set($d);
