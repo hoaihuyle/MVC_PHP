@@ -14,7 +14,7 @@ class MenuController extends Controller
 
         $this->render($this->index.__FUNCTION__);
     }
-
+    // http://domain/cotroler/edit/12
     function create()
     {
         $this->render($this->index.__FUNCTION__);
@@ -29,7 +29,7 @@ class MenuController extends Controller
         $this->set($d);
         // $this->render('admin/form-validation');
         $this->render($this->index.__FUNCTION__);
-    }
+    }  
 
 }
 ?>

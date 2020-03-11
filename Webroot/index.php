@@ -8,6 +8,10 @@ require(ROOT . 'router.php');
 require(ROOT . 'request.php');
 require(ROOT . 'dispatcher.php');
 
+/*  Phase 1: 
+ *  Request: Domain name call here
+ *  call to class Dispatcher() file dispatcher.php
+ */ 
 $dispatch = new Dispatcher();
 $dispatch->dispatch();
 ?>
