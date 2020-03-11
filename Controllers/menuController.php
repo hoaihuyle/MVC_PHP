@@ -25,7 +25,18 @@ class MenuController extends Controller
         require(ROOT . $this->service);
         $news = new MenuService();
         
-        $d['menuInfo'] = $news->findMenu($db, $id);  
+        $d['menuInfo'] = $news->findMenu($db, $id); 
+        
+        if (!empty($_POST["name_menu"]))
+        {
+            var_dump($_POST);
+            die();
+            // if ($task->edit($id, $_POST["title"], $_POST["description"]))
+            // {
+            //     header("Location: " . WEBROOT . "tasks/index");
+            // }
+        }
+        
         $this->set($d);
         // $this->render('admin/form-validation');
         $this->render($this->index.__FUNCTION__);

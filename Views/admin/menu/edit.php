@@ -34,11 +34,11 @@
                 <div class="card">
                     <h5 class="card-header">Validation Types</h5>
                     <div class="card-body">
-                        <form id="validationform" data-parsley-validate="" novalidate="">
+                        <form id="validationform" data-parsley-validate="" novalidate="" method="POST" action="#">
                             <div class="form-group row">
                                 <label class="col-12 col-sm-3 col-form-label text-sm-right">Tên Menu</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
-                                    <input type="text" required="" placeholder="<?php echo $menuInfo[0]['name_menu'] ?>" class="form-control">
+                                    <input name="name_menu" type="text" required="" value="<?php echo $menuInfo[0]['name_menu'] ?>" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -50,7 +50,7 @@
                             <div class="form-group row">
                                 <label class="col-12 col-sm-3 col-form-label text-sm-right">Thứ tự - Sorting</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
-                                    <input type="text" required="" data-parsley-maxlength="6" placeholder="<?php echo ($menuInfo[0]['sorting']==0)?'Chưa thiết lập':$menuInfo[0]['sorting'] ?>" class="form-control">
+                                    <input type="text" required="" data-parsley-maxlength="6" value="<?php echo ($menuInfo[0]['sorting']==0)?'Chưa thiết lập':$menuInfo[0]['sorting'] ?>" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -63,6 +63,12 @@
                                             </label>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="form-group row text-right">
+                                <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                                    <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                    <button class="btn btn-space btn-secondary">Cancel</button>
                                 </div>
                             </div>
 
