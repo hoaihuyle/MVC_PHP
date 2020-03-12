@@ -21,8 +21,19 @@ class MenuDAO extends Model
          
     }
 
-    public function updateColById($db, $id, $data){
-        return $db->updateColById('menu', $id, $data);
+    public function update($db, $id, $data){
+
+        return $db->update('menu', $data, array('id_menu'=>$id));
+    }
+
+    public function insert($db, $data){
+
+        return $db->insert('menu', $data ); 
+    }
+
+    public function delete($db, $id){
+
+        return $db->delete('menu', $id, 'id_menu'); 
     }
  
 }

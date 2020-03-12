@@ -78,7 +78,27 @@ class MenuService extends Service{
      */
     function editMenu($db, $id,$data){
         $menu = new MenuDAO();
-        $menus =  $menu->updateColById($db, $id, $data ); 
+        $menus =  $menu->update($db, $id, $data ); 
+
+        return $menus;
+    }
+
+    /** 
+     * Create menu
+     */
+    function createMenu($db, $data){
+        $menu = new MenuDAO();
+        $menus =  $menu->insert($db, $data ); 
+
+        return $menus;
+    }
+
+    /** 
+     * Delete menu by ID
+     */
+    function deleteMenu($db, $id){
+        $menu = new MenuDAO();
+        $menus =  $menu->delete($db, $id); 
 
         return $menus;
     }

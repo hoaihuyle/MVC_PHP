@@ -72,6 +72,9 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="/menu/create">Thêm mới</a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/menu/sort">Sắp xếp menu</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>

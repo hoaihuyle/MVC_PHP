@@ -2,7 +2,8 @@
 class MenuController extends Controller
 {
     var $service ="Services/menuService.php";
-    var $index="admin/menu/";
+    var $red="admin/menu/";
+    var $redIndex="menu/index";
 
     function index()
     {
@@ -12,12 +13,28 @@ class MenuController extends Controller
         $d['menuInfos'] = $news->listMenu($db);  
         $this->set($d);
 
-        $this->render($this->index.__FUNCTION__);
+        $this->render($this->red.__FUNCTION__);
     }
  
     function create()
     {
-        $this->render($this->index.__FUNCTION__);
+        if (!empty($_POST))
+        {
+            require(ROOT . $this->service);
+            $news = new MenuService();
+
+            if ($news->createMenu($db, $_POST))
+            {
+                header("Location: " . WEBROOT . $this->redIndex);
+            }
+        }
+
+        $this->render($this->red.__FUNCTION__);
+    }
+
+    function sort()
+    {
+        $this->render($this->red.__FUNCTION__);
     }
 
     function edit($id)
@@ -26,20 +43,30 @@ class MenuController extends Controller
         $news = new MenuService();
         
         $d['menuInfo'] = $news->findMenu($db, $id); 
-        
+
         if (!empty($_POST))
         {
-           
+
             if ($news->editMenu($db, $id, $_POST))
             {
-                header("Location: " . WEBROOT . "menu/index");
+                header("Location: " . WEBROOT . $this->redIndex);
             }
         }
         
         $this->set($d);
         // $this->render('admin/form-validation');
-        $this->render($this->index.__FUNCTION__);
+        $this->render($this->red.__FUNCTION__);
     }
 
+    function delete($id)
+    {
+        require(ROOT . $this->service);
+        $news = new MenuService();
+        if ($news->deleteMenu($db, $id))
+        {
+            header("Location: " . WEBROOT . $this->redIndex);
+        }
+        header("Location: " . WEBROOT . $this->redIndex);
+    }  
 }
 ?>

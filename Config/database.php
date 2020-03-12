@@ -60,22 +60,35 @@
             $where = " WHERE ";
 
             foreach($data as $field => $value) {
+               
                 if(is_string($value)) {
-                    $set .= $field .'='.'\''. mysqli_real_escape_string($this->link, xss_clean($value)) .'\',';
+                    
+                    $set .= $field .'='.'\''. mysqli_real_escape_string($this->link, ($value)) .'\',';
                 } else {
-                    $set .= $field .'='. mysqli_real_escape_string($this->link, xss_clean($value)) . ',';
+                    $set .= $field .'='. mysqli_real_escape_string($this->link, ($value)) . ',';
                 }
+
+                // if(is_string($value)) {
+                    
+                //     $set .= $field .'='.'\''. mysqli_real_escape_string($this->link, xss_clean($value)) .'\',';
+                // } else {
+                //     $set .= $field .'='. mysqli_real_escape_string($this->link, xss_clean($value)) . ',';
+                // }
             }
-
             $set = substr($set, 0, -1);
-
-
             foreach($conditions as $field => $value) {
+
                 if(is_string($value)) {
-                    $where .= $field .'='.'\''. mysqli_real_escape_string($this->link, xss_clean($value)) .'\' AND ';
+                    $where .= $field .'='.'\''. mysqli_real_escape_string($this->link, ($value)) .'\' AND ';
                 } else {
-                    $where .= $field .'='. mysqli_real_escape_string($this->link, xss_clean($value)) . ' AND ';
+                    $where .= $field .'='. mysqli_real_escape_string($this->link, ($value)) . ' AND ';
                 }
+
+                // if(is_string($value)) {
+                //     $where .= $field .'='.'\''. mysqli_real_escape_string($this->link, xss_clean($value)) .'\' AND ';
+                // } else {
+                //     $where .= $field .'='. mysqli_real_escape_string($this->link, xss_clean($value)) . ' AND ';
+                // }
             }
 
             $where = substr($where, 0, -5);
@@ -83,13 +96,9 @@
             $sql .= $set . $where;
             // _debug($sql);die;
 
-            mysqli_query($this->link, $sql) or die( "Lỗi truy vấn Update -- " .mysqli_error());
+            mysqli_query($this->link, $sql) or die( "Lỗi truy vấn Update -- " .mysqli_error($this->link));
 
             return mysqli_affected_rows($this->link);
-        }
-
-        public function updateColById($table, $col, $id){
-            
         }
 
         public function updateview($sql)
@@ -113,10 +122,11 @@
          * @param  array  $conditions [description]
          * @return integer             [description]
          */
-        public function delete ($table ,  $id )
+        public function delete ($table ,  $id, $col = null )
         {
-            $sql = "DELETE FROM {$table} WHERE id = $id ";
-
+            if(!isset($col)) $sql = "DELETE FROM {$table} WHERE id = $id ";
+            else             $sql = "DELETE FROM {$table} WHERE $col = $id ";
+            
             mysqli_query($this->link,$sql) or die (" Lỗi Truy Vấn delete   --- " .mysqli_error($this->link));
             return mysqli_affected_rows($this->link);
         }

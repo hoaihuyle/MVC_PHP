@@ -34,23 +34,17 @@
                 <div class="card">
                     <h5 class="card-header">Validation Types</h5>
                     <div class="card-body">
-                        <form id="validationform" data-parsley-validate="" novalidate="" method="POST" action="#">
+                        <form id="validationform" data-parsley-validate="" novalidate="" method="POST">
                             <div class="form-group row">
                                 <label class="col-12 col-sm-3 col-form-label text-sm-right">Tên Menu</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
-                                    <input name="name_menu" type="text" required="" value="<?php echo $menuInfo[0]['name_menu'] ?>" class="form-control">
+                                    <input name="name_menu" type="text" required="" value="<?php echo $menuInfo[0]['name_menu'] ?>" class="form-control text-primary">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Các danh mục sản phẩm</label>
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Chọn danh mục sản phẩm</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
-                                    <input type="text" placeholder="Min 6 chars." class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Thứ tự - Sorting</label>
-                                <div class="col-12 col-sm-8 col-lg-6">
-                                    <input type="text" value="<?php echo ($menuInfo[0]['sorting']==0)?'Chưa thiết lập':$menuInfo[0]['sorting'] ?>" class="form-control">
+                                    <!-- Table list all Category with fields id - name - checkbox ; Action click on row to choice or checkbox-->
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -59,7 +53,7 @@
                                     <div class="custom-controls-stacked">
                                         <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
                                             <label class="be-checkbox custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" <?php echo ($menuInfo[0]['flag']==0)?'':'checked'; ?>><span class="custom-control-label">Ẩn</span>
+                                                <input type="checkbox" class="custom-control-input" <?php echo ($menuInfo[0]['flag']==1)?'':'checked'; ?>><span class="custom-control-label">Hiện</span>
                                             </label>
                                         </div>
                                     </div>
@@ -67,8 +61,8 @@
                             </div>
                             <div class="form-group row text-right">
                                 <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
-                                    <button type="submit" class="btn btn-space btn-primary">Submit</button>
-                                    <button class="btn btn-space btn-secondary">Cancel</button>
+                                    <button type="submit" class="btn btn-space btn-primary">Lưu thay đổi</button>
+                                    <button type="button" onclick="location.href='/menu/index';" class="btn btn-space btn-secondary" >Quay về</button>
                                 </div>
                             </div>
 
