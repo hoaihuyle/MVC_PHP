@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/lib/admin/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/lib/admin/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <link rel="stylesheet" type="text/css" href="/lib/admin/vendor/datatables/css/dataTables.bootstrap4.css">
-    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+    <title>CODOSUPP - Admin</title>
 </head>
 <body>
     <!-- ============================================================== -->

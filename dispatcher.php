@@ -10,14 +10,15 @@ class Dispatcher
      */
     public function dispatch()
     {
-        $this->request = new Request();
+        $this->request = new Request(); 
         Router::parse($this->request->url, $this->request);
-        $controller = $this->loadController();
-        //["url"]=> string(5) "/MVC/" 
-        //["controller"]=> string(5) "news" 
-        //["action"]=> string(5) "index" 
-        //["params"]=> array(0) { }
-        call_user_func_array([$controller, $this->request->action], $this->request->params);
+        $controller = $this->loadController(); 
+        /*["url"]=> string(5) "/MVC/" 
+         *["controller"]=> string(5) "news" 
+         *["action"]=> string(5) "index" 
+         *["params"]=> array(0) { }
+         */
+         call_user_func_array([$controller, $this->request->action], $this->request->params);
        
     }
 
@@ -32,7 +33,6 @@ class Dispatcher
         require($file);
 
         $controller = new $name();
-
         return $controller;
     }
 

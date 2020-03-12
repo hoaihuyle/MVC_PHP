@@ -15,7 +15,7 @@ class MenuController extends Controller
 
         $this->render($this->red.__FUNCTION__);
     }
- 
+    // http://domain/cotroler/edit/12
     function create()
     {
         if (!empty($_POST))
@@ -56,7 +56,7 @@ class MenuController extends Controller
         $this->set($d);
         // $this->render('admin/form-validation');
         $this->render($this->red.__FUNCTION__);
-    }
+    }  
 
     function delete($id)
     {
