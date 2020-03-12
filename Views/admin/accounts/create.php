@@ -36,9 +36,9 @@
                     <div class="card-body">
                         <form id="validationform" data-parsley-validate="" novalidate="" method="POST">
                             <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Tên Menu</label>
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right ">Tên Công ty</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
-                                    <input name="name_prod" type="text" required="" value="<?php echo $productInfo[0]['name_prod'] ?>" class="form-control text-primary">
+                                    <input name="name_comp" type="text" required="" placeholder="Nhập tên công ty" class="form-control text-primary">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -53,7 +53,7 @@
                                     <div class="custom-controls-stacked">
                                         <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
                                             <label class="be-checkbox custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" <?php echo ($productInfo[0]['flag']==1)?'':'checked'; ?>><span class="custom-control-label">Hiện</span>
+                                                <input type="checkbox" class="custom-control-input" checked><span class="custom-control-label">Hiện</span>
                                             </label>
                                         </div>
                                     </div>
@@ -61,8 +61,8 @@
                             </div>
                             <div class="form-group row text-right">
                                 <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
-                                    <button type="submit" class="btn btn-space btn-primary">Lưu thay đổi</button>
-                                    <button type="button" onclick="location.href='/product/index';" class="btn btn-space btn-secondary" >Quay về</button>
+                                    <button type="submit" class="btn btn-space btn-primary">Tạo mới</button>
+                                    <button type="button" onclick="location.href='/menu/index';" class="btn btn-space btn-secondary" >Quay về</button>
                                 </div>
                             </div>
 

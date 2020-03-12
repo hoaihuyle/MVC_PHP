@@ -1,19 +1,19 @@
 <?php
-class CompanyDAO extends Model
+class MenuDAO extends Model
 {
     
     public function fetchAll($db){
-        return $db->fetchAll('companies');
+        return $db->fetchAll('menu');
     }
 
     public function fetchByCol($db,$id){
-        return $db->fetchByCol('companies','id_comp',$id);
+        return $db->fetchByCol('menu','id_menu',$id);
     }
 
     function fetchByColOther($db){
         try {
             //code...
-            return $db->fetchByColOther('companies','status','1'); 
+            return $db->fetchByColOther('menu','status','1'); 
         } catch (\Throwable $th) {
             //throw $th;
             return $err = 'Try late!!';
@@ -23,17 +23,17 @@ class CompanyDAO extends Model
 
     public function update($db, $id, $data){
 
-        return $db->update('companies', $data, array('id_comp'=>$id));
+        return $db->update('menu', $data, array('id_menu'=>$id));
     }
 
     public function insert($db, $data){
 
-        return $db->insert('companies', $data ); 
+        return $db->insert('menu', $data ); 
     }
 
     public function delete($db, $id){
 
-        return $db->delete('companies', $id, 'id_comp'); 
+        return $db->delete('menu', $id, 'id_menu'); 
     }
  
 }

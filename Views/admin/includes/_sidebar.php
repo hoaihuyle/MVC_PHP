@@ -115,7 +115,7 @@
                                             <a class="nav-link" href="/company/index">Danh sách</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/company/index">Thêm mới</a>
+                                            <a class="nav-link" href="/company/create">Thêm mới</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -129,7 +129,7 @@
                                             <a class="nav-link" href="/account/index">Danh sách</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/account/index">Thêm mới</a>
+                                            <a class="nav-link" href="/account/create">Thêm mới</a>
                                         </li>
                                     </ul>
                                 </div>
