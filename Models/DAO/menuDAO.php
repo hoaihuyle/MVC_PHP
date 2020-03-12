@@ -18,7 +18,11 @@ class MenuDAO extends Model
             //throw $th;
             return $err = 'Try late!!';
         }
-        
+         
+    }
+
+    public function updateColById($db, $id, $data){
+        return $db->updateColById('menu', $id, $data);
     }
  
 }

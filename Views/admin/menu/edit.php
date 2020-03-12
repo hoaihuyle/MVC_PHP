@@ -44,13 +44,13 @@
                             <div class="form-group row">
                                 <label class="col-12 col-sm-3 col-form-label text-sm-right">Các danh mục sản phẩm</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
-                                    <input type="text" required="" data-parsley-minlength="6" placeholder="Min 6 chars." class="form-control">
+                                    <input type="text" placeholder="Min 6 chars." class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-12 col-sm-3 col-form-label text-sm-right">Thứ tự - Sorting</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
-                                    <input type="text" required="" data-parsley-maxlength="6" value="<?php echo ($menuInfo[0]['sorting']==0)?'Chưa thiết lập':$menuInfo[0]['sorting'] ?>" class="form-control">
+                                    <input type="text" value="<?php echo ($menuInfo[0]['sorting']==0)?'Chưa thiết lập':$menuInfo[0]['sorting'] ?>" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">

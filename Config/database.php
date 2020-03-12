@@ -87,6 +87,11 @@
 
             return mysqli_affected_rows($this->link);
         }
+
+        public function updateColById($table, $col, $id){
+            
+        }
+
         public function updateview($sql)
         {
             $result = mysqli_query($this->link,$sql)  or die ("Lỗi update view " .mysqli_error($this->link));

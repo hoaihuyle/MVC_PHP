@@ -62,12 +62,23 @@ class MenuService extends Service{
         $menus =  $menu->fetchAll($db); 
         return $menus;
     }
-    /**
-     * Edit menu by ID
+
+    /** 
+     * List menu by ID
      */
     function findMenu($db, $id){
         $menu = new MenuDAO();
         $menus =  $menu->fetchByCol($db, $id); 
+
+        return $menus;
+    }
+
+     /** 
+     * Update menu by ID
+     */
+    function editMenu($db, $id,$data){
+        $menu = new MenuDAO();
+        $menus =  $menu->updateColById($db, $id, $data ); 
 
         return $menus;
     }
