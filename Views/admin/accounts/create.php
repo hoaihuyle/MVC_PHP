@@ -36,9 +36,9 @@
                     <div class="card-body">
                         <form id="validationform" data-parsley-validate="" novalidate="" method="POST">
                             <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right ">Tên Công ty</label>
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right ">Tên tài khoản</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
-                                    <input name="name_comp" type="text" required="" placeholder="Nhập tên công ty" class="form-control text-primary">
+                                    <input name="name_acco" type="text" required="" placeholder="Nhập tên tài khoản" class="form-control text-primary">
                                 </div>
                             </div>
                             <div class="form-group row">

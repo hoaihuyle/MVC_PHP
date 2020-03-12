@@ -13,7 +13,7 @@
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="/admin/index" ><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
+                                <a class="nav-link" href="/admin/index" ><i class="fas fa-home"></i>Dashboard </a>
                                 <!--
                                 <a class="nav-link active" href="admin/index" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
                                  <div id="submenu-1" class="collapse submenu" style="">
@@ -130,6 +130,20 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="/account/create">Thêm mới</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="nav-item ">
+                                <a class="nav-link" href="admin/index" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fa fa-fw fa-user-circle"></i>Thống kê <span class="badge badge-success">6</span></a>
+                                 <div id="submenu-6" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/account/index">Đơn hàng</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/account/create">Sản phẩm</a>
                                         </li>
                                     </ul>
                                 </div>
