@@ -21,8 +21,9 @@
          * return array data in model and set value to variable $var
          *  */    
         function set($d)
-        {
+        { 
             $this->vars = array_merge($this->vars, $d);
+        
         }
 
         /**
@@ -31,7 +32,7 @@
          * return html file $func, $menu, $layout(default)
          */
         function render($filename)
-        {
+        { 
             //Get name url when begin
             extract($this->vars); 
             $ex='';
@@ -55,8 +56,7 @@
             $content_for_default = ob_get_clean();
 
             if ($this->default == false)
-                {
-
+                { 
                     isset($content_for_myUntils)?$content_for_myUntils:''; 
 
                     $content_for_default;
@@ -65,6 +65,9 @@
                 }
             else if($explode_filename[0] === 'admin' && $explode_filename[1] === 'login')
                 {
+                    require(ROOT. "Views/". $explode_filename[0] .'/' . $explode_filename[1].'/'. $explode_filename[2] .'.php');
+                }
+            else if($explode_filename[0] === 'admin' && $explode_filename[1] === 'register'){
                     require(ROOT. "Views/". $explode_filename[0] .'/' . $explode_filename[1].'/'. $explode_filename[2] .'.php');
                 }
             else

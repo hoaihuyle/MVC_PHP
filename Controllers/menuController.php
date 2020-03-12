@@ -9,7 +9,7 @@ class MenuController extends Controller
         require(ROOT . $this->service);
         $news = new MenuService();
 
-        $d['menuInfos'] = $news->listMenu($db);  
+        $d['menuInfos'] = $news->listMenu($db);   
         $this->set($d);
 
         $this->render($this->index.__FUNCTION__);
