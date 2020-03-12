@@ -21,6 +21,7 @@
                                 <thead>
                                     <tr>
                                         <th style="text-align: center;">Tên</th>
+                                        <th style="text-align: center;">Các danh mục sản phẩm</th>
                                         <th style="text-align: center;">Ngày tạo</th>
                                         <th style="text-align: center;">Người tạo</th>
                                         <th style="text-align: center;">Trạng thái</th>
@@ -30,15 +31,16 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                        foreach($productInfos as $product){
+                                        foreach($companyInfos as $company){
                                     ?>
                                         <tr>
-                                            <td align="center"><?php echo $product['name_prod']; ?></td>
-                                            <td align="center"><?php echo $product['created']; ?></td>
-                                            <td align="center"><?php echo isset($product['user_created'])?$product['user_created']:'admin'; ?></td>
-                                            <td align="center"><?php echo ($product['flag']==0)?'Hiển thị':'Đã xóa'; ?></td>
-                                            <td align="center"><a href="/product/edit/<?php echo $product['id_prod']; ?>"><img src="/lib/admin/images/edit.png" width="25"></a></td>
-                                            <td align="center"><a href="/product/delete/<?php echo $product['id_prod']; ?>" onclick="return confirm('Dữ liệu của bạn sẽ bị mất, bạn chắc chắn chứ ?')" ><img src="/lib/admin/images/delete.png" width="25"></a></td>
+                                            <td align="center"><?php echo $company['name_comp']; ?></td>
+                                            <td><?php echo 'Các danh mục sản phẩm'; ?></td>
+                                            <td align="center"><?php echo $company['created']; ?></td>
+                                            <td align="center"><?php echo isset($company['user_created'])?$company['user_created']:'admin'; ?></td>
+                                            <td align="center"><?php echo ($company['flag']==0)?'Hiển thị':'Đã xóa'; ?></td>
+                                            <td align="center"><a href="/company/edit/<?php echo $company['id_comp']; ?>"><img src="/lib/admin/images/edit.png" width="25"></a></td>
+                                            <td align="center"><a href="/company/delete/<?php echo $company['id_comp']; ?>" onclick="return confirm('Dữ liệu của bạn sẽ bị mất, bạn chắc chắn chứ ?')" ><img src="/lib/admin/images/delete.png" width="25"></a></td>
                                         </tr>
                                     <?php        
                                         } 
@@ -47,6 +49,7 @@
                                 <tfoot>
                                     <tr>
                                         <th style="text-align: center;">Tên</th>
+                                        <th style="text-align: center;">Các danh mục sản phẩm</th>
                                         <th style="text-align: center;">Ngày tạo</th>
                                         <th style="text-align: center;">Người tạo</th>
                                         <th style="text-align: center;">Trạng thái</th>

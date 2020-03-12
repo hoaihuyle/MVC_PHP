@@ -35,7 +35,7 @@ class MenuService extends Service{
             $arr=[];
             foreach($dataChil as $child){
                 if($pa['id']==$child['parent'])
-                $arr[] = $child;
+                $arr[] = $child; 
             }
             $data[$i]['child']=$arr;
             $i++;

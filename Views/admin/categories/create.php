@@ -41,6 +41,18 @@
                                     <input name="name_cate" type="text" required="" placeholder="Nhập tên danh mục sản phẩm" class="form-control text-primary">
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label text-sm-right">Trạng thái</label>
+                                <div class="col-sm-6">
+                                    <div class="custom-controls-stacked">
+                                        <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
+                                            <label class="be-checkbox custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" checked><span class="custom-control-label">Hiện</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                            
                             <div class="form-group row text-right">
                                 <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">

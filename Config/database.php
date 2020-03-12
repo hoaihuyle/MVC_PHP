@@ -28,6 +28,7 @@
          */
         public function insert($table, array $data)
         {
+            
             //code
             $sql = "INSERT INTO {$table} ";
             $columns = implode(',', array_keys($data));
@@ -42,7 +43,7 @@
             }
             $values = substr($values, 0, -1);
             $sql .= " VALUES (" . $values . ')';
-
+            
             // _debug($sql);die;
 
             // _debug($sql);die;
