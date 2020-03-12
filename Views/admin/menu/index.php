@@ -40,7 +40,7 @@
                                             <td align="center"><?php echo isset($menu['user_created'])?$menu['user_created']:'admin'; ?></td>
                                             <td align="center"><?php echo ($menu['flag']==0)?'Hiển thị':'Đã xóa'; ?></td>
                                             <td align="center"><a href="/menu/edit/<?php echo $menu['id_menu']; ?>"><img src="/lib/admin/images/edit.png" width="25"></a></td>
-                                            <td align="center"><a href="edit_info.php?id=24"><img src="/lib/admin/images/delete.png" width="25"></a></td>
+                                            <td align="center"><a href="/menu/delete/<?php echo $menu['id_menu']; ?>" onclick="return confirm('Dữ liệu của bạn sẽ bị mất, bạn chắc chắn chứ ?')" ><img src="/lib/admin/images/delete.png" width="25"></a></td>
                                         </tr>
                                     <?php        
                                         } 
