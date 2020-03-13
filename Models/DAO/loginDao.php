@@ -4,7 +4,7 @@ class loginDAO extends Model
     // Lây thông tin người dùng đăng nhập
     function fetchOneVal($db, $request){
         try{
-            return $db->fetchOne('users',"name='". $request['name']."'AND password ='".$request['password']."'");	
+            return $db->fetchOne('accounts',"phone='". $request['phone']."'");	
         }catch(\Throwable $e){
             return $err = 'Try Again !';
         }
