@@ -1,10 +1,9 @@
-<?php include('includes/_header.php') ?>
    <body>
       <!-- Google Tag Manager (noscript) --> 
       <noscript><iframe src="https://www.googletagmanager.com/ns?id=GTM-PZKMVKR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- End Google Tag Manager (noscript) --> <!-- Top Banner --> 
       <div class="slider-ads-top banner" numColumn='[{"num": 1, "width": 0}]' classItems="item" isControls="false" isPager="false"> </div>
-      <script>$('.slider-ads-top').bxSlider({auto: true,pager: false,autoHover: true,mode: 'horizontal',controls: false,pause: 10000});</script> <!-- End Top Banner --> 
+      
       <p style="text-align: center; padding: 0 10px; margin: 15px 0; line-height: 21px;"><a style="font-size:16px" href="lib/front/tdee_calculator" target="_blank">Ghé thăm <span style="background: #00aeef; color: #FFF; padding: 2px 5px 3px 5px; border-radius: 5px;">ứng dụng tính TDEE</span> BÁ ĐẠO NHẤT VIỆT NAM - đo được lượng calories và tính được thực đơn mỗi ngày của bạn để tăng cân, tăng cơ hoặc giảm mỡ theo ý muốn tại đây</a></p>
       <div class="header">
          <!-- Top bar --> 
@@ -163,7 +162,7 @@
             <img class="item" src="lib/front/upload/banner/banner-web-2.jpg" alt="whey gold " title="whey gold "></a> 
          </div>
       </div>
-      <script>$('.slider-magic').bxSlider({ auto: true, autoHover: true, pause: 10000});</script> 
+      
       <div class="marketing">
             <div class="main-content cs-flex">
             <div class="box-marketing cs-flex cs-col-lg-4 flex-align-center">
@@ -593,4 +592,3 @@
                </div> 
          </div>
       </div>
-      <?php include('includes/_footer.php') ?>
