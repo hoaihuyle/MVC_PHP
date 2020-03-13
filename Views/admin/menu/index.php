@@ -20,8 +20,9 @@
                             <table id="example" class="table table-striped table-bordered second" style="width:100%">
                                 <thead>
                                     <tr>
+                                        <th style="text-align: center;">Id</th>
                                         <th style="text-align: center;">Tên</th>
-                                        <th style="text-align: center;">Các danh mục sản phẩm</th>
+                                        <th style="text-align: center;">Danh mục sản phẩm</th>
                                         <th style="text-align: center;">Ngày tạo</th>
                                         <th style="text-align: center;">Người tạo</th>
                                         <th style="text-align: center;">Trạng thái</th>
@@ -34,8 +35,20 @@
                                         foreach($menuInfos as $menu){
                                     ?>
                                         <tr>
+                                            <td align="center"><?php echo $menu['id_menu']; ?></td>
                                             <td align="center"><?php echo $menu['name_menu']; ?></td>
-                                            <td><?php echo 'Các danh mục sản phẩm'; ?></td>
+                                            <td align="center">
+                                            <?php 
+                                            $i=0;
+                                            foreach($categoryInfos as $category){
+                                                 if ($category['menu_id']==$menu['id_menu']){ 
+                                                    echo $category['name_cate']; 
+                                                    $i++;
+                                                    if($i==3){echo'...';break;} 
+                                                }
+                                            }
+                                            ?>
+                                            </td>
                                             <td align="center"><?php echo $menu['created']; ?></td>
                                             <td align="center"><?php echo isset($menu['user_created'])?$menu['user_created']:'admin'; ?></td>
                                             <td align="center"><?php echo ($menu['flag']==0)?'Hiển thị':'Đã xóa'; ?></td>
@@ -48,8 +61,9 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th style="text-align: center;">Id</th>
                                         <th style="text-align: center;">Tên</th>
-                                        <th style="text-align: center;">Các danh mục sản phẩm</th>
+                                        <th style="text-align: center;">Danh mục sản phẩm</th>
                                         <th style="text-align: center;">Ngày tạo</th>
                                         <th style="text-align: center;">Người tạo</th>
                                         <th style="text-align: center;">Trạng thái</th>

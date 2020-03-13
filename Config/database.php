@@ -95,7 +95,8 @@
             $where = substr($where, 0, -5);
 
             $sql .= $set . $where;
-            // _debug($sql);die;
+            // var_dump($sql);
+            // die();
 
             mysqli_query($this->link, $sql) or die( "Lỗi truy vấn Update -- " .mysqli_error($this->link));
 

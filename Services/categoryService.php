@@ -16,11 +16,23 @@ class CategoryService extends Service{
     }
 
     /** 
-     * List category by ID
+     * List category by ID 
+     * @id_cate 
      */
     function findCategory($db, $id){
         $category = new CategoryDAO();
-        $categories =  $category->fetchByCol($db, $id); 
+        $categories =  $category->fetchByCol($db, 'id_cate', $id); 
+
+        return $categories;
+    }
+
+     /** 
+     * List category by id
+     * @menu_id
+     */
+    function findCategoryMenu($db, $id){
+        $category = new CategoryDAO();
+        $categories =  $category->fetchByCol($db, 'menu_id', $id); 
 
         return $categories;
     }
@@ -31,7 +43,7 @@ class CategoryService extends Service{
     function editCategory($db, $id,$data){
         $category = new CategoryDAO();
         $categories =  $category->update($db, $id, $data ); 
-
+ 
         return $categories;
     }
 
