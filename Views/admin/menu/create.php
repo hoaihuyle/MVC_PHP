@@ -31,20 +31,14 @@
             <!-- valifation types -->
             <!-- ============================================================== -->
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="card">
+                <div class="card"> <?php if(isset($error)) echo $error;  ?>
                     <h5 class="card-header">Validation Types</h5>
                     <div class="card-body">
                         <form id="validationform" data-parsley-validate="" novalidate="" method="POST">
                             <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right ">Tên Menu</label>
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right ">Tên Menu<span class="text-danger">*</span></label>
                                 <div class="col-12 col-sm-8 col-lg-6">
                                     <input name="name_menu" type="text" required="" placeholder="Nhập tên Menu" class="form-control text-primary">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Chọn danh mục sản phẩm</label>
-                                <div class="col-12 col-sm-8 col-lg-6">
-                                    <!-- Table list all Category with fields id - name - checkbox ; Action click on row to choice or checkbox-->
                                 </div>
                             </div>
                             <div class="form-group row">

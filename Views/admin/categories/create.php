@@ -31,12 +31,12 @@
             <!-- valifation types -->
             <!-- ============================================================== -->
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="card">
+                <div class="card"> <?php if(isset($error)) echo $error;  ?>
                     <h5 class="card-header">Validation Types</h5>
                     <div class="card-body">
                         <form id="validationform" data-parsley-validate="" novalidate="" method="POST">
                             <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right ">Tên danh mục sản phẩm</label>
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right ">Tên danh mục sản phẩm <span class="text-danger">*</span></label>
                                 <div class="col-12 col-sm-8 col-lg-6">
                                     <input name="name_cate" type="text" required="" placeholder="Nhập tên danh mục sản phẩm" class="form-control text-primary">
                                 </div>
