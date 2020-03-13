@@ -51,18 +51,18 @@ class MenuController extends Controller
     function edit($id)
     {
         require(ROOT . $this->service);
-        $news = new MenuService();
+        $menu = new MenuService();
 
         require(ROOT . $this->serviceC);
         $category = new CategoryService();
 
         $d['categoryInfos'] = $category->findCategoryMenu($db, $id);  
-        $d['menuInfo'] = $news->findMenu($db, $id); 
+        $d['menuInfo'] = $menu->findMenu($db, $id); 
         
         if (!empty($_POST))
         {
             // var_dump($_POST);die();
-            if ($news->editMenu($db, $id, $_POST))
+            if ($menu->editMenu($db, $id, $_POST))
             {
                 header("Location: " . WEBROOT . $this->redIndex);
             }else{

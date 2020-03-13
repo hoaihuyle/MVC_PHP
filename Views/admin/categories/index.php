@@ -20,7 +20,9 @@
                             <table id="example" class="table table-striped table-bordered second" style="width:100%">
                                 <thead>
                                     <tr>
+                                    <th style="text-align: center;">Id</th>
                                         <th style="text-align: center;">Tên</th>
+                                        <th style="text-align: center;">Menu</th>
                                         <th style="text-align: center;">Ngày tạo</th>
                                         <th style="text-align: center;">Người tạo</th>
                                         <th style="text-align: center;">Chỉnh sửa</th>
@@ -32,7 +34,19 @@
                                         foreach($categoryInfos as $category){
                                     ?>
                                         <tr>
+                                            <td align="center"><?php echo $category['id_cate']; ?></td>
                                             <td align="center"><?php echo $category['name_cate']; ?></td>
+
+                                            <td align="center">
+                                            <?php 
+                                            foreach($menuInfos as $menu){
+                                                 if ($category['menu_id']==$menu['id_menu']){ 
+                                                    echo $menu['name_menu']; 
+                                                }
+                                            }
+                                            ?>
+                                            </td>
+
                                             <td align="center"><?php echo $category['created']; ?></td>
                                             <td align="center"><?php echo isset($category['user_created'])?$category['user_created']:'admin'; ?></td>
                                             <td align="center"><a href="/category/edit/<?php echo $category['id_cate']; ?>"><img src="/lib/admin/images/edit.png" width="25"></a></td>
@@ -44,7 +58,9 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                    <th style="text-align: center;">Tên</th>
+                                        <th style="text-align: center;">Id</th>
+                                        <th style="text-align: center;">Tên</th>
+                                        <th style="text-align: center;">Menu</th>
                                         <th style="text-align: center;">Ngày tạo</th>
                                         <th style="text-align: center;">Người tạo</th>
                                         <th style="text-align: center;">Chỉnh sửa</th>
