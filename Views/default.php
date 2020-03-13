@@ -2,5 +2,5 @@
 
 echo $content_for_default;
 
-include('admin/includes/_footer.php');
+include('includes/_footer.php');
 ?>

@@ -84,9 +84,25 @@
          <div style="text-align: center; font-size: 14px;">Tất cả các sản phẩm mà CODO SUPP bán không phải là thuốc, không thể thay thế thuốc chữa bệnh.<br />Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni obcaecati cupiditate, blanditiis temporibus nobis unde asperiores nostrum ea reiciendis, ut molestiae ex non accusamus id odio, doloribus earum consequatur nihil!.</div>
       </div>
       <div id="fb-root"></div>
-     
-      <link rel="stylesheet" href="lib/front/asset/site/modal/jquery.modal.min.css" />
+      
+      <script src="lib/front/asset/site/js/jquery-3.2.1.min.js"></script> 
+      <script src="lib/front/asset/site/js/bootstrap.min.js"></script> 
+      <script src="lib/front/asset/site/js/slider/jquery.bxslider.min.js"></script> 
+      <script src="lib/front/asset/site/magic/jquery.magic.js"></script> 
+      <script src="lib/front/asset/site/js/jquery-ui.min.js"></script> 
+      <script src="lib/front/asset/site/js/owl.carousel.min.js"></script> 
       <script src="lib/front/asset/site/js/jquery.lazy.min.js"></script> 
+      <script src="lib/front/asset/site/js/thanh.js"></script>
+      <script>$('.slider-ads-top').bxSlider({auto: true,pager: false,autoHover: true,mode: 'horizontal',controls: false,pause: 10000});</script> <!-- End Top Banner --> 
       <script> $(function() { $('.lazy').Lazy();});</script> 
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         
+         gtag('config', 'UA-105598555-1');
+      </script> 
+      <script>$('.slider-magic').bxSlider({ auto: true, autoHover: true, pause: 10000});</script> 
+     
    </body> 
 </html>
