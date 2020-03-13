@@ -2,6 +2,7 @@
 class MenuController extends Controller
 {
     var $service ="Services/menuService.php";
+    var $serviceC ="Services/categoryService.php";
     var $red="admin/menu/";
     var $redIndex="menu/index";
 
@@ -10,6 +11,10 @@ class MenuController extends Controller
         require(ROOT . $this->service);
         $news = new MenuService();
 
+        require(ROOT . $this->serviceC);
+        $category = new CategoryService();
+
+        $d['categoryInfos'] = $category->listCategory($db); 
         $d['menuInfos'] = $news->listMenu($db);  
         $this->set($d);
 
@@ -37,20 +42,51 @@ class MenuController extends Controller
         $this->render($this->red.__FUNCTION__);
     }
 
+    /**
+     * Redirect edit page
+     * If have a POST
+     * - Edit information in table Menu
+     * - Loop: Update menu_id in table Category
+     */
     function edit($id)
     {
         require(ROOT . $this->service);
         $news = new MenuService();
-        
-        $d['menuInfo'] = $news->findMenu($db, $id); 
 
+        require(ROOT . $this->serviceC);
+        $category = new CategoryService();
+
+        $d['categoryInfos'] = $category->findCategoryMenu($db, $id);  
+        $d['menuInfo'] = $news->findMenu($db, $id); 
+        
         if (!empty($_POST))
         {
-
+            // var_dump($_POST);die();
             if ($news->editMenu($db, $id, $_POST))
             {
                 header("Location: " . WEBROOT . $this->redIndex);
+            }else{
+                $d['error'] = " <div class='message p-3 bg-danger text-white'> Cập nhập thông tin không thành công</div>";
+                $this->set($d);
             }
+            // if(!isset($_POST["example3_length"])){
+               
+            // }else{
+                // unset($_POST['example3_length']);
+                // foreach($_POST as $key => $p){
+                //     $category-> editCategory($db, $p, array('menu_id' => $id));
+                //     // $data[] = array('id_cate' => $p, 'menu_id'=> $id);
+                // }
+                // if ()
+                // {
+                //     $d['error'] = "Cập nhập thông tin thành công";
+                //     $this->set($d);
+                // }else{
+                //     $d['error'] = "Cập nhập thông tin không thành công";
+                //     $this->set($d);
+                // }
+            // }
+           
         }
         
         $this->set($d);

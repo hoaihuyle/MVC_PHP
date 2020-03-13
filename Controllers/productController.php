@@ -19,7 +19,7 @@ class ProductController extends Controller
     function create()
     {
 
-        if (!empty($_POST))
+        if (!empty($_POST)) 
         {
 
             require(ROOT . $this->service);

@@ -22,7 +22,7 @@ class CategoryController extends Controller
         {
             require(ROOT . $this->service);
             $categories = new CategoryService();
-
+ 
             if ($categories->createCategory($db, $_POST))
             {
                 header("Location: " . WEBROOT . $this->redIndex);

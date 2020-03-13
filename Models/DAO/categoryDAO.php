@@ -6,8 +6,8 @@ class CategoryDAO extends Model
         return $db->fetchAll('categories');
     }
 
-    public function fetchByCol($db,$id){
-        return $db->fetchByCol('categories','id_cate',$id);
+    public function fetchByCol($db, $col, $id){
+        return $db->fetchByCol('categories', $col,$id);
     }
 
     function fetchByColOther($db){

@@ -45,8 +45,10 @@
                 ob_start();
                 require(ROOT . "Views/includes/" . $this->menu . '.php');
                 $content_for_Menu = ob_get_clean();
+
             }
 
+            
             ob_start();
             require(ROOT . "Views/" . $this->myUntils . '.php');
             $content_for_myUntils = ob_get_clean();
@@ -56,25 +58,26 @@
             $content_for_default = ob_get_clean();
 
             if ($this->default == false)
-                { 
-                    isset($content_for_myUntils)?$content_for_myUntils:''; 
+            { 
+                isset($content_for_myUntils)?$content_for_myUntils:''; 
 
-                    $content_for_default;
+                $content_for_default;
 
-                    isset($content_for_Menu)?$content_for_Menu:''; 
-                }
-            else if($explode_filename[0] === 'admin' && $explode_filename[1] === 'login')
-                {
-                    require(ROOT. "Views/". $explode_filename[0] .'/' . $explode_filename[1].'/'. $explode_filename[2] .'.php');
-                }
-            else if($explode_filename[0] === 'admin' && $explode_filename[1] === 'register'){
+                isset($content_for_Menu)?$content_for_Menu:''; 
+            }
+            // else if($explode_filename[0] === 'admin' && $explode_filename[1] === 'login')
+            //     {
+            //         require(ROOT. "Views/". $explode_filename[0] .'/' . $explode_filename[1].'/'. $explode_filename[2] .'.php');
+            //     }
+            else if($explode_filename[0] === 'admin' && ($explode_filename[1] === 'login'||$explode_filename[1] === 'register')){
                     require(ROOT. "Views/". $explode_filename[0] .'/' . $explode_filename[1].'/'. $explode_filename[2] .'.php');
                 }
             else
-                {
-                    require(ROOT . "Views/" . $ex . $this->layout_header . '.php');
-                    require(ROOT . "Views/" . $ex . $this->default . '.php');
-                }
+            {
+                // require(ROOT. "Views/". $explode_filename[0] .'/' . $explode_filename[1].'/'. $explode_filename[2] .'.php');
+                require(ROOT . "Views/" . $ex . $this->layout_header . '.php');
+                require(ROOT . "Views/" . $ex . $this->default . '.php');
+            }
              
         }
 
