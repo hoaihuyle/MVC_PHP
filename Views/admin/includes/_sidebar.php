@@ -108,7 +108,7 @@
                             </li>
 
                             <li class="nav-item ">
-                                <a class="nav-link" href="admin/index" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fa fa-fw fa-user-circle"></i>Công ty <span class="badge badge-success">6</span></a>
+                                <a class="nav-link" href="admin/index" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fa fa-fw fa-user-circle"></i>Nhà cung cấp sản phẩm <span class="badge badge-success">6</span></a>
                                  <div id="submenu-4" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
