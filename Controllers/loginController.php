@@ -36,6 +36,7 @@ class loginController extends Controller
           if($val && $val['role'] == 0 && password_verify($_POST["password"], $val['password'])){
               $_SESSION['name_id'] = $val['id_acco'];
               $_SESSION['name_acco'] = $val['name_acco'];
+              $_SESSION['role'] = $val['role'];
               $_SESSION['success'] = "Đăng nhập thành công";
                 header("Location: /menu");
           }

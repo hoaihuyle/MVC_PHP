@@ -63,6 +63,15 @@ class MenuService extends Service{
         return $menus;
     }
 
+    /**
+     * List menu by flag = 0
+     */
+    function listMenuWhere($db){
+        $menu = new MenuDAO();
+        $menus =  $menu->fetchAll($db);
+        return $menus;
+    }
+
     /** 
      * List menu by ID
      */

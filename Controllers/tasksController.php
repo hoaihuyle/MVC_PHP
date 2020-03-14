@@ -1,6 +1,13 @@
 <?php
 class tasksController extends Controller
 {
+
+    function __construct()
+    {
+        if( $_SESSION['role'] != 0 || !isset($_SESSION['role']) )
+            header('location: /');
+    }
+
     function index()
     {
         require(ROOT . 'Models/Task.php');

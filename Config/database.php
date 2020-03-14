@@ -188,6 +188,15 @@
             }
             return $data;
          }
+
+        //lấy toàn bộ dữ liệu với điều kiện có trong bảng
+        //$id = array 'name' => 'val'
+        public function fetchWhere($table , $val)
+        {
+            $sql = "SELECT * FROM {$table} WHERE $val ";
+            $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn fetchID " .mysqli_error($this->link));
+            return mysqli_fetch_assoc($result);
+        }
         
         //lấy toàn bộ dữ liệu của id có trong bảng
         public function fetchID($table , $id)

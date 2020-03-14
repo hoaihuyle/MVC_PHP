@@ -4,6 +4,8 @@ class AccountController extends Controller
     var $service ="Services/accountService.php";
     var $red="admin/accounts/";
     var $redIndex="account/index";
+    var $accUser = 'myAccount';
+    var $editUser = 'editAccounts';
 
     function index()
     {
@@ -68,5 +70,22 @@ class AccountController extends Controller
         }
         header("Location: " . WEBROOT . $this->redIndex);
     }  
+
+    function detailUser(){
+        require(ROOT . $this->service);
+        $accounts = new AccountService(); 
+        $user['user'] = $accounts->checkUser($db, $_SESSION['name_id']); 
+        return $this->set($user);
+    }
+
+    function myUser(){ 
+        $this->detailUser();
+        $this->render($this->accUser);
+    }
+
+    function editMyUser(){
+        $this->detailUser();
+        $this->render($this->editUser);
+    }
 }
 ?>

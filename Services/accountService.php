@@ -54,6 +54,11 @@ class AccountService extends Service{
 
         return $accounts;
     }
+
+    function checkUser($db, $id){
+        $account = new AccountDao();
+        return $account->checkUser($db, $id);
+    }
 }
 
 ?>

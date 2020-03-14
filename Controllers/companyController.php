@@ -5,6 +5,13 @@ class CompanyController extends Controller
     var $red="admin/companies/";
     var $redIndex="company/index";
 
+    function __construct()
+    {
+        if( $_SESSION['role'] != 0 || !isset($_SESSION['role']) )
+            header('location: /');
+    }
+
+
     function index()
     {
         require(ROOT . $this->service);

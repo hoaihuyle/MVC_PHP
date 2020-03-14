@@ -52,9 +52,9 @@
                 <a href="#" target="_blank" rel="nofollow" class="connect cs-flex flex-row flex-align-center mr-20">
                    <span><i class="fab fa-facebook-square"></i> Ghé Fanpage</span>
                 </a> 
-                <a href="#" rel="nofollow" class="checkpoint cs-flex flex-row flex-align-center mr-20"> 
-                    <span style="color: #FFF"><i class="fas fa-address-card" style="color: #FFF"></i> Kiểm tra tích điểm</span> 
-                </a> 
+<!--                <a href="#" rel="nofollow" class="checkpoint cs-flex flex-row flex-align-center mr-20"> -->
+<!--                    <span style="color: #FFF"><i class="fas fa-address-card" style="color: #FFF"></i> Kiểm tra tích điểm</span> -->
+<!--                </a> -->
             </div>
                <div class="cs-col-12 cs-col-sm-6 cs-flex tool-buttons">
                    <?php if(!isset($_SESSION['name_id'])): ?>
@@ -62,14 +62,14 @@
                     <?php else: ?>
 
                    <a href="#" class="connect cs-flex flex-row flex-align-center ml-auto "> Xin chào: <?php echo $_SESSION['name_acco'] ?> </a>
-                   <a href="#" class="connect cs-flex flex-row flex-align-center"> Tài khoản của tôi </a>
+                   <a href="/account/myUser" class="connect cs-flex flex-row flex-align-center"> Tài khoản của tôi </a>
                    <a href="/signup/logout" rel="modal:open" class="connect cs-flex flex-row flex-align-center"> Đăng xuất </a>
                    <?php endif ?>
             </div>
             </div>
          </div>
          <!-- End top bar --> <!--Top Bar User Mobile--> 
-         <div id="topUserMobile"><a href="#" rel="nofollow"><span style="color: #FFF"><i class="fas fa-address-card" style="color: #FFF"></i> Kiểm tra tích điểm</span></a> <a href="#"><i class="fas fa-user-shield" style="color: #FFF"></i> Tài khoản của tôi</a> </div>
+         <div id="topUserMobile"><a href="#" rel="nofollow"><span style="color: #FFF"><i class="fas fa-address-card" style="color: #FFF"></i> Kiểm tra tích điểm</span></a> <a href="/account/myUser"><i class="fas fa-user-shield" style="color: #FFF"></i> Tài khoản của tôi</a> </div>
          <!--End Top Bar User Mobile--> <!--Top Bar Mobile--> 
          <div id="topMobile" style="background: #00aeef; box-shadow: 0 2px 10px #eae69a; padding: 10px 20px 5px 10px;">
             <a class="switch-menu" style="cursor: pointer; float: left; width: 23%; margin-top: 8px;" href="front/#"><i class="fas fa-bars" style="color: #FFF;"> MENU</i></a> <a style="float: left; width: 20%" href="/front/index" class="switch-menu mb-10 show-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center mr-auto">
@@ -119,67 +119,18 @@
             <div class="main-content">
                <ul class="list-menu">
                   <li><a class="cs-flex flex-align-center" href="/" style="background: #f35f64;">Trang chủ</a></li>
+                   <?php foreach($menuInfos as $menu){ ?>
                   <li>
-                     <a href="#" class="cs-flex flex-align-center">Sữa tăng cân</a>
+                     <a href="#" class="cs-flex flex-align-center"><?php echo $menu['name_menu'] ?></a>
                      <ul>
-                        <li> <a href="#" class="cs-flex flex-align-center">Tăng cân nhanh</a></li>
-                        <li> <a href="#" class="cs-flex flex-align-center">Tăng cân nạc, ít mỡ</a></li>
+                         <?php foreach($categoryInfos as $cate) {?>
+                             <?php if($cate['menu_id'] == $menu['id_menu']) : ?>
+                            <li> <a href="#" class="cs-flex flex-align-center"><?php echo $cate['name_cate'] ?></a></li>
+                             <?php endif; ?>
+                         <?php }?>
                      </ul>
                   </li>
-                  <li>
-                     <a href="front/c152/whey-protein-tang-co" class="cs-flex flex-align-center">Whey Protein</a>
-                     <ul>
-                        <li> <a href="#" class="cs-flex flex-align-center">Whey Protein Blend</a></li>
-                        <li> <a href="#" class="cs-flex flex-align-center">Whey Protein Isolate</a></li>
-                        <li> <a href="#" class="cs-flex flex-align-center">Hydrolyzed Whey</a></li>
-                        <li> <a href="#" class="cs-flex flex-align-center">Casein Protein</a></li>
-                        <li> <a href="#" class="cs-flex flex-align-center">Meal Replacement</a></li>
-                     </ul>
-                  </li>
-                  <li>
-                     <a href="#" class="cs-flex flex-align-center">BCAA</a>
-                     <ul></ul>
-                  </li>
-                  <li>
-                     <a href="#" class="cs-flex flex-align-center">Tăng sức mạnh</a>
-                     <ul>
-                        <li> <a href="#" class="cs-flex flex-align-center">Pre-workout</a></li>
-                        <li> <a href="#" class="cs-flex flex-align-center">Pre & giảm mỡ</a></li>
-                        <li> <a href="#" class="cs-flex flex-align-center">Creatine</a></li>
-                        <li> <a href="#" class="cs-flex flex-align-center">Đơn chất</a></li>
-                     </ul>
-                  </li>
-                  <li>
-                     <a href="front/c162/vitamin-khoang-chat" class="cs-flex flex-align-center">Vitamin, khoáng</a>
-                     <ul>
-                        <li> <a href="front/bo-sung-vitamin" class="cs-flex flex-align-center">Bổ sung Vitamin</a></li>
-                        <li> <a href="front/tang-hoc-mon-nam" class="cs-flex flex-align-center">Tăng hóc môn nam</a></li>
-                        <li> <a href="front/bo-sung-dau-ca" class="cs-flex flex-align-center">Bổ sung dầu cá</a></li>
-                     </ul>
-                  </li>
-                  <li>
-                     <a href="front/c158/giam-can-dot-mo" class="cs-flex flex-align-center">Giảm mỡ</a>
-                     <ul>
-                        <li> <a href="front/sinh-nhiet-dot-mo" class="cs-flex flex-align-center">Sinh nhiệt đốt mỡ</a></li>
-                        <li> <a href="front/it-chat-kich-thich" class="cs-flex flex-align-center">Ít chất kích thích</a></li>
-                     </ul>
-                  </li>
-                  <li>
-                     <a href="front/c165/phu-kien" class="cs-flex flex-align-center">Phụ kiện</a>
-                     <ul>
-                        <li> <a href="front/c36/binh-lac" class="cs-flex flex-align-center">Bình lắc</a></li>
-                        <li> <a href="front/c39/phu-kien-khac" class="cs-flex flex-align-center">Phụ kiện khác</a></li>
-                     </ul>
-                  </li>
-                  <li>
-                     <a href="front/combo-gia-tot" class="cs-flex flex-align-center">COMBO X2</a>
-                     <ul>
-                        <li> <a href="front/combo-tang-can-tang-co" class="cs-flex flex-align-center">Combo tăng cân tăng cơ</a></li>
-                        <li> <a href="front/combo-tang-co-giam-mo" class="cs-flex flex-align-center">Combo tăng cơ giảm mỡ</a></li>
-                     </ul>
-                  </li>
-                  <li class="show-top-bar"> <a href="front/home/store" class="cs-flex flex-align-center">Hệ thống 6 cửa hàng</a> </li>
-                  <li class="show-top-bar"><a href="front/#" onclick="closeMenu();">Đóng lại (X)</a></li>
+                   <?php } ?>
                </ul>
             </div>
          </div>

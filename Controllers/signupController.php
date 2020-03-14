@@ -1,12 +1,11 @@
 <?php
 class signupController extends Controller
 {
-    var $regis ="Services/registerService.php";
-    var $log = "Services/loginService.php";
+    
 
     var $index = '/';
-    var $signup = '/signup';
-
+    var $signup = '/signup'; 
+ 
     function index()
     {   
         $this->render("signup");
@@ -92,6 +91,7 @@ class signupController extends Controller
              if($val && $val['role'] != 0 && password_verify($_POST["password"], $val['password'])){
                  $_SESSION['name_id'] = $val['id_acco'];
                  $_SESSION['name_acco'] = $val['name_acco'];
+                 $_SESSION['role'] = $val['role'];
                   $_SESSION['success'] = "Đăng nhập thành công";
                   header("Location: /"); 
               }

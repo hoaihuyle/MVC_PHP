@@ -13,20 +13,20 @@
       
       <div class="marketing">
       <!-- <script>$('.slider-magic').bxSlider({ auto: true, autoHover: true, pause: 10000});</script>  -->
-            <div class="main-content cs-flex">
-            <div class="box-marketing cs-flex cs-col-lg-4 flex-align-center">
-               <div class="image"> <img class="lazy" data-src=" lib/front/upload/service/srv_1.png" alt="Ship COD toàn quốc" title="Ship COD toàn quốc"> </div>
-               <div class="about flex cs-flex flex-column"> <span class="title">Ship COD toàn quốc</span> <span class="description">Nhận hàng & thanh toán tiền tại nhà</span> </div>
-            </div>
-            <div class="box-marketing cs-flex cs-col-lg-4 flex-align-center">
-               <div class="image"> <img class="lazy" data-src=" lib/front/upload/service/srv_22.png" alt="Đội ngũ tư vấn chuyên sâu" title="Đội ngũ tư vấn chuyên sâu"> </div>
-               <div class="image"> <img class="lazy" data-src="lib/front/upload/service/srv_22.png" alt="Đội ngũ tư vấn chuyên sâu" title="Đội ngũ tư vấn chuyên sâu"> </div>
-            </div>
-            <div class="box-marketing cs-flex cs-col-lg-4 flex-align-center">
-            <div class="image"> <img class="lazy" data-src="lib/front/upload/service/srv_1.png" alt="Ship COD toàn quốc" title="Ship COD toàn quốc"> </div>
-            <div class="image"> <img class="lazy" data-src="lib/front/upload/service/srv_32.png" alt="Đổi trả với bất kỳ lý do" title="Đổi trả với bất kỳ lý do"> </div>
-            </div>
-         </div>
+          <div class="main-content cs-flex">
+              <div class="box-marketing cs-flex cs-col-lg-4 flex-align-center">
+                  <div class="image"> <img class="lazy" alt="Ship COD toàn quốc" title="Ship COD toàn quốc" src=" /lib/front/upload/service/srv_1.png" style=""> </div>
+                  <div class="about flex cs-flex flex-column"> <span class="title">Ship COD toàn quốc</span> <span class="description">Nhận hàng &amp; thanh toán tiền tại nhà</span> </div>
+              </div>
+              <div class="box-marketing cs-flex cs-col-lg-4 flex-align-center">
+                  <div class="image"> <img class="lazy" alt="Đội ngũ tư vấn chuyên sâu" title="Đội ngũ tư vấn chuyên sâu" src=" /lib/front/upload/service/srv_22.png" style=""> </div>
+                  <div class="about flex cs-flex flex-column"> <span class="title">Đội ngũ tư vấn chuyên sâu</span> <span class="description">Tư vấn 1 cách bài bản, khoa học nhất</span> </div>
+              </div>
+              <div class="box-marketing cs-flex cs-col-lg-4 flex-align-center">
+                  <div class="image"> <img class="lazy" alt="Đổi trả với bất kỳ lý do" title="Đổi trả với bất kỳ lý do" src=" /lib/front/upload/service/srv_32.png" style=""> </div>
+                  <div class="about flex cs-flex flex-column"> <span class="title">Đổi trả với bất kỳ lý do</span> <span class="description">Cho phép bạn đổi trả hàng trong 30 ngày</span> </div>
+              </div>
+          </div>
       
       <div class="session">
          <div class="main-content">

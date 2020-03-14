@@ -6,6 +6,13 @@ class MenuController extends Controller
     var $red="admin/menu/";
     var $redIndex="menu/index";
 
+
+    function __construct()
+    {
+        if( $_SESSION['role'] != 0 || !isset($_SESSION['role']) )
+            header('location: /');
+    }
+
     function index()
     {
         require(ROOT . $this->service);
