@@ -47,8 +47,6 @@
                 $content_for_Menu = ob_get_clean();
 
             }
-
-            
             ob_start();
             require(ROOT . "Views/" . $this->myUntils . '.php');
             $content_for_myUntils = ob_get_clean();
@@ -65,10 +63,10 @@
 
                 isset($content_for_Menu)?$content_for_Menu:''; 
             }
-            // else if($explode_filename[0] === 'admin' && $explode_filename[1] === 'login')
-            //     {
-            //         require(ROOT. "Views/". $explode_filename[0] .'/' . $explode_filename[1].'/'. $explode_filename[2] .'.php');
-            //     }
+             else if($explode_filename[0] === 'admin' && $explode_filename[1] === 'login')
+                 {
+                     require(ROOT. "Views/". $explode_filename[0] .'/' . $explode_filename[1].'/'. $explode_filename[2] .'.php');
+                 }
             else if($explode_filename[0] === 'admin' && ($explode_filename[1] === 'login'||$explode_filename[1] === 'register')){
                     require(ROOT. "Views/". $explode_filename[0] .'/' . $explode_filename[1].'/'. $explode_filename[2] .'.php');
                 }

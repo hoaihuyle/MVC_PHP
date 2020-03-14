@@ -8,29 +8,28 @@
                   <p style="line-height: 25px;">Lợi ích khi đăng ký tài khoản tại CODO SUPP: Đăng ký 1 lần và các lần tiếp theo đăng nhập <span style="color: #FF8C00; font-weight: bold;">đặt hàng cực nhanh</span></p>
                   <form id="form_register" action="/signup/postRegister" method="POST">
                      <label class="label-cm mt-10" for="">Họ & Tên*</label> 
-                     <input class="input-cm" name="name_acco" autocomplete="off" type="text" placeholder="Nhập tên khách hàng" value="" style="font-size: 15px;">
+                     <input required class="input-cm" name="name_acco" autocomplete="off" type="text" placeholder="Nhập tên khách hàng" value="" style="font-size: 15px;">
                      <?php if($_SERVER['REQUEST_URI'] != '/signup/postLogin'): if(isset($name_acco)): ?>
                      <p class="text-danger"><?php echo $name_acco;?></p>
                      <?php endif; endif?>
                       <label class="label-cm mt-10" for="">Số điện thoại*</label>
                       <p style="font-size: 12px;">Đúng 10 số, ko chứa khoảng trắng, ko ký tự lạ, ko chứa +84.</p>
-                      <input class="input-cm" name="phone" autocomplete="off" type="text" placeholder="Ví dụ: 123123132, nhập tại đây" value="" style="font-size: 15px;"> <small class="show-error" id="phone"></small>
+                      <input required class="input-cm" name="phone" autocomplete="off" type="number" placeholder="Ví dụ: 123123132, nhập tại đây" value="" style="font-size: 15px;"> <small class="show-error" id="phone"></small>
 
                       <?php if($_SERVER['REQUEST_URI'] != '/signup/postLogin'): if(isset($phone)): ?>
                           <p class="text-danger"><?php echo $phone;?></p>
                       <?php endif; endif?>
                       <label class="label-cm mt-10" style="margin-bottom: 5px;">Mật khẩu*</label>
-                     <input class="input-cm" name="password" type="password" style="font-size: 15px;"> 
+                     <input required class="input-cm" name="password" type="password" style="font-size: 15px;">
                      <?php if($_SERVER['REQUEST_URI'] != '/signup/postLogin'): if(isset($password)): ?>
                      <p class="text-danger"><?php echo $password;?></p>
                      <?php endif; endif?>
                      <label class="label-cm mt-10" style="margin-bottom: 5px;">Địa chỉ nhận hàng*</label> 
-                     <input class="input-cm" name="address" autocomplete="off" type="text" style="font-size: 15px;"> 
+                     <input required class="input-cm" name="address" autocomplete="off" type="text" style="font-size: 15px;">
                      <?php if($_SERVER['REQUEST_URI'] != '/signup/postLogin'): if(isset($address)): ?>
                      <p class="text-danger"><?php echo $address;?></p>
                      <?php endif; endif ?>
-                     <button class="button-cm mt-10 mt-20" style="font-size: 15px;">Đăng ký thành viên</button> 
-                     <input name="target" type="hidden" value=""> <small class="show-error" id="name_acco"></small>
+                     <button class="button-cm mt-10 mt-20" style="font-size: 15px;">Đăng ký thành viên</button>
 
 
                     </form>
@@ -51,12 +50,12 @@
                    <?php endif; endif?>
                   <form id="form_register" action="/signup/postLogin" method="POST">
                      <label class="label-cm mt-10" for="">Số điện thoại*</label> 
-                     <input class="input-cm" name="phone" autocomplete="off" type="text" style="font-size: 15px;">
+                     <input required class="input-cm" name="phone" autocomplete="off" type="number" style="font-size: 15px;">
                       <?php if($_SERVER['REQUEST_URI'] === '/signup/postLogin'): if(isset($phone)): ?>
                           <p class="text-danger"><?php echo $phone;?></p>
                       <?php endif; endif?>
                      <label class="label-cm mt-10" style="margin-bottom: 5px;">Mật khẩu*</label> 
-                     <input class="input-cm" name="password" type="password" style="font-size: 15px;">
+                     <input required class="input-cm" name="password" type="password" style="font-size: 15px;">
                       <?php if($_SERVER['REQUEST_URI'] === '/signup/postLogin'): if(isset($password)): ?>
                           <p class="text-danger"><?php echo $password;?></p>
                       <?php endif; endif?>

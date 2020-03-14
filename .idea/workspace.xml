@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/Views/includes/_header.php" line="65" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c93ac342-66cb-49f3-8d9a-59a21e512379" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/loginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/loginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/menuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/menuController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/signupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/signupController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/includes/_footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/includes/_footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/admin/includes/_topbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/admin/includes/_topbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/admin/login/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/admin/login/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/includes/_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/includes/_header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/signup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/front/asset/site/css/thanh.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/front/asset/site/css/thanh.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/signup.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="48" column="94" selection-start-line="48" selection-start-column="94" selection-end-line="48" selection-end-column="94" />
+            <state relative-caret-position="340">
+              <caret line="20" column="42" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="20" selection-end-column="42" />
               <folding>
                 <element signature="n#style#0;n#p#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
@@ -38,10 +42,50 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controllers/loginController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="586">
+              <caret line="37" column="57" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="37" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Views/includes/_header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="64" column="105" lean-forward="true" selection-start-line="64" selection-start-column="105" selection-end-line="64" selection-end-column="105" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controllers/signupController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="657">
-              <caret line="97" column="32" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="32" />
+            <state relative-caret-position="323">
+              <caret line="113" column="27" selection-start-line="113" selection-start-column="27" selection-end-line="113" selection-end-column="27" />
+              <folding>
+                <element signature="n#postRegister#0;n#signupController#0;n#!!top" />
+                <element signature="n#postLogin#0;n#signupController#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controllers/menuController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="790">
+              <caret line="107" column="8" selection-start-line="107" selection-start-column="8" selection-end-line="108" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/admin/login/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -62,9 +106,12 @@
       <find>dathongbao.png</find>
       <find>jquery-3.2.1.min.js</find>
       <find>đăng ký thành viên</find>
-      <find>#loginRegisUser .regisLogin</find>
-      <find>số điện thoại</find>
+      <find>$index</find>
       <find>bại</find>
+      <find>#loginRegisUser .regisLogin</find>
+      <find>đăng nhập</find>
+      <find>logo</find>
+      <find>số điện thoại</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -74,10 +121,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/lib/front/asset/site/css/thanh.css" />
-        <option value="$PROJECT_DIR$/Views/includes/_header.php" />
         <option value="$PROJECT_DIR$/Views/includes/_footer.php" />
-        <option value="$PROJECT_DIR$/Controllers/signupController.php" />
         <option value="$PROJECT_DIR$/Views/signup.php" />
+        <option value="$PROJECT_DIR$/Core/Controller.php" />
+        <option value="$PROJECT_DIR$/Views/admin/login/index.php" />
+        <option value="$PROJECT_DIR$/Controllers/menuController.php" />
+        <option value="$PROJECT_DIR$/Controllers/loginController.php" />
+        <option value="$PROJECT_DIR$/Controllers/signupController.php" />
+        <option value="$PROJECT_DIR$/Views/admin/includes/_topbar.php" />
+        <option value="$PROJECT_DIR$/Views/includes/_header.php" />
       </list>
     </option>
   </component>
@@ -126,6 +178,19 @@
               <item name="codosupp.vn" type="b2602c69:ProjectViewProjectNode" />
               <item name="codosupp.vn" type="462c0819:PsiDirectoryNode" />
               <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codosupp.vn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codosupp.vn" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codosupp.vn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codosupp.vn" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
               <item name="includes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -166,12 +231,12 @@
       <workItem from="1513111791162" duration="736000" />
       <workItem from="1513152695175" duration="194000" />
       <workItem from="1513326896814" duration="43000" />
-      <workItem from="1584159919218" duration="2480000" />
+      <workItem from="1584159919218" duration="8892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3453000" />
+    <option name="totallyTimeSpent" value="9865000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -235,19 +300,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/includes/_header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="40" column="27" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="19" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Views/admin/menu/create.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/front/asset/site/css/thanh.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -256,22 +310,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/registerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/menuController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="790">
+          <caret line="107" column="8" selection-start-line="107" selection-start-column="8" selection-end-line="108" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/signupController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="97" column="32" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="32" />
+        <state relative-caret-position="323">
+          <caret line="113" column="27" selection-start-line="113" selection-start-column="27" selection-end-line="113" selection-end-column="27" />
+          <folding>
+            <element signature="n#postRegister#0;n#signupController#0;n#!!top" />
+            <element signature="n#postLogin#0;n#signupController#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/signup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="48" column="94" selection-start-line="48" selection-start-column="94" selection-end-line="48" selection-end-column="94" />
+        <state relative-caret-position="340">
+          <caret line="20" column="42" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="20" selection-end-column="42" />
           <folding>
             <element signature="n#style#0;n#p#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/admin/login/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/admin/includes/_topbar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1085">
+          <caret line="104" column="75" selection-start-line="104" selection-start-column="75" selection-end-line="104" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/admin/includes/_header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/loginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="37" column="57" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="37" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/includes/_header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="64" column="105" lean-forward="true" selection-start-line="64" selection-start-column="105" selection-end-line="64" selection-end-column="105" />
         </state>
       </provider>
     </entry>
