@@ -17,7 +17,7 @@ class CompanyDAO extends Model
         } catch (\Throwable $th) {
             //throw $th;
             return $err = 'Try late!!';
-        }
+        } 
          
     }
 

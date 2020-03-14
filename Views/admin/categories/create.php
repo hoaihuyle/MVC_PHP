@@ -42,6 +42,21 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Chọn Menu thuộc</label>
+                                <div class="col-12 col-sm-8 col-lg-6">
+                                    <select class="form-control" name="menu_id" id="input-select">
+                                    <option value="0">Chọn Menu</option>
+                                    <?php  
+                                        foreach($menuInfos as $menu){
+                                    ?>
+                                        <option value="<?php echo $menu['id_menu']; ?>"> <?php echo $menu['name_menu'] ?> </option> ;
+                                    <?php
+                                    }
+                                    ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label class="col-sm-3 col-form-label text-sm-right">Trạng thái</label>
                                 <div class="col-sm-6">
                                     <div class="custom-controls-stacked">

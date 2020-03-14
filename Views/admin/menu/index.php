@@ -42,7 +42,7 @@
                                             $i=0;
                                             foreach($categoryInfos as $category){
                                                  if ($category['menu_id']==$menu['id_menu']){ 
-                                                    echo $category['name_cate']; 
+                                                    echo $category['name_cate'].'<br>'; 
                                                     $i++;
                                                     if($i==3){echo'...';break;} 
                                                 }

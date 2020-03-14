@@ -20,7 +20,9 @@
                             <table id="example" class="table table-striped table-bordered second" style="width:100%">
                                 <thead>
                                     <tr>
+                                        <th style="text-align: center;">Id</th>
                                         <th style="text-align: center;">Tên</th>
+                                        <th style="text-align: center;">Ảnh</th>
                                         <th style="text-align: center;">Ngày tạo</th>
                                         <th style="text-align: center;">Người tạo</th>
                                         <th style="text-align: center;">Trạng thái</th>
@@ -33,9 +35,11 @@
                                         foreach($productInfos as $product){
                                     ?>
                                         <tr>
+                                            <td align="center"><?php echo $product['id_prod']; ?></td>
                                             <td align="center"><?php echo $product['name_prod']; ?></td>
+                                            <td align="center">Ảnhtd>
                                             <td align="center"><?php echo $product['created']; ?></td>
-                                            <td align="center"><?php echo isset($product['user_created'])?$product['user_created']:'admin'; ?></td>
+                                            <td align="center"><?php echo ($product['user_created']!=0)?$product['user_created']:'admin'; ?></td>
                                             <td align="center"><?php echo ($product['flag']==0)?'Hiển thị':'Đã xóa'; ?></td>
                                             <td align="center"><a href="/product/edit/<?php echo $product['id_prod']; ?>"><img src="/lib/admin/images/edit.png" width="25"></a></td>
                                             <td align="center"><a href="/product/delete/<?php echo $product['id_prod']; ?>" onclick="return confirm('Dữ liệu của bạn sẽ bị mất, bạn chắc chắn chứ ?')" ><img src="/lib/admin/images/delete.png" width="25"></a></td>
@@ -46,7 +50,9 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th style="text-align: center;">Id</th>
                                         <th style="text-align: center;">Tên</th>
+                                        <th style="text-align: center;">Ảnh</th>
                                         <th style="text-align: center;">Ngày tạo</th>
                                         <th style="text-align: center;">Người tạo</th>
                                         <th style="text-align: center;">Trạng thái</th>
