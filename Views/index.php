@@ -136,8 +136,8 @@
                </div>
                <div class="product slider-home cs-col-6 cs-col-xs-6 cs-col-md-3">
                   <a href="lib/front/mass-tech-extreme-2000-loai-20lbs-9kg-1498" class="image cs-flex flex-align-center flex-content-center">
-                     <div class="pane-tool-button cs-flex"> <button class="pr-10 pl-10 mr-5">Xem chi tiết</button> <button class="mr-5 btn-popup-detail" smell="2" current=" lib/front/" base=" lib/front/" product="96"><i class="fas fa-eye"></i></button> <button class="redirect-login" url="dang-nhap"><i class="far fa-heart"></i></button> </div>
-                     <img class="lazy" data-src=" lib/front/upload/product/catalog/mass_tech_2000_loai_22lbs_10kg_image_catalog_1571631263.jpg" alt="Mass Tech 2000 loại 22lbs 10kg" title="Mass Tech 2000 loại 22lbs 10kg"> 
+                     <div class="pane-tool-button cs-flex"> <button class="pr-10 pl-10 mr-5">Xem chi tiết</button> <button class="mr-5 btn-popup-detail" smell="2" current=" front/" base=" front/" product="96"><i class="fas fa-eye"></i></button> <button class="redirect-login" url="dang-nhap"><i class="far fa-heart"></i></button> </div>
+                     <img class="lazy" data-src="lib/front/upload/product/catalog/mass_tech_2000_loai_22lbs_10kg_image_catalog_1571631263.jpg" alt="Mass Tech 2000 loại 22lbs 10kg" title="Mass Tech 2000 loại 22lbs 10kg"> 
                   </a>
                   <a href="lib/front/mass-tech-extreme-2000-loai-20lbs-9kg-1498" class="title">Mass Tech 2000 loại 22lbs 10kg</a> <span style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;">60g protein, 2060 calo, 441g tinh bột, tăng cân siêu nhanh, 106 muỗng</span> 
                   <div class="star" total="5" point="5"></div>
@@ -147,8 +147,8 @@
                   <div class="label-deal-product">-5%</div>
                   <div class="time-deal-product" time="384847"> <span><i class="far fa-clock"></i> <span class="display-time"></span></span> </div>
                   <a href="lib/front/elitelab-mass-muscle-gainer-20lbs-1094" class="image cs-flex flex-align-center flex-content-center">
-                     <div class="pane-tool-button cs-flex"> <button class="pr-10 pl-10 mr-5">Xem chi tiết</button> <button class="mr-5 btn-popup-detail" smell="2" current=" lib/front/" base=" lib/front/" product="95"><i class="fas fa-eye"></i></button> <button class="redirect-login" url="dang-nhap"><i class="far fa-heart"></i></button> </div>
-                     <img class="lazy" data-src=" lib/front/upload/product/catalog/elitelab_mass_muscle_gainer_20lbs_image_catalog_1582008379.jpg" alt="EliteLab Mass Muscle Gainer 20LBS" title="EliteLab Mass Muscle Gainer 20LBS"> 
+                  <div class="pane-tool-button cs-flex"> <button class="pr-10 pl-10 mr-5">Xem chi tiết</button> <button class="mr-5 btn-popup-detail" smell="2" current=" front/" base=" front/" product="95"><i class="fas fa-eye"></i></button> <button class="redirect-login" url="dang-nhap"><i class="far fa-heart"></i></button> </div>
+                     <img class="lazy" data-src="lib/front/upload/product/catalog/elitelab_mass_muscle_gainer_20lbs_image_catalog_1582008379.jpg" alt="EliteLab Mass Muscle Gainer 20LBS" title="EliteLab Mass Muscle Gainer 20LBS"> 
                   </a>
                   <a href="lib/front/elitelab-mass-muscle-gainer-20lbs-1094" class="title">EliteLab Mass Muscle Gainer 20LBS</a> <span style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;">60g protein, 1150 calo, 215g tinh bột, tăng cân nạc, 125 muỗng</span> 
                   <div class="star" total="5" point="5"></div>
@@ -156,8 +156,8 @@
                </div>
                <div class="product slider-home cs-col-6 cs-col-xs-6 cs-col-md-3">
                   <a href="lib/front/super-mass-gainer-5-5kg-381" class="image cs-flex flex-align-center flex-content-center">
-                     <div class="pane-tool-button cs-flex"> <button class="pr-10 pl-10 mr-5">Xem chi tiết</button> <button class="mr-5 btn-popup-detail" smell="2" current=" lib/front/" base=" lib/front/" product="92"><i class="fas fa-eye"></i></button> <button class="redirect-login" url="dang-nhap"><i class="far fa-heart"></i></button> </div>
-                     <img class="lazy" data-src=" lib/front/upload/product/catalog/dymatize_super_mass_5_4kg_image_catalog_1571631401.jpg" alt="Dymatize Super Mass 5.4kg" title="Dymatize Super Mass 5.4kg"> 
+                  <div class="pane-tool-button cs-flex"> <button class="pr-10 pl-10 mr-5">Xem chi tiết</button> <button class="mr-5 btn-popup-detail" smell="2" current=" front/" base=" front/" product="92"><i class="fas fa-eye"></i></button> <button class="redirect-login" url="dang-nhap"><i class="far fa-heart"></i></button> </div>
+                     <img class="lazy" data-src="lib/front/upload/product/catalog/dymatize_super_mass_5_4kg_image_catalog_1571631401.jpg" alt="Dymatize Super Mass 5.4kg" title="Dymatize Super Mass 5.4kg"> 
                   </a>
                   <a href="lib/front/super-mass-gainer-5-5kg-381" class="title">Dymatize Super Mass 5.4kg</a> <span style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;">52g protein, 1280 calo, 247g tinh bột, tăng cân nhanh, nhiều vitamin, 32 muỗng</span> 
                   <div class="star" total="5" point="5"></div>
@@ -165,8 +165,8 @@
                </div>
                <div class="product slider-home cs-col-6 cs-col-xs-6 cs-col-md-3">
                   <a href="lib/front/muscletech-premium-mass-gainer-12lbs-5-44kg--709" class="image cs-flex flex-align-center flex-content-center">
-                     <div class="pane-tool-button cs-flex"> <button class="pr-10 pl-10 mr-5">Xem chi tiết</button> <button class="mr-5 btn-popup-detail" smell="2" current=" lib/front/" base=" lib/front/" product="90"><i class="fas fa-eye"></i></button> <button class="redirect-login" url="dang-nhap"><i class="far fa-heart"></i></button> </div>
-                     <img class="lazy" data-src=" lib/front/upload/product/catalog/premium_mass_gainer_5_44kg_image_catalog_1581565403.jpg" alt="Premium Mass Gainer 5,44kg" title="Premium Mass Gainer 5,44kg"> 
+                  <div class="pane-tool-button cs-flex"> <button class="pr-10 pl-10 mr-5">Xem chi tiết</button> <button class="mr-5 btn-popup-detail" smell="2" current=" front/" base=" front/" product="90"><i class="fas fa-eye"></i></button> <button class="redirect-login" url="dang-nhap"><i class="far fa-heart"></i></button> </div>
+                     <img class="lazy" data-src="lib/front/upload/product/catalog/premium_mass_gainer_5_44kg_image_catalog_1581565403.jpg" alt="Premium Mass Gainer 5,44kg" title="Premium Mass Gainer 5,44kg"> 
                   </a>
                   <a href="lib/front/muscletech-premium-mass-gainer-12lbs-5-44kg--709" class="title">Premium Mass Gainer 5,44kg</a> <span style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;">53g protein, 1260 calo, 250g tinh bột, rất nhiều vitamin, 32 muỗng</span> 
                   <div class="star" total="5" point="5"></div>
