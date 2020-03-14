@@ -24,6 +24,10 @@ class CategoryController extends Controller
  
     function create()
     {
+        require(ROOT . $this->serviceM);
+        $menu = new MenuService();
+        $d['menuInfos'] = $menu->listMenu($db); 
+
         if (!empty($_POST))
         {
             require(ROOT . $this->service);
@@ -34,7 +38,8 @@ class CategoryController extends Controller
                 header("Location: " . WEBROOT . $this->redIndex);
             }
         }
-
+        
+        $this->set($d);
         $this->render($this->red.__FUNCTION__);
     }
 

@@ -48,7 +48,7 @@
                                             </td>
 
                                             <td align="center"><?php echo $category['created']; ?></td>
-                                            <td align="center"><?php echo isset($category['user_created'])?$category['user_created']:'admin'; ?></td>
+                                            <td align="center"><?php echo ($category['user_created']!=0)?$category['user_created']:'admin'; ?></td>
                                             <td align="center"><a href="/category/edit/<?php echo $category['id_cate']; ?>"><img src="/lib/admin/images/edit.png" width="25"></a></td>
                                             <td align="center"><a href="/category/delete/<?php echo $category['id_cate']; ?>" onclick="return confirm('Dữ liệu của bạn sẽ bị mất, bạn chắc chắn chứ ?')" ><img src="/lib/admin/images/delete.png" width="25"></a></td>
                                         </tr>
