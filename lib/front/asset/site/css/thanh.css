@@ -64,7 +64,7 @@ img{width: 100%; height:auto}
 
 /* login register */
 #loginRegisUser .session .cs-col-12.cs-col-sm-12.cs-col-lg-6{height: 100%; width: 100%;padding: 30px 30px 45px 30px; background-color: #fafafa; border: 1px solid #ddd;}
-#loginRegisUser .regisLogin{display: flex; justify-content: space-between; margin: 15px 90px 35px;}
+#loginRegisUser .regisLogin{display: flex; justify-content: space-between; margin: 15px auto 35px auto;}
 #loginRegisUser .regisLogin .register{padding-right: 15px;}
 #loginRegisUser .regisLogin .login{padding-left: 15px;}
 #loginRegisUser .regisLogin .login .main-content,#loginRegisUser .regisLogin .login .cs-flex{height: 100%}
