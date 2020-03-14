@@ -15,22 +15,21 @@ class signupController extends Controller
     function postRegister(){
       require(ROOT.$this->regis);
       $register = new registerService();
-
-      if($_SERVER['REQUEST_METHOD'] == "POST"){
+      if(isset($_POST)){
           if (empty($_POST["name_acco"])) {
             $error['name_acco'] = "Họ tên khách hàng không được để trống";
           } else {
             $request['name_acco'] = $_POST["name_acco"];
           }
 
-          if(empty($_POST['phone'])){  
+          if(empty($_POST['phone'])){
             $error['phone'] = 'Số điện thoại không được để trống';
           }
           else{
             //Check isset phone
             $is_check = $register->checkPhone($db, 'accounts',$_POST['phone']);
             if($is_check != null){
-              $error['phone'] = 'Số điện thoại đã tồn tại'; 
+              $error['phone'] = 'Số điện thoại đã tồn tại';
             }
             $request['phone'] = $_POST['phone'];
           }
@@ -39,16 +38,16 @@ class signupController extends Controller
             $error['password'] = "Password không được để trống";
           } else {
             $request['password'] = password_hash($_POST["password"],PASSWORD_BCRYPT);
-          } 
+          }
 
           if(empty($_POST['address'])){
             $error['address'] = 'Địa chỉ không được để trống';
           }
           else {
             $request['address'] = $_POST['address'];
-          } 
+          }
           $request['role'] = 2;
-          if(empty($error)){ 
+          if(empty($error)){
             $insert = $register->create($db, 'accounts', $request);
             if($insert>0){
               $_SESSION['success'] = 'Tạo tài khoản thành công';
@@ -56,15 +55,17 @@ class signupController extends Controller
             }
             else {
               $_SESSION['error']="Thêm mới thất bại";
-              header("Location: " . $_SERVER["HTTP_REFERER"]); 
+              $this->set($error);
+              $this->render('/signup');
             }
           }
           else{
-            header("Location: " . $_SERVER["HTTP_REFERER"]);
+              $this->set($error);
+              $this->render('/signup');
           }
 
 
-      } 
+      }
 
     }
 
@@ -72,7 +73,7 @@ class signupController extends Controller
       require(ROOT.$this->log);
       $login = new loginService();
 
-      if($_SERVER['REQUEST_METHOD'] == "POST"){
+      if(isset($_POST)){
           if (empty($_POST["phone"])) {
             $error['phone'] = "Họ tên khách hàng không được để trống";
           } else {
@@ -94,11 +95,14 @@ class signupController extends Controller
                   header("Location: /"); 
               }
               else {
-                header("Location: " . $_SERVER["HTTP_REFERER"]);
+                  $error['errors'] ='Bạn không có quyền đăng nhập';
+                  $this->set($error);
+                  $this->render('/signup');
               }
           }
           else{
-            header("Location: " . $_SERVER["HTTP_REFERER"]);
+              $this->set($error);
+              $this->render('/signup');
           }
 
 
