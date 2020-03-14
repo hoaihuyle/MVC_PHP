@@ -35,6 +35,13 @@ class MenuDAO extends Model
 
         return $db->delete('menu', $id, 'id_menu'); 
     }
+
+    /**
+     * List menu by flag = 0
+     */
+    function listMenuWhere($db){
+        return $db->fetchWhere('menu', "'flag' = '0'");
+    }
  
 }
 ?>

@@ -6,6 +6,12 @@ class CategoryController extends Controller
     var $red="admin/categories/";
     var $redIndex="category/index";
 
+    function __construct()
+    {
+        if( $_SESSION['role'] != 0 || !isset($_SESSION['role']) )
+            header('location: /');
+    }
+
     function index()
     {
         require(ROOT . $this->serviceM);

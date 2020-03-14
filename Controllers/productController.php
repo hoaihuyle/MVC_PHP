@@ -5,6 +5,13 @@ class ProductController extends Controller
     var $red="admin/products/";
     var $redIndex="product/index";
 
+
+    function __construct()
+    {
+        if( $_SESSION['role'] != 0 || !isset($_SESSION['role']) )
+            header('location: /');
+    }
+
     function index()
     {
         require(ROOT . $this->service);
