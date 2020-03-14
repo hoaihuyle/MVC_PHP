@@ -1,25 +1,18 @@
 <?php 
 
 $db = new Database();
-require(ROOT . 'Models/DAO/loginDAO.php');
-class loginService extends Service{
+require(ROOT . 'Models/DAO/registerDAO.php');
+class registerService extends Service{
 
-    function postLogin($db,$request){
-      $login = new loginDAO(); 
-
-      $val = $login->fetchOneVal($db,$request);
-
-      return $val;
-
-    }
-
-     
-  function findMenu($db, $id){
-      $menu = new MenuDAO();
-      $menus =  $menu->fetchByCol($db, $id); 
-
-      return $menus;
+  function create($db,$table,$request){
+    $register = new registerDao(); 
+    return $register->create($db, $table, $request);
   }
+
+  function checkPhone($db, $table, $request){
+    $register = new registerDao();
+    return $register->checkPhone($db, $table, $request);
+  } 
    
 }
 

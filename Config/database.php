@@ -272,6 +272,10 @@
             return $data;
             
         }
+        /* kiểm tra dữ liệu tồn tại trong bảng hay chưa??
+        *  $table = 'name table'
+        *  $query = "email ='".$data['email']."' "
+        */
         //kiểm tra dữ liệu tồn tại trong bảng hay chưa??
         public function fetchOne($table , $query)
         {

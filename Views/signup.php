@@ -1,5 +1,4 @@
-<?php include('header.php') ?>
-<section id="loginRegisUser">
+<<section id="loginRegisUser">
     <div class="regisLogin container">
       <div class="session register">
          <div class="main-content">
@@ -7,8 +6,30 @@
                <div class="cs-col-12 cs-col-sm-12 cs-col-lg-6">
                   <h3 class="title-cm"> <span>Đăng ký tài khoản</span> </h3>
                   <p style="line-height: 25px;">Lợi ích khi đăng ký tài khoản tại CODO SUPP: Đăng ký 1 lần và các lần tiếp theo đăng nhập <span style="color: #FF8C00; font-weight: bold;">đặt hàng cực nhanh</span></p>
-                  <form id="form_register" action="" method="post">
-                     <label class="label-cm mt-10" for="">Họ & Tên*</label> <input class="input-cm" name="name" autocomplete="off" type="text" style="font-size: 15px;"> <input name="target" type="hidden" value=""> <small class="show-error" id="name"></small> <label class="label-cm mt-10" for="">Số điện thoại*</label> 
+                  <form id="form_register" action="signup/postRegister" method="POST">
+                     <label class="label-cm mt-10" for="">Họ & Tên*</label> 
+                     <input class="input-cm" name="phone" autocomplete="off" type="text" placeholder="Ví dụ: 123123132, nhập tại đây" value="" style="font-size: 15px;"> 
+                     <?php if(isset($error['phone'])): ?>
+                     <p class="text-danger"><?php echo $error['phone'];?></p>
+                     <?php endif?> 
+                     <small class="show-error" id="phone"></small> <label class="label-cm mt-10" style="margin-bottom: 5px;">Mật khẩu*</label> 
+                     <input class="input-cm" name="password" type="password" style="font-size: 15px;"> 
+                     <?php if(isset($error['password'])): ?>
+                     <p class="text-danger"><?php echo $error['password'];?></p>
+                     <?php endif?> 
+                     <small class="show-error" id="password"></small> 
+                     <label class="label-cm mt-10" style="margin-bottom: 5px;">Địa chỉ nhận hàng*</label> 
+                     <input class="input-cm" name="address" autocomplete="off" type="text" style="font-size: 15px;"> 
+                     <?php if(isset($error['address'])): ?>
+                     <p class="text-danger"><?php echo $error['address'];?></p>
+                     <?php endif?> 
+                     <small class="show-error" id="address"></small> 
+                     <button class="button-cm mt-10 mt-20" style="font-size: 15px;">Đăng ký thành viên</button> 
+                     <input name="target" type="hidden" value=""> <small class="show-error" id="name_acco"></small>
+                     <?php if(isset($error['name_acco'])): ?>
+                     <p class="text-danger"><?php echo $error['name_acco'];?></p>
+                     <?php endif?> 
+                     <label class="label-cm mt-10" for="">Số điện thoại*</label> 
                      <p style="font-size: 12px;">Đúng 10 số, ko chứa khoảng trắng, ko ký tự lạ, ko chứa +84.</p>
                      <input class="input-cm" name="phone" autocomplete="off" type="text" placeholder="Ví dụ: 123123132, nhập tại đây" value="" style="font-size: 15px;"> <small class="show-error" id="phone"></small> <label class="label-cm mt-10" style="margin-bottom: 5px;">Mật khẩu*</label> <input class="input-cm" name="password" type="password" style="font-size: 15px;"> <small class="show-error" id="password"></small> <label class="label-cm mt-10" style="margin-bottom: 5px;">Địa chỉ nhận hàng*</label> <input class="input-cm" name="address" autocomplete="off" type="text" style="font-size: 15px;"> <small class="show-error" id="address"></small> <button class="button-cm mt-10 mt-20" style="font-size: 15px;">Đăng ký thành viên</button> 
                     
@@ -24,9 +45,12 @@
                   <h3 class="title-cm"> <span>Đăng nhập</span> </h3> 
                   <p style="line-height: 25px;">Nếu bạn có một tài khoản, hãy đăng nhập bằng số diện thoại của bạn để được
                   <span style="color: #FF8C00; font-weight: bold;">đặt hàng cực nhanh</span></p>
-                  <form id="form_register" action="" method="post">
-                     <label class="label-cm mt-10" for="">Số điện thoại*</label> <input class="input-cm" name="name" autocomplete="off" type="text" style="font-size: 15px;"> <input name="target" type="hidden" value=""> <small class="show-error" id="name"></small> 
-                     <label class="label-cm mt-10" style="margin-bottom: 5px;">Mật khẩu*</label> <input class="input-cm" name="password" type="password" style="font-size: 15px;"> <small class="show-error" id="password"></small>
+                  <form id="form_register" action="signup/postLogin" method="POST">
+                     <label class="label-cm mt-10" for="">Số điện thoại*</label> 
+                     <input class="input-cm" name="phone" autocomplete="off" type="text" style="font-size: 15px;"> 
+                     <input name="target" type="hidden" value=""> <small class="show-error" id="name"></small> 
+                     <label class="label-cm mt-10" style="margin-bottom: 5px;">Mật khẩu*</label> 
+                     <input class="input-cm" name="password" type="password" style="font-size: 15px;"> <small class="show-error" id="password"></small>
                       <button class="button-cm mt-10 mt-20" style="font-size: 15px;">Đăng nhập</button>
                       <br /><br /> 
                       <a href="#" style=" padding: 3px 5px; display: block; with: 100%; text-align: center">Quên mật khẩu nhấn vào đây?</a> 
@@ -36,7 +60,7 @@
          </div>
       </div> 
       </div> 
-      <div class="session">
+      <!-- <div class="session">
          <div class="main-content">
             <div class="title-nav"> <a href="javascript:;" class="hover-color">Sản phẩm bạn đã xem</a> </div>
             <div class="slider-magic cs-flex" numColumn=' [ {"num": 5, "width": 900}, {"num": 3, "width": 500}, {"num": 2, "width": 400}, {"num": 2, "width": 0} ]' isPager="false" classItems="product">
@@ -93,8 +117,5 @@
                </script> 
             </div>
          </div>
-      </div> 
+      </div>  -->
 </section>
-   
-
-<?php include('footer.php') ?>
