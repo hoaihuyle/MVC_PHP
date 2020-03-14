@@ -62,14 +62,14 @@
                     <?php else: ?>
 
                    <a href="#" class="connect cs-flex flex-row flex-align-center ml-auto "> Xin chào: <?php echo $_SESSION['name_acco'] ?> </a>
-                   <a href="#" class="connect cs-flex flex-row flex-align-center"> Tài khoản của tôi </a>
+                   <a href="/account/myUser" class="connect cs-flex flex-row flex-align-center"> Tài khoản của tôi </a>
                    <a href="/signup/logout" rel="modal:open" class="connect cs-flex flex-row flex-align-center"> Đăng xuất </a>
                    <?php endif ?>
             </div>
             </div>
          </div>
          <!-- End top bar --> <!--Top Bar User Mobile--> 
-         <div id="topUserMobile"><a href="#" rel="nofollow"><span style="color: #FFF"><i class="fas fa-address-card" style="color: #FFF"></i> Kiểm tra tích điểm</span></a> <a href="#"><i class="fas fa-user-shield" style="color: #FFF"></i> Tài khoản của tôi</a> </div>
+         <div id="topUserMobile"><a href="#" rel="nofollow"><span style="color: #FFF"><i class="fas fa-address-card" style="color: #FFF"></i> Kiểm tra tích điểm</span></a> <a href="/account/myUser"><i class="fas fa-user-shield" style="color: #FFF"></i> Tài khoản của tôi</a> </div>
          <!--End Top Bar User Mobile--> <!--Top Bar Mobile--> 
          <div id="topMobile" style="background: #00aeef; box-shadow: 0 2px 10px #eae69a; padding: 10px 20px 5px 10px;">
             <a class="switch-menu" style="cursor: pointer; float: left; width: 23%; margin-top: 8px;" href="front/#"><i class="fas fa-bars" style="color: #FFF;"> MENU</i></a> <a style="float: left; width: 20%" href="/front/index" class="switch-menu mb-10 show-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center mr-auto">

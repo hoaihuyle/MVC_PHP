@@ -35,6 +35,9 @@ class AccountDAO extends Model
 
         return $db->delete('accounts', $id, 'id_acco'); 
     }
- 
+    
+    public function checkUser($db, $id){
+        return $db->fetchWhere('accounts', "id_acco = ".$id);
+    }
 }
 ?>

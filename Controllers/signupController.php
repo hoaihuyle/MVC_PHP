@@ -1,12 +1,11 @@
 <?php
 class signupController extends Controller
 {
-    var $regis ="Services/registerService.php";
-    var $log = "Services/loginService.php";
+    
 
     var $index = '/';
-    var $signup = '/signup';
-
+    var $signup = '/signup'; 
+ 
     function index()
     {   
         $this->render("signup");

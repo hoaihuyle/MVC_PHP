@@ -38,7 +38,7 @@
             </div>
          </div>
       </div>
-      <div class="session login">
+      <div class="session login" <?php if(isset($_SESSION['name_id'])): ?> style="display:none" <?php endif ?> >
          <div class="main-content">
             <div class="cs-flex">
                <div class="cs-col-12 cs-col-sm-12 cs-col-lg-6">
@@ -47,22 +47,22 @@
                   <span style="color: #FF8C00; font-weight: bold;">đặt hàng cực nhanh</span></p>
                    <?php if($_SERVER['REQUEST_URI'] === '/signup/postLogin'): if(isset($errors)): ?>
                        <p class="text-danger"><?php echo $errors;?></p>
-                   <?php endif; endif?>
-                  <form id="form_register" action="/signup/postLogin" method="POST">
-                     <label class="label-cm mt-10" for="">Số điện thoại*</label> 
-                     <input required class="input-cm" name="phone" autocomplete="off" type="number" style="font-size: 15px;">
-                      <?php if($_SERVER['REQUEST_URI'] === '/signup/postLogin'): if(isset($phone)): ?>
-                          <p class="text-danger"><?php echo $phone;?></p>
-                      <?php endif; endif?>
-                     <label class="label-cm mt-10" style="margin-bottom: 5px;">Mật khẩu*</label> 
-                     <input required class="input-cm" name="password" type="password" style="font-size: 15px;">
-                      <?php if($_SERVER['REQUEST_URI'] === '/signup/postLogin'): if(isset($password)): ?>
-                          <p class="text-danger"><?php echo $password;?></p>
-                      <?php endif; endif?>
-                      <button class="button-cm mt-10 mt-20" style="font-size: 15px;">Đăng nhập</button>
-                      <br /><br /> 
-                      <a href="#" style=" padding: 3px 5px; display: block; with: 100%; text-align: center">Quên mật khẩu nhấn vào đây?</a> 
-                  </form>
+                   <?php endif; endif?> 
+                     <form id="form_register" action="/signup/postLogin" method="POST">
+                        <label class="label-cm mt-10" for="">Số điện thoại*</label> 
+                        <input required class="input-cm" name="phone" autocomplete="off" type="number" style="font-size: 15px;">
+                        <?php if($_SERVER['REQUEST_URI'] === '/signup/postLogin'): if(isset($phone)): ?>
+                           <p class="text-danger"><?php echo $phone;?></p>
+                        <?php endif; endif?>
+                        <label class="label-cm mt-10" style="margin-bottom: 5px;">Mật khẩu*</label> 
+                        <input required class="input-cm" name="password" type="password" style="font-size: 15px;">
+                        <?php if($_SERVER['REQUEST_URI'] === '/signup/postLogin'): if(isset($password)): ?>
+                           <p class="text-danger"><?php echo $password;?></p>
+                        <?php endif; endif?>
+                        <button class="button-cm mt-10 mt-20" style="font-size: 15px;">Đăng nhập</button>
+                        <br /><br /> 
+                        <a href="#" style=" padding: 3px 5px; display: block; with: 100%; text-align: center">Quên mật khẩu nhấn vào đây?</a> 
+                     </form>
                </div>
             </div>
          </div>

@@ -7,23 +7,30 @@
         var $myUntils = "myUntils";
         var $default = "default";
         var $layout_header ="includes/_header"; 
+        var $regis ="Services/registerService.php";
+        var $log = "Services/loginService.php";
+        var $listMenu ="Services/menuService.php";
+        var $listCateMenu ="Services/categoryService.php";
 
-        // function __construct(){
+
+
+        function __construct(){
         //     // require(ROOT . 'Models/DAO/menuDAO.php');
         //     // $menu = new MenuDAO();
         //     require(ROOT . 'Services/menuService.php');
         //     $menu = new MenuService();
         //     $d['menu'] = $menu->listMenuByParent($db);  
         //     $this->set($d);
-        // }
+        
+            $this->callMenu();
+        }
 
         /**
          * return array data in model and set value to variable $var
          *  */    
         function set($d)
         { 
-            $this->vars = array_merge($this->vars, $d);
-        
+            $this->vars = array_merge($this->vars, $d); 
         }
 
         /**
@@ -31,6 +38,19 @@
          * render HTML. Value saved in $vars will show to View
          * return html file $func, $menu, $layout(default)
          */
+
+
+        function callMenu(){
+            require(ROOT . $this->listMenu);
+            require(ROOT . $this->listCateMenu);
+            $news = new MenuService(); 
+            $category = new CategoryService();
+            
+            $d['menuInfos'] = $news->listMenuWhere($db);
+            $d['categoryInfos'] = $category->listCategory($db);
+            $this->set($d);
+        }
+
         function render($filename)
         { 
             //Get name url when begin
@@ -40,8 +60,7 @@
             if($explode_filename[0]=='admin'){
                 $ex = 'admin/';
             }
-            else{
-
+            else{ 
                 ob_start();
                 require(ROOT . "Views/includes/" . $this->menu . '.php');
                 $content_for_Menu = ob_get_clean();
@@ -78,7 +97,6 @@
             }
              
         }
-
         private function secure_input($data)
         {
             $data = trim($data);
