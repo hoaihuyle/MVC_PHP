@@ -2,6 +2,8 @@
 class ProductController extends Controller
 {
     var $service ="Services/productService.php";
+    var $serviceComp ="Services/companyService.php";
+    var $serviceCate ="Services/categoryService.php";
     var $red="admin/products/";
     var $redIndex="product/index";
 
@@ -17,7 +19,16 @@ class ProductController extends Controller
         require(ROOT . $this->service);
         $product = new ProductService();
 
+        require(ROOT . $this->serviceComp);
+        $company = new CompanyService();
+
+        require(ROOT . $this->serviceCate);
+        $category = new CategoryService();
+
         $d['productInfos'] = $product->listProduct($db);  
+        $d['companyInfos'] = $company->listCompany($db);
+        $d['categoryInfos'] = $category->listCategory($db);
+
         $this->set($d);
 
         $this->render($this->red.__FUNCTION__);
