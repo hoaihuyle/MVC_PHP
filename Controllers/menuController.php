@@ -103,6 +103,10 @@ class MenuController extends Controller
             header("Location: " . WEBROOT . $this->redIndex);
         }
         header("Location: " . WEBROOT . $this->redIndex);
-    }  
+    }
+    function logout(){
+        session_destroy();
+        header('location: /login');
+    }
 }
 ?>

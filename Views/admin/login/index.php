@@ -20,24 +20,15 @@
     <!-- login page  -->
     <!-- ============================================================== -->
     <div class="splash-container">
-        <div class="card ">
-            <?php if(isset($_SESSION['success'])): ?>
-              <!--Thông báo thành công từ đăng ký-->
-              <div class="alert alert-success">
-                  <strong style="color: green"><?php echo $_SESSION['success'];unset($_SESSION['success']) ?></strong> 
-              </div>
-            <?php endif ?>
-            <?php if(isset($_SESSION['error'])): ?>
-              <!--Thông báo không thành công-->
-              <div class="alert alert-danger">
-                  <strong style="color: red"><?php echo $_SESSION['error'];unset($_SESSION['error']) ?></strong> 
-              </div>
-            <?php endif ?>
+        <div class="card">
             <div class="card-header text-center"><a href="../index.html"><img class="logo-img" src="lib/admin/images/logo.png" alt="logo"></a><span class="splash-description">Nhập thông tin đăng nhập của bạn.</span></div>
             <div class="card-body">
+                <?php if(isset($_SESSION['error'])): ?>
+                    <p class="text-danger"><?php echo $_SESSION['error'];  ?></p>
+                <?php endif ?>
                 <form method="POST" action="login/postLogin">
                     <div class="form-group">
-                        <input class="form-control form-control-lg" name="name" id="name" type="text" placeholder="Tên đăng nhập" autocomplete="off">
+                        <input class="form-control form-control-lg" name="phone" id="name" type="text" placeholder="Số điện thoại đăng nhập" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <input class="form-control form-control-lg" name="password" id="password" type="password" placeholder="Mật khẩu">
