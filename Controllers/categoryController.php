@@ -42,6 +42,8 @@ class CategoryController extends Controller
             if ($categories->createCategory($db, $_POST))
             {
                 header("Location: " . WEBROOT . $this->redIndex);
+            }else{
+                $d['error'] = " <div class='message p-3 bg-danger text-white'> Cập nhập thông tin không thành công</div>";
             }
         }
         
