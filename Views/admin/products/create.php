@@ -122,9 +122,7 @@
                             <label class="col-12 col-sm-3 col-form-label text-sm-right ">Hình ảnh</label>
                             <div class="col-12 col-sm-8 col-lg-6">
                                 <div class="input-file-container d-inline-block" >
-                                    <input type="hidden" name="image" value="<?php echo $files;?>">
-                                    <input class="input-file" name="img" id="my-file" type="file">
-                                    <label tabindex="0" for="my-file" class="input-file-trigger" >Gửi ảnh</label>
+                                    <input type="file" name="image">
                                 </div>
                                 <p class="file-return"></p>
                             </div>

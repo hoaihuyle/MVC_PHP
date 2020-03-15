@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 15, 2020 lúc 10:23 AM
+-- Thời gian đã tạo: Th3 15, 2020 lúc 05:01 PM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.2
 
@@ -33,7 +33,7 @@ CREATE TABLE `categories` (
   `name_cate` varchar(100) DEFAULT NULL,
   `menu_id` int(10) DEFAULT NULL,
   `title_cate` varchar(255) NOT NULL,
-  `cms` varchar(255) DEFAULT NULL,
+  `cms` text DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `flag` int(1) NOT NULL DEFAULT 0 COMMENT '0: display; 1:deleted',
   `created` timestamp NOT NULL DEFAULT current_timestamp(),
