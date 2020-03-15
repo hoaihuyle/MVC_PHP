@@ -13,6 +13,11 @@ class registerService extends Service{
     $register = new registerDao();
     return $register->checkPhone($db, $table, $request);
   } 
+
+  function checkEmail($db,$table, $request){
+    $register = new registerDao();
+    return $register->checkEmail($db, $table, $request);
+  }
    
 }
 
