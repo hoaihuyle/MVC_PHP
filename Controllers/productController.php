@@ -37,8 +37,6 @@ class ProductController extends Controller
     // http://domain/cotroler/edit/12
     function create()
     {
-        $this->helper->_debug('thạnh');
-        die();
         require(ROOT . $this->serviceComp);
         $company = new CompanyService();
 
@@ -50,57 +48,32 @@ class ProductController extends Controller
 
         if (!empty($_POST)) 
         {
+            if(isset($_FILES["image"]) && !empty($_FILES['image']['name'])){
+                $allowed =  array('gif','png' ,'jpg');
+                $filename = $_FILES['image']['name'];
+                $ext = pathinfo($filename, PATHINFO_EXTENSION);
+                $messageError = "";
 
-           
-            if ($_FILES['img']['size']=='')
-            {
-                $link_img=$_POST['anh_hi'];
-            } 
-            else {
-            //upload ảnh
-                if(($_FILES['img']['type']!="image/gif")
-                &&($_FILES['img']['type']!="image/png")
-                &&($_FILES['img']['type']!="image/jpg")
-                &&($_FILES['img']['type']!="image/jpeg"))
-                {
-                    $message="File Không Đúng Định Dạng";  
+                if ($_FILES["image"]["error"] > 0) {
+                    $messageError .= "Lỗi quá trình mở file.";
                 }
-                else{
-                    if ($_FILES['img']['size']>6000000) {
-                        $message="Kích Thước Phải Nhỏ Hơn 6MB";
-                    }
-                    else{ 
-                        $img=$_FILES['img']['name'];
-                        $link_img=$img;
-                        echo($this->helper->testConnect());
-                        die();
-                        $link_img = $this->helper->uploadImagesThumb($_FILES['img'], 'upload/uploadUser/', 'upload/uploadUser/thumb/');
-                    }
+
+                if (!in_array($ext, $allowed)) {
+                    $messageError .= " File không đúng định dạng.";
                 }
-                var_dump($_POST);
-                die();
-                $sql="SELECT picture FROM applicant WHERE id={$userInfo[0]['aid']}";
-                $query_a=mysqli_query($dbc,$sql); 
-                $anhInfo=mysqli_fetch_assoc($query_a);
-                unlink('upload/uploadUser/'.$anhInfo['picture']);
-                // unlink('../upload/images/'.$anhInfo['files']);
-                unlink('upload/uploadUser/thumb/'.$anhInfo['picture']);
-                
-            }
-            var_dump($_POST);
-            die();
-            $query_up="UPDATE applicant SET picture='{$link_img}' WHERE id={$userInfo[0]['aid']}";
 
-            $result_up=mysqli_query($dbc,$query_up);
+                if ($_FILES["image"]["size"] > 6*1024*1024) {
+                    $messageError .= " Dung lượng file không được lớn hơn 6MB.";
+                }
 
-            if(mysqli_affected_rows($dbc)==1){
-                //echo "<p style='color:green;'>Sửa Thành Công</p>";
-                header('Location: /account/'.$userInfo[0]['uid']);
+                if($messageError == ""){
+                    $img = $this->helper->uploadImagesThumb($_FILES['image'], 'uploads/products/', 'uploads/products/thumb/');
+                }else {
+                    $message = $messageError;
+                }
+            } else { 
+                $img = ''; 
             }
-            else{
-                echo "<p class='required'>Thông Tin Vẫn Chưa Được Chỉnh Sửa</p>";
-            }
-        
             require(ROOT . $this->service);
             $product = new ProductService();
 
