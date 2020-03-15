@@ -1,5 +1,5 @@
-<?php 
-    $db = new Database;
+<?php  
+$db = new Database();
     session_start();
     /**
     * 
