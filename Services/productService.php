@@ -53,6 +53,7 @@ class ProductService extends Service{
 
         return $products;
     }
+    
 }
 
 ?>

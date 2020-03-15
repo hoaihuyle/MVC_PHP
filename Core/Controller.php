@@ -53,7 +53,6 @@
             $d['menuInfos'] = $news->listMenuWhere($db);
             $d['categoryInfos'] = $category->listCategory($db);
             $this->set($d);
-            
         }
 
         function render($filename)
@@ -102,6 +101,7 @@
             }
              
         }
+        
         private function secure_input($data)
         {
             $data = trim($data);

@@ -87,12 +87,12 @@ trait helperFuncs{
 
     $add=$org_path.$imageName;
     $tsrc=$thumb_path.$imageName;
-    // var_dump($add);
+    $add=ROOT.$add;
     // echo "-----------";
     // var_dump(move_uploaded_file ($file['tmp_name'],$add));
     // die();
     //echo $add;
-  if(move_uploaded_file ($file['tmp_name'],$add)){
+  if(move_uploaded_file($file['tmp_name'],$add)){
     // echo "Successfully uploaded the mage";
     // die();
     chmod("$add",0777);
@@ -102,38 +102,38 @@ trait helperFuncs{
   }
 
   //echo $tsrc;
-  if (!($file['type'] =="image/jpeg" OR $file['type']=="image/gif")){
+  if (!($file['type'] =="image/jpeg" OR $file['type'] =="image/png" OR $file['type']=="image/gif")){
     echo json_encode("Your uploaded file must be of JPG or GIF. Other file types are not allowed<BR>");
   exit;}
   /////////////////////////////////////////////// Starting of GIF thumb nail creation///////////
-  if($file['type']=="image/gif")
-  {
-    $im=ImageCreateFromGIF($add);
-    $width=ImageSx($im);              // Original picture width is stored
-    $height=ImageSy($im);                  // Original picture height is stored
-    $newimage=imagecreatetruecolor($n_width,$n_height);
-    imageCopyResized($newimage,$im,0,0,0,0,$n_width,$n_height,$width,$height);
-  if (function_exists("imagegif")) {
-    Header("Content-type: image/gif");
-    ImageGIF($newimage,$tsrc);
-  }
-  elseif (function_exists("imagejpeg")) {
-    Header("Content-type: image/jpeg");
-    ImageJPEG($newimage,$tsrc);
-  }
-    chmod("$tsrc",0777);
-  }////////// end of gif file thumb nail creation//////////
+  // if($file['type']=="image/gif")
+  // {
+  //   $im=ImageCreateFromGIF($add);
+  //   $width=ImageSx($im);              // Original picture width is stored
+  //   $height=ImageSy($im);                  // Original picture height is stored
+  //   $newimage=imagecreatetruecolor($n_width,$n_height);
+  //   imageCopyResized($newimage,$im,0,0,0,0,$n_width,$n_height,$width,$height);
+  // if (function_exists("imagegif")) {
+  //   Header("Content-type: image/gif");
+  //   ImageGIF($newimage,$tsrc);
+  // }
+  // elseif (function_exists("imagejpeg")) {
+  //   Header("Content-type: image/jpeg");
+  //   ImageJPEG($newimage,$tsrc);
+  // }
+  //   chmod("$tsrc",0777);
+  // }////////// end of gif file thumb nail creation//////////
 
-  ////////////// starting of JPG thumb nail creation//////////
-  if($file['type']=="image/jpeg"){
-    $im=ImageCreateFromJPEG($add); 
-    $width=ImageSx($im);              // Original picture width is stored
-    $height=ImageSy($im);             // Original picture height is stored
-    $newimage=imagecreatetruecolor($n_width,$n_height);                 
-    imageCopyResized($newimage,$im,0,0,0,0,$n_width,$n_height,$width,$height);
-    ImageJpeg($newimage,$tsrc);
-    chmod("$tsrc",0777);
-  }
+  // ////////////// starting of JPG thumb nail creation//////////
+  // if($file['type']=="image/jpeg"){
+  //   $im=ImageCreateFromJPEG($add); 
+  //   $width=ImageSx($im);              // Original picture width is stored
+  //   $height=ImageSy($im);             // Original picture height is stored
+  //   $newimage=imagecreatetruecolor($n_width,$n_height);                 
+  //   imageCopyResized($newimage,$im,0,0,0,0,$n_width,$n_height,$width,$height);
+  //   ImageJpeg($newimage,$tsrc);
+  //   chmod("$tsrc",0777);
+  // }
 
   return $imageName;
   }
