@@ -42,11 +42,12 @@
                                 <input name="name_prod" type="text" required="" placeholder="Nhập tên danh mục sản phẩm" class="form-control text-primary">
                             </div>
                         </div>
+                        
                         <div class="form-group row">
                             <label class="col-12 col-sm-3 col-form-label text-sm-right">Danh mục sản phẩm <span class="text-danger">*</span></label>
                             <div class="col-12 col-sm-8 col-lg-6">
-                                <select class="form-control" name="cate_id" id="input-select" require>
-                                <option value="0">Chọn danh mục</option>
+                                <select class="form-control" name="cate_id" id="input-select-cate" require>
+                                <option>Chọn danh mục</option>
                                 <?php  
                                     foreach($categoryInfos as $category){
                                 ?>
@@ -55,12 +56,13 @@
                                 }
                                 ?>
                                 </select>
+                                <ul class="parsley-errors-list filled" style="display:none" id="erroCate"><li class="parsley-required">Xin hãy nhập danh mục sản phẩm</li></ul>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-12 col-sm-3 col-form-label text-sm-right">Hãng sản xuất <span class="text-danger">*</span></label>
                             <div class="col-12 col-sm-8 col-lg-6">
-                                <select class="form-control" name="comp_id" id="input-select" require>
+                                <select class="form-control" name="comp_id" id="input-select-comp" require>
                                 <option value="0">Chọn Hãng</option>
                                 <?php  
                                     foreach($companyInfos as $company){
@@ -70,6 +72,7 @@
                                 }
                                 ?>
                                 </select>
+                                <ul class="parsley-errors-list filled" style="display:none" id="erroComp"><li class="parsley-required">Xin hãy nhập hãng sản xuất.</li></ul>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -134,7 +137,7 @@
                     <div class="form-group row">
                         <label class="col-12 col-sm-3 col-form-label text-sm-right ">Giá nhà sản xuất</label>
                         <div class="col-12 col-sm-8 col-lg-6">
-                            <input name="price_manu" type="number" placeholder="Nhập giá hãng cho sản phẩm" class="form-control text-primary">
+                            <input name="price_manu" type="number" min="10000" step="1000" placeholder="Nhập giá hãng cho sản phẩm" class="form-control text-primary">
                         </div>
                     </div>   
                     <div class="form-group row">
@@ -145,12 +148,13 @@
                     </div>   
                     <div class="form-group row">
                         <label class="col-12 col-sm-3 col-form-label text-sm-right ">Bài viết cho sản phẩm</label>
-                        <div id="editor"></div> 
+                        <!-- <div id="editor"></div>  -->
+                        <textarea cols="80" rows="10" name="description" class="form-control" id="editor"><?php echo isset($_POST['description'])?$_POST['description']:''; ?></textarea>
                     </div>
                     <div class="form-group row text-right">
                         <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
                             <button type="submit" class="btn btn-space btn-primary">Tạo mới</button>
-                            <button type="button" onclick="location.href='/category/index';" class="btn btn-space btn-secondary" >Quay về</button>
+                            <button type="button" onclick="location.href='/products/index';" class="btn btn-space btn-secondary" >Quay về</button>
                         </div>
                     </div>
                     </form>
@@ -162,3 +166,18 @@
         </div>
 
 </div>
+
+<script>
+/**
+ * CK-Editor version 5
+ */
+const textarea = document.querySelector( '#editor' );
+
+ClassicEditor
+    .create( textarea )
+    .then( editor => { window.editor = editor } );
+
+//     document.getElementById( 'submit' ).onclick = () => {
+//     textarea.value = editor.getData();
+// }
+</script>

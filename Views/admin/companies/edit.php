@@ -41,12 +41,11 @@
                                     <input name="name_comp" type="text" required="" value="<?php echo $companyInfo[0]['name_comp'] ?>" class="form-control text-primary">
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <!-- <div class="form-group row">
                                 <label class="col-12 col-sm-3 col-form-label text-sm-right">Chọn danh mục sản phẩm</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
-                                    <!-- Table list all Category with fields id - name - checkbox ; Action click on row to choice or checkbox-->
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label text-sm-right">Trạng thái</label>
                                 <div class="col-sm-6">
