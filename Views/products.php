@@ -1,5 +1,3 @@
-<?php include('header.php') ?>
-
 <main id="maincontent" class="page-main products"> 
 	<div class="columns col2-layout">
 		<div class="container">
@@ -16,78 +14,15 @@
               <h3 class="title-cm"> <span>MỤC SẢN PHẨM</span> </h3> 
               <div class="tree-view">
                 <ul class="catalog mc-tree-view" style="display: block;">
-                  <li class="mc-state-collapsed"><a href="h/c157/sua-tang-can">Sữa tăng cân</a>
-                    <ul class="mc-tree-view" style="display: none;">
-                      <li class=""><a href="h/tang-can-nhanh">Tăng cân nhanh</a>
-                      </li>
-                      <li class=""><a href="h/tang-can-nac-it-mo">Tăng cân nạc ít mỡ</a>
-                      </li>
-                    </ul>
-                    <button class="mc-toggle"></button>
-                  </li>
-                  <li class="mc-state-collapsed"><a href="h/c152/whey-protein-tang-co">Whey Protein</a>
-                    <ul class="mc-tree-view" style="display: block;">
+                  <?php foreach($categoryInfos as $cate){ ?>
+                  <li class="mc-state-collapsed"><a href="/home/category/<?php echo $cate['id_cate'] ?>"><?php echo $cate['name_cate'] ?></a>
+                    <!-- <ul class="mc-tree-view" style="display: block;">
                       <li class="mc-state-expanded"><a href="h/whey-protein-blend">Whey Protein Blend </a>
-                      </li>
-
-                    </ul>
+                      </li> 
+                    </ul> -->
                     <button class="mc-toggle"></button>
-                  </li>
-                  <li class="mc-state-collapsed"><a href="h/c161/amino-acid">Amino Acid, BCAAs</a>
-                    <ul class="mc-tree-view" style="display: none;"></ul>
-                    <button class="mc-toggle"></button>
-                  </li>
-                  <li class="mc-state-collapsed"><a href="h/c160/tang-suc-manh">Pre-workout, Creatine</a>
-                    <ul class="mc-tree-view" style="display: none;">
-                      <li class=""><a href="h/pre-workout">Pre-workout</a>
-                      </li>
-                      <li class=""><a href="h/creatine">Creatine</a>
-                      </li>
-                      <li class=""><a href="h/don-chat">Đơn chất</a>
-                      </li>
-                      <li class=""><a href="h/pre-workout-giam-mo">Pre &amp; giảm mỡ</a>
-                      </li>
-                    </ul>
-                    <button class="mc-toggle"></button>
-                  </li>
-                  <li class="mc-state-collapsed"><a href="h/c162/vitamin-khoang-chat">Vitamin các loại</a>
-                    <ul class="mc-tree-view" style="display: none;">
-                      <li class=""><a href="h/bo-sung-vitamin">Bổ sung Vitamin</a>
-                      </li>
-                      <li class=""><a href="h/tang-hoc-mon-nam">Tăng hóc môn nam</a>
-                      </li>
-                      <li class=""><a href="h/bo-sung-dau-ca">Bổ sung dầu cá</a>
-                      </li>
-                    </ul>
-                    <button class="mc-toggle"></button>
-                  </li>
-                  <li class="mc-state-collapsed"><a href="h/c158/giam-can-dot-mo">Giảm cân đốt mỡ</a>
-                    <ul class="mc-tree-view" style="display: none;">
-                      <li class=""><a href="h/sinh-nhiet-dot-mo">Sinh nhiệt đốt mỡ</a>
-                      </li>
-                      <li class=""><a href="h/it-chat-kich-thich">Ít chất kích thích</a>
-                      </li>
-                    </ul>
-                    <button class="mc-toggle"></button>
-                  </li>
-                  <li class="mc-state-collapsed"><a href="h/c165/phu-kien">Phụ kiện Gym</a>
-                    <ul class="mc-tree-view" style="display: none;">
-                      <li class=""><a href="h/c36/binh-lac">Bình lắc</a>
-                      </li>
-                      <li class=""><a href="h/c39/phu-kien-khac">Phụ kiện khác</a>
-                      </li>
-                    </ul>
-                    <button class="mc-toggle"></button>
-                  </li>
-                  <li class="mc-state-collapsed"><a href="h/combo-gia-tot">Combo giá tốt</a>
-                    <ul class="mc-tree-view" style="display: none;">
-                      <li class=""><a href="h/combo-tang-can-tang-co">Combo tăng cân tăng cơ</a>
-                      </li>
-                      <li class=""><a href="h/combo-tang-co-giam-mo">Combo tăng cơ giảm mỡ</a>
-                      </li>
-                    </ul>
-                    <button class="mc-toggle"></button>
-                  </li>
+                  </li> 
+                  <?php } ?>
                 </ul>
               </div>
               <form action="" method="get">
@@ -441,22 +376,26 @@
 				<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 					<div class="category-view">
 						<div class="category-image">
+              <?php if($Cate['image'] == null) :?>
 							<img src=" https://www.thol.com.vn/pub/media/catalog/category/nang-luong-suc-khoe.jpg" alt="Pre-workout" title="Pre-workout" class="image">
-						</div>
+              <?php else: ?>
+              <img src="<?php echo $Cate['image'] ?>" alt="Pre-workout" title="Pre-workout" class="image">
+              <?php endif ?>
+            </div>
 						<div class="category-cms">
-							<h1>Pre-workout - Bùng cháy đam mê - Gymer mạnh mẽ - THOL</h1>
-							<p class="alert alert-success">Pre-workout là thực phẩm bổ sung uống trước khi tập luyện thể thao 30p để giúp cơ thể tổng hợp sử dụng nguồn năng lượng ATP tốt hơn. Hay nói cách khác giúp bạn tập nhiều hơn trong cùng 1 quãng thời gian, đốt cháy Calories nhiều hơn, cơ bắp tác động nhiều hơn, tập ít tốn thời gian hơn. Ngoài ra pre-workout giúp bạn tập trung tỉnh táo hơn tránh những chấn thương không đáng có trong quá trình tập luyện</p>
+							<h1><?php echo $Cate['title_cate'] ?></h1>
+							<p class="alert alert-success"><?php echo $Cate['cms'] ?></p>
 						</div>
 					</div>
 					<div class="page-title-wrapper">
 						<h1 class="page-title" id="page-title-heading" aria-labelledby="page-title-heading toolbar-amount">
-                <span class="base" data-ui-id="page-title-wrapper">Pre-workout</span>   
+                <span class="base" data-ui-id="page-title-wrapper"><?php echo $Cate['name_cate'] ?></span>   
                </h1>
 					</div>
 					
 					<div class="column main">              
             <h3 class="title-cm"> 
-              <span>Whey Protein Blend </span> 
+              <span><?php echo $Cate['name_cate'] ?> </span> 
               <span class="description mr-auto">(Hiển thị 1 - 42/11 sản phẩm)</span> 
               <div class="filter-price"> 
                 <label for="filter_price">Sắp xếp</label> 
@@ -470,7 +409,14 @@
               </div> 
             </h3> 
             <div class="cs-flex cs-wrap">
+              <?php foreach($product as $p) : ?>
+                
                 <div class="product product-catalog cs-col-6 cs-col-md-4">
+                  <?php if($p['discount'] > 0) :?>
+                    <div class="label-deal-product">-<?php echo $p['discount'] ?>%</div>
+                    <div class="time-deal-product" time="7015"> <span><i class="far fa-clock"></i> <span class="display-time">01:56:56</span></span>
+                    </div>
+                    <?php endif ?>
                   <a href="/bpi-iso-hd-5lbs-1056.html" class="image cs-flex flex-align-center flex-content-center">
                     <div class="pane-tool-button cs-flex">
                       <button class="pr-10 pl-10 mr-5">Xem chi tiết</button>
@@ -479,30 +425,14 @@
                       <button class="redirect-login" url="/dang-nhap.html"><i class="far fa-heart"></i>
                       </button>
                     </div>
-                    <img class="lazy" alt="ISO HD 5lbs 100% Isolate" title="ISO HD 5lbs 100% Isolate" src=" front/upload/product/catalog/mass_fusion_12lbs_5_4kg__phien_ban_moi__image_catalog_1582008615.jpg" style="">
-                  </a> <a href="/bpi-iso-hd-5lbs-1056.html" class="title">ISO HD 5lbs 100% Isolate</a>  <span style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;">100% whey isolate, mức giá cực kỳ tốt, là sp tốt nhất của hãng BPI Sports</span> 
+                    <img class="lazy" alt="<?php echo $p['name_prod'] ?>" title="<?php echo $p['name_prod'] ?>" src="<?php echo $p['image'] ?>" style="">
+                  </a> <a href="/bpi-iso-hd-5lbs-1056.html" class="title"><?php echo $p['name_prod'] ?></a>  <span style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;"><?php echo $p['uses_prod'] ?></span> 
                   <div class="star" total="5" point="5"><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i>
                   </div>
-                  <div class="price"> <span class="main">1.290.000đ</span>  <span class="old">1.550.000đ</span> 
+                  <div class="price"> <span class="main"><?php echo $p['price'] ?></span>  <span class="old"><?php echo $p['price_manu'] ?></span> 
                   </div>
-                </div>
-                <div class="product product-catalog cs-col-6 cs-col-md-4">
-                  <a href="/muscletech-nitrotech-10lbs-1103.html" class="image cs-flex flex-align-center flex-content-center">
-                    <div class="pane-tool-button cs-flex">
-                      <button class="pr-10 pl-10 mr-5">Xem chi tiết</button>
-                      <button class="mr-5 btn-popup-detail" smell="2" current="/whey-protein-blend" base="/" product="80"><i class="fas fa-eye"></i>
-                      </button>
-                      <button class="redirect-login" url="/dang-nhap.html"><i class="far fa-heart"></i>
-                      </button>
-                    </div>
-                    <img class="lazy" alt="MuscleTech NitroTech 10Lbs (4,5kg)" title="MuscleTech NitroTech 10Lbs (4,5kg)" src=" front/upload/product/catalog/mass_fusion_12lbs_5_4kg__phien_ban_moi__image_catalog_1582008615.jpg" style="">
-                  </a> <a href="/muscletech-nitrotech-10lbs-1103.html" class="title">MuscleTech NitroTech 10Lbs (4,5kg)</a>  <span style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;">Nitrotech không chỉ là whey, nó là 1 siêu phẩm tăng cơ với 30g protein, 3g creatine</span> 
-                  <div class="star" total="5" point="5"><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i>
-                  </div>
-                  <div class="price"> <span class="main">2.450.000đ</span>  <span class="old">2.650.000đ</span> 
-                  </div>
-                </div>
-                <div class="product product-catalog cs-col-6 cs-col-md-4">
+                </div> 
+                <!-- <div class="product product-catalog cs-col-6 cs-col-md-4">
                   <div class="label-deal-product">-18%</div>
                   <div class="time-deal-product" time="7015"> <span><i class="far fa-clock"></i> <span class="display-time">01:56:56</span></span>
                   </div>
@@ -514,153 +444,14 @@
                       <button class="redirect-login" url="/dang-nhap.html"><i class="far fa-heart"></i>
                       </button>
                     </div>
-                    <img class="lazy" alt="Impact whey protein 1kg 44 servings" title="Impact whey protein 1kg 44 servings" src=" front/upload/product/catalog/mass_fusion_12lbs_5_4kg__phien_ban_moi__image_catalog_1582008615.jpg" style="">
+                    <img class="lazy" alt="Impact whey protein 1kg 44 servings" title="Impact whey protein 1kg 44 servings" src=" lib/front/upload/product/catalog/mass_fusion_12lbs_5_4kg__phien_ban_moi__image_catalog_1582008615.jpg" style="">
                   </a> <a href="/myprotein-impact-whey-protein-1kg-44-servings-1112.html" class="title">Impact whey protein 1kg 44 servings</a>  <span style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;">Chỉ 15.000đ 1 muỗng và đây là loại whey được nhiều người lựa chọn nhất</span> 
                   <div class="star" total="5" point="4"><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5"></i>
                   </div>
                   <div class="price"> <span class="main">530.000đ</span>  <span class="old">650.000đ</span> 
                   </div>
-                </div>
-                <div class="product product-catalog cs-col-6 cs-col-md-4">
-                  <div class="label-deal-product">-12%</div>
-                  <div class="time-deal-product" time="7015"> <span><i class="far fa-clock"></i> <span class="display-time">01:56:56</span></span>
-                  </div>
-                  <a href="/myprotein-impact-whey-protein-2-5kg-100-servings-1113.html" class="image cs-flex flex-align-center flex-content-center">
-                    <div class="pane-tool-button cs-flex">
-                      <button class="pr-10 pl-10 mr-5">Xem chi tiết</button>
-                      <button class="mr-5 btn-popup-detail" smell="2" current="/whey-protein-blend" base="/" product="76"><i class="fas fa-eye"></i>
-                      </button>
-                      <button class="redirect-login" url="/dang-nhap.html"><i class="far fa-heart"></i>
-                      </button>
-                    </div>
-                    <img class="lazy" alt=" Impact whey protein 2.5kg 100 servings" title=" Impact whey protein 2.5kg 100 servings" src="front/upload/product/catalog/mass_fusion_12lbs_5_4kg__phien_ban_moi__image_catalog_1582008615.jpg" style="">
-                  </a> <a href="/myprotein-impact-whey-protein-2-5kg-100-servings-1113.html" class="title"> Impact whey protein 2.5kg 100 servings</a> 
-                  <div class="star" total="5" point="5"><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i>
-                  </div>
-                  <div class="price"> <span class="main">1.190.000đ</span>  <span class="old">1.350.000đ</span> 
-                  </div>
-                </div>
-                <div class="product product-catalog cs-col-6 cs-col-md-4">
-                  <div class="label-deal-product">-9%</div>
-                  <div class="time-deal-product" time="7015"> <span><i class="far fa-clock"></i> <span class="display-time">01:56:56</span></span>
-                  </div>
-                  <a href="/myprotein-impact-whey-protein-5kg-200-servings-1114.html" class="image cs-flex flex-align-center flex-content-center">
-                    <div class="pane-tool-button cs-flex">
-                      <button class="pr-10 pl-10 mr-5">Xem chi tiết</button>
-                      <button class="mr-5 btn-popup-detail" smell="2" current="/whey-protein-blend" base="/" product="75"><i class="fas fa-eye"></i>
-                      </button>
-                      <button class="redirect-login" url="/dang-nhap.html"><i class="far fa-heart"></i>
-                      </button>
-                    </div>
-                    <img class="lazy" alt="Impact whey protein 5kg 200 servings" title="Impact whey protein 5kg 200 servings" src=" front/upload/product/catalog/mass_fusion_12lbs_5_4kg__phien_ban_moi__image_catalog_1582008615.jpg" style="">
-                  </a> <a href="/myprotein-impact-whey-protein-5kg-200-servings-1114.html" class="title">Impact whey protein 5kg 200 servings</a> 
-                  <div class="star" total="5" point="5"><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i>
-                  </div>
-                  <div class="price"> <span class="main">1.990.000đ</span>  <span class="old">2.190.000đ</span> 
-                  </div>
-                </div>
-                <div class="product product-catalog cs-col-6 cs-col-md-4">
-                  <a href="/nitro-tech-ripped-4lbs-1-8kg--1130.html" class="image cs-flex flex-align-center flex-content-center">
-                    <div class="pane-tool-button cs-flex">
-                      <button class="pr-10 pl-10 mr-5">Xem chi tiết</button>
-                      <button class="mr-5 btn-popup-detail" smell="2" current="/whey-protein-blend" base="/" product="71"><i class="fas fa-eye"></i>
-                      </button>
-                      <button class="redirect-login" url="/dang-nhap.html"><i class="far fa-heart"></i>
-                      </button>
-                    </div>
-                    <img class="lazy" alt="MuscleTech NitroTech Ripped 4lbs (1,8kg)" title="MuscleTech NitroTech Ripped 4lbs (1,8kg)" src=" front/upload/product/catalog/mass_fusion_12lbs_5_4kg__phien_ban_moi__image_catalog_1582008615.jpg" style="">
-                  </a> <a href="/nitro-tech-ripped-4lbs-1-8kg--1130.html" class="title">MuscleTech NitroTech Ripped 4lbs (1,8kg)</a> 
-                  <div class="star" total="5" point="5"><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i>
-                  </div>
-                  <div class="price"> <span class="main">1.450.000đ</span>  <span class="old">1.550.000đ</span> 
-                  </div>
-                </div>
-                <div class="product product-catalog cs-col-6 cs-col-md-4">
-                  <a href="/labrada-lean-pro-8-5lbs-2-27kg--1201.html" class="image cs-flex flex-align-center flex-content-center">
-                    <div class="pane-tool-button cs-flex">
-                      <button class="pr-10 pl-10 mr-5">Xem chi tiết</button>
-                      <button class="mr-5 btn-popup-detail" smell="2" current="/whey-protein-blend" base="/" product="70"><i class="fas fa-eye"></i>
-                      </button>
-                      <button class="redirect-login" url="/dang-nhap.html"><i class="far fa-heart"></i>
-                      </button>
-                    </div>
-                    <img class="lazy" alt="Labrada Lean Pro 8 5lbs (2,27kg)" title="Labrada Lean Pro 8 5lbs (2,27kg)" src=" front/upload/product/catalog/mass_fusion_12lbs_5_4kg__phien_ban_moi__image_catalog_1582008615.jpg" style="">
-                  </a> <a href="/labrada-lean-pro-8-5lbs-2-27kg--1201.html" class="title">Labrada Lean Pro 8 5lbs (2,27kg)</a> 
-                  <div class="star" total="5" point="2"><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5"></i><i class="far fa-star mr-5"></i><i class="far fa-star mr-5"></i>
-                  </div>
-                  <div class="price"> <span class="main">1.450.000đ</span>  <span class="old">1.600.000đ</span> 
-                  </div>
-                </div>
-                <div class="product product-catalog cs-col-6 cs-col-md-4">
-                  <div class="label-deal-product">-2%</div>
-                  <div class="time-deal-product" time="7015"> <span><i class="far fa-clock"></i> <span class="display-time">01:56:56</span></span>
-                  </div>
-                  <a href="/whey-gold-standard-10lbs-4-54kg--70.html" class="image cs-flex flex-align-center flex-content-center">
-                    <div class="pane-tool-button cs-flex">
-                      <button class="pr-10 pl-10 mr-5">Xem chi tiết</button>
-                      <button class="mr-5 btn-popup-detail" smell="2" current="/whey-protein-blend" base="/" product="58"><i class="fas fa-eye"></i>
-                      </button>
-                      <button class="redirect-login" url="/dang-nhap.html"><i class="far fa-heart"></i>
-                      </button>
-                    </div>
-                    <img class="lazy" alt="Whey Gold Standard 10Lbs (4.54KG)" title="Whey Gold Standard 10Lbs (4.54KG)" src=" front/upload/product/catalog/mass_fusion_12lbs_5_4kg__phien_ban_moi__image_catalog_1582008615.jpg" style="">
-                  </a> <a href="/whey-gold-standard-10lbs-4-54kg--70.html" class="title">Whey Gold Standard 10Lbs (4.54KG)</a> 
-                  <div class="star" total="5" point="5"><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i>
-                  </div>
-                  <div class="price"> <span class="main">2.590.000đ</span>  <span class="old">2.650.000đ</span> 
-                  </div>
-                </div>
-                <div class="product product-catalog cs-col-6 cs-col-md-4">
-                  <a href="/whey-gold-standard-2lbs-900g--43.html" class="image cs-flex flex-align-center flex-content-center">
-                    <div class="pane-tool-button cs-flex">
-                      <button class="pr-10 pl-10 mr-5">Xem chi tiết</button>
-                      <button class="mr-5 btn-popup-detail" smell="2" current="/whey-protein-blend" base="/" product="56"><i class="fas fa-eye"></i>
-                      </button>
-                      <button class="redirect-login" url="/dang-nhap.html"><i class="far fa-heart"></i>
-                      </button>
-                    </div>
-                    <img class="lazy" alt="Whey Gold Standard 2Lbs (900G)" title="Whey Gold Standard 2Lbs (900G)" src=" front/upload/product/catalog/mass_fusion_12lbs_5_4kg__phien_ban_moi__image_catalog_1582008615.jpg" style="">
-                  </a> <a href="/whey-gold-standard-2lbs-900g--43.html" class="title">Whey Gold Standard 2Lbs (900G)</a> 
-                  <div class="star" total="5" point="5"><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i>
-                  </div>
-                  <div class="price"> <span class="main">790.000đ</span> 
-                  </div>
-                </div>
-                <div class="product product-catalog cs-col-6 cs-col-md-4">
-                  <a href="/nitro-tech-whey-isolate-4-lbs-1-8kg--312.html" class="image cs-flex flex-align-center flex-content-center">
-                    <div class="pane-tool-button cs-flex">
-                      <button class="pr-10 pl-10 mr-5">Xem chi tiết</button>
-                      <button class="mr-5 btn-popup-detail" smell="2" current="/whey-protein-blend" base="/" product="55"><i class="fas fa-eye"></i>
-                      </button>
-                      <button class="redirect-login" url="/dang-nhap.html"><i class="far fa-heart"></i>
-                      </button>
-                    </div>
-                    <img class="lazy" alt="MuscleTech NitroTech 4 Lbs (1,8kg)" title="MuscleTech NitroTech 4 Lbs (1,8kg)" src=" front/upload/product/catalog/mass_fusion_12lbs_5_4kg__phien_ban_moi__image_catalog_1582008615.jpg" style="">
-                  </a> <a href="/nitro-tech-whey-isolate-4-lbs-1-8kg--312.html" class="title">MuscleTech NitroTech 4 Lbs (1,8kg)</a> 
-                  <div class="star" total="5" point="5"><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i>
-                  </div>
-                  <div class="price"> <span class="main">1.200.000đ</span>  <span class="old">1.290.000đ</span> 
-                  </div>
-                </div>
-                <div class="product product-catalog cs-col-6 cs-col-md-4">
-                  <div class="label-deal-product">-4%</div>
-                  <div class="time-deal-product" time="7015"> <span><i class="far fa-clock"></i> <span class="display-time">01:56:56</span></span>
-                  </div>
-                  <a href="/whey-gold-standard-5lbs-2-27kg--57.html" class="image cs-flex flex-align-center flex-content-center">
-                    <div class="pane-tool-button cs-flex">
-                      <button class="pr-10 pl-10 mr-5">Xem chi tiết</button>
-                      <button class="mr-5 btn-popup-detail" smell="2" current="/whey-protein-blend" base="/" product="54"><i class="fas fa-eye"></i>
-                      </button>
-                      <button class="redirect-login" url="/dang-nhap.html"><i class="far fa-heart"></i>
-                      </button>
-                    </div>
-                    <img class="lazy" alt="Whey Gold Standard 5Lbs (2.27KG)" title="Whey Gold Standard 5Lbs (2.27KG)" src=" front/upload/product/catalog/mass_fusion_12lbs_5_4kg__phien_ban_moi__image_catalog_1582008615.jpg" style="">
-                  </a> <a href="/whey-gold-standard-5lbs-2-27kg--57.html" class="title">Whey Gold Standard 5Lbs (2.27KG)</a> 
-                  <div class="star" total="5" point="5"><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i>
-                  </div>
-                  <div class="price"> <span class="main">1.390.000đ</span>  <span class="old">1.450.000đ</span> 
-                  </div>
-                </div> 
+                </div> -->
+                <?php endforeach ?>
                </div>  
              <div class="pagination cs-flex"> <strong>1</strong><a href="tim-kiemcadd.html?page=45" data-ci-pagination-page="2">2</a><a href="tim-kiem9907.html?page=90" data-ci-pagination-page="3">3</a><a href="tim-kiemcadd.html?page=45" data-ci-pagination-page="2" rel="next"><i class="fa fa-angle-double-right"></i></a><a href="tim-kiem9d64.html?page=270" data-ci-pagination-page="7">Trang cuối</a> 
 				    </div>
@@ -670,7 +461,4 @@
 		</div>
 	</div>
 </main>
-
-
-
-<?php include('footer.php') ?>
+ 

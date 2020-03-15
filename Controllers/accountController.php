@@ -6,7 +6,13 @@ class AccountController extends Controller
     var $redIndex="account/index";
     var $accUser = 'myAccount';
     var $editUser = 'editAccounts';
-     
+    
+    function __construct(){ 
+        parent::__construct();
+        $this->callMenu();
+    }
+
+
     function index()
     {
         require(ROOT . $this->service);

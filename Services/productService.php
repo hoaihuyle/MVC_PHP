@@ -53,6 +53,16 @@ class ProductService extends Service{
 
         return $products;
     }
+
+    function getCate($db,$table, $id){
+        $product = new ProductDAO();
+        return $product->getCate($db,$table, $id);
+    }
+
+    function listsProduct($db, $table, $col, $id){
+        $product = new ProductDAO();
+        return $product->listsProduct($db, $table, $col, $id);
+    }
 }
 
 ?>
