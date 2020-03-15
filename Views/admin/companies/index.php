@@ -21,7 +21,6 @@
                                 <thead>
                                     <tr>
                                         <th style="text-align: center;">Tên</th>
-                                        <th style="text-align: center;">Các danh mục sản phẩm</th>
                                         <th style="text-align: center;">Ngày tạo</th>
                                         <th style="text-align: center;">Người tạo</th>
                                         <th style="text-align: center;">Trạng thái</th>
@@ -35,7 +34,7 @@
                                     ?>
                                         <tr>
                                             <td align="center"><?php echo $company['name_comp']; ?></td>
-                                            <td><?php echo 'Các danh mục sản phẩm'; ?></td>
+                                            
                                             <td align="center"><?php echo $company['created']; ?></td>
                                             <td align="center"><?php echo isset($company['user_created'])?$company['user_created']:'admin'; ?></td>
                                             <td align="center"><?php echo ($company['flag']==0)?'Hiển thị':'Đã xóa'; ?></td>
@@ -49,7 +48,6 @@
                                 <tfoot>
                                     <tr>
                                         <th style="text-align: center;">Tên</th>
-                                        <th style="text-align: center;">Các danh mục sản phẩm</th>
                                         <th style="text-align: center;">Ngày tạo</th>
                                         <th style="text-align: center;">Người tạo</th>
                                         <th style="text-align: center;">Trạng thái</th>
