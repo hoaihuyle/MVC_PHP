@@ -18,7 +18,7 @@
             //call helper
             require('helper.php');
             $this->helper = new helper();
-            $this->callMenu(); 
+            // $this->callMenu(); 
         //     // require(ROOT . 'Models/DAO/menuDAO.php');
         //     // $menu = new MenuDAO();
         //     require(ROOT . 'Services/menuService.php');
@@ -53,6 +53,7 @@
             $d['menuInfos'] = $news->listMenuWhere($db);
             $d['categoryInfos'] = $category->listCategory($db);
             $this->set($d);
+            
         }
 
         function render($filename)

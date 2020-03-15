@@ -6,6 +6,12 @@ class signupController extends Controller
     var $index = '/';
     var $signup = '/signup'; 
  
+    function __construct()
+    {
+        parent::__construct();
+        $this->callMenu();
+    }
+
     function index()
     {   
         $this->render("signup");

@@ -1,7 +1,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <div class="footer">
+            <!-- <div class="footer">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
@@ -16,7 +16,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- ============================================================== -->
             <!-- end footer -->
             <!-- ============================================================== -->
@@ -31,10 +31,11 @@
     <script src="/lib/admin/vendor/slimscroll/jquery.slimscroll.js"></script>
     <script src="/lib/admin/vendor/multi-select/js/jquery.multi-select.js"></script>
     <script src="/lib/admin/vendor/parsley/parsley.js"></script>
-    <script src="/lib/datepicker/moment-with-locales.min.js"></script>
+    <script src="/lib/js/moment-with-locales.min.js"></script>
 
-    <script src="/lib/datepicker/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="/lib/js/tempusdominus-bootstrap-4.min.js"></script>
     <script src="/lib/admin/libs/js/main-js.js"></script>
+    <script src="/lib/js/custom.js"></script>
 
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="/lib/admin/vendor/datatables/js/dataTables.bootstrap4.min.js"></script>

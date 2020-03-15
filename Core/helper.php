@@ -3,6 +3,10 @@
 trait helperFuncs{
  
 
+  function testConnect(){
+    return null;
+  }
+
     /*Convert string signed to non-signed*/
   function khongdau($str) {
     $str = preg_replace("/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/", "a", $str);
