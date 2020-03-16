@@ -33,6 +33,10 @@
     <script src="/lib/admin/vendor/parsley/parsley.js"></script>
     <script src="/lib/js/moment-with-locales.min.js"></script>
 
+    <script src="/lib/front/asset/site/js/scrsnxtproduct13860.js?v=1"></script> 
+    <script src="/lib/front/asset/site/js/jquery.easing.min.js"></script> 
+    <script src="/lib/front/asset/site/js/jquery.easy-ticker.js"></script> 
+
     <script src="/lib/js/tempusdominus-bootstrap-4.min.js"></script>
     <script src="/lib/admin/libs/js/main-js.js"></script>
     <script src="/lib/js/custom.js"></script>

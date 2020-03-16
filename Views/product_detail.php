@@ -459,7 +459,7 @@
          </form>
       </div>
    </div>
-   <script>var maxHeight = 0;$('.main_effect_content').each(function(){if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }});$('.main_effect_content').height(maxHeight);</script> <script src="/lib/front/asset/site/js/scrsnxtproduct13860.js?v=1"></script> <script src="/lib/front/asset/site/js/jquery.easing.min.js"></script> <script src="/lib/front/asset/site/js/jquery.easy-ticker.js"></script> 
+   
    <div class="session">
       <div class="main-content">
          <div class="title-nav"> <a href="javascript:;" class="hover-color">Sản phẩm bạn đã xem</a> </div>
