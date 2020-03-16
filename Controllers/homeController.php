@@ -23,5 +23,11 @@ class HomeController extends Controller
         $this->set($prod);
         $this->render('products');
     }
+
+    function product($id){
+        require(ROOT . $this->service);
+        $product = new ProductService(); 
+        $this->render('product_detail');
+    }
 }
 ?>

@@ -77,6 +77,7 @@ img{width: 100%; height:auto}
 .products .col2-layout .col-lg-9.col-md-9.col-sm-12.col-xs-12{margin-left: 0!important;}
 .products .catalog-product{height: auto;}
 .products .category-cms h1{font-size: 40px;margin: 40px 0;}
+.product .image:hover .pane-tool-button{justify-content:center; width: 100%;}
 /* search */
 .pagination{text-align: center; margin-bottom: 40px;}
 
@@ -85,4 +86,5 @@ img{width: 100%; height:auto}
 .editUser{display: flex; justify-content: space-around; width: 100%}
 .editUser .image_user{width: 50%; text-align: center;}
 .editUser form{width: 100%}
+
 

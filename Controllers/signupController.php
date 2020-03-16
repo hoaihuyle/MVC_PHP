@@ -77,8 +77,8 @@ class signupController extends Controller
           if(empty($error)){
             $insert = $register->create($db, 'accounts', $request);
             if($insert>0){
-              $_SESSION['success'] = 'Tạo tài khoản thành công';
-              header('location:' . $this->index);
+
+              echo "<script>alert('Đăng ký thành công, giờ đây bạn có thể đăng nhập!!'); location=' /'</script> ";
             }
             else {
               $_SESSION['error']="Thêm mới thất bại";
