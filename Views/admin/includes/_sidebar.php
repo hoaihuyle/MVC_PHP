@@ -103,6 +103,9 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="/product/create">Thêm mới</a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/product/setting">Cài đặt</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
