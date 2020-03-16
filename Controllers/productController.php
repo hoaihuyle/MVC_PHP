@@ -15,6 +15,10 @@ class ProductController extends Controller
             header('location: /');
     }
 
+    /**
+     * Show all product with extend func filter by company, category and filter by time
+     * return a list
+     */
     function index()
     {
         require(ROOT . $this->service);
@@ -169,6 +173,9 @@ class ProductController extends Controller
         $this->render($this->red.__FUNCTION__);
     }  
 
+    /**
+     * Delete
+     */
     function delete($id)
     {
         require(ROOT . $this->service);
@@ -178,6 +185,8 @@ class ProductController extends Controller
             header("Location: " . WEBROOT . $this->redIndex);
         }
         header("Location: " . WEBROOT . $this->redIndex);
-    }  
+    }
+    
+    
 }
 ?>

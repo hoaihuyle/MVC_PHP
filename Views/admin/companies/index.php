@@ -36,7 +36,7 @@
                                             <td align="center"><?php echo $company['name_comp']; ?></td>
                                             
                                             <td align="center"><?php echo $company['created']; ?></td>
-                                            <td align="center"><?php echo isset($company['user_created'])?$company['user_created']:'admin'; ?></td>
+                                            <td align="center"><?php echo ($company['user_created']!=0)?$company['user_created']:'admin'; ?></td>
                                             <td align="center"><?php echo ($company['flag']==0)?'Hiển thị':'Đã xóa'; ?></td>
                                             <td align="center"><a href="/company/edit/<?php echo $company['id_comp']; ?>"><img src="/lib/admin/images/edit.png" width="25"></a></td>
                                             <td align="center"><a href="/company/delete/<?php echo $company['id_comp']; ?>" onclick="return confirm('Dữ liệu của bạn sẽ bị mất, bạn chắc chắn chứ ?')" ><img src="/lib/admin/images/delete.png" width="25"></a></td>
