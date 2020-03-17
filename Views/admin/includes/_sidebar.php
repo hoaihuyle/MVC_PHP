@@ -94,8 +94,8 @@
                             </li>
 
                             <li class="nav-item ">
-                                <a class="nav-link" href="admin/index" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-user-circle"></i>Sản phẩm <span class="badge badge-success">6</span></a>
-                                 <div id="submenu-3" class="collapse submenu" style="">
+                                <a class="nav-link" href="admin/index" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3-1" aria-controls="submenu-3-1"><i class="fa fa-fw fa-user-circle"></i>Sản phẩm <span class="badge badge-success">6</span></a>
+                                 <div id="submenu-3-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" href="/product/index">Danh sách</a>
@@ -104,7 +104,17 @@
                                             <a class="nav-link" href="/product/create">Thêm mới</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/product/setting">Cài đặt</a>
+                                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3-2" aria-controls="submenu-3-2"> Cài đặt </a>
+                                            <div id="submenu-3-2" class="collapse submenu" style="">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="/setting/index">Danh sách</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="/setting/create">Thêm mới</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
