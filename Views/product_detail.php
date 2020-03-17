@@ -7,7 +7,7 @@
             <div class="cs-flex">
                <div class="cs-flex cs-col-lg-9 cs-wrap product-detail-left">
                   <div class="cs-col-lg-5 left-child">
-                     <div class="show-image"> <img id="img_01" class="lazy" data-src="/lib/front/upload/product/catalog/scivation_xtend_bcaa_90_servings_image_catalog_1582015416.jpg" title="BCAA 3:1:2 (30 Servings)" alt="BCAA 3:1:2 (30 Servings)"> </div>
+                     <div class="show-image"> <img id="img_01" class="lazy" data-src="/lib/front/upload/product/catalog/scivation_xtend_bcaa_90_servings_image_catalog_1582015416.jpg" title="<?php echo $prod[0]['name_prod'] ?>" alt="<?php echo $prod[0]['name_prod'] ?>"> </div>
                      <div class="cs-flex flex-content-center inline" style="margin-top: 10px;"> <span style="font-size: 13px;">Like hoặc Share nếu bạn thích sp này</span> </div>
                      <div class="cs-flex flex-content-center inline" style="margin: 5px 0 0 0;">
                         <div class="cs-flex mb-10">
@@ -24,7 +24,7 @@
                   </div>
                   <div class="cs-col-lg-7 mb-20 right-child">
                      <div class="title-cm mt-0 font-s-20">
-                        <h1 style="font-size: 20px; margin: 0; padding: 0;"><span class="product-name" itemprop="name" id="product_name_r">BCAA 3:1:2 (30 Servings)</span></h1>
+                        <h1 style="font-size: 20px; margin: 0; padding: 0;"><span class="product-name" itemprop="name" id="product_name_r"><?php echo $prod[0]['name_prod'] ?></span></h1>
                      </div>
                      <div class="mt-10 cs-flex" style="width: 100%;">
                         <div style="line-height: 28px;">
