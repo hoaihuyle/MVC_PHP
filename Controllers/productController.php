@@ -171,8 +171,8 @@ class ProductController extends Controller
         $this->set($d);
         // $this->render('admin/form-validation');
         $this->render($this->red.__FUNCTION__);
-    }  
-
+    } 
+    
     /**
      * Delete
      */
