@@ -33,7 +33,6 @@ class ProductController extends Controller
         $d['productInfos'] = $product->listProduct($db);  
         $d['companyInfos'] = $company->listCompany($db);
         $d['categoryInfos'] = $category->listCategory($db);
-        //long
         $this->set($d);
 
         $this->render($this->red.__FUNCTION__);

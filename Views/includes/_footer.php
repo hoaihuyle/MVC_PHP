@@ -93,6 +93,7 @@
       <script src="/lib/front/asset/site/js/owl.carousel.min.js"></script>
       <script src="/lib/front/asset/site/js/jquery.lazy.min.js"></script>
       <script src="/lib/front/asset/site/js/thanh.js"></script>
+      <script src="/lib/js/custom.js"></script>
       <script>$('.slider-ads-top').bxSlider({auto: true,pager: false,autoHover: true,mode: 'horizontal',controls: false,pause: 10000});</script> <!-- End Top Banner --> 
       <script> $(function() { $('.lazy').Lazy();});</script> 
       <script>

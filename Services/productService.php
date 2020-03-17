@@ -63,6 +63,12 @@ class ProductService extends Service{
         $product = new ProductDAO();
         return $product->listsProduct($db, $table, $col, $id);
     }
+
+    function listsProductPagi($db, $table, $col, $id, $page, $total, $pagi){
+        $product = new ProductDAO();
+        $sql ="SELECT * FROM {$table} as tb WHERE $col = $id";
+        return $product->listsProductPagi($db, $sql, $page, $total, $pagi);
+    }
 }
 
 ?>

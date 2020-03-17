@@ -384,17 +384,16 @@ $db = new Database();
         }
 
 
-        public  function fetchJoneDetail($table , $sql ,$page = 0,$total ,$pagi )
+        public  function fetchJoneDetail($sql ,$page = 0,$total ,$pagi )
         {
             $result = mysqli_query($this->link,$sql) or die("Lỗi truy vấn fetchJone ---- " .mysqli_error($this->link));
-
             $sotrang = ceil($total / $pagi);
             $start = ($page - 1 ) * $pagi ;
-            $sql .= " LIMIT $start,$pagi";
-
+            $sql .= " LIMIT $start,$pagi";       
             $result = mysqli_query($this->link , $sql);
             $data = [];
-            $data = [ "page" => $sotrang];
+            // $data = [ "page" => $sotrang];
+            
             if( $result)
             {
                 while ($num = mysqli_fetch_assoc($result))
