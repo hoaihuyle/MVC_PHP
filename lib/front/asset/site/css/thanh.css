@@ -70,14 +70,21 @@ img{width: 100%; height:auto}
 #loginRegisUser .regisLogin .login .main-content,#loginRegisUser .regisLogin .login .cs-flex{height: 100%}
 #loginRegisUser .button-cm{    background: #444; border: 1px solid #444;}
 
+
 /* product */
 .products{padding: 30px 0;  min-height: 500px;}
 .products .col2-layout .col-lg-3.col-md-3.col-sm-12.col-xs-12{margin-right: 0!important;}
 .products .col2-layout .col-lg-9.col-md-9.col-sm-12.col-xs-12{margin-left: 0!important;}
 .products .catalog-product{height: auto;}
 .products .category-cms h1{font-size: 40px;margin: 40px 0;}
+.product .image:hover .pane-tool-button{justify-content:center; width: 100%;}
 /* search */
 .pagination{text-align: center; margin-bottom: 40px;}
 
+/* edit user */
+
+.editUser{display: flex; justify-content: space-around; width: 100%}
+.editUser .image_user{width: 50%; text-align: center;}
+.editUser form{width: 100%}
 
 

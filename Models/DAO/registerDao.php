@@ -11,6 +11,10 @@ class registerDAO extends Model
       return $db->fetchOne($table,"phone ='".$request."' ");
   }
 
+    public function checkEmail($db, $table, $request){
+      return $db->fetchOne($table, "email ='".$request."' ");
+    }
+
 
 
 }

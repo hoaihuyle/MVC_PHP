@@ -57,12 +57,15 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label text-sm-right">Trạng thái</label>
-                                <div class="col-sm-6">
+                            <label class="col-sm-3 col-form-label text-sm-right">Trạng thái</label>
+                            <div class="col-sm-6">
                                     <div class="custom-controls-stacked">
                                         <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
-                                            <label class="be-checkbox custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" <?php echo ($category[0]['flag']==1)?'':'checked'; ?>><span class="custom-control-label">Hiện</span>
+                                            <label class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" name="flag" value="1"  <?php echo ($category[0]['flag']==0)?'':'checked'; ?> class="custom-control-input"><span class="custom-control-label">Ẩn</span>
+                                            </label>
+                                            <label class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" name="flag" value="0"  <?php echo ($category[0]['flag']==1)?'':'checked'; ?> class="custom-control-input"><span class="custom-control-label">Hiện</span>
                                             </label>
                                         </div>
                                     </div>

@@ -8,6 +8,7 @@ class CategoryController extends Controller
 
     function __construct()
     {
+        parent::__construct();
         if( $_SESSION['role'] != 0 || !isset($_SESSION['role']) )
             header('location: /');
     }
@@ -42,6 +43,8 @@ class CategoryController extends Controller
             if ($categories->createCategory($db, $_POST))
             {
                 header("Location: " . WEBROOT . $this->redIndex);
+            }else{
+                $d['error'] = " <div class='message p-3 bg-danger text-white'> Cập nhập thông tin không thành công</div>";
             }
         }
         

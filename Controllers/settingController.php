@@ -1,10 +1,9 @@
 <?php
-class MenuController extends Controller
+class SettingController extends Controller
 {
-    var $service ="Services/menuService.php";
-    var $serviceC ="Services/categoryService.php";
-    var $red="admin/menu/";
-    var $redIndex="menu/index";
+    var $service ="Services/settingService.php";
+    var $red="admin/settings/";
+    var $redIndex="settings/index";
 
 
     function __construct()
@@ -17,13 +16,9 @@ class MenuController extends Controller
     function index()
     {
         require(ROOT . $this->service);
-        $news = new MenuService();
+        $news = new SettingService();
 
-        require(ROOT . $this->serviceC);
-        $category = new CategoryService();
-
-        $d['categoryInfos'] = $category->listCategory($db); 
-        $d['menuInfos'] = $news->listMenu($db);  
+        $d['settingInfos'] = $news->listSetting($db);  
         $this->set($d);
 
         $this->render($this->red.__FUNCTION__);
@@ -34,9 +29,9 @@ class MenuController extends Controller
         if (!empty($_POST))
         {
             require(ROOT . $this->service);
-            $news = new MenuService();
+            $news = new SettingService();
 
-            if ($news->createMenu($db, $_POST))
+            if ($news->createSetting($db, $_POST))
             {
                 header("Location: " . WEBROOT . $this->redIndex);
             }
@@ -53,24 +48,20 @@ class MenuController extends Controller
     /**
      * Redirect edit page
      * If have a POST
-     * - Edit information in table Menu
-     * - Loop: Update menu_id in table Category
+     * - Edit information in table Setting
+     * - Loop: Update setting_id in table Category
      */
     function edit($id)
     {
         require(ROOT . $this->service);
-        $menu = new MenuService();
+        $setting = new SettingService();
 
-        require(ROOT . $this->serviceC);
-        $category = new CategoryService();
-
-        $d['categoryInfos'] = $category->findCategoryMenu($db, $id);  
-        $d['menuInfo'] = $menu->findMenu($db, $id); 
+        $d['settingInfo'] = $setting->findSetting($db, $id); 
         
         if (!empty($_POST))
         {
             // var_dump($_POST);die();
-            if ($menu->editMenu($db, $id, $_POST))
+            if ($setting->editSetting($db, $id, $_POST))
             {
                 header("Location: " . WEBROOT . $this->redIndex);
             }else{
@@ -82,8 +73,8 @@ class MenuController extends Controller
             // }else{
                 // unset($_POST['example3_length']);
                 // foreach($_POST as $key => $p){
-                //     $category-> editCategory($db, $p, array('menu_id' => $id));
-                //     // $data[] = array('id_cate' => $p, 'menu_id'=> $id);
+                //     $category-> editCategory($db, $p, array('setting_id' => $id));
+                //     // $data[] = array('id_cate' => $p, 'setting_id'=> $id);
                 // }
                 // if ()
                 // {
@@ -105,8 +96,8 @@ class MenuController extends Controller
     function delete($id)
     {
         require(ROOT . $this->service);
-        $news = new MenuService();
-        if ($news->deleteMenu($db, $id))
+        $news = new SettingService();
+        if ($news->deleteSetting($db, $id))
         {
             header("Location: " . WEBROOT . $this->redIndex);
         }

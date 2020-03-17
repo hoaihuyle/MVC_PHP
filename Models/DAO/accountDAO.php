@@ -39,5 +39,9 @@ class AccountDAO extends Model
     public function checkUser($db, $id){
         return $db->fetchWhere('accounts', "id_acco = ".$id);
     }
+
+    public function checkEmail($db, $table, $request){
+        return $db->fetchOne($table, "email ='".$request."' ");
+      }
 }
 ?>

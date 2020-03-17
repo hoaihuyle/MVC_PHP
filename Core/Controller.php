@@ -1,7 +1,6 @@
-<?php
-
+<?php 
     class Controller
-    {
+    {    
         var $vars = [];
         var $menu = "_menu";
         var $myUntils = "myUntils";
@@ -12,24 +11,29 @@
         var $listMenu ="Services/menuService.php";
         var $listCateMenu ="Services/categoryService.php";
 
+        var $helper;
 
 
         function __construct(){
+            //call helper
+            require('helper.php');
+            $this->helper = new helper();
+            // $this->callMenu(); 
         //     // require(ROOT . 'Models/DAO/menuDAO.php');
         //     // $menu = new MenuDAO();
         //     require(ROOT . 'Services/menuService.php');
         //     $menu = new MenuService();
         //     $d['menu'] = $menu->listMenuByParent($db);  
-        //     $this->set($d);
-        
-            $this->callMenu();
+        //     $this->set($d); 
+            
+            
         }
 
         /**
          * return array data in model and set value to variable $var
          *  */    
         function set($d)
-        { 
+        {  
             $this->vars = array_merge($this->vars, $d); 
         }
 
@@ -97,6 +101,7 @@
             }
              
         }
+        
         private function secure_input($data)
         {
             $data = trim($data);

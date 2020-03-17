@@ -1,4 +1,4 @@
-<?php include('header.php') ?>  
+
 <section id="'detail" >
    
    <form id="submit-product" action="" method="post">
@@ -7,7 +7,7 @@
             <div class="cs-flex">
                <div class="cs-flex cs-col-lg-9 cs-wrap product-detail-left">
                   <div class="cs-col-lg-5 left-child">
-                     <div class="show-image"> <img id="img_01" class="lazy" data-src="front/upload/product/catalog/scivation_xtend_bcaa_90_servings_image_catalog_1582015416.jpg" title="BCAA 3:1:2 (30 Servings)" alt="BCAA 3:1:2 (30 Servings)"> </div>
+                     <div class="show-image"> <img id="img_01" class="lazy" data-src="/lib/front/upload/product/catalog/scivation_xtend_bcaa_90_servings_image_catalog_1582015416.jpg" title="<?php echo $prod[0]['name_prod'] ?>" alt="<?php echo $prod[0]['name_prod'] ?>"> </div>
                      <div class="cs-flex flex-content-center inline" style="margin-top: 10px;"> <span style="font-size: 13px;">Like hoặc Share nếu bạn thích sp này</span> </div>
                      <div class="cs-flex flex-content-center inline" style="margin: 5px 0 0 0;">
                         <div class="cs-flex mb-10">
@@ -24,7 +24,7 @@
                   </div>
                   <div class="cs-col-lg-7 mb-20 right-child">
                      <div class="title-cm mt-0 font-s-20">
-                        <h1 style="font-size: 20px; margin: 0; padding: 0;"><span class="product-name" itemprop="name" id="product_name_r">BCAA 3:1:2 (30 Servings)</span></h1>
+                        <h1 style="font-size: 20px; margin: 0; padding: 0;"><span class="product-name" itemprop="name" id="product_name_r"><?php echo $prod[0]['name_prod'] ?></span></h1>
                      </div>
                      <div class="mt-10 cs-flex" style="width: 100%;">
                         <div style="line-height: 28px;">
@@ -74,7 +74,7 @@
                            <div class="action-cart-product" style="margin-bottom: 10px; text-align: left;">
                               <table>
                                  <tr>
-                                    <td><img class="lazy" data-src="front/upload/product/catalog/scivation_xtend_bcaa_90_servings_image_catalog_1582015416.jpg" width="100" /></td>
+                                    <td><img class="lazy" data-src="/lib/front/upload/product/catalog/scivation_xtend_bcaa_90_servings_image_catalog_1582015416.jpg" width="100" /></td>
                                     <td>Cam kết hàng chất lượng 100%, phát hiện hàng giả đền 100 lần, giá rẻ nhất VN, ship toàn quốc nhanh nhất, thanh toán tại nhà, đặt hàng siêu nhanh chỉ mất 20 giây</td>
                                  </tr>
                               </table>
@@ -151,7 +151,7 @@
                                  </tr>
                               </table>
                            </div>
-                           <div style="margin-top: 20px;"><img class="lazy" data-src="front/upload/product/catalog/on_isolate_5lbs___xtend_bcaa_90_servings_image_catalog_1565077755.jpg" style="max-width: 100%;" /></div>
+                           <div style="margin-top: 20px;"><img class="lazy" data-src="/lib/front/upload/product/catalog/on_isolate_5lbs___xtend_bcaa_90_servings_image_catalog_1565077755.jpg" style="max-width: 100%;" /></div>
                            <div class="detail_content">
                               <p><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:#000000"><strong>BCAA 3:1:2</strong> l&agrave; sản phẩm cung cấp c&aacute;c chuỗi amino acid cần thiết m&agrave; cơ thể kh&ocirc;ng tự tổng hợp được. <strong>BCAA</strong> l&agrave; một nguy&ecirc;n liệu gi&uacute;p cơ thể tạo ra c&aacute;c tế b&agrave;o cơ mới, gi&uacute;p x&acirc;y dựng cơ bắp, rất th&iacute;ch hợp với những người tập thể dục thể thao đặc biệt l&agrave; thể h&igrave;nh.</span></span></span></p>
                               <p><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:#000000">Bạn sẽ nhận được rất nhiều lợi &iacute;ch từ <a href="c161/amino-acid.html"><strong>BCAA</strong></a> v&agrave; điều n&agrave;y sẽ được minh chứng bằng kết quả của bạn sau qu&aacute; tr&igrave;nh sử dụng.</span></span></span></p>
@@ -171,7 +171,7 @@
                   </div>
                   <div style="margin-bottom: 20px;"><span itemprop="keywords">Keywords: BCAA 3:1:2</span></div>
                   <div class="cs-flex cs-col-12 p-0 buy-product-last">
-                     <div class="cs-col-12 cs-col-md-2" style="margin-bottom: 10px; padding-top: 10px;"> <img id="img_01" itemprop="image" class="lazy" data-src="front/upload/product/catalog/bcaa-312-30-servings.jpg" style="max-width: 110px; max-height: 110px;" title="BCAA 3:1:2 (30 Servings)" alt="BCAA 3:1:2 (30 Servings)"> </div>
+                     <div class="cs-col-12 cs-col-md-2" style="margin-bottom: 10px; padding-top: 10px;"> <img id="img_01" itemprop="image" class="lazy" data-src="/lib/front/upload/product/catalog/bcaa-312-30-servings.jpg" style="max-width: 110px; max-height: 110px;" title="BCAA 3:1:2 (30 Servings)" alt="BCAA 3:1:2 (30 Servings)"> </div>
                      <div class="cs-col-12 cs-col-md-5" style="margin-bottom: 10px; padding-top: 10px;">
                         <b>
                            <p class="mb-0 font-s-15">BCAA 3:1:2 (30 Servings)</p>
@@ -185,7 +185,7 @@
                <div class="cs-col-lg-3 cs-wrap product-detail-right">
                   <div id="notmobile">
                      <div class="action-cart-product" style="margin-bottom: 10px; text-align: center;">
-                        <p style="padding: 0; margin: 0;"><img class="lazy" data-src="front/upload/product/catalog/true_gain_12lbs___best_bcaa_30_servings_image_catalog_1583306553.jpg" width="100" /></p>
+                        <p style="padding: 0; margin: 0;"><img class="lazy" data-src="/lib/front/upload/product/catalog/true_gain_12lbs___best_bcaa_30_servings_image_catalog_1583306553.jpg" width="100" /></p>
                         <p style="padding: 0; margin: 0;">Cam kết hàng chất lượng 100%, phát hiện hàng giả đền 100 lần, giá tốt nhất, ship toàn quốc nhanh nhất, đặt hàng siêu nhanh chỉ mất 20 giây</p>
                      </div>
                      <!--Liệt kê thuộc tính sản phẩm tại đây--> 
@@ -207,28 +207,28 @@
                      <!-- List View. --> 
                      <div class="list-view">
                         <div class="item cs-flex" style="padding-bottom: 15px;">
-                           <div class="image" style="background: url(front/upload/service/shiper1.png) no-repeat center"> </div>
+                           <div class="image" style="background: url(/lib/front/upload/service/shiper1.png) no-repeat center"> </div>
                            <div class="about">
                               <h3 class="title">Giao hàng toàn quốc</h3>
                               <span class="description">Nhận hàng & thanh toán tiền tại nhà, ship hàng siêu nhanh</span> 
                            </div>
                         </div>
                         <div class="item cs-flex" style="padding-bottom: 15px;">
-                           <div class="image" style="background: url(front/upload/service/change1.png) no-repeat center"> </div>
+                           <div class="image" style="background: url(/lib/front/upload/service/change1.png) no-repeat center"> </div>
                            <div class="about">
                               <h3 class="title">Đổi trả nhanh gọn</h3>
                               <span class="description">Đổi trả hàng trong vòng 30 ngày, chấp nhận bất kỳ lý do</span> 
                            </div>
                         </div>
                         <div class="item cs-flex" style="padding-bottom: 15px;">
-                           <div class="image" style="background: url(front/upload/service/phone.png) no-repeat center"> </div>
+                           <div class="image" style="background: url(/lib/front/upload/service/phone.png) no-repeat center"> </div>
                            <div class="about">
                               <h3 class="title">Tư vấn nhiệt tình</h3>
                               <span class="description">Đội ngũ chuyên viên tư vấn có kiến thức chuẩn và body đẹp</span> 
                            </div>
                         </div>
                         <div class="item cs-flex" style="padding-bottom: 15px;">
-                           <div class="image" style="background: url(front/upload/service/gift-icon.png) no-repeat center"> </div>
+                           <div class="image" style="background: url(/lib/front/upload/service/gift-icon.png) no-repeat center"> </div>
                            <div class="about">
                               <h3 class="title">Giá tốt kèm quà tặng</h3>
                               <span class="description">Nhiều chương trình giảm giá, tặng quà cực giá trị</span> 
@@ -239,8 +239,8 @@
                   </div>
                   <div class="nutrition_facts">
                      <p><b style="color: teal;">BẢNG THÀNH PHẦN</b></p>
-                     <div class="content-nutrition-facts" style="margin-top: -7px;"><a href="front/front/upload/product/nutrition_facts/bcaa_3_1_2__30_servings__nutrition_facts_1563181992.jpg" target="_blank"><img width="100%" src="front/upload/product/nutrition_facts/bcaa_3_1_2__30_servings__nutrition_facts_1563181992.jpg" /></a></div>
-                     <p style="text-align: center; padding: 5px; margin: 0; background: #d0d0d0;"><a href="front/upload/product/nutrition_facts/bcaa_3_1_2__30_servings__nutrition_facts_1563181992.jpg" target="_blank">Zoom to hơn</a></p>
+                     <div class="content-nutrition-facts" style="margin-top: -7px;"><a href="/lib/front//lib/front/upload/product/nutrition_facts/bcaa_3_1_2__30_servings__nutrition_facts_1563181992.jpg" target="_blank"><img width="100%" src="/lib/front/upload/product/nutrition_facts/bcaa_3_1_2__30_servings__nutrition_facts_1563181992.jpg" /></a></div>
+                     <p style="text-align: center; padding: 5px; margin: 0; background: #d0d0d0;"><a href="/lib/front/upload/product/nutrition_facts/bcaa_3_1_2__30_servings__nutrition_facts_1563181992.jpg" target="_blank">Zoom to hơn</a></p>
                   </div>
                   <div id="product_interest">
                      <h3 class="title-cm mt-20 mb-20">
@@ -248,7 +248,7 @@
                         <div class="title-line"></div>
                      </h3>
                      <div class="box-product-mini index mb-20">
-                        <a href="alpha-amino-30-serving.html" class="image"> <img class="lazy" data-src="front/upload/product/catalog/alpha_amino_30_serving_image_catalog_1571041916.jpg" alt="Alpha Amino 30 serving" title="Alpha Amino 30 serving"> </a> 
+                        <a href="alpha-amino-30-serving.html" class="image"> <img class="lazy" data-src="/lib/front/upload/product/catalog/alpha_amino_30_serving_image_catalog_1571041916.jpg" alt="Alpha Amino 30 serving" title="Alpha Amino 30 serving"> </a> 
                         <div class="about pl-10">
                            <a href="alpha-amino-30-serving.html" class="title mt-0 p-0 mb-0 cm-font">Alpha Amino 30 serving</a> 
                            <div class="status">
@@ -258,7 +258,7 @@
                         </div>
                      </div>
                      <div class="box-product-mini index mb-20">
-                        <a href="nutrex-eaa-hydration-30-servings.html" class="image"> <img class="lazy" data-src="front/upload/product/catalog/nutrex_eaa_hydration_30_servings_image_catalog_1569321987.jpg" alt="Nutrex EAA Hydration 30 servings" title="Nutrex EAA Hydration 30 servings"> </a> 
+                        <a href="nutrex-eaa-hydration-30-servings.html" class="image"> <img class="lazy" data-src="/lib/front/upload/product/catalog/nutrex_eaa_hydration_30_servings_image_catalog_1569321987.jpg" alt="Nutrex EAA Hydration 30 servings" title="Nutrex EAA Hydration 30 servings"> </a> 
                         <div class="about pl-10">
                            <a href="nutrex-eaa-hydration-30-servings.html" class="title mt-0 p-0 mb-0 cm-font">Nutrex EAA Hydration 30 servings</a> 
                            <div class="status">
@@ -268,7 +268,7 @@
                         </div>
                      </div>
                      <div class="box-product-mini index mb-20">
-                        <a href="musclepharm-bcaa-60-servings.html" class="image"> <img class="lazy" data-src="front/upload/product/catalog/musclepharm_bcaa_60_servings_image_catalog_1562669350.jpg" alt="MusclePharm BCAA 60 servings" title="MusclePharm BCAA 60 servings"> </a> 
+                        <a href="musclepharm-bcaa-60-servings.html" class="image"> <img class="lazy" data-src="/lib/front/upload/product/catalog/musclepharm_bcaa_60_servings_image_catalog_1562669350.jpg" alt="MusclePharm BCAA 60 servings" title="MusclePharm BCAA 60 servings"> </a> 
                         <div class="about pl-10">
                            <a href="musclepharm-bcaa-60-servings.html" class="title mt-0 p-0 mb-0 cm-font">MusclePharm BCAA 60 servings</a> 
                            <div class="status">
@@ -278,7 +278,7 @@
                         </div>
                      </div>
                      <div class="box-product-mini index mb-20">
-                        <a href="best-bcaa-14-servings.html" class="image"> <img class="lazy" data-src="front/upload/product/catalog/best_bcaa__14_servings__image_catalog_1562925626.jpg" alt="Best BCAA 14 servings" title="Best BCAA 14 servings"> </a> 
+                        <a href="best-bcaa-14-servings.html" class="image"> <img class="lazy" data-src="/lib/front/upload/product/catalog/best_bcaa__14_servings__image_catalog_1562925626.jpg" alt="Best BCAA 14 servings" title="Best BCAA 14 servings"> </a> 
                         <div class="about pl-10">
                            <a href="best-bcaa-14-servings.html" class="title mt-0 p-0 mb-0 cm-font">Best BCAA 14 servings</a> 
                            <div class="status">
@@ -288,7 +288,7 @@
                         </div>
                      </div>
                      <div class="box-product-mini index mb-20">
-                        <a href="mutant-bcaa-30-servings.html" class="image"> <img class="lazy" data-src="front/upload/product/catalog/mutant_bcaa_30_servings_image_catalog_1562402874.jpg" alt="Mutant BCAA 30 servings" title="Mutant BCAA 30 servings"> </a> 
+                        <a href="mutant-bcaa-30-servings.html" class="image"> <img class="lazy" data-src="/lib/front/upload/product/catalog/mutant_bcaa_30_servings_image_catalog_1562402874.jpg" alt="Mutant BCAA 30 servings" title="Mutant BCAA 30 servings"> </a> 
                         <div class="about pl-10">
                            <a href="mutant-bcaa-30-servings.html" class="title mt-0 p-0 mb-0 cm-font">Mutant BCAA 30 servings</a> 
                            <div class="status">
@@ -310,103 +310,103 @@
          <div class="title-nav"> <a href="javascript:;" class="hover-color">SẢN PHẨM LIÊN QUAN</a> </div>
          <div class="slider-magic cs-flex" numColumn='[ {"num": 5, "width": 900}, {"num": 3, "width": 500}, {"num": 2, "width": 400}, {"num": 2, "width": 0} ]' isPager="false" classItems="product">
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="bpi-sports-best-bcaa-30-servings-846.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/bpi-sports-best-bcaa-30-servings.jpg" alt="BPI Sports Best BCAA 30 Servings" title="BPI Sports Best BCAA 30 Servings"> </a> <a href="bpi-sports-best-bcaa-30-servings-846.html" class="title">BPI Sports Best BCAA 30 Servings</a> 
+               <a href="bpi-sports-best-bcaa-30-servings-846.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/bpi-sports-best-bcaa-30-servings.jpg" alt="BPI Sports Best BCAA 30 Servings" title="BPI Sports Best BCAA 30 Servings"> </a> <a href="bpi-sports-best-bcaa-30-servings-846.html" class="title">BPI Sports Best BCAA 30 Servings</a> 
                <div class="star" total="5" point="5"></div>
                <div class="price"> <span class="main">550.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="scivation-xtend-bcaa-90-servings-807.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/scivation_xtend_bcaa_90_servings_image_catalog_1582015416.jpg" alt="Scivation Xtend BCAA 90 servings" title="Scivation Xtend BCAA 90 servings"> </a> <a href="scivation-xtend-bcaa-90-servings-807.html" class="title">Scivation Xtend BCAA 90 servings</a> 
+               <a href="scivation-xtend-bcaa-90-servings-807.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/scivation_xtend_bcaa_90_servings_image_catalog_1582015416.jpg" alt="Scivation Xtend BCAA 90 servings" title="Scivation Xtend BCAA 90 servings"> </a> <a href="scivation-xtend-bcaa-90-servings-807.html" class="title">Scivation Xtend BCAA 90 servings</a> 
                <div class="star" total="5" point="5"></div>
                <div class="price"> <span class="main">1.290.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="bpi-sports-best-bcaa-60-servings-1128.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/bpi_sports_best_bcaa_60_servings_image_catalog_1582015984.jpg" alt="BPI Sports Best BCAA 60 Servings" title="BPI Sports Best BCAA 60 Servings"> </a> <a href="bpi-sports-best-bcaa-60-servings-1128.html" class="title">BPI Sports Best BCAA 60 Servings</a> 
+               <a href="bpi-sports-best-bcaa-60-servings-1128.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/bpi_sports_best_bcaa_60_servings_image_catalog_1582015984.jpg" alt="BPI Sports Best BCAA 60 Servings" title="BPI Sports Best BCAA 60 Servings"> </a> <a href="bpi-sports-best-bcaa-60-servings-1128.html" class="title">BPI Sports Best BCAA 60 Servings</a> 
                <div class="star" total="5" point="5"></div>
                <div class="price"> <span class="main">790.000đ</span> <span class="old">850.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="myprotein-bcaa-2-1-1-500g-100-servings-1117.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/myprotein-bcaa-2-1-1-500g-100-servings.jpg" alt="MyProtein BCAA 500g 100 servings" title="MyProtein BCAA 500g 100 servings"> </a> <a href="myprotein-bcaa-2-1-1-500g-100-servings-1117.html" class="title">MyProtein BCAA 500g 100 servings</a> 
+               <a href="myprotein-bcaa-2-1-1-500g-100-servings-1117.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/myprotein-bcaa-2-1-1-500g-100-servings.jpg" alt="MyProtein BCAA 500g 100 servings" title="MyProtein BCAA 500g 100 servings"> </a> <a href="myprotein-bcaa-2-1-1-500g-100-servings-1117.html" class="title">MyProtein BCAA 500g 100 servings</a> 
                <div class="star" total="5" point="5"></div>
                <div class="price"> <span class="main">650.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="scivation-xtend-bcaa-30-servings-640.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/scivation_xtend_bcaa_30_servings_image_catalog_1577958591.jpg" alt="Scivation Xtend BCAA 30 servings" title="Scivation Xtend BCAA 30 servings"> </a> <a href="scivation-xtend-bcaa-30-servings-640.html" class="title">Scivation Xtend BCAA 30 servings</a> 
+               <a href="scivation-xtend-bcaa-30-servings-640.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/scivation_xtend_bcaa_30_servings_image_catalog_1577958591.jpg" alt="Scivation Xtend BCAA 30 servings" title="Scivation Xtend BCAA 30 servings"> </a> <a href="scivation-xtend-bcaa-30-servings-640.html" class="title">Scivation Xtend BCAA 30 servings</a> 
                <div class="star" total="5" point="5"></div>
                <div class="price"> <span class="main">590.000đ</span> <span class="old">650.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="best-bcaa-shredded-25-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/best-bcaa-shredded-25-servings.jpg" alt="Best bcaa shredded 25 servings" title="Best bcaa shredded 25 servings"> </a> <a href="best-bcaa-shredded-25-servings.html" class="title">Best bcaa shredded 25 servings</a> 
+               <a href="best-bcaa-shredded-25-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/best-bcaa-shredded-25-servings.jpg" alt="Best bcaa shredded 25 servings" title="Best bcaa shredded 25 servings"> </a> <a href="best-bcaa-shredded-25-servings.html" class="title">Best bcaa shredded 25 servings</a> 
                <div class="star" total="5" point="5"></div>
                <div class="price"> <span class="main">550.000đ</span> <span class="old">590.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
                <div class="label-deal-product">-14%</div>
                <div class="time-deal-product"time="383153"> <span><i class="far fa-clock"></i> <span class="display-time"></span></span> </div>
-               <a href="anabolic-state-bcaa-70-servings-1241.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/anabolic_state_70_servings_image_catalog_1583374330.jpg" alt="Anabolic State 70 servings" title="Anabolic State 70 servings"> </a> <a href="anabolic-state-bcaa-70-servings-1241.html" class="title">Anabolic State 70 servings</a> 
+               <a href="anabolic-state-bcaa-70-servings-1241.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/anabolic_state_70_servings_image_catalog_1583374330.jpg" alt="Anabolic State 70 servings" title="Anabolic State 70 servings"> </a> <a href="anabolic-state-bcaa-70-servings-1241.html" class="title">Anabolic State 70 servings</a> 
                <div class="star" total="5" point="5"></div>
                <div class="price"> <span class="main">990.000đ</span> <span class="old">1.150.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="myprotein-bcaa-1kg-200-servings--1083.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/myprotein_bcaa_1kg__200_servings__image_catalog_1563263041.jpg" alt="MyProtein BCAA 1kg (200 servings)" title="MyProtein BCAA 1kg (200 servings)"> </a> <a href="myprotein-bcaa-1kg-200-servings--1083.html" class="title">MyProtein BCAA 1kg (200 servings)</a> 
+               <a href="myprotein-bcaa-1kg-200-servings--1083.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/myprotein_bcaa_1kg__200_servings__image_catalog_1563263041.jpg" alt="MyProtein BCAA 1kg (200 servings)" title="MyProtein BCAA 1kg (200 servings)"> </a> <a href="myprotein-bcaa-1kg-200-servings--1083.html" class="title">MyProtein BCAA 1kg (200 servings)</a> 
                <div class="star" total="5" point="5"></div>
                <div class="price"> <span class="main">1.090.000đ</span> <span class="old">1.150.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="mutant-bcaa-90-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/mutant_bcaa_90_servings_image_catalog_1563186691.jpg" alt="Mutant BCAA 90 servings" title="Mutant BCAA 90 servings"> </a> <a href="mutant-bcaa-90-servings.html" class="title">Mutant BCAA 90 servings</a> 
+               <a href="mutant-bcaa-90-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/mutant_bcaa_90_servings_image_catalog_1563186691.jpg" alt="Mutant BCAA 90 servings" title="Mutant BCAA 90 servings"> </a> <a href="mutant-bcaa-90-servings.html" class="title">Mutant BCAA 90 servings</a> 
                <div class="star" total="5" point="5"></div>
                <div class="price"> <span class="main">1.250.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
                <div class="label-deal-product">-6%</div>
                <div class="time-deal-product"time="383153"> <span><i class="far fa-clock"></i> <span class="display-time"></span></span> </div>
-               <a href="anabolic-state-bcaa-30-servings-1240.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/anabolic_state_30_servings_image_catalog_1583375364.jpg" alt="Anabolic State 30 servings" title="Anabolic State 30 servings"> </a> <a href="anabolic-state-bcaa-30-servings-1240.html" class="title">Anabolic State 30 servings</a> 
+               <a href="anabolic-state-bcaa-30-servings-1240.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/anabolic_state_30_servings_image_catalog_1583375364.jpg" alt="Anabolic State 30 servings" title="Anabolic State 30 servings"> </a> <a href="anabolic-state-bcaa-30-servings-1240.html" class="title">Anabolic State 30 servings</a> 
                <div class="star" total="5" point="5"></div>
                <div class="price"> <span class="main">650.000đ</span> <span class="old">690.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="xtend-energy-bcaas-30-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/xtend-energy-bcaas-30-servings.jpg" alt="Xtend Energy BCAAs 30 servings" title="Xtend Energy BCAAs 30 servings"> </a> <a href="xtend-energy-bcaas-30-servings.html" class="title">Xtend Energy BCAAs 30 servings</a> 
+               <a href="xtend-energy-bcaas-30-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/xtend-energy-bcaas-30-servings.jpg" alt="Xtend Energy BCAAs 30 servings" title="Xtend Energy BCAAs 30 servings"> </a> <a href="xtend-energy-bcaas-30-servings.html" class="title">Xtend Energy BCAAs 30 servings</a> 
                <div class="star" total="5" point="5"></div>
                <div class="price"> <span class="main">590.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="mutant-bcaa-30-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/mutant_bcaa_30_servings_image_catalog_1562402874.jpg" alt="Mutant BCAA 30 servings" title="Mutant BCAA 30 servings"> </a> <a href="mutant-bcaa-30-servings.html" class="title">Mutant BCAA 30 servings</a> 
+               <a href="mutant-bcaa-30-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/mutant_bcaa_30_servings_image_catalog_1562402874.jpg" alt="Mutant BCAA 30 servings" title="Mutant BCAA 30 servings"> </a> <a href="mutant-bcaa-30-servings.html" class="title">Mutant BCAA 30 servings</a> 
                <div class="star" total="5" point="3"></div>
                <div class="price"> <span class="main">600.000đ</span> <span class="old">700.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="optimum-bcaa-1000-400-vien-693.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/optimum-bcaa-1000-400-vien.jpg" alt="Optimum BCAA 1000 400 Viên" title="Optimum BCAA 1000 400 Viên"> </a> <a href="optimum-bcaa-1000-400-vien-693.html" class="title">Optimum BCAA 1000 400 Viên</a> 
+               <a href="optimum-bcaa-1000-400-vien-693.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/optimum-bcaa-1000-400-vien.jpg" alt="Optimum BCAA 1000 400 Viên" title="Optimum BCAA 1000 400 Viên"> </a> <a href="optimum-bcaa-1000-400-vien-693.html" class="title">Optimum BCAA 1000 400 Viên</a> 
                <div class="star" total="5" point="5"></div>
                <div class="price"> <span class="main">850.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="optimum-bcaa-1000-200-vien-337.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/optimum-bcaa-1000-200-vien.jpg" alt="Optimum BCAA 1000 200 viên" title="Optimum BCAA 1000 200 viên"> </a> <a href="optimum-bcaa-1000-200-vien-337.html" class="title">Optimum BCAA 1000 200 viên</a> 
+               <a href="optimum-bcaa-1000-200-vien-337.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/optimum-bcaa-1000-200-vien.jpg" alt="Optimum BCAA 1000 200 viên" title="Optimum BCAA 1000 200 viên"> </a> <a href="optimum-bcaa-1000-200-vien-337.html" class="title">Optimum BCAA 1000 200 viên</a> 
                <div class="star" total="5" point="5"></div>
                <div class="price"> <span class="main">500.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
                <div class="label-deal-product">-12%</div>
                <div class="time-deal-product"time="383153"> <span><i class="far fa-clock"></i> <span class="display-time"></span></span> </div>
-               <a href="nutrex-eaa-hydration-30-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/nutrex_eaa_hydration_30_servings_image_catalog_1569321987.jpg" alt="Nutrex EAA Hydration 30 servings" title="Nutrex EAA Hydration 30 servings"> </a> <a href="nutrex-eaa-hydration-30-servings.html" class="title">Nutrex EAA Hydration 30 servings</a> 
+               <a href="nutrex-eaa-hydration-30-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/nutrex_eaa_hydration_30_servings_image_catalog_1569321987.jpg" alt="Nutrex EAA Hydration 30 servings" title="Nutrex EAA Hydration 30 servings"> </a> <a href="nutrex-eaa-hydration-30-servings.html" class="title">Nutrex EAA Hydration 30 servings</a> 
                <div class="star" total="5" point="0"></div>
                <div class="price"> <span class="main">750.000đ</span> <span class="old">850.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="ibcaa-gonutrition-1kg-200-serving--1466.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/ibcaa-gonutrition-1kg-200-serving.jpg" alt="iBcaa GoNutrition 1kg (200 serving)" title="iBcaa GoNutrition 1kg (200 serving)"> </a> <a href="ibcaa-gonutrition-1kg-200-serving--1466.html" class="title">iBcaa GoNutrition 1kg (200 serving)</a> 
+               <a href="ibcaa-gonutrition-1kg-200-serving--1466.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/ibcaa-gonutrition-1kg-200-serving.jpg" alt="iBcaa GoNutrition 1kg (200 serving)" title="iBcaa GoNutrition 1kg (200 serving)"> </a> <a href="ibcaa-gonutrition-1kg-200-serving--1466.html" class="title">iBcaa GoNutrition 1kg (200 serving)</a> 
                <div class="star" total="5" point="5"></div>
                <div class="price"> <span class="main">1.090.000đ</span> <span class="old">1.150.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="best-bcaa-14-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/best_bcaa__14_servings__image_catalog_1562925626.jpg" alt="Best BCAA 14 servings" title="Best BCAA 14 servings"> </a> <a href="best-bcaa-14-servings.html" class="title">Best BCAA 14 servings</a> 
+               <a href="best-bcaa-14-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/best_bcaa__14_servings__image_catalog_1562925626.jpg" alt="Best BCAA 14 servings" title="Best BCAA 14 servings"> </a> <a href="best-bcaa-14-servings.html" class="title">Best BCAA 14 servings</a> 
                <div class="star" total="5" point="0"></div>
                <div class="price"> <span class="main">280.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="alpha-amino-30-serving.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/alpha_amino_30_serving_image_catalog_1571041916.jpg" alt="Alpha Amino 30 serving" title="Alpha Amino 30 serving"> </a> <a href="alpha-amino-30-serving.html" class="title">Alpha Amino 30 serving</a> 
+               <a href="alpha-amino-30-serving.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/alpha_amino_30_serving_image_catalog_1571041916.jpg" alt="Alpha Amino 30 serving" title="Alpha Amino 30 serving"> </a> <a href="alpha-amino-30-serving.html" class="title">Alpha Amino 30 serving</a> 
                <div class="star" total="5" point="5"></div>
                <div class="price"> <span class="main">290.000đ</span> <span class="old">550.000đ</span> </div>
             </div>
             <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="musclepharm-bcaa-60-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="front/upload/product/catalog/musclepharm_bcaa_60_servings_image_catalog_1562669350.jpg" alt="MusclePharm BCAA 60 servings" title="MusclePharm BCAA 60 servings"> </a> <a href="musclepharm-bcaa-60-servings.html" class="title">MusclePharm BCAA 60 servings</a> 
+               <a href="musclepharm-bcaa-60-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/musclepharm_bcaa_60_servings_image_catalog_1562669350.jpg" alt="MusclePharm BCAA 60 servings" title="MusclePharm BCAA 60 servings"> </a> <a href="musclepharm-bcaa-60-servings.html" class="title">MusclePharm BCAA 60 servings</a> 
                <div class="star" total="5" point="0"></div>
                <div class="price"> <span class="main">650.000đ</span> </div>
             </div>
@@ -459,67 +459,66 @@
          </form>
       </div>
    </div>
-   <script>var maxHeight = 0;$('.main_effect_content').each(function(){if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }});$('.main_effect_content').height(maxHeight);</script> <script src="front/asset/site/js/scrsnxtproduct13860.js?v=1"></script> <script src="front/asset/site/js/jquery.easing.min.js"></script> <script src="front/asset/site/js/jquery.easy-ticker.js"></script> 
+   
    <div class="session">
       <div class="main-content">
          <div class="title-nav"> <a href="javascript:;" class="hover-color">Sản phẩm bạn đã xem</a> </div>
          <div class="slider-magic cs-flex" numColumn=' [ {"num": 5, "width": 900}, {"num": 3, "width": 500}, {"num": 2, "width": 400}, {"num": 2, "width": 0} ]' isPager="false" classItems="product">
             <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="super-mass-gainer-12lbs-xtend-bcaa-90-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/super_mass_gainer_12lbs___xtend_bcaa_90_servings_image_catalog_1564559625.jpg" alt="Super Mass Gainer 12lbs + Xtend BCAA 90 servings" title="Super Mass Gainer 12lbs + Xtend BCAA 90 servings"> </a> <a href="super-mass-gainer-12lbs-xtend-bcaa-90-servings.html" class="title">Super Mass Gainer 12lbs + Xtend BCAA 90 servings</a> 
+               <a href="super-mass-gainer-12lbs-xtend-bcaa-90-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/super_mass_gainer_12lbs___xtend_bcaa_90_servings_image_catalog_1564559625.jpg" alt="Super Mass Gainer 12lbs + Xtend BCAA 90 servings" title="Super Mass Gainer 12lbs + Xtend BCAA 90 servings"> </a> <a href="super-mass-gainer-12lbs-xtend-bcaa-90-servings.html" class="title">Super Mass Gainer 12lbs + Xtend BCAA 90 servings</a> 
                <div class="star" total="5" point="0"></div>
                <div class="price"> <span class="main">2.450.000đ</span> <span class="old">2.600.000đ</span> </div>
             </div>
             <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="true-gain-12lbs-best-bcaa-30sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/true_gain_12lbs___best_bcaa_30_servings_image_catalog_1583306553.jpg" alt="True Gain 12lbs + Best BCAA 30 servings" title="True Gain 12lbs + Best BCAA 30 servings"> </a> <a href="true-gain-12lbs-best-bcaa-30sers.html" class="title">True Gain 12lbs + Best BCAA 30 servings</a> 
+               <a href="true-gain-12lbs-best-bcaa-30sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/true_gain_12lbs___best_bcaa_30_servings_image_catalog_1583306553.jpg" alt="True Gain 12lbs + Best BCAA 30 servings" title="True Gain 12lbs + Best BCAA 30 servings"> </a> <a href="true-gain-12lbs-best-bcaa-30sers.html" class="title">True Gain 12lbs + Best BCAA 30 servings</a> 
                <div class="star" total="5" point="0"></div>
                <div class="price"> <span class="main">1.640.000đ</span> <span class="old">1.740.000đ</span> </div>
             </div>
             <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="true-gain-12lbs-xtend-bcaa-90sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/true_gainer_12lbs___xtend_bcaa_90sers_image_catalog_1563785432.jpg" alt="True Gain 12lbs + Xtend BCAA 90 servings" title="True Gain 12lbs + Xtend BCAA 90 servings"> </a> <a href="true-gain-12lbs-xtend-bcaa-90sers.html" class="title">True Gain 12lbs + Xtend BCAA 90 servings</a> 
+               <a href="true-gain-12lbs-xtend-bcaa-90sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/true_gainer_12lbs___xtend_bcaa_90sers_image_catalog_1563785432.jpg" alt="True Gain 12lbs + Xtend BCAA 90 servings" title="True Gain 12lbs + Xtend BCAA 90 servings"> </a> <a href="true-gain-12lbs-xtend-bcaa-90sers.html" class="title">True Gain 12lbs + Xtend BCAA 90 servings</a> 
                <div class="star" total="5" point="0"></div>
                <div class="price"> <span class="main">2.240.000đ</span> <span class="old">2.490.000đ</span> </div>
             </div>
             <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="true-gainer-12lbs-alive-mens-energy.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/on_isolate_5lbs___xtend_bcaa_90_servings_image_catalog_1565077755.jpg" alt="ON isolate 5lbs + Xtend BCAA 90 servings" title="ON isolate 5lbs + Xtend BCAA 90 servings"> </a> <a href="true-gainer-12lbs-alive-mens-energy.html" class="title">ON isolate 5lbs + Xtend BCAA 90 servings</a> 
+               <a href="true-gainer-12lbs-alive-mens-energy.html" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/on_isolate_5lbs___xtend_bcaa_90_servings_image_catalog_1565077755.jpg" alt="ON isolate 5lbs + Xtend BCAA 90 servings" title="ON isolate 5lbs + Xtend BCAA 90 servings"> </a> <a href="true-gainer-12lbs-alive-mens-energy.html" class="title">ON isolate 5lbs + Xtend BCAA 90 servings</a> 
                <div class="star" total="5" point="0"></div>
                <div class="price"> <span class="main">2.700.000đ</span> <span class="old">2.950.000đ</span> </div>
             </div>
             <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="whey-gold-standard-2lbs-best-bcaa-30-sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/whey_gold_2lbs___best_bcaa_30_servings_image_catalog_1564712699.png" alt="Whey Gold 2lbs + Best BCAA 30 servings" title="Whey Gold 2lbs + Best BCAA 30 servings"> </a> <a href="whey-gold-standard-2lbs-best-bcaa-30-sers.html" class="title">Whey Gold 2lbs + Best BCAA 30 servings</a> 
+               <a href="whey-gold-standard-2lbs-best-bcaa-30-sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/whey_gold_2lbs___best_bcaa_30_servings_image_catalog_1564712699.png" alt="Whey Gold 2lbs + Best BCAA 30 servings" title="Whey Gold 2lbs + Best BCAA 30 servings"> </a> <a href="whey-gold-standard-2lbs-best-bcaa-30-sers.html" class="title">Whey Gold 2lbs + Best BCAA 30 servings</a> 
                <div class="star" total="5" point="0"></div>
                <div class="price"> <span class="main">1.240.000đ</span> <span class="old">1.340.000đ</span> </div>
             </div>
             <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="whey-gold-2lbs-best-bcaa-60sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/whey_gold_2lbs___best_bcaa_60sers_image_catalog_1564018284.jpg" alt="Whey Gold 2lbs + Best BCAA 60 servings" title="Whey Gold 2lbs + Best BCAA 60 servings"> </a> <a href="whey-gold-2lbs-best-bcaa-60sers.html" class="title">Whey Gold 2lbs + Best BCAA 60 servings</a> 
+               <a href="whey-gold-2lbs-best-bcaa-60sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/whey_gold_2lbs___best_bcaa_60sers_image_catalog_1564018284.jpg" alt="Whey Gold 2lbs + Best BCAA 60 servings" title="Whey Gold 2lbs + Best BCAA 60 servings"> </a> <a href="whey-gold-2lbs-best-bcaa-60sers.html" class="title">Whey Gold 2lbs + Best BCAA 60 servings</a> 
                <div class="star" total="5" point="0"></div>
                <div class="price"> <span class="main">1.480.000đ</span> <span class="old">1.580.000đ</span> </div>
             </div>
             <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="iso-100-5lbs-best-bcaa-30-sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/iso_100_5lbs___best_bcaa_30_sers_image_catalog_1564135786.jpg" alt="Iso 100 5lbs + Best BCAA 30 servings" title="Iso 100 5lbs + Best BCAA 30 servings"> </a> <a href="iso-100-5lbs-best-bcaa-30-sers.html" class="title">Iso 100 5lbs + Best BCAA 30 servings</a> 
+               <a href="iso-100-5lbs-best-bcaa-30-sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/iso_100_5lbs___best_bcaa_30_sers_image_catalog_1564135786.jpg" alt="Iso 100 5lbs + Best BCAA 30 servings" title="Iso 100 5lbs + Best BCAA 30 servings"> </a> <a href="iso-100-5lbs-best-bcaa-30-sers.html" class="title">Iso 100 5lbs + Best BCAA 30 servings</a> 
                <div class="star" total="5" point="0"></div>
                <div class="price"> <span class="main">2.300.000đ</span> <span class="old">2.450.000đ</span> </div>
             </div>
             <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="whey-gold-10lbs-best-bcaa-30sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/whey_gold_10lbs___best_bcaa_30sers_image_catalog_1563963207.jpg" alt="Whey Gold 10lbs + Best BCAA 30 servings" title="Whey Gold 10lbs + Best BCAA 30 servings"> </a> <a href="whey-gold-10lbs-best-bcaa-30sers.html" class="title">Whey Gold 10lbs + Best BCAA 30 servings</a> 
+               <a href="whey-gold-10lbs-best-bcaa-30sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/whey_gold_10lbs___best_bcaa_30sers_image_catalog_1563963207.jpg" alt="Whey Gold 10lbs + Best BCAA 30 servings" title="Whey Gold 10lbs + Best BCAA 30 servings"> </a> <a href="whey-gold-10lbs-best-bcaa-30sers.html" class="title">Whey Gold 10lbs + Best BCAA 30 servings</a> 
                <div class="star" total="5" point="0"></div>
                <div class="price"> <span class="main">3.000.000đ</span> <span class="old">3.200.000đ</span> </div>
             </div>
             <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="musclepharm-bcaa-60-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/musclepharm_bcaa_60_servings_image_catalog_1562669350.jpg" alt="MusclePharm BCAA 60 servings" title="MusclePharm BCAA 60 servings"> </a> <a href="musclepharm-bcaa-60-servings.html" class="title">MusclePharm BCAA 60 servings</a> 
+               <a href="musclepharm-bcaa-60-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/musclepharm_bcaa_60_servings_image_catalog_1562669350.jpg" alt="MusclePharm BCAA 60 servings" title="MusclePharm BCAA 60 servings"> </a> <a href="musclepharm-bcaa-60-servings.html" class="title">MusclePharm BCAA 60 servings</a> 
                <div class="star" total="5" point="0"></div>
                <div class="price"> <span class="main">650.000đ</span> </div>
             </div>
             <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-               <a href="best-bcaa-14-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/best_bcaa__14_servings__image_catalog_1562925626.jpg" alt="Best BCAA 14 servings" title="Best BCAA 14 servings"> </a> <a href="best-bcaa-14-servings.html" class="title">Best BCAA 14 servings</a> 
+               <a href="best-bcaa-14-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/best_bcaa__14_servings__image_catalog_1562925626.jpg" alt="Best BCAA 14 servings" title="Best BCAA 14 servings"> </a> <a href="best-bcaa-14-servings.html" class="title">Best BCAA 14 servings</a> 
                <div class="star" total="5" point="0"></div>
                <div class="price"> <span class="main">280.000đ</span> </div>
             </div>
             <script> 
-               if($(window).width() <= 769) {$(".slider-child-catalog").remove();} 
+               // if($(window).width() <= 769) {$(".slider-child-catalog").remove();} 
             </script> 
          </div>
       </div>
    </div>
   
 </section>
-<?php include('footer.php') ?>

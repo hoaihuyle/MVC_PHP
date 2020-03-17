@@ -1,11 +1,17 @@
 <?php
-class AccountController extends Controller
+class AccountController extends Controller 
 {
     var $service ="Services/accountService.php";
     var $red="admin/accounts/";
     var $redIndex="account/index";
     var $accUser = 'myAccount';
     var $editUser = 'editAccounts';
+    
+    function __construct(){ 
+        parent::__construct();
+        $this->callMenu();
+    }
+
 
     function index()
     {
@@ -74,18 +80,60 @@ class AccountController extends Controller
     function detailUser(){
         require(ROOT . $this->service);
         $accounts = new AccountService(); 
-        $user['user'] = $accounts->checkUser($db, $_SESSION['name_id']); 
-        return $this->set($user);
+        return $accounts->checkUser($db, $_SESSION['name_id']);  
     }
 
     function myUser(){ 
-        $this->detailUser();
+        $user['user'] = $this->detailUser();
+        $this->set($user);
         $this->render($this->accUser);
     }
 
     function editMyUser(){
-        $this->detailUser();
+        $user['user'] = $this->detailUser();
+        $this->set($user);
         $this->render($this->editUser);
+    }
+
+    function postEditUser(){ 
+        require(ROOT . $this->service);
+        $accounts = new AccountService(); 
+        $userOld = $accounts->checkUser($db, $_SESSION['name_id']); 
+        if($_POST){
+            $userNew['name_acco'] = $_POST['name_acco']; 
+            $userNew['address'] = $_POST['address'];
+            if(!password_verify( $_POST['password'],$userOld['password']) && $_POST['password'] != null)
+                $userNew['password'] = password_hash($_POST['password'],PASSWORD_BCRYPT);    
+            // $this->helper->_debug($accounts); 
+            $is_check = $accounts->checkEmail($db,'accounts',$_POST['email']);
+            if($is_check != null && $_POST['email'] != $userOld['email']   ){
+                $error['errEmail'] = 'Email đã tồn tại'; 
+              }else
+            $userNew['email'] = $_POST['email'];  
+            if(!isset($error)){
+                if ($accounts->editAccount($db, $_SESSION['name_id'], $userNew))
+                {  
+                    $user['user'] = $accounts->checkUser($db, $_SESSION['name_id']);
+                    $user['nofitication'] = 'Sửa thành công';
+                    $this->set($user);
+                    $this->render($this->editUser);
+                }
+                else {  
+                    $user['user'] = $accounts->checkUser($db, $_SESSION['name_id']);
+                    $user['nofitication'] = 'Chỉnh sửa không thành công';
+                    $this->set($user);
+                    $this->render($this->editUser);
+                }
+            }
+            else{
+                $user['user'] = $accounts->checkUser($db, $_SESSION['name_id']);
+                $this->set(array_merge($user, $error));
+                $this->render($this->editUser);
+            }
+            
+            
+            
+        } 
     }
 }
 ?>

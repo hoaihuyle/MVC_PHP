@@ -31,28 +31,23 @@
             <!-- valifation types -->
             <!-- ============================================================== -->
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="card">
+                <div class="card"> <?php if(isset($error)) echo $error;  ?>
                     <h5 class="card-header">Validation Types</h5>
                     <div class="card-body">
                         <form id="validationform" data-parsley-validate="" novalidate="" method="POST">
                             <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Tên Công ty</label>
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right ">Tên cài đặt<span class="text-danger">*</span></label>
                                 <div class="col-12 col-sm-8 col-lg-6">
-                                    <input name="name_comp" type="text" required="" value="<?php echo $companyInfo[0]['name_comp'] ?>" class="form-control text-primary">
+                                    <input name="name_menu" type="text" required="" placeholder="Nhập tên Menu" class="form-control text-primary">
                                 </div>
                             </div>
-                            <!-- <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Chọn danh mục sản phẩm</label>
-                                <div class="col-12 col-sm-8 col-lg-6">
-                                </div>
-                            </div> -->
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label text-sm-right">Trạng thái</label>
                                 <div class="col-sm-6">
                                     <div class="custom-controls-stacked">
                                         <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
                                             <label class="be-checkbox custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" <?php echo ($companyInfo[0]['flag']==1)?'':'checked'; ?>><span class="custom-control-label">Hiện</span>
+                                                <input type="checkbox" class="custom-control-input" checked><span class="custom-control-label">Hiện</span>
                                             </label>
                                         </div>
                                     </div>
@@ -60,8 +55,8 @@
                             </div>
                             <div class="form-group row text-right">
                                 <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
-                                    <button type="submit" class="btn btn-space btn-primary">Lưu thay đổi</button>
-                                    <button type="button" onclick="location.href='/company/index';" class="btn btn-space btn-secondary" >Quay về</button>
+                                    <button type="submit" class="btn btn-space btn-primary">Tạo mới</button>
+                                    <button type="button" onclick="location.href='/menu/index';" class="btn btn-space btn-secondary" >Quay về</button>
                                 </div>
                             </div>
 

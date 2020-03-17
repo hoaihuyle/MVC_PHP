@@ -53,14 +53,23 @@ class ProductService extends Service{
 
         return $products;
     }
+
+    function getCate($db,$table, $id){
+        $product = new ProductDAO();
+        return $product->getCate($db,$table, $id);
+    }
+
+    function listsProduct($db, $table, $col, $id){
+        $product = new ProductDAO();
+        return $product->listsProduct($db, $table, $col, $id);
+    }
+}
     /** 
-     * Seach > nhiều điều kiện
+     * Seach > nhi?u di?u ki?n
      */
     public function  fetchsql($db,$cate_id,$comp_id){
          $product = new ProductDAO();
          $products =  $product-> fetchsql($db,$cate_id,$comp_id);
          return $products;
     } 
-}
-
 ?>

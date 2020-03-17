@@ -6,6 +6,12 @@ class signupController extends Controller
     var $index = '/';
     var $signup = '/signup'; 
  
+    function __construct()
+    {
+        parent::__construct();
+        $this->callMenu();
+    }
+
     function index()
     {   
         $this->render("signup");
@@ -14,9 +20,9 @@ class signupController extends Controller
     function postRegister(){
       require(ROOT.$this->regis);
       $register = new registerService();
-      if(isset($_POST)){
+      if(isset($_POST)){ 
           if (empty($_POST["name_acco"])) {
-            $error['name_acco'] = "Họ tên khách hàng không được để trống";
+            $error['name_acco'] = "Họ tên khách hàng không được để trống"; 
           } else {
             $request['name_acco'] = $_POST["name_acco"];
           }
@@ -28,38 +34,60 @@ class signupController extends Controller
             //Check isset phone
             $is_check = $register->checkPhone($db, 'accounts',$_POST['phone']);
             if($is_check != null){
-              $error['phone'] = 'Số điện thoại đã tồn tại';
+              $error['phone'] = 'Số điện thoại đã tồn tại'; 
             }
             $request['phone'] = $_POST['phone'];
           }
 
+          if(empty($_POST['email'])){
+            $error['email'] = 'Email không được để trống'; 
+          }
+          else{
+            //Check isset phone
+            $is_check = $register->checkEmail($db,'accounts',$_POST['email']);
+            if($is_check != null){
+              $error['email'] = 'Email đã tồn tại'; 
+            }
+            $request['email'] = $_POST['email'];
+          }
+
           if (empty($_POST["password"])) {
             $error['password'] = "Password không được để trống";
-          } else {
+          } 
+          else {
             $request['password'] = password_hash($_POST["password"],PASSWORD_BCRYPT);
           }
 
           if(empty($_POST['address'])){
-            $error['address'] = 'Địa chỉ không được để trống';
+            $error['address'] = 'Địa chỉ không được để trống'; 
           }
           else {
             $request['address'] = $_POST['address'];
           }
+          if($_POST != null){
+            $val = [
+              'val_name' => $_POST['name_acco'],
+              'val_phone' => $_POST['phone'],
+              'val_email' => $_POST['email'],
+              'val_address' => $_POST['address'],
+            ];
+          }
+          else{$val = [];}
           $request['role'] = 2;
           if(empty($error)){
             $insert = $register->create($db, 'accounts', $request);
             if($insert>0){
-              $_SESSION['success'] = 'Tạo tài khoản thành công';
-              header('location:' . $this->index);
+
+              echo "<script>alert('Đăng ký thành công, giờ đây bạn có thể đăng nhập!!'); location=' /'</script> ";
             }
             else {
               $_SESSION['error']="Thêm mới thất bại";
-              $this->set($error);
+              $this->set(array_merge($error, $val));
               $this->render('/signup');
             }
           }
           else{
-              $this->set($error);
+              $this->set(array_merge($val, $error));
               $this->render('/signup');
           }
 
@@ -96,13 +124,14 @@ class signupController extends Controller
                   header("Location: /"); 
               }
               else {
-                  $error['errors'] ='Bạn không có quyền đăng nhập';
-                  $this->set($error);
+                  $error['errors'] ='Sai tên tài khoản hoặc mật khẩu';
+                  $this->set($error, $request);
                   $this->render('/signup');
               }
           }
           else{
-              $this->set($error);
+              $error['errors'] ='Bạn không có quyền đăng nhập';
+              $this->set($error,$request);
               $this->render('/signup');
           }
 

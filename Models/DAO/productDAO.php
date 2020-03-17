@@ -57,5 +57,11 @@ class ProductDAO extends Model
         return $db->delete('products', $id, 'id_prod'); 
     }
  
+    public function getCate($db, $table, $id){
+        return $db->fetchWhere($table, $id);
+    }
+    public function listsProduct($db, $table, $col, $id){
+        return $db->fetchByCol($table, $col, $id);
+    }
 }
 ?>
