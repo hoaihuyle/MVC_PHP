@@ -42,5 +42,8 @@ class ProductDAO extends Model
     public function listsProduct($db, $table, $col, $id){
         return $db->fetchByCol($table, $col, $id);
     }
+    public function fetchByCateID($db, $col, $id){
+        return $db->fetchByCol('categories', $col,$id);
+    }
 }
 ?>

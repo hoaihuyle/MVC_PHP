@@ -63,6 +63,17 @@ class ProductService extends Service{
         $product = new ProductDAO();
         return $product->listsProduct($db, $table, $col, $id);
     }
+
+     /** 
+     * List category by ID 
+     * @id_cate 
+     */
+    function fetchByCateID($db, $id){
+        $category = new CategoryDAO();
+        $categories =  $category->fetchByCateID($db, 'id_cate', $id); 
+
+        return $categories;
+    }
 }
 
 ?>
