@@ -321,6 +321,12 @@ $db = new Database();
         }
 
         //Total là tổng số bản ghi, row số bảng ghi trong 1 trang
+        /*
+         * total: tổng số trang
+         * page: trang hiện tại
+         * row: số bảng ghi cần lấy ra
+         *
+         * */
         public  function fetchJones($table,$sql,$total = 1,$page,$row ,$pagi = true )
         {
             
