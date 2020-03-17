@@ -382,10 +382,12 @@
               <img src="<?php echo $Cate['image'] ?>" alt="Pre-workout" title="Pre-workout" class="image">
               <?php endif ?>
             </div>
+
 						<div class="category-cms">
 							<h1><?php echo $Cate['title_cate'] ?></h1>
-							<p class="alert alert-success"><?php echo $Cate['cms'] ?></p>
+							<p class="<?php if(isset($Cate['cms'])): ?> alert alert-success <?php endif ?>"><?php echo $Cate['cms'] ?></p>
 						</div>
+
 					</div>
 					<div class="page-title-wrapper">
 						<h1 class="page-title" id="page-title-heading" aria-labelledby="page-title-heading toolbar-amount">
@@ -417,7 +419,7 @@
                     <div class="time-deal-product" time="7015"> <span><i class="far fa-clock"></i> <span class="display-time">01:56:56</span></span>
                     </div>
                     <?php endif ?>
-                  <a href="/bpi-iso-hd-5lbs-1056.html" class="image cs-flex flex-align-center flex-content-center" style="width:255px; height: 255px; display: inline-block; padding: 10px">
+                  <a href="/home/product/<?php echo $p['id_prod'] ?>" class="image cs-flex flex-align-center flex-content-center" style="width:255px; height: 255px; display: inline-block; padding: 10px">
                     <div class="pane-tool-button cs-flex">
                       <button class="pr-10 pl-10 mr-5">Xem chi tiết</button>
                       <button class="mr-5 btn-popup-detail" smell="2" current="/whey-protein-blend" base="/" product="83"><i class="fas fa-eye"></i>
@@ -426,7 +428,7 @@
                       </button>
                     </div>
                     <img class="lazy" alt="<?php echo $p['name_prod'] ?>" title="<?php echo $p['name_prod'] ?>" src="/uploads/products/<?php echo $p['image'] ?>" style="">
-                  </a> <a href="/bpi-iso-hd-5lbs-1056.html" class="title"><?php echo $p['name_prod'] ?></a>  <span style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;"><?php echo $p['uses_prod'] ?></span> 
+                  </a> <a href="/home/product/<?php echo $p['id_prod'] ?>" class="title"><?php echo $p['name_prod'] ?></a>  <span style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;"><?php echo $p['uses_prod'] ?></span>
                   <div class="star" total="5" point="5"><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i>
                   </div>
                   <div class="price"> <span class="main"><?php echo $p['price'] ?></span>  <span class="old"><?php echo $p['price_manu'] ?></span> 

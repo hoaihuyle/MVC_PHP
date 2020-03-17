@@ -31,7 +31,15 @@ class HomeController extends Controller
 
     function product($id){
         require(ROOT . $this->service);
-        $product = new ProductService(); 
+        $product = new ProductService();  
+        $prod['prod'] = $product->findProduct($db,$id);
+       //  $prod['cate'] = $product->fetchByCateID($db, $prod['prod'][0]['cate_id']);
+
+
+       // $this->helper->_debug($prod);
+
+       // die();
+        $this->set($prod);
         $this->render('product_detail');
     }
 }

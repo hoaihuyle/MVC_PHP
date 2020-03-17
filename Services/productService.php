@@ -64,11 +64,21 @@ class ProductService extends Service{
         return $product->listsProduct($db, $table, $col, $id);
     }
 
+     /** 
+     * List category by ID 
+     * @id_cate 
+     */
+    function fetchByCateID($db, $id){
+        $category = new CategoryDAO();
+        $categories =  $category->fetchByCateID($db, 'id_cate', $id); 
+
+        return $categories;
+    }
     function listsProductPagi($db, $table, $col, $id, $page, $total, $pagi){
         $product = new ProductDAO();
         $sql ="SELECT * FROM {$table} as tb WHERE $col = $id";
         return $product->listsProductPagi($db, $sql, $page, $total, $pagi);
-    }
+    
 }
 
 ?>
