@@ -1,4 +1,3 @@
-
 <section id="'detail" >
    
    <form id="submit-product" action="" method="post">
@@ -7,7 +6,7 @@
             <div class="cs-flex">
                <div class="cs-flex cs-col-lg-9 cs-wrap product-detail-left">
                   <div class="cs-col-lg-5 left-child">
-                     <div class="show-image"> <img id="img_01" class="lazy" data-src="/lib/front/upload/product/catalog/scivation_xtend_bcaa_90_servings_image_catalog_1582015416.jpg" title="BCAA 3:1:2 (30 Servings)" alt="BCAA 3:1:2 (30 Servings)"> </div>
+                     <div class="show-image"> <img id="img_01" class="lazy" data-src="/lib/front/upload/product/catalog/scivation_xtend_bcaa_90_servings_image_catalog_1582015416.jpg" title="<?php echo $prod[0]['name_prod'] ?>" alt="<?php echo $prod[0]['name_prod'] ?>"> </div>
                      <div class="cs-flex flex-content-center inline" style="margin-top: 10px;"> <span style="font-size: 13px;">Like hoặc Share nếu bạn thích sp này</span> </div>
                      <div class="cs-flex flex-content-center inline" style="margin: 5px 0 0 0;">
                         <div class="cs-flex mb-10">
@@ -24,7 +23,7 @@
                   </div>
                   <div class="cs-col-lg-7 mb-20 right-child">
                      <div class="title-cm mt-0 font-s-20">
-                        <h1 style="font-size: 20px; margin: 0; padding: 0;"><span class="product-name" itemprop="name" id="product_name_r">BCAA 3:1:2 (30 Servings)</span></h1>
+                        <h1 style="font-size: 20px; margin: 0; padding: 0;"><span class="product-name" itemprop="name" id="product_name_r"><?php echo $prod[0]['name_prod'] ?></span></h1>
                      </div>
                      <div class="mt-10 cs-flex" style="width: 100%;">
                         <div style="line-height: 28px;">
@@ -520,5 +519,111 @@
          </div>
       </div>
    </div>
-  
+  <div id="myModalInventory" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content--> 
+         <div class="modal-content">
+            <div class="modal-body"></div>
+         </div>
+      </div>
+   </div>
+   <div class="form-rate" style="overflow: auto;">
+      <div class="form">
+         <button type="button" class="close">x</button> 
+         <h4 style="text-align: left;">Đánh giá sản phẩm này</h4>
+         <form action="" enctype="multipart/form-data" method="post" id="form_rate">
+            <input name="parent_id" type="hidden" value="0"> 
+            <div class="content_parent_rate"></div>
+            <input name="name" id="txt_name" type="text" value="" placeholder="Họ tên của bạn" style="max-width: 300px;"> 
+            <small class="show-error">
+               <p id="name"></p>
+            </small>
+            <input name="phone" id="txt_phone" type="text" placeholder="Số điện thoại" value="" style="max-width: 300px; margin-bottom: 0;"> 
+            <small class="show-error">
+               <p id="phone"></p>
+            </small>
+            <textarea name="content" id="txt_content" rows="5" style="margin-top: 25px; max-width: 600px;" placeholder="Nội dung"></textarea>
+            <small class="show-error">
+               <p id="content" style="margin-bottom: 10px;"></p>
+            </small>
+            <div class="sms_notify_div">
+               <p style="margin: 0; color: #3b5eae; font-size: 14px;">Bạn có muốn hệ thống SMS thông báo cho bạn khi có người trả lời bạn không?</p>
+               <p style="margin: 0"> <input type="radio" style="width: auto;" id="sms_notify_y" name="sms_notify" value="1" /> <label for="sms_notify_y">Có</label> <input type="radio" style="width: auto;" id="sms_notify_n" name="sms_notify" value="2" /> <label for="sms_notify_n">Không</label> </p>
+               <small class="show-error">
+                  <p id="sms_notify"></p>
+               </small>
+            </div>
+            <p> 
+            <p style="margin-bottom: 5px; font-size: 14px;">Mời bạn đánh giá (1 - 5 sao) sản phẩm này giúp chúng tôi</p>
+            <div class="star star-hover mt-0" total="5" point="0"></div>
+            <input name="rate" type="hidden" value="0"> <input name="page" id="current_page" type="hidden" value=""> 
+            <small class="show-error">
+               <p id="rate"></p>
+            </small>
+            </p> <button type="submit">Gửi ngay</button> 
+            <p>Xin chân thành cảm ơn!</p>
+         </form>
+      </div>
+   </div>
+   <script>var maxHeight = 0;$('.main_effect_content').each(function(){if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }});$('.main_effect_content').height(maxHeight);</script> <script src="front/asset/site/js/scrsnxtproduct13860.js?v=1"></script> <script src="front/asset/site/js/jquery.easing.min.js"></script> <script src="front/asset/site/js/jquery.easy-ticker.js"></script> 
+   <div class="session">
+      <div class="main-content">
+         <div class="title-nav"> <a href="javascript:;" class="hover-color">Sản phẩm bạn đã xem</a> </div>
+         <div class="slider-magic cs-flex" numColumn=' [ {"num": 5, "width": 900}, {"num": 3, "width": 500}, {"num": 2, "width": 400}, {"num": 2, "width": 0} ]' isPager="false" classItems="product">
+            <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
+               <a href="super-mass-gainer-12lbs-xtend-bcaa-90-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/super_mass_gainer_12lbs___xtend_bcaa_90_servings_image_catalog_1564559625.jpg" alt="Super Mass Gainer 12lbs + Xtend BCAA 90 servings" title="Super Mass Gainer 12lbs + Xtend BCAA 90 servings"> </a> <a href="super-mass-gainer-12lbs-xtend-bcaa-90-servings.html" class="title">Super Mass Gainer 12lbs + Xtend BCAA 90 servings</a> 
+               <div class="star" total="5" point="0"></div>
+               <div class="price"> <span class="main">2.450.000đ</span> <span class="old">2.600.000đ</span> </div>
+            </div>
+            <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
+               <a href="true-gain-12lbs-best-bcaa-30sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/true_gain_12lbs___best_bcaa_30_servings_image_catalog_1583306553.jpg" alt="True Gain 12lbs + Best BCAA 30 servings" title="True Gain 12lbs + Best BCAA 30 servings"> </a> <a href="true-gain-12lbs-best-bcaa-30sers.html" class="title">True Gain 12lbs + Best BCAA 30 servings</a> 
+               <div class="star" total="5" point="0"></div>
+               <div class="price"> <span class="main">1.640.000đ</span> <span class="old">1.740.000đ</span> </div>
+            </div>
+            <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
+               <a href="true-gain-12lbs-xtend-bcaa-90sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/true_gainer_12lbs___xtend_bcaa_90sers_image_catalog_1563785432.jpg" alt="True Gain 12lbs + Xtend BCAA 90 servings" title="True Gain 12lbs + Xtend BCAA 90 servings"> </a> <a href="true-gain-12lbs-xtend-bcaa-90sers.html" class="title">True Gain 12lbs + Xtend BCAA 90 servings</a> 
+               <div class="star" total="5" point="0"></div>
+               <div class="price"> <span class="main">2.240.000đ</span> <span class="old">2.490.000đ</span> </div>
+            </div>
+            <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
+               <a href="true-gainer-12lbs-alive-mens-energy.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/on_isolate_5lbs___xtend_bcaa_90_servings_image_catalog_1565077755.jpg" alt="ON isolate 5lbs + Xtend BCAA 90 servings" title="ON isolate 5lbs + Xtend BCAA 90 servings"> </a> <a href="true-gainer-12lbs-alive-mens-energy.html" class="title">ON isolate 5lbs + Xtend BCAA 90 servings</a> 
+               <div class="star" total="5" point="0"></div>
+               <div class="price"> <span class="main">2.700.000đ</span> <span class="old">2.950.000đ</span> </div>
+            </div>
+            <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
+               <a href="whey-gold-standard-2lbs-best-bcaa-30-sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/whey_gold_2lbs___best_bcaa_30_servings_image_catalog_1564712699.png" alt="Whey Gold 2lbs + Best BCAA 30 servings" title="Whey Gold 2lbs + Best BCAA 30 servings"> </a> <a href="whey-gold-standard-2lbs-best-bcaa-30-sers.html" class="title">Whey Gold 2lbs + Best BCAA 30 servings</a> 
+               <div class="star" total="5" point="0"></div>
+               <div class="price"> <span class="main">1.240.000đ</span> <span class="old">1.340.000đ</span> </div>
+            </div>
+            <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
+               <a href="whey-gold-2lbs-best-bcaa-60sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/whey_gold_2lbs___best_bcaa_60sers_image_catalog_1564018284.jpg" alt="Whey Gold 2lbs + Best BCAA 60 servings" title="Whey Gold 2lbs + Best BCAA 60 servings"> </a> <a href="whey-gold-2lbs-best-bcaa-60sers.html" class="title">Whey Gold 2lbs + Best BCAA 60 servings</a> 
+               <div class="star" total="5" point="0"></div>
+               <div class="price"> <span class="main">1.480.000đ</span> <span class="old">1.580.000đ</span> </div>
+            </div>
+            <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
+               <a href="iso-100-5lbs-best-bcaa-30-sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/iso_100_5lbs___best_bcaa_30_sers_image_catalog_1564135786.jpg" alt="Iso 100 5lbs + Best BCAA 30 servings" title="Iso 100 5lbs + Best BCAA 30 servings"> </a> <a href="iso-100-5lbs-best-bcaa-30-sers.html" class="title">Iso 100 5lbs + Best BCAA 30 servings</a> 
+               <div class="star" total="5" point="0"></div>
+               <div class="price"> <span class="main">2.300.000đ</span> <span class="old">2.450.000đ</span> </div>
+            </div>
+            <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
+               <a href="whey-gold-10lbs-best-bcaa-30sers.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/whey_gold_10lbs___best_bcaa_30sers_image_catalog_1563963207.jpg" alt="Whey Gold 10lbs + Best BCAA 30 servings" title="Whey Gold 10lbs + Best BCAA 30 servings"> </a> <a href="whey-gold-10lbs-best-bcaa-30sers.html" class="title">Whey Gold 10lbs + Best BCAA 30 servings</a> 
+               <div class="star" total="5" point="0"></div>
+               <div class="price"> <span class="main">3.000.000đ</span> <span class="old">3.200.000đ</span> </div>
+            </div>
+            <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
+               <a href="musclepharm-bcaa-60-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/musclepharm_bcaa_60_servings_image_catalog_1562669350.jpg" alt="MusclePharm BCAA 60 servings" title="MusclePharm BCAA 60 servings"> </a> <a href="musclepharm-bcaa-60-servings.html" class="title">MusclePharm BCAA 60 servings</a> 
+               <div class="star" total="5" point="0"></div>
+               <div class="price"> <span class="main">650.000đ</span> </div>
+            </div>
+            <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
+               <a href="best-bcaa-14-servings.html" class="image cs-flex flex-align-center flex-content-center"> <img src="front/upload/product/catalog/best_bcaa__14_servings__image_catalog_1562925626.jpg" alt="Best BCAA 14 servings" title="Best BCAA 14 servings"> </a> <a href="best-bcaa-14-servings.html" class="title">Best BCAA 14 servings</a> 
+               <div class="star" total="5" point="0"></div>
+               <div class="price"> <span class="main">280.000đ</span> </div>
+            </div>
+            <script> 
+               if($(window).width() <= 769) {$(".slider-child-catalog").remove();} 
+            </script> 
+         </div>
+      </div>
+   </div>
 </section>
