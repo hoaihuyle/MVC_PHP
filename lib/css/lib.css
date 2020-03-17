@@ -1,0 +1,12 @@
+.active{
+    background-color: #ec2c1e !important;
+    color: white !important;
+}
+
+.disabled{
+  color: currentColor;
+  cursor: not-allowed;
+  opacity: 0.5;
+  text-decoration: none;
+ 
+}

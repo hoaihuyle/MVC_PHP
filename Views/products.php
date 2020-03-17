@@ -454,9 +454,23 @@
                   </div>
                 </div> -->
                 <?php endforeach ?>
-               </div>  
-             <div class="pagination cs-flex"> <strong>1</strong><a href="tim-kiemcadd.html?page=45" data-ci-pagination-page="2">2</a><a href="tim-kiem9907.html?page=90" data-ci-pagination-page="3">3</a><a href="tim-kiemcadd.html?page=45" data-ci-pagination-page="2" rel="next"><i class="fa fa-angle-double-right"></i></a><a href="tim-kiem9d64.html?page=270" data-ci-pagination-page="7">Trang cuối</a> 
-				    </div>
+               </div>
+              <div class="pagination cs-flex">
+                <a class="first" href="<?php echo '/home/category?cate_id='.$Cate['id_cate'].'&page=1'; ?>" data-ci-pagination-page="1">Trang đầu</a>
+
+                <a class="prev" data-ci-pagination-page="2" rel="prev">
+                <i class="fa fa-angle-double-left"></i></a>
+
+                <?php   for ($i=0; $i < $totalPage; $i++) {  ?>
+                  <a class="page-item <?php echo ($activePage == $i+1)?'active':'' ?>" href="<?php echo '/home/category?cate_id='.$Cate['id_cate'].'&page='.($i+1); ?>" data-ci-pagination-page="<?php echo ($i+1); ?>"><?php echo $i+1; ?></a>
+                <?php } ?>
+
+                <a class="next" data-ci-pagination-page="2" rel="next">
+                <i class="fa fa-angle-double-right"></i></a>
+
+                <a class="end" href="<?php echo '/home/category?cate_id='.$Cate['id_cate'].'&page='.$i; ?>" data-ci-pagination-page="<?php echo $totalPag-1; ?>">Trang cuối</a>
+              </div>
+            
 					</div>
 				</div>
 			</div>

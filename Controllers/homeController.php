@@ -11,13 +11,18 @@ class HomeController extends Controller
         $this->render("index");
     }
 
-    function Category($id){
+    function category($id, $pag){
+        $pagi = 9;
+        $page = isset($pag)?$pag:0;
         require(ROOT . $this->service);
         $product = new ProductService(); 
 
         $prod['Cate'] = $product->getCate($db,'categories','id_cate ='.$id);
-        $prod['product'] = $product->listsProduct($db,'products','cate_id', $id);
-
+        $total = count($product->listsProduct($db,'products','cate_id', $id, $page));
+        $prod['product'] = $product->listsProductPagi($db,'products','cate_id', $id, $page, $total, $pagi);
+        $prod['totalPage'] = ceil($total/$pagi);
+        $prod['activePage']=$pag;
+        // die();
         // $this->helper->_debug($prod);
         // die(); 
         $this->set($prod);

@@ -14,6 +14,7 @@
       <link rel="stylesheet" href="/lib/front/asset/site/modal/jquery.modal.min.css" />
       <link rel="stylesheet" href="/lib/front/asset/site/css/stylelist13860.css">
       <link rel="stylesheet" href="/lib/front/asset/site/css/thanh.css">
+      <link rel="stylesheet" href="/lib/css/lib.css">
       <meta http-equiv="content-language" content="vi" />
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
