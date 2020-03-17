@@ -7,15 +7,40 @@ class ProductController extends Controller
     var $red="admin/products/";
     var $redIndex="product/index";
 
-
+    
     function __construct()
     {
         if( $_SESSION['role'] != 0 || !isset($_SESSION['role']) )
             header('location: /');
     }
+    function seach($str, $str2){
+        // var_dump($_GET);
+        require(ROOT . $this->service);
+        $product = new ProductService();
 
+        require(ROOT . $this->serviceComp);
+        $company = new CompanyService();
+
+        require(ROOT . $this->serviceCate);
+        $category = new CategoryService();
+        $d['productInfos'] = $product->fetchsql($db,$str,$str2);  
+        $d['companyInfos'] = $company->listCompany($db);
+        $d['categoryInfos'] = $category->listCategory($db);
+        if(intval($str)==true){
+          $d['cate_id1']=$str;
+        
+         
+        }
+        if(intval($str2)==true){
+          $d['comp_id1']=$str2;
+        }
+        $this->set($d);
+        $this->render($this->red.'index');
+
+    }
     function index()
     {
+
         require(ROOT . $this->service);
         $product = new ProductService();
 
@@ -28,7 +53,7 @@ class ProductController extends Controller
         $d['productInfos'] = $product->listProduct($db);  
         $d['companyInfos'] = $company->listCompany($db);
         $d['categoryInfos'] = $category->listCategory($db);
-        //long
+        
         $this->set($d);
 
         $this->render($this->red.__FUNCTION__);

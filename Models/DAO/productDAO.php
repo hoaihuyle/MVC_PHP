@@ -20,6 +20,27 @@ class ProductDAO extends Model
         }
          
     }
+    public function  fetchsql($db,$cate_id,$comp_id){
+         
+         $sql="SELECT * FROM products WHERE ";    
+        if($cate_id==0&&$comp_id!=0){
+            $sql.="comp_id='".$comp_id."'";
+            return $db->fetchsql($sql);
+        } 
+        if($comp_id==0&&$cate_id!=0){
+            $sql.="cate_id='".$cate_id."'";
+            return $db->fetchsql($sql);
+        }
+        if($comp_id!=0&&$cate_id!=0){
+            $sql.="cate_id='".$cate_id."'".' AND '."comp_id='".$comp_id."'";
+             return $db->fetchsql($sql);
+        }
+        else{
+            $sql.='1';
+            return $db->fetchsql($sql);
+        }
+
+    } 
 
     public function update($db, $id, $data){
 

@@ -132,6 +132,33 @@
             mysqli_query($this->link,$sql) or die (" Lỗi Truy Vấn delete   --- " .mysqli_error($this->link));
             return mysqli_affected_rows($this->link);
         }
+        public function WhereOneTable($table, array $data1,array $conditions){
+            $sql="SELECT * FROM {$table} WHERE ";
+            for($x=0;$x<count($data1);$x++){
+                 $sql.=$data1[$x].'=';
+                for($y=$x;$y<=$x;$y++){
+                    if(count($conditions)-$y!=1){
+                      $sql.=$conditions[$y]."AND";
+                    }
+                    else{
+                         $sql.=$conditions[$y];
+                    }
+                }
+            }
+                echo $sql ;
+                
+                $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn fetchID " .mysqli_error($this->link));
+                    $data = [];
+                    if( $result)
+                    {
+                        while ($num = mysqli_fetch_assoc($result))
+                        {
+                            $data[] = $num;
+                        }
+                    }
+                    return $data;
+            }
+                
 
         /**
          * delete array 
