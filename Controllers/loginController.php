@@ -38,7 +38,7 @@ class loginController extends Controller
               $_SESSION['name_acco'] = $val['name_acco'];
               $_SESSION['role'] = $val['role'];
               $_SESSION['success'] = "Đăng nhập thành công";
-                header("Location: /menu");
+                header("Location:" . WEBROOT ."/menu");
           }
           else {
               $_SESSION['error'] = 'Sai tên đăng nhập hoặc mật khẩu';
