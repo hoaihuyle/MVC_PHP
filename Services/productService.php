@@ -82,5 +82,12 @@ class ProductService extends Service{
     }
     
 }
-
+    /** 
+     * Seach > nhi?u di?u ki?n
+     */
+    public function  fetchsql($db,$cate_id,$comp_id){
+         $product = new ProductDAO();
+         $products =  $product-> fetchsql($db,$cate_id,$comp_id);
+         return $products;
+    } 
 ?>
