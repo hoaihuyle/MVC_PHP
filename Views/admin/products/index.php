@@ -7,51 +7,82 @@
     <div class="container-fluid  dashboard-content">
         <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <div class="form-group">
-                <div class="row">
-                    <div class="form-group col-md-5 col-sm-12">
-                        <select class="form-control" id="exampleFormControlSelect1">
-                        <option value="0">Chọn danh mục sản phẩm </option>
-                        <?php foreach($categoryInfos as $category){ ?>
-                            <option value="<?php echo $category['id_cate'] ?>"> <?php echo $category['name_cate'] ?> </option>
-                        <?php } ?>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-5 col-sm-12">
-                        <select class="form-control" id="exampleFormControlSelect1">
-                        <option value="0">Chọn hãng sản phẩm</option>
-                        <?php foreach($companyInfos as $company){ ?>
-                            <option value="<?php echo $company['id_comp'] ?>"> <?php echo $company['name_comp'] ?> </option>
-                        <?php } ?>
-                        </select>
-                    </div>
-                    <!-- <div class='col-md-5'>
+             <form id="validationform" data-parsley-validate="" novalidate="" method="GET" action="/product/seach" >
                         <div class="form-group">
-                        <div class="input-group date" id="datetimepicker7" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker7"/>
-                                <div class="input-group-append" data-target="#datetimepicker7" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            <div class="row">
+                                <div class="form-group col-md-5 col-sm-12">
+                                    <select class="form-control" id="exampleFormControlSelect1" name="cate_id" >
+                                    <?php if(!isset($cate_id1)){?> 
+                                    <option value="0">Chọn danh mục sản phẩm </option>
+                                    <?php }?>
+                                    <?php if(isset($cate_id1)){?>
+                                        <?php foreach($categoryInfos as $category){ ?>
+                                         <?php if($cate_id1==$category['id_cate']){?>   
+                                        <option value="<?php echo $category['id_cate'] ?>"> <?php echo $category['name_cate']; ?> </option>
+                                    <?php }}} ?>
+                                        <?php foreach($categoryInfos as $category){ ?>
+                                         <?php if(isset($cate_id1)){ if($cate_id1!=$category['id_cate']){?>   
+                                        <option value="<?php echo $category['id_cate'] ?>"> <?php echo $category['name_cate']; ?> </option>
+                                    <?php }} else {?>
+                                        <option value="<?php echo $category['id_cate'] ?>"> <?php echo $category['name_cate']; ?> </option>
+                                    <?php }} ?>
+                                    <?php if(isset($cate_id1)){?> 
+                                    <option value="0">Chọn danh mục sản phẩm </option>
+                                    <?php }?>
+                                    </select>
+                                </div>  
+                                <div class="form-group col-md-5 col-sm-12">
+                                    <select class="form-control" id="exampleFormControlSelect12" name="comp_id">
+                                    <?php if(!isset($comp_id1)){?>
+                                    <option value="0">Chọn hãng sản phẩm</option>
+                                    <?php }?>
+                                     <?php if(isset($comp_id1)){?>
+                                        <?php foreach($companyInfos as $company){ ?>
+                                         <?php if($comp_id1==$company['id_comp']){?>   
+                                        <option value="<?php echo $company['id_comp'] ?>"> <?php echo $company['name_comp']; ?> </option>
+                                    <?php }}} ?>
+                                    <?php foreach($companyInfos as $company){ ?>
+                                    <?php if(isset($comp_id1)){ if($comp_id1!=$company['id_comp']){?> 
+                                   
+                                        <option value="<?php echo $company['id_comp'] ?>"> <?php echo $company['name_comp']; ?> </option>
+                                    <?php  }} else {?>
+                                         <option value="<?php echo $company['id_comp'] ?>"> <?php echo $company['name_comp']; ?> </option>
+                                     <?php }} ?>
+                                     <?php if(isset($comp_id1)){?>
+                                    <option value="0">Chọn hãng sản phẩm</option>
+                                    <?php }?>   
+                                    </select>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='col-md-5'>
-                        <div class="form-group">
-                        <div class="input-group date" id="datetimepicker8" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker8"/>
-                                <div class="input-group-append" data-target="#datetimepicker8" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                 
+                                <!-- <div class='col-md-5'>
+                                    <div class="form-group">
+                                    <div class="input-group date" id="datetimepicker7" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker7"/>
+                                            <div class="input-group-append" data-target="#datetimepicker7" data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                                <div class='col-md-5'>
+                                    <div class="form-group">
+                                    <div class="input-group date" id="datetimepicker8" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker8"/>
+                                            <div class="input-group-append" data-target="#datetimepicker8" data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="col-md-2">
+                                    <div class="form-group" id="filterBtnTime">
+                                        <button type="submit" class="btn btn-primary"> Lọc </button>
+                                    </div>
+                                </div>
+                            </div> 
                         </div>
-                    </div> -->
-                    <div class="col-md-2">
-                        <div class="form-group" id="filterBtnTime">
-                            <button class="btn btn-primary"> Lọc </button>
-                        </div>
-                    </div>
-                </div> 
-            </div>
+                  </form>
+                        
         </div>
         </div>
         <div class="row">
@@ -79,9 +110,10 @@
                                         <th style="text-align: center;">Xóa</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <?php
+                                <tbody id="list-product">
+                                    <?php 
                                         foreach($productInfos as $product){
+                                    
                                     ?>
                                         <tr>
                                             <td align="center"><?php echo $product['id_prod']; ?></td>
@@ -94,8 +126,10 @@
                                             <td align="center"><a href="/product/delete/<?php echo $product['id_prod']; ?>" onclick="return confirm('Dữ liệu của bạn sẽ bị mất, bạn chắc chắn chứ ?')" ><img src="/lib/admin/images/delete.png" width="25"></a></td>
                                         </tr>
                                     <?php        
-                                        } 
+                                        }
+                                       
                                     ?>
+                                       
                                 </tbody>
                                 <tfoot>
                                     <tr>
