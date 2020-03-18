@@ -80,8 +80,6 @@ class ProductService extends Service{
         $sql = "SELECT * FROM {$table} as tb WHERE $col = $id";
         return $product->listsProductPagi($db, $sql, $page, $total, $pagi);
     }
-    
-}
     /** 
      * Seach > nhi?u di?u ki?n
      */
@@ -90,4 +88,5 @@ class ProductService extends Service{
          $products =  $product-> fetchsql($db,$cate_id,$comp_id);
          return $products;
     } 
+}
 ?>
