@@ -266,7 +266,7 @@
 					<div class="column main">              
             <h3 class="title-cm"> 
               <span><?php echo $Cate['name_cate'] ?> </span> 
-              <span class="description mr-auto">(Hiển thị <?php echo $countShow ?> - <?php if($total >= 9 ):?> 9/ <?php endif ?><?php echo $total ?> sản phẩm)</span>
+              <span class="description mr-auto">(Hiển thị <?php echo $totalPage != 0 ? $countShow : 0 ?> - <?php if($total >= 9 ):?> 9/ <?php endif ?><?php echo $total ?> sản phẩm)</span>
               <div class="filter-price"> 
                 <label for="filter_price">Sắp xếp</label> 
                 <select name="filter_price" id="filter_price"> 
@@ -316,7 +316,7 @@
                   <a class="page-item <?php echo ($activePage == $i+1)?'active':'' ?>" href="<?php echo '/home/category?cate_id='.$Cate['id_cate'].'&page='.($i+1); ?>" data-ci-pagination-page="<?php echo ($i+1); ?>"><?php echo $i+1; ?></a>
                 <?php } ?>
 
-                  <?php if($activePage != $totalPage): ?>
+                  <?php if($activePage != $totalPage && $totalPage != 0): ?>
                 <a class="next" data-ci-pagination-page="2" rel="next">
                 <i class="fa fa-angle-double-right"></i></a>
 

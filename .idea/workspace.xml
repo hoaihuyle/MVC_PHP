@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c93ac342-66cb-49f3-8d9a-59a21e512379" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Views/product_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/product_detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/products.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,20 +63,6 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Views/products.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="294">
-                  <caret line="301" column="211" lean-forward="true" selection-start-line="301" selection-start-column="18" selection-end-line="301" selection-end-column="211" />
-                  <folding>
-                    <element signature="n#div#7;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" />
-                    <element signature="n#div#11;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" />
-                    <element signature="n#a#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Views/product_detail.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="328">
@@ -189,13 +175,21 @@
               </provider>
             </entry>
           </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Views/products.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="294">
+                  <caret line="268" column="101" selection-start-line="268" selection-start-column="101" selection-end-line="268" selection-end-column="101" />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-second>
     </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>listMenu</find>
       <find>fetchOne</find>
       <find>trang chủ</find>
       <find>alert alert-success</find>
@@ -220,11 +214,12 @@
       <find>.square-radio .radio-label:before</find>
       <find>?ca</find>
       <find>500.000</find>
-      <find>['price</find>
       <find>đ</find>
       <find>['price']</find>
       <find>front/front/</find>
       <find>fetchJoneDetail</find>
+      <find>['price</find>
+      <find>Bảng thành</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -259,8 +254,8 @@
         <option value="$PROJECT_DIR$/Controllers/homeController.php" />
         <option value="$PROJECT_DIR$/Views/includes/_header.php" />
         <option value="$PROJECT_DIR$/lib/front/asset/site/css/style_dong.css" />
-        <option value="$PROJECT_DIR$/Views/products.php" />
         <option value="$PROJECT_DIR$/Views/product_detail.php" />
+        <option value="$PROJECT_DIR$/Views/products.php" />
       </list>
     </option>
   </component>
@@ -405,12 +400,12 @@
       <workItem from="1513326896814" duration="43000" />
       <workItem from="1584159919218" duration="15072000" />
       <workItem from="1584409244986" duration="6549000" />
-      <workItem from="1584494785003" duration="9210000" />
+      <workItem from="1584494785003" duration="9565000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31804000" />
+    <option name="totallyTimeSpent" value="32159000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1874" height="1096" extended-state="6" />
@@ -709,18 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/products.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="301" column="211" lean-forward="true" selection-start-line="301" selection-start-column="18" selection-end-line="301" selection-end-column="211" />
-          <folding>
-            <element signature="n#div#7;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" />
-            <element signature="n#div#11;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" />
-            <element signature="n#a#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
@@ -852,6 +835,13 @@
             <element signature="n#style#0;n#input#1;n#p#1;n#div#1;n#form#0;n#div#0;n#div#2;n#section#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#form#0;n#div#0;n#div#2;n#section#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/products.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="268" column="101" selection-start-line="268" selection-start-column="101" selection-end-line="268" selection-end-column="101" />
         </state>
       </provider>
     </entry>
