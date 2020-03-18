@@ -429,7 +429,7 @@
                     </div>
                     <img class="lazy" alt="<?php echo $p['name_prod'] ?>" title="<?php echo $p['name_prod'] ?>" src="/uploads/products/<?php echo $p['image'] ?>" style="">
                   </a> <a href="/home/product/<?php echo $p['id_prod'] ?>" class="title"><?php echo $p['name_prod'] ?></a>  <span style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;"><?php echo $p['uses_prod'] ?></span>
-                  <div class="star" total="5" point="5"><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i>
+                  <div class="star" total="5" point="5">
                   </div>
                   <div class="price"> <span class="main"><?php echo $p['price'] ?></span>  <span class="old"><?php echo $p['price_manu'] ?></span> 
                   </div>
