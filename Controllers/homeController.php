@@ -18,13 +18,15 @@ class HomeController extends Controller
         $product = new ProductService(); 
 
         $prod['Cate'] = $product->getCate($db,'categories','id_cate ='.$id);
-        $total = count($product->listsProduct($db,'products','cate_id', $id, $page));
-        $prod['product'] = $product->listsProductPagi($db,'products','cate_id', $id, $page, $total, $pagi);
-        $prod['totalPage'] = ceil($total/$pagi);
+        $prod['total'] = count($product->listsProduct($db,'products','cate_id', $id, $page));
+        $prod['product'] = $product->listsProductPagi($db,'products','cate_id', $id, $page, $prod['total'], $pagi);
+        $prod['totalPage'] = ceil($prod['total']/$pagi);
         $prod['activePage']=$pag;
+        $prod['total'] % $pagi == 0 ? $prod['countShow'] = $pagi : $prod['countShow'] = $prod['total'] % $pagi ;
+
         // die();
-        // $this->helper->_debug($prod);
-        // die(); 
+//         $this->helper->_debug($prod);
+//         die();
         $this->set($prod);
         $this->render('products');
     }
@@ -36,7 +38,7 @@ class HomeController extends Controller
        //  $prod['cate'] = $product->fetchByCateID($db, $prod['prod'][0]['cate_id']);
 
 
-       // $this->helper->_debug($prod);
+//        $this->helper->_debug($prod);
 
        // die();
         $this->set($prod);

@@ -126,7 +126,7 @@
                      <ul>
                          <?php foreach($categoryInfos as $cate) {?>
                              <?php if($cate['menu_id'] == $menu['id_menu']) : ?>
-                            <li> <a href="/home/category/<?php echo $cate['id_cate'] ?>" class="cs-flex flex-align-center"><?php echo $cate['name_cate'] ?></a></li>
+                            <li> <a href="/home/category?cate_id=<?php echo $cate['id_cate'] ?>&page=1" class="cs-flex flex-align-center"><?php echo $cate['name_cate'] ?></a></li>
                              <?php endif; ?>
                          <?php }?>
                      </ul>
