@@ -42,18 +42,15 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Chọn danh mục sản phẩm</label>
-                                <div class="col-12 col-sm-8 col-lg-6">
-                                    <!-- Table list all Category with fields id - name - checkbox ; Action click on row to choice or checkbox-->
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label text-sm-right">Trạng thái</label>
-                                <div class="col-sm-6">
+                            <label class="col-sm-3 col-form-label text-sm-right">Trạng thái</label>
+                            <div class="col-sm-6">
                                     <div class="custom-controls-stacked">
                                         <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
-                                            <label class="be-checkbox custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" <?php echo ($accountInfo[0]['flag']==1)?'':'checked'; ?>><span class="custom-control-label">Hiện</span>
+                                            <label class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" name="flag" value="1"  <?php echo ($accountInfo[0]['flag']==0)?'':'checked'; ?> class="custom-control-input"><span class="custom-control-label">Ẩn</span>
+                                            </label>
+                                            <label class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" name="flag" value="0"  <?php echo ($accountInfo[0]['flag']==1)?'':'checked'; ?> class="custom-control-input"><span class="custom-control-label">Hiện</span>
                                             </label>
                                         </div>
                                     </div>
