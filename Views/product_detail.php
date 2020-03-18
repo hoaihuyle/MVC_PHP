@@ -32,11 +32,11 @@
                                     <div style="float: left;"> <span> Tình trạng:</span>
                                         <?php if($prod[0]['flag'] == 0) : ?>
                                         <span class="status-display" status="0">
-                                            <span style="color: red; font-weight: 600">Ngừng kinh doanh</span>
+                                            <span style="color: red; font-weight: 600">Đang kinh doanh</span>
                                         </span>
                                         <?php else: ?>
                                         <span class="status-display" status="0">
-                                            <span style="color: Green; font-weight: 600">Đang kinh doanh</span>
+                                            <span style="color: Green; font-weight: 600">Ngừng kinh doanh</span>
                                         </span>
                                         <?php endif ?>
                                     </div>
@@ -239,8 +239,8 @@
                         </div>
                         <div class="nutrition_facts">
                             <p><b style="color: teal;">BẢNG THÀNH PHẦN</b></p>
-                            <div class="content-nutrition-facts" style="margin-top: -7px;"><a href="/lib/front/upload/product/nutrition_facts/bcaa_3_1_2__30_servings__nutrition_facts_1563181992.jpg" target="_blank"><img width="100%" src="front/upload/product/nutrition_facts/bcaa_3_1_2__30_servings__nutrition_facts_1563181992.jpg" /></a></div>
-                            <p style="text-align: center; padding: 5px; margin: 0; background: #d0d0d0;"><a href="front/upload/product/nutrition_facts/bcaa_3_1_2__30_servings__nutrition_facts_1563181992.jpg" target="_blank">Zoom to hơn</a></p>
+                            <div class="content-nutrition-facts" style="margin-top: -7px;"><a href="/lib/front/upload/product/catalog/bcaa_3_1_2__30_servings__nutrition_facts_1563181992.jpg" target="_blank"><img width="100%" src="/lib/front/upload/product/catalog/bcaa_3_1_2__30_servings__nutrition_facts_1563181992.jpg" /></a></div>
+                            <p style="text-align: center; padding: 5px; margin: 0; background: #d0d0d0;"><a href="/lib/front/upload/product/catalog/bcaa_3_1_2__30_servings__nutrition_facts_1563181992.jpg" target="_blank">Zoom to hơn</a></p>
                         </div>
                         <div id="product_interest">
                             <h3 class="title-cm mt-20 mb-20">
