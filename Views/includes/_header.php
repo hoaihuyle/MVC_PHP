@@ -14,6 +14,7 @@
       <link rel="stylesheet" href="/lib/front/asset/site/modal/jquery.modal.min.css" />
       <link rel="stylesheet" href="/lib/front/asset/site/css/stylelist13860.css">
       <link rel="stylesheet" href="/lib/front/asset/site/css/thanh.css">
+      <link rel="stylesheet" href="/lib/css/lib.css">
       <meta http-equiv="content-language" content="vi" />
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -125,7 +126,7 @@
                      <ul>
                          <?php foreach($categoryInfos as $cate) {?>
                              <?php if($cate['menu_id'] == $menu['id_menu']) : ?>
-                            <li> <a href="/home/category/<?php echo $cate['id_cate'] ?>" class="cs-flex flex-align-center"><?php echo $cate['name_cate'] ?></a></li>
+                            <li> <a href="/home/category?cate_id=<?php echo $cate['id_cate'] ?>&page=1" class="cs-flex flex-align-center"><?php echo $cate['name_cate'] ?></a></li>
                              <?php endif; ?>
                          <?php }?>
                      </ul>
