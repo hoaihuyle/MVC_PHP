@@ -121,16 +121,18 @@
                <ul class="list-menu">
                   <li><a class="cs-flex flex-align-center" href="/" style="background: #f35f64;">Trang chủ</a></li>
                    <?php foreach($menuInfos as $menu){ ?>
+                   <?php if($menu['flag'] == 0) :?>
                   <li>
                      <a href="#" class="cs-flex flex-align-center"><?php echo $menu['name_menu'] ?></a>
                      <ul>
                          <?php foreach($categoryInfos as $cate) {?>
-                             <?php if($cate['menu_id'] == $menu['id_menu']) : ?>
+                             <?php if($cate['menu_id'] == $menu['id_menu'] && $cate['flag'] == 0) : ?>
                             <li> <a href="/home/category?cate_id=<?php echo $cate['id_cate'] ?>&page=1" class="cs-flex flex-align-center"><?php echo $cate['name_cate'] ?></a></li>
                              <?php endif; ?>
                          <?php }?>
                      </ul>
                   </li>
+                  <?php endif ?>
                    <?php } ?>
                </ul>
             </div>
