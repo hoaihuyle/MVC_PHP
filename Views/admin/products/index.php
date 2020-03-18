@@ -117,7 +117,7 @@
                                     ?>
                                         <tr>
                                             <td align="center"><?php echo $product['id_prod']; ?></td>
-                                            <td align="center"><?php echo $product['name_prod']; ?></td>
+                                            <td ><?php echo $product['name_prod']; ?></td>
                                             <td align="center"><img class="rounded" height="45" width="45" class="" src="<?php echo isset($product['image'])?'/uploads/products/'.$product['image']:'/uploads/noimage.jpg'; ?>"> </td>
                                             <td align="center"><?php echo $product['created']; ?></td>
                                             <td align="center"><?php echo ($product['user_created']!=0)?$product['user_created']:'admin'; ?></td>
