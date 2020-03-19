@@ -88,5 +88,6 @@ class ProductService extends Service{
          $products =  $product-> fetchsql($db,$cate_id,$comp_id);
          return $products;
     } 
+ 
 }
 ?>

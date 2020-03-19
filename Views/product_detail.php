@@ -1,5 +1,5 @@
 
-<section id="'detail" >
+<section id="detail" >
 
     <form id="submit-product" action="" method="post">
         <div class="session microdata" itemtype="">
@@ -28,7 +28,7 @@
                             </div>
                             <div class="mt-10 cs-flex" style="width: 100%;">
                                 <div style="line-height: 28px;">
-                                    <div style="float: left; margin-right: 10px;"> Thương hiệu: <a href="thuong-hieu/muscle-pharm.html"> <span class="pl-5 pr-5" itemprop="author" style="background: #E46D38;color: #FFF;border-radius: 5px; padding-bottom: 2px;"> MusclePharm </span></a> </div>
+                                    <div style="float: left; margin-right: 10px;"> Thương hiệu: <a href="/home/category?cate_id=<?php echo $CateName['id_cate'] ?>&page=1"> <span class="pl-5 pr-5" itemprop="author" style="background: #E46D38;color: #FFF;border-radius: 5px; padding-bottom: 2px;"> <?php echo $CateName['name_cate'] ?></span></a> </div>
                                     <div style="float: left;"> <span> Tình trạng:</span>
                                         <?php if($prod[0]['flag'] == 0) : ?>
                                         <span class="status-display" status="0">
@@ -114,7 +114,7 @@
                             <div class="cs-flex mt-10 action-cart-product"> <button class="button-cm mt-5 not-disable add-cart"> <span style="text-transform: uppercase; color: #FFF; font-size: 18px;">Mua sp này</span><br /><span style="font-size: 12px; padding-top: 6px; font-weight: normal; color: #FFF;">Cam kết hàng chính hãng, thật 100%</span></button> </div>
                             <div class="contact-phone">
                                 <div style="background: #288AD6; text-align: center; margin-top: 10px; padding: 5px;">
-                                    <a target="_blank" href="https://zalo.me/" style="color: #FFF;">
+                                    <a target="_blank" href="https://zalo.me/0779417827" style="color: #FFF;">
                                         <p style="padding: 5px 0; margin: 0; color: #FFF; font-size: 15px;"><i class="fa fa-comment" style="color: #FFF;"></i> Chat Zalo với CODO SUPP</p>
                                     </a>
                                 </div>
@@ -124,7 +124,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <p style="padding: 0; margin: 15px 0 5px 0;"><i class="fa fa-phone" style="background: #62686e; color: #FFF; border-radius: 10px; padding: 5px; font-size: 10px;"></i> Hotline Huế, toàn quốc: <a href="tel:123123123" style="color: #6c6865; font-weight: 550;">123.123.123</a></p>
+                            <p style="padding: 0; margin: 15px 0 5px 0;"><i class="fa fa-phone" style="background: #62686e; color: #FFF; border-radius: 10px; padding: 5px; font-size: 10px;"></i> Hotline Huế, toàn quốc: <a href="tel:0779417827" style="color: #6c6865; font-weight: 550;">077.941.7827</a></p>
                         </div>
                         <div style="border-top: 1px #ada9a9 solid; padding-top: 20px; margin-top: 10px;">Xin quý khách lưu ý: Hình ảnh và <?php echo $prod[0]['name_prod'] ?> chỉ mang tính chất tham khảo bởi thành phần, mẫu mã nhà sản xuất có thể thay đổi bất cứ lúc nào. Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</div>
                         <!-- One Tab -->

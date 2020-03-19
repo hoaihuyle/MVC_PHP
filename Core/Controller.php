@@ -6,6 +6,7 @@
         var $myUntils = "myUntils";
         var $default = "default";
         var $layout_header ="includes/_header"; 
+        var $sidebar = '/includes/_sidebar';
         var $regis ="Services/registerService.php";
         var $log = "Services/loginService.php";
         var $listMenu ="Services/menuService.php";
@@ -95,8 +96,12 @@
                 }
             else
             {
+                
                 // require(ROOT. "Views/". $explode_filename[0] .'/' . $explode_filename[1].'/'. $explode_filename[2] .'.php');
-                require(ROOT . "Views/" . $ex . $this->layout_header . '.php');
+                require(ROOT . "Views/" . $ex . $this->layout_header . '.php'); 
+                if($explode_filename[0] == 'product_detail' || $explode_filename[0] == 'products'){
+                    require(ROOT . "Views".$ex. $this->sidebar.'.php');
+                }
                 require(ROOT . "Views/" . $ex . $this->default . '.php');
             }
              

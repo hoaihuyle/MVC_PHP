@@ -70,5 +70,6 @@ class ProductDAO extends Model
     public function listsProductPagi($db, $sql, $page, $total, $pagi){
         return $db->fetchJoneDetail($sql, $page, $total, $pagi);
     }
+ 
 }
 ?>

@@ -25,7 +25,7 @@ class HomeController extends Controller
         $prod['total'] % $pagi == 0 ? $prod['countShow'] = $pagi : $prod['countShow'] = $prod['total'] % $pagi ;
 
         // die();
-//         $this->helper->_debug($prod);
+        // $this->helper->_debug($prod);
 //         die();
         $this->set($prod);
         $this->render('products');
@@ -35,14 +35,14 @@ class HomeController extends Controller
         require(ROOT . $this->service);
         $product = new ProductService();  
         $prod['prod'] = $product->findProduct($db,$id);
-       //  $prod['cate'] = $product->fetchByCateID($db, $prod['prod'][0]['cate_id']);
-
-
-//        $this->helper->_debug($prod);
-
-       // die();
+        $prod['CateName'] = $product->getCate($db,'categories','id_cate ='.$prod['prod'][0]['cate_id']);  
+        // $prod['ProdQT'] = $product-
         $this->set($prod);
         $this->render('product_detail');
+    }
+
+    function aboutUs(){
+        $this->render('about_us'); 
     }
 }
 ?>

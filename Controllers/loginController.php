@@ -50,7 +50,7 @@ class loginController extends Controller
       else
       {
           $_SESSION['error'] = 'Mật khẩu số điện thoại không được để trống';
-          header("Location: " . $_SERVER["HTTP_REFERER"]);\
+          header("Location: " . $_SERVER["HTTP_REFERER"]);
           // $this->render('/login');
       }
 

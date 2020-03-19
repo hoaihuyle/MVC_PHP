@@ -47,10 +47,10 @@
          <div class="top-bar hidden-top-bar">
             <div class="main-content cs-flex">
                <div class="cs-col-12 cs-col-sm-6 cs-flex"> 
-                <a href="/front/tel:123.456.789" rel="nofollow" class="connect cs-flex flex-row flex-align-center mr-20">
-                 <span><i class="fas fa-phone-square"></i> Hotline: 123.456.789</span>
+                <a href="/front/tel:0779417827" rel="nofollow" class="connect cs-flex flex-row flex-align-center mr-20">
+                 <span><i class="fas fa-phone-square"></i> Hotline: 077.941.7827</span>
                 </a>
-                <a href="#" target="_blank" rel="nofollow" class="connect cs-flex flex-row flex-align-center mr-20">
+                <a href="https://www.facebook.com/codosupp/" target="_blank" rel="nofollow" class="connect cs-flex flex-row flex-align-center mr-20">
                    <span><i class="fab fa-facebook-square"></i> Ghé Fanpage</span>
                 </a> 
 <!--                <a href="#" rel="nofollow" class="checkpoint cs-flex flex-row flex-align-center mr-20"> -->
@@ -134,6 +134,9 @@
                   </li>
                   <?php endif ?>
                    <?php } ?>
+                   <li>
+                     <a  class="cs-flex flex-align-center" href="/home/aboutUs">Liên hệ</a>
+                  </li>
                </ul>
             </div>
          </div>
@@ -141,26 +144,4 @@
         
       </div>
       </div>
-     <h1 style="display: none;">CODO SUPP Thực phẩm bổ sung sức khỏe - Đẳng cấp hoàng gia</h1>
-      <h2 style="display: none">CODO SUPP chỉ phân phối các sản phẩm thực phẩm bổ sung chính hãng</h2>
-      <div class="breadcrumbs">
-      <div class="container">
-         <ul class="items">
-            <li class="item home">
-               <a href="/" title="Đi đến trang chủ">
-               Trang chủ					</a>
-            </li>
-            <li class="item">
-               <a href="#" title="">
-               PROTEIN &amp; Tăng cân					</a>
-            </li>
-            <li class="item">
-               <a href="#" title="">
-               Protein hoàn chỉnh					</a>
-            </li>
-            <li class="item product">
-               <strong>BCAA 3:1:2 (30 Servings)</strong>
-            </li>
-         </ul>
-      </div>
-   </div> 
+      
