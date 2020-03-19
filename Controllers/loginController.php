@@ -38,17 +38,20 @@ class loginController extends Controller
               $_SESSION['name_acco'] = $val['name_acco'];
               $_SESSION['role'] = $val['role'];
               $_SESSION['success'] = "Đăng nhập thành công";
-                header("Location:" . WEBROOT ."/menu");
+                header("Location: /menu");
           }
           else {
               $_SESSION['error'] = 'Sai tên đăng nhập hoặc mật khẩu';
                header("Location: " . $_SERVER['HTTP_REFERER']);
+              // $this->render('/login');
+
           }
       }
       else
       {
           $_SESSION['error'] = 'Mật khẩu số điện thoại không được để trống';
-          header("Location: " . $_SERVER["HTTP_REFERER"]);
+          header("Location: " . $_SERVER["HTTP_REFERER"]);\
+          // $this->render('/login');
       }
 
     }
@@ -56,6 +59,7 @@ class loginController extends Controller
     {
         $_SESSION['error'] = 'Không thể đăng nhập';
         header("Location: " . $_SERVER["HTTP_REFERER"]);
+        // $this->render('/login');
     }
   }
 

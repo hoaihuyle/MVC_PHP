@@ -59,12 +59,12 @@
             </div>
                <div class="cs-col-12 cs-col-sm-6 cs-flex tool-buttons">
                    <?php if(!isset($_SESSION['name_id'])): ?>
-                <a href="/signup" rel="modal:open" class="connect cs-flex flex-row flex-align-center ml-auto"> Đăng nhập </a>
+                <a href="/signup" class="connect cs-flex flex-row flex-align-center ml-auto"> Đăng nhập </a>
                     <?php else: ?>
 
                    <a href="#" class="connect cs-flex flex-row flex-align-center ml-auto "> Xin chào: <?php echo $_SESSION['name_acco'] ?> </a>
                    <a href="/account/myUser" class="connect cs-flex flex-row flex-align-center"> Tài khoản của tôi </a>
-                   <a href="/signup/logout" rel="modal:open" class="connect cs-flex flex-row flex-align-center"> Đăng xuất </a>
+                   <a href="/signup/logout" class="connect cs-flex flex-row flex-align-center"> Đăng xuất </a>
                    <?php endif ?>
             </div>
             </div>
