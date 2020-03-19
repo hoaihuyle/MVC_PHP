@@ -20,8 +20,8 @@
                             <table id="example" class="table table-striped table-bordered second" style="width:100%">
                                 <thead>
                                     <tr>
+                                        <th style="text-align: center;">Id</th>
                                         <th style="text-align: center;">Tên</th>
-                                        <th style="text-align: center;">Các danh mục sản phẩm</th>
                                         <th style="text-align: center;">Ngày tạo</th>
                                         <th style="text-align: center;">Người tạo</th>
                                         <th style="text-align: center;">Trạng thái</th>
@@ -34,8 +34,8 @@
                                         foreach($accountInfos as $account){
                                     ?>
                                         <tr>
-                                            <td align="center"><?php echo $account['name_comp']; ?></td>
-                                            <td><?php echo 'Các danh mục sản phẩm'; ?></td>
+                                            <td align="center"><?php echo $account['id_acco']; ?></td>
+                                            <td align="center"><?php echo $account['name_acco']; ?></td>
                                             <td align="center"><?php echo $account['created']; ?></td>
                                             <td align="center"><?php echo isset($account['user_created'])?$account['user_created']:'admin'; ?></td>
                                             <td align="center"><?php echo ($account['flag']==0)?'Hiển thị':'Đã xóa'; ?></td>
@@ -48,8 +48,8 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th style="text-align: center;">Id</th>
                                         <th style="text-align: center;">Tên</th>
-                                        <th style="text-align: center;">Các danh mục sản phẩm</th>
                                         <th style="text-align: center;">Ngày tạo</th>
                                         <th style="text-align: center;">Người tạo</th>
                                         <th style="text-align: center;">Trạng thái</th>
