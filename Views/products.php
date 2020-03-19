@@ -12,14 +12,17 @@
           </div>
           <div class="catalog-product" style="width: 100%">
               <h3 class="title-cm"> <span>MỤC SẢN PHẨM</span> </h3> 
+             
               <div class="tree-view">
                 <ul class="catalog mc-tree-view" style="display: block;">
                   <?php foreach($categoryInfos as $cate){ ?>
-                  <li class="mc-state-collapsed"><a href="/home/category?cate_id=<?php echo $cate['id_cate']?>&page=1"><?php echo $cate['name_cate'] ?></a>
+                  <li class="mc-state-collapsed"> 
+                  <a  <?php if( $_SERVER['REQUEST_URI'] == '/home/category?cate_id='.$cate['id_cate'].'&page=1'): ?>style="color: red" <?php endif ?> href="/home/category?cate_id=<?php echo $cate['id_cate']?>&page=1"><?php echo $cate['name_cate'] ?></a>
                     <!-- <ul class="mc-tree-view" style="display: block;">
                       <li class="mc-state-expanded"><a href="h/whey-protein-blend">Whey Protein Blend </a>
                       </li> 
                     </ul> -->
+                    
                     <button class="mc-toggle"></button>
                   </li> 
                   <?php } ?>
