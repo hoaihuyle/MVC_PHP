@@ -35,9 +35,7 @@ class HomeController extends Controller
         require(ROOT . $this->service);
         $product = new ProductService();  
         $prod['prod'] = $product->findProduct($db,$id);
-        $prod['CateName'] = $product->getCate($db,'categories','id_cate ='.$prod['prod'][0]['cate_id']);  
-        // $prod['ProdQT'] = $product-
-        // $this->helper->_debug($prod);
+        $prod['CateName'] = $product->getCate($db,'categories','id_cate ='.$prod['prod'][0]['cate_id']);
         $this->set($prod);
         $this->render('product_detail');
     }
@@ -51,32 +49,37 @@ class HomeController extends Controller
         $product = new ProductService();  
         $prod = $product->findProduct($db,$id);
         // $this->helper->_debug($prod);
-        if($prod[0]['count']==0){ 
-            // echo "<script>alert('Sản phẩm đã hết, vui lòng lựa chọn sản phẩm khác!!'); location=' /'</script> ";
-        }
-        else
-        {
-            if(! isset($_SESSION['cart'][$id]))//$id là key phân biệt các sp với nhau
-            {
-                //tạo mới giỏ hàng    
-                $_SESSION['cart'][$id]['name'] = $editcart['name'];
-                $_SESSION['cart'][$id]['thumbal'] = $editcart['thumbal'];
-                $_SESSION['cart'][$id]['price'] = ((100-$editcart['sale']) * $editcart['price'])/100;
-                $_SESSION['cart'][$id]['qty'] = 1;//số lượng
-                
-                
-            }   
+//        $this->helper->_debug($prod);
+        if($prod != null){
+            if($prod[0]['count']!=0){
+                // echo "<script>alert('Sản phẩm đã hết, vui lòng lựa chọn sản phẩm khác!!'); location=' /'</script> ";
+            }
             else
-            {   
-                $_SESSION['cart'][$id]['qty'] += 1;
-                //cập nhật giỏ hàng
+            {
+                if(! isset($_SESSION['cart'][$id]))//$id là key phân biệt các sp với nhau
+                {
+                    //tạo mới giỏ hàng
+                    $_SESSION['cart'][$id]['name_prod'] = $prod[0]['name_prod'];
+                    $_SESSION['cart'][$id]['image'] = $prod[0]['image'];
+                    $_SESSION['cart'][$id]['discount'] = $prod[0]['discount'];
+                    $_SESSION['cart'][$id]['price'] = ((100-$prod[0]['discount']) * $prod[0]['price'])/100;
+                    $_SESSION['cart'][$id]['qty'] = 1;//số lượng
+                }
+                else
+                {
+                    $_SESSION['cart'][$id]['qty'] += 1;
+                    //cập nhật giỏ hàng
+                }
             }
         }
-        
+        else {
+             echo "<script>alert('Sản phẩm không tồn tại, vui lòng lựa chọn sản phẩm khác!!'); location=' /'</script> ";
+        }
 
+        $this->render('card');
+    }
 
-        // $_SESSION['card'][$id]['']
-        // $this->set($prod);
+    function Cart(){
         $this->render('card');
     }
 
