@@ -16,7 +16,7 @@ $db = new Database();
         {
 
             // $this->link = mysqli_connect("cit.cit","root","","cit_db") or die ();
-            $this->link =  mysqli_connect("qbhol6k6vexd5qjs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com","idc1h0rveicx5l94","sf996cqouxdwcghn","ngg5g9y1jletgi0d") or die ("Kết nối thất bại thử lại sau - Connect Fail, please try agian late !");
+            $this->link =  mysqli_connect("localhost","root","","codosupp") or die ("Kết nối thất bại thử lại sau - Connect Fail, please try agian late !");
             mysqli_set_charset($this->link,"utf8");
         }
  
