@@ -23,9 +23,7 @@ class CategoryController extends Controller
 
         $d['categoryInfos'] = $categories->listCategory($db);  
         $d['menuInfos'] = $menu->listMenu($db);  
-
-        $this->set($d);
-
+        $this->set($d); 
         $this->render($this->red.__FUNCTION__);
     }
  

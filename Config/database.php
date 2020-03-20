@@ -15,6 +15,7 @@ $db = new Database();
         public function __construct()
         {
 
+            // $this->link =  mysqli_connect("localhost","root","","codosupp") or die ("Kết nối thất bại thử lại sau - Connect Fail, please try agian late !");
             // $this->link = mysqli_connect("cit.cit","root","","cit_db") or die ();
             $this->link =  mysqli_connect("localhost","root","","codosupp") or die ("Kết nối thất bại thử lại sau - Connect Fail, please try agian late !");
             mysqli_set_charset($this->link,"utf8");

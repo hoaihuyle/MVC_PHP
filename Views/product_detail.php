@@ -1,5 +1,5 @@
 
-<section id="'detail" >
+<section id="detail" >
 
     <form id="submit-product" action="" method="post">
         <div class="session microdata" itemtype="">
@@ -28,11 +28,11 @@
                             </div>
                             <div class="mt-10 cs-flex" style="width: 100%;">
                                 <div style="line-height: 28px;">
-                                    <div style="float: left; margin-right: 10px;"> Thương hiệu: <a href="thuong-hieu/muscle-pharm.html"> <span class="pl-5 pr-5" itemprop="author" style="background: #E46D38;color: #FFF;border-radius: 5px; padding-bottom: 2px;"> MusclePharm </span></a> </div>
+                                    <div style="float: left; margin-right: 10px;"> Thương hiệu: <a href="/home/category?cate_id=<?php echo $CateName['id_cate'] ?>&page=1"> <span class="pl-5 pr-5" itemprop="author" style="background: #E46D38;color: #FFF;border-radius: 5px; padding-bottom: 2px;"> <?php echo $CateName['name_cate'] ?></span></a> </div>
                                     <div style="float: left;"> <span> Tình trạng:</span>
                                         <?php if($prod[0]['flag'] == 0) : ?>
                                         <span class="status-display" status="0">
-                                            <span style="color: red; font-weight: 600">Đang kinh doanh</span>
+                                            <span style="color: green; font-weight: 600">Đang kinh doanh</span>
                                         </span>
                                         <?php else: ?>
                                         <span class="status-display" status="0">
@@ -66,11 +66,8 @@
                                 <div id="list_store" style="margin-top: 8px; padding: 0">
                                     <table>
                                         <tr>
-                                            <td>1: Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2: Lorem ipsum dolor sit amet consectetur adipisicing elit</td>
-                                        </tr>
+                                            <td>Địa chỉ: 114 Minh Mạng, Phường Thủy Xuân, TP Huế</td>
+                                        </tr> 
                                     </table>
                                 </div>
                             </div>
@@ -111,20 +108,20 @@
                             </div>
                             <div class="cs-flex mt-10"> <input class="spinner input-spin" name="quantity" value="1"> <button type="button" class="redirect-login" url="dang-nhap"><i class="far fa-heart"></i></button> </div>
                             <span class="cm-red font-s-25 product-price" style="margin-top: 13px; display: inline-block" price="<?php echo $prod[0]['price'] ?>"><?php echo number_format( $prod[0]['price'], 0 ,'','.' ) ?> VND </span>
-                            <div class="cs-flex mt-10 action-cart-product"> <button class="button-cm mt-5 not-disable add-cart"> <span style="text-transform: uppercase; color: #FFF; font-size: 18px;">Mua sp này</span><br /><span style="font-size: 12px; padding-top: 6px; font-weight: normal; color: #FFF;">Cam kết hàng chính hãng, thật 100%</span></button> </div>
+                            <div class="cs-flex mt-10 action-cart-product"> <a class="button-cm mt-5 not-disable add-cart" value="<?php echo $prod[0]['id_prod'] ?>" style="text-align: center" > <span style="text-transform: uppercase; color: #FFF; font-size: 18px;">Thêm vào giỏ hàng</span><br /><span style="font-size: 12px; padding-top: 6px; font-weight: normal; color: #FFF;">Cam kết hàng chính hãng, thật 100%</span></a> </div>
                             <div class="contact-phone">
                                 <div style="background: #288AD6; text-align: center; margin-top: 10px; padding: 5px;">
-                                    <a target="_blank" href="https://zalo.me/" style="color: #FFF;">
+                                    <a target="_blank" href="https://zalo.me/0779417827" style="color: #FFF;">
                                         <p style="padding: 5px 0; margin: 0; color: #FFF; font-size: 15px;"><i class="fa fa-comment" style="color: #FFF;"></i> Chat Zalo với CODO SUPP</p>
                                     </a>
                                 </div>
                                 <div style="background: #288AD6; text-align: center; margin-top: 10px; padding: 5px;">
-                                    <a target="_blank" href="#" target="_blank" style="color: #FFF;">
+                                    <a target="_blank" href="http://m.me/codosupp" target="_blank" style="color: #FFF;">
                                         <p style="padding: 5px 0; margin: 0; color: #FFF; font-size: 15px;"><i class="fa fa-comment" style="color: #FFF;"></i> Nhắn tin Messenger với chúng tôi</p>
                                     </a>
                                 </div>
                             </div>
-                            <p style="padding: 0; margin: 15px 0 5px 0;"><i class="fa fa-phone" style="background: #62686e; color: #FFF; border-radius: 10px; padding: 5px; font-size: 10px;"></i> Hotline Huế, toàn quốc: <a href="tel:123123123" style="color: #6c6865; font-weight: 550;">123.123.123</a></p>
+                            <p style="padding: 0; margin: 15px 0 5px 0;"><i class="fa fa-phone" style="background: #62686e; color: #FFF; border-radius: 10px; padding: 5px; font-size: 10px;"></i> Hotline Huế, toàn quốc: <a href="tel:0779417827" style="color: #6c6865; font-weight: 550;">077.941.7827</a></p>
                         </div>
                         <div style="border-top: 1px #ada9a9 solid; padding-top: 20px; margin-top: 10px;">Xin quý khách lưu ý: Hình ảnh và <?php echo $prod[0]['name_prod'] ?> chỉ mang tính chất tham khảo bởi thành phần, mẫu mã nhà sản xuất có thể thay đổi bất cứ lúc nào. Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</div>
                         <!-- One Tab -->
@@ -179,7 +176,7 @@
                                 <div class="mt-5"> <span class="star mt-10" total="5" point="5"></span> </div>
                                 <b><span class="cm-red font-s-20 product-price" price="<?php echo number_format( $prod[0]['price'], 0 ,'','.' ) ?>"><?php echo number_format( $prod[0]['price'], 0 ,'','.' ) ?> VND </span></b>
                             </div>
-                            <div class="cs-col-12 cs-col-md-5 panel-btn action-cart-product" style="margin-bottom: 10px; padding-top: 10px;"> <button class="button-cm mr-10 mt-5 not-disable add-cart" style="font-size: 14px;"> Mua sản phẩm này</button> </div>
+                            <div class="cs-col-12 cs-col-md-5 panel-btn action-cart-product" style="margin-bottom: 10px; padding-top: 10px;"> <button value="<?php echo $prod[0]['id_prod'] ?>" class="button-cm mr-10 mt-5 not-disable add-cart" style="font-size: 14px;" "> Mua sản phẩm này</button> </div>
                         </div>
                     </div>
                     <div class="cs-col-lg-3 cs-wrap product-detail-right">
