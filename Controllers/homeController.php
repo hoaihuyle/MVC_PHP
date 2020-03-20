@@ -37,8 +37,47 @@ class HomeController extends Controller
         $prod['prod'] = $product->findProduct($db,$id);
         $prod['CateName'] = $product->getCate($db,'categories','id_cate ='.$prod['prod'][0]['cate_id']);  
         // $prod['ProdQT'] = $product-
+        // $this->helper->_debug($prod);
         $this->set($prod);
         $this->render('product_detail');
+    }
+
+    function card($id){
+
+    }
+
+    function giohang($id){
+        require(ROOT . $this->service);
+        $product = new ProductService();  
+        $prod = $product->findProduct($db,$id);
+        // $this->helper->_debug($prod);
+        if($prod[0]['count']==0){ 
+            // echo "<script>alert('Sản phẩm đã hết, vui lòng lựa chọn sản phẩm khác!!'); location=' /'</script> ";
+        }
+        else
+        {
+            if(! isset($_SESSION['cart'][$id]))//$id là key phân biệt các sp với nhau
+            {
+                //tạo mới giỏ hàng    
+                $_SESSION['cart'][$id]['name'] = $editcart['name'];
+                $_SESSION['cart'][$id]['thumbal'] = $editcart['thumbal'];
+                $_SESSION['cart'][$id]['price'] = ((100-$editcart['sale']) * $editcart['price'])/100;
+                $_SESSION['cart'][$id]['qty'] = 1;//số lượng
+                
+                
+            }   
+            else
+            {   
+                $_SESSION['cart'][$id]['qty'] += 1;
+                //cập nhật giỏ hàng
+            }
+        }
+        
+
+
+        // $_SESSION['card'][$id]['']
+        // $this->set($prod);
+        $this->render('card');
     }
 
     function aboutUs(){

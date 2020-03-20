@@ -1,9 +1,9 @@
-<?php include('header.php') ?>
+
 <div class="session" id="card-shop">
    <div class="main-content">
       <div class="cs-flex cs-col-12">
-         <div class="title-cm">
-            <h3 style="font-size: 16px;">Giỏ hàng của bạn có <span class="color-red total-cart-items">2</span> sản phẩm</h3>
+         <div class="title-cm" style="width: 100%">
+            <h3 style="padding: 10px; text-align: center">Giỏ hàng của bạn có <span class="color-red total-cart-items">2</span> sản phẩm</h3>
          </div>
          <div class="table-desktop">
             <form action="/site/cart/update" method="post">
@@ -74,5 +74,4 @@
       </div>
    </div>
    <!-- end content --> 
-</div>
-<?php include('footer.php') ?>
+</div> 
