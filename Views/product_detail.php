@@ -32,7 +32,7 @@
                                     <div style="float: left;"> <span> Tình trạng:</span>
                                         <?php if($prod[0]['flag'] == 0) : ?>
                                         <span class="status-display" status="0">
-                                            <span style="color: red; font-weight: 600">Đang kinh doanh</span>
+                                            <span style="color: green; font-weight: 600">Đang kinh doanh</span>
                                         </span>
                                         <?php else: ?>
                                         <span class="status-display" status="0">
@@ -66,11 +66,8 @@
                                 <div id="list_store" style="margin-top: 8px; padding: 0">
                                     <table>
                                         <tr>
-                                            <td>1: Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2: Lorem ipsum dolor sit amet consectetur adipisicing elit</td>
-                                        </tr>
+                                            <td>Địa chỉ: 114 Minh Mạng, Phường Thủy Xuân, TP Huế</td>
+                                        </tr> 
                                     </table>
                                 </div>
                             </div>
@@ -111,7 +108,7 @@
                             </div>
                             <div class="cs-flex mt-10"> <input class="spinner input-spin" name="quantity" value="1"> <button type="button" class="redirect-login" url="dang-nhap"><i class="far fa-heart"></i></button> </div>
                             <span class="cm-red font-s-25 product-price" style="margin-top: 13px; display: inline-block" price="<?php echo $prod[0]['price'] ?>"><?php echo number_format( $prod[0]['price'], 0 ,'','.' ) ?> VND </span>
-                            <div class="cs-flex mt-10 action-cart-product"> <a class="button-cm mt-5 not-disable add-cart" href="/home/giohang/<?php echo $prod[0]['id_prod'] ?>" style="text-align: center" > <span style="text-transform: uppercase; color: #FFF; font-size: 18px;">Thêm vào giỏ hàng</span><br /><span style="font-size: 12px; padding-top: 6px; font-weight: normal; color: #FFF;">Cam kết hàng chính hãng, thật 100%</span></a> </div>
+                            <div class="cs-flex mt-10 action-cart-product"> <a class="button-cm mt-5 not-disable add-cart" value="<?php echo $prod[0]['id_prod'] ?>" style="text-align: center" > <span style="text-transform: uppercase; color: #FFF; font-size: 18px;">Thêm vào giỏ hàng</span><br /><span style="font-size: 12px; padding-top: 6px; font-weight: normal; color: #FFF;">Cam kết hàng chính hãng, thật 100%</span></a> </div>
                             <div class="contact-phone">
                                 <div style="background: #288AD6; text-align: center; margin-top: 10px; padding: 5px;">
                                     <a target="_blank" href="https://zalo.me/0779417827" style="color: #FFF;">
@@ -119,7 +116,7 @@
                                     </a>
                                 </div>
                                 <div style="background: #288AD6; text-align: center; margin-top: 10px; padding: 5px;">
-                                    <a target="_blank" href="#" target="_blank" style="color: #FFF;">
+                                    <a target="_blank" href="http://m.me/codosupp" target="_blank" style="color: #FFF;">
                                         <p style="padding: 5px 0; margin: 0; color: #FFF; font-size: 15px;"><i class="fa fa-comment" style="color: #FFF;"></i> Nhắn tin Messenger với chúng tôi</p>
                                     </a>
                                 </div>
@@ -179,7 +176,7 @@
                                 <div class="mt-5"> <span class="star mt-10" total="5" point="5"></span> </div>
                                 <b><span class="cm-red font-s-20 product-price" price="<?php echo number_format( $prod[0]['price'], 0 ,'','.' ) ?>"><?php echo number_format( $prod[0]['price'], 0 ,'','.' ) ?> VND </span></b>
                             </div>
-                            <div class="cs-col-12 cs-col-md-5 panel-btn action-cart-product" style="margin-bottom: 10px; padding-top: 10px;"> <button class="button-cm mr-10 mt-5 not-disable add-cart" style="font-size: 14px;" "> Mua sản phẩm này</button> </div>
+                            <div class="cs-col-12 cs-col-md-5 panel-btn action-cart-product" style="margin-bottom: 10px; padding-top: 10px;"> <button value="<?php echo $prod[0]['id_prod'] ?>" class="button-cm mr-10 mt-5 not-disable add-cart" style="font-size: 14px;" "> Mua sản phẩm này</button> </div>
                         </div>
                     </div>
                     <div class="cs-col-lg-3 cs-wrap product-detail-right">

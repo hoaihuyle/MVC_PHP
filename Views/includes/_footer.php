@@ -67,7 +67,6 @@
       </div>
       <div id="fb-root"></div>
       
-      
       <script src="/lib/front/asset/site/js/jquery-3.2.1.min.js"></script>
       <script src="/lib/front/asset/site/js/bootstrap.min.js"></script>
       <script src="/lib/front/asset/site/js/slider/jquery.bxslider.min.js"></script>

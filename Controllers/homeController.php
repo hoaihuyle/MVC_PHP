@@ -44,12 +44,10 @@ class HomeController extends Controller
 
     }
 
-    function giohang($id){
+    function giohang($id){  
         require(ROOT . $this->service);
         $product = new ProductService();  
-        $prod = $product->findProduct($db,$id);
-        // $this->helper->_debug($prod);
-//        $this->helper->_debug($prod);
+        $prod = $product->findProduct($db,$id); 
         if($prod != null){
             if($prod[0]['count']!=0){
                 // echo "<script>alert('Sản phẩm đã hết, vui lòng lựa chọn sản phẩm khác!!'); location=' /'</script> ";
@@ -73,9 +71,10 @@ class HomeController extends Controller
             }
         }
         else {
-             echo "<script>alert('Sản phẩm không tồn tại, vui lòng lựa chọn sản phẩm khác!!'); location=' /'</script> ";
+             echo "Sản phẩm không tồn tại, vui lòng lựa chọn sản phẩm khác!!'); location=' /'";
         }
-        echo "<script>alert('Thêm vào giỏ hàng thành công !!'); location= . ".$_SERVER['HTTP_REFERER']."</script> ";
+        // echo 'Sản phẩm đã được thêm vào giỏ hàng'; 
+        echo count($_SESSION['cart']);
 }
 
     function Cart(){

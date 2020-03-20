@@ -126,3 +126,13 @@ input[type=number] {-moz-appearance: textfield; }
     bottom: -1px;
     height: 50%;
 }
+
+/* cart */
+.countCart{
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}

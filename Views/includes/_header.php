@@ -87,6 +87,7 @@
                   <a href="/home/cart" class="mb-10 show-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center ml-auto cart">
                      <i class="fas fa-shopping-cart"></i> 
                      <div class="box-content"> Xem giỏ hàng </div>
+                     <span class="countCart"><?php if(isset($_SESSION['cart']) && count($_SESSION['cart']) != 0) echo count($_SESSION['cart']) ?></span>
                   </a>
                   <!-- End box icon --> 
                </div>
@@ -107,9 +108,10 @@
                      <div class="box-content"> Yêu thích </div>
                   </a>
                   <!-- End box icon --> <!-- Box icon --> 
-                  <a href="#" class="hidden-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center ml-20 cart">
+                  <a href="/home/cart" class="hidden-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center ml-20 cart">
                      <i class="fas fa-shopping-cart"></i> 
                      <div class="box-content"> Xem giỏ hàng </div>
+                     <span class="countCart"><?php if(isset($_SESSION['cart']) && count($_SESSION['cart']) != 0) echo count($_SESSION['cart'])  ?></span>
                   </a>
                   <!-- End box icon --> 
                </div>
