@@ -75,12 +75,17 @@ class HomeController extends Controller
         else {
              echo "<script>alert('Sản phẩm không tồn tại, vui lòng lựa chọn sản phẩm khác!!'); location=' /'</script> ";
         }
-
-        $this->render('card');
-    }
+        echo "<script>alert('Thêm vào giỏ hàng thành công !!'); location= . ".$_SERVER['HTTP_REFERER']."</script> ";
+}
 
     function Cart(){
         $this->render('card');
+    }
+
+    function delCart($id){
+
+        unset($_SESSION['cart'][$id]);
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
     }
 
     function aboutUs(){

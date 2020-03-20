@@ -111,7 +111,7 @@
                             </div>
                             <div class="cs-flex mt-10"> <input class="spinner input-spin" name="quantity" value="1"> <button type="button" class="redirect-login" url="dang-nhap"><i class="far fa-heart"></i></button> </div>
                             <span class="cm-red font-s-25 product-price" style="margin-top: 13px; display: inline-block" price="<?php echo $prod[0]['price'] ?>"><?php echo number_format( $prod[0]['price'], 0 ,'','.' ) ?> VND </span>
-                            <div class="cs-flex mt-10 action-cart-product"> <a class="button-cm mt-5 not-disable add-cart" href="/home/giohang/<?php echo $prod[0]['id_prod'] ?>" style="text-align: center" > <span style="text-transform: uppercase; color: #FFF; font-size: 18px;">Mua sp này</span><br /><span style="font-size: 12px; padding-top: 6px; font-weight: normal; color: #FFF;">Cam kết hàng chính hãng, thật 100%</span></a> </div>
+                            <div class="cs-flex mt-10 action-cart-product"> <a class="button-cm mt-5 not-disable add-cart" href="/home/giohang/<?php echo $prod[0]['id_prod'] ?>" style="text-align: center" > <span style="text-transform: uppercase; color: #FFF; font-size: 18px;">Thêm vào giỏ hàng</span><br /><span style="font-size: 12px; padding-top: 6px; font-weight: normal; color: #FFF;">Cam kết hàng chính hãng, thật 100%</span></a> </div>
                             <div class="contact-phone">
                                 <div style="background: #288AD6; text-align: center; margin-top: 10px; padding: 5px;">
                                     <a target="_blank" href="https://zalo.me/0779417827" style="color: #FFF;">
