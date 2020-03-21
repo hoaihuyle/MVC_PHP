@@ -13,7 +13,9 @@ class loginController extends Controller
       else
       $this->render($this->index.__FUNCTION__);
   }
-  
+  function aaaa(){
+    $this->render('admin/login/index');
+  }
   function postLogin(){ 
     require(ROOT.$this->login);
     $log = new loginService();
@@ -31,8 +33,7 @@ class loginController extends Controller
       }
 //
       if(empty($error)){
-          $val = $log->postLogin($db, $request);
-          var_dump($val);
+          $val = $log->postLogin($db, $request); 
           if($val && $val['role'] == 0 && password_verify($_POST["password"], $val['password'])){
               $_SESSION['name_id'] = $val['id_acco'];
               $_SESSION['name_acco'] = $val['name_acco'];
@@ -41,25 +42,25 @@ class loginController extends Controller
                 header("Location: /menu");
           }
           else {
-              $_SESSION['error'] = 'Sai tên đăng nhập hoặc mật khẩu';
-               header("Location: " . $_SERVER['HTTP_REFERER']);
-              // $this->render('/login');
+              $error['error'] = 'Sai tên đăng nhập hoặc mật khẩu';
+              $this->set($error);
+              $this->render('admin/login/index');
 
           }
       }
       else
       {
-          $_SESSION['error'] = 'Mật khẩu số điện thoại không được để trống';
-          header("Location: " . $_SERVER["HTTP_REFERER"]);
-          // $this->render('/login');
+          $error['error'] = 'Mật khẩu số điện thoại không được để trống';  
+              $this->set($error);
+              $this->render('admin/login/index'); 
       }
 
     }
     else
     {
-        $_SESSION['error'] = 'Không thể đăng nhập';
-        header("Location: " . $_SERVER["HTTP_REFERER"]);
-        // $this->render('/login');
+        $error['error'] = 'Không thể đăng nhập';
+          $this->set($error);
+              $this->render('admin/login/index'); 
     }
   }
 

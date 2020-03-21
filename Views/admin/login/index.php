@@ -21,12 +21,12 @@
     <!-- ============================================================== -->
     <div class="splash-container">
         <div class="card">
-            <div class="card-header text-center"><a href="../index.html"><img class="logo-img" src="lib/admin/images/logo.png" alt="logo"></a><span class="splash-description">Nhập thông tin đăng nhập của bạn.</span></div>
+            <div class="card-header text-center"><a href="../index.html"><img class="logo-img" src="/lib/admin/images/logo.png" alt="logo"></a><span class="splash-description">Nhập thông tin đăng nhập của bạn.</span></div>
             <div class="card-body">
-                <?php if(isset($_SESSION['error'])): ?>
-                    <p class="text-danger"><?php echo $_SESSION['error'];  ?></p>
+                <?php if(isset($error)): ?>
+                    <p class="text-danger"><?php echo $error;  ?></p>
                 <?php endif ?>
-                <form method="POST" action="login/postLogin">
+                <form method="POST" action="/login/postLogin">
                     <div class="form-group">
                         <input class="form-control form-control-lg" name="phone" id="name" type="text" placeholder="Số điện thoại đăng nhập" autocomplete="off">
                     </div>
