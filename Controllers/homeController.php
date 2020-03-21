@@ -8,6 +8,22 @@ class HomeController extends Controller
     }
     function index()
     {  
+        $limit = 8;
+        require(ROOT . $this->service); 
+        $product = new ProductService();  
+        $categories = new CategoryService();
+        $prod['sp_views'] = $product->listProductViews($db, 'products', 'count' ,$limit);        
+        $prod['cateViews'] = $categories->ShowlistCategory($db);
+        foreach($prod['cateViews'] as $ct){
+            $p['cate'] = $product->prodCateWhere($db, 'products', 'cate_id ='.$ct['id_cate'].' limit 8');
+            $prod['prod_cate'][] = array_merge($ct, $p);
+        }
+        // $this->helper->_debug($prod['prod_cate']);
+        // die();
+
+        // $this->helper->_debug($prod['prod_cate']);
+        // die();
+        $this->set($prod);
         $this->render("index");
     }
 
@@ -35,6 +51,8 @@ class HomeController extends Controller
         require(ROOT . $this->service);
         $product = new ProductService();  
         $prod['prod'] = $product->findProduct($db,$id);
+        $data = ['count' => $prod['prod'][0]['count'] + 1];
+        $update = $product->editProduct($db, $id, $data );
         $prod['CateName'] = $product->getCate($db,'categories','id_cate ='.$prod['prod'][0]['cate_id']);
         $this->set($prod);
         $this->render('product_detail');
@@ -61,6 +79,7 @@ class HomeController extends Controller
                     $_SESSION['cart'][$id]['image'] = $prod[0]['image'];
                     $_SESSION['cart'][$id]['discount'] = $prod[0]['discount'];
                     $_SESSION['cart'][$id]['price'] = ((100-$prod[0]['discount']) * $prod[0]['price'])/100;
+                    $_SESSION['cart'][$id]['price_old'] = $prod[0]['price'];
                     $_SESSION['cart'][$id]['qty'] = 1;//số lượng
                 }
                 else
@@ -71,7 +90,7 @@ class HomeController extends Controller
             }
         }
         else {
-             echo "Sản phẩm không tồn tại, vui lòng lựa chọn sản phẩm khác!!'); location=' /'";
+             echo "Sản phẩm không tồn tại, vui lòng lựa chọn sản phẩm khác!!'); location='/'";
         }
         // echo 'Sản phẩm đã được thêm vào giỏ hàng'; 
         echo count($_SESSION['cart']);

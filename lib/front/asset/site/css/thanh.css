@@ -136,3 +136,5 @@ input[type=number] {-moz-appearance: textfield; }
     font-weight: bold;
     color: red;
 }
+/* index */
+.marketing .main-content .owl-carousel .owl-item {background: #fff!important}
