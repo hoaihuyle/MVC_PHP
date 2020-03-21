@@ -6,7 +6,7 @@
                <div class="cs-col-12 cs-col-sm-12 cs-col-lg-6">
                   <h3 class="title-cm"> <span>Đăng ký tài khoản</span> </h3>
                   <p style="line-height: 25px;">Lợi ích khi đăng ký tài khoản tại CODO SUPP: Đăng ký 1 lần và các lần tiếp theo đăng nhập <span style="color: #FF8C00; font-weight: bold;">đặt hàng cực nhanh</span></p>
-                  <form id="form_register" action="/signup/postRegister" method="POST">
+                  <form id="" action="/signup/postRegister" method="POST">
                      <label class="label-cm mt-10" for="">Họ & Tên <span style="color:red">*</span></label> 
                      <input required class="input-cm" name="name_acco" autocomplete="off" type="text" placeholder="Nhập tên khách hàng" value="<?php if(isset($val_name)) echo $val_name ?>" style="font-size: 15px;">
                      <?php if($_SERVER['REQUEST_URI'] != '/signup/postLogin'): if(isset($name_acco)): ?>
@@ -53,7 +53,7 @@
                    <?php if($_SERVER['REQUEST_URI'] === '/signup/postLogin'): if(isset($errors)): ?>
                        <p class="text-danger"><?php echo $errors;?></p>
                    <?php endif; endif?> 
-                     <form id="form_register" action="/signup/postLogin" method="POST">
+                     <form id="" action="/signup/postLogin" method="POST">
                         <label class="label-cm mt-10" for="">Số điện thoại*</label> 
                         <input required class="input-cm" name="phone" autocomplete="off" type="number" style="font-size: 15px;">
                         <?php if($_SERVER['REQUEST_URI'] === '/signup/postLogin'): if(isset($phone)): ?>

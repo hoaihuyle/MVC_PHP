@@ -14,6 +14,14 @@ class CategoryService extends Service{
         $categories =  $category->fetchAll($db); 
         return $categories;
     }
+     /**
+     * List all category by flag = 0
+     */
+    function ShowlistCategory($db){ 
+        $category = new CategoryDAO();
+        $categories =  $category->ShowlistCategory($db); 
+        return $categories;
+    }
 
     /** 
      * List category by ID 

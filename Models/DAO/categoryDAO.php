@@ -6,6 +6,10 @@ class CategoryDAO extends Model
         return $db->fetchAll('categories');
     }
 
+    public function ShowlistCategory($db){
+        return $db->fetchArr('categories', 'flag = 0 Limit 3');
+    }
+
     public function fetchByCol($db, $col, $id){
         return $db->fetchByCol('categories', $col,$id);
     }

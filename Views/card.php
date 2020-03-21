@@ -3,7 +3,7 @@
    <div class="main-content">
       <div class="cs-flex cs-col-12">
          <div class="title-cm" style="width: 100%">
-            <h3 style="padding: 10px; text-align: center">Giỏ hàng của bạn có <span class="color-red total-cart-items" style="font-size: 25px"><?php echo count($_SESSION['cart']) ?></span> sản phẩm</h3>
+            <h3 style="padding: 10px; text-align: center">Giỏ hàng của bạn có <span class="color-red total-cart-items" style="font-size: 25px"><?php if(isset($_SESSION['cart'])) echo count($_SESSION['cart']) ?></span> sản phẩm</h3>
          </div>
          <div class="table-desktop">
             <form action="/site/cart/update" method="post">
@@ -19,29 +19,30 @@
                         <th>Thành tiền</th>
                         <th>Xóa</th>
                      </tr>
-                     <?php if(isset($_SESSION['cart']) != null || count($_SESSION['cart']) ==0): ?>
+                     <?php if(isset($_SESSION['cart'])): if(isset($_SESSION['cart']) != null || count($_SESSION['cart']) ==0): ?>
 
-                     <?php foreach($_SESSION['cart'] as $key=>$cart): ?>
+                           <?php foreach($_SESSION['cart'] as $key=>$cart): ?>
 
-                     <tr class="row-cart">
-                        <td class="ta-center"><?php echo $stt ?></td>
-                        <td> <a href="/home/product/<?php echo $key ?>" class="m-auto cs-flex"> <img class="m-auto lazy" alt="<?php echo $cart['name_prod'] ?>" src="/uploads/products/<?php echo $cart['image'] ?>" style=""> </a> </td>
-                        <td class="">
-                           <b><?php echo $cart['name_prod'] ?> </b>
-                           <p style="font-style: italic; font-size: 12px;"></p>
-                        </td>
-                        <td class="color-red ta-center"><?php echo number_format( $cart['price'], 0 ,'','.' ) ?>đ</td>
-                         <td class="color-red ta-center"><?php echo $cart['discount'] ?></td>
-                        <td class="ta-center">
-                            <div class="quantity">
-                                <input type="number" min="1" max="100" step="1" value="<?php echo $cart['qty'] ?>">
-                            </div>
-                         </td>
-                        <td class="color-red ta-center row-cart-amount"><?php echo number_format($cart['price'] * $cart['qty'], 0,'','.') ?>₫</td>
-                        <td class="ta-center"> <a href="/home/delCart/<?php echo $key ?>" class="style-icon white" style="padding: 0"> <i class="fas fa-times"></i> </a> </td>
-                     </tr>
-                         <?php $tongtien = $tongtien + $cart['price'] * $cart['qty']; $stt++; ?>
-                     <?php endforeach; ?>
+                           <tr class="row-cart">
+                              <td class="ta-center"><?php echo $stt ?></td>
+                              <td> <a href="/home/product/<?php echo $key ?>" class="m-auto cs-flex"> <img class="m-auto lazy" alt="<?php echo $cart['name_prod'] ?>" src="/uploads/products/<?php echo $cart['image'] ?>" style=""> </a> </td>
+                              <td class="">
+                                 <b><?php echo $cart['name_prod'] ?> </b>
+                                 <p style="font-style: italic; font-size: 12px;"></p>
+                              </td>
+                              <td class="color-red ta-center"><?php echo number_format( $cart['price_old'], 0 ,'','.' ) ?>đ</td>
+                              <td class="color-red ta-center"><?php echo $cart['discount'] ?>% = <?php echo number_format( $cart['price_old'] - $cart['price']  , 0 ,'','.' ) ?>đ</td>
+                              <td class="ta-center">
+                                 <div class="quantity">
+                                    <input type="number" min="1" max="100" step="1" value="<?php echo $cart['qty'] ?>">
+                                 </div>
+                              </td>
+                              <td class="color-red ta-center row-cart-amount"><?php echo number_format($cart['price'] * $cart['qty'], 0,'','.') ?>₫</td>
+                              <td class="ta-center"> <a href="/home/delCart/<?php echo $key ?>" class="style-icon white" style="padding: 0"> <i class="fas fa-times"></i> </a> </td>
+                           </tr>
+                              <?php $tongtien = $tongtien + $cart['price'] * $cart['qty']; $stt++; ?>
+                           <?php endforeach; ?>
+                        <?php endif; ?>
                      <?php endif; ?>
                      <tr>
                         <td colspan="4" align="right" style="border-right: none "> <b> <span>Tổng tiền thanh toán:</span> </b> </td>

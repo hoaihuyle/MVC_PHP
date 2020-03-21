@@ -47,7 +47,7 @@
          <div class="top-bar hidden-top-bar">
             <div class="main-content cs-flex">
                <div class="cs-col-12 cs-col-sm-6 cs-flex"> 
-                <a href="/front/tel:0779417827" rel="nofollow" class="connect cs-flex flex-row flex-align-center mr-20">
+                <a href="tel:0779417827" rel="nofollow" class="connect cs-flex flex-row flex-align-center mr-20">
                  <span><i class="fas fa-phone-square"></i> Hotline: 077.941.7827</span>
                 </a>
                 <a href="https://www.facebook.com/codosupp/" target="_blank" rel="nofollow" class="connect cs-flex flex-row flex-align-center mr-20">

@@ -10,6 +10,10 @@ class ProductDAO extends Model
         return $db->fetchByCol('products','id_prod',$id);
     }
 
+    public function prodCateWhere($db, $table, $where){
+        return $db->fetchArr($table, $where);
+    }
+
     function fetchByColOther($db){
         try {
             //code...
@@ -71,5 +75,8 @@ class ProductDAO extends Model
         return $db->fetchJoneDetail($sql, $page, $total, $pagi);
     }
  
+    public function listProductViews($db, $table, $column , $limit){
+        return $db->fetchMax($table, $column , $limit);
+    }
 }
 ?>
