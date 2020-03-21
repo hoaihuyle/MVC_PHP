@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0">Data Tables - Print, Excel, CSV, PDF Buttons</h5>
-                        <p>This example shows DataTables and the Buttons extension being used with the Bootstrap 4 framework providing the styling.</p>
+                        <!-- <p>This example shows DataTables and the Buttons extension being used with the Bootstrap 4 framework providing the styling.</p> -->
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

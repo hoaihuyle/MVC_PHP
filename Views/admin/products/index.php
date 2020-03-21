@@ -54,11 +54,11 @@
                                     </select>
                                 </div>
                                  
-                                <!-- <div class='col-md-5'>
+                                <div class='col-md-5'>
                                     <div class="form-group">
-                                    <div class="input-group date" id="datetimepicker7" data-target-input="nearest">
-                                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker7"/>
-                                            <div class="input-group-append" data-target="#datetimepicker7" data-toggle="datetimepicker">
+                                        <div class="input-group date" id="startFilter" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input" data-target="#startFilter" name="startFilter" <?php if(isset($str3)) echo "value=$str3"?>/>
+                                            <div class="input-group-append" data-target="#startFilter" data-toggle="datetimepicker">
                                                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                             </div>
                                         </div>
@@ -66,14 +66,14 @@
                                 </div>
                                 <div class='col-md-5'>
                                     <div class="form-group">
-                                    <div class="input-group date" id="datetimepicker8" data-target-input="nearest">
-                                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker8"/>
-                                            <div class="input-group-append" data-target="#datetimepicker8" data-toggle="datetimepicker">
+                                    <div class="input-group date" id="endFilter" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input" data-target="#endFilter" name="endFilter" <?php if(isset($str4)) echo "value=$str4"?>/>
+                                            <div class="input-group-append" data-target="#endFilter" data-toggle="datetimepicker">
                                                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                             </div>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
                                 <div class="col-md-2">
                                     <div class="form-group" id="filterBtnTime">
                                         <button type="submit" class="btn btn-primary"> Lọc </button>
@@ -164,3 +164,8 @@
         </div>
 
     </div>
+    <style type="text/css">
+        .bootstrap-datetimepicker-widget.dropdown-menu{
+             width: max-content;
+        }
+    </style>

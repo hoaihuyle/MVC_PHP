@@ -14,7 +14,7 @@ class ProductController extends Controller
         if( $_SESSION['role'] != 0 || !isset($_SESSION['role']) )
             header('location: /');
     }
-    function seach($str, $str2){
+    function seach($str, $str2,$str3,$str4){
         // var_dump($_GET);
         require(ROOT . $this->service);
         $product = new ProductService();
@@ -24,13 +24,18 @@ class ProductController extends Controller
 
         require(ROOT . $this->serviceCate);
         $category = new CategoryService();
-        $d['productInfos'] = $product->fetchsql($db,$str,$str2);  
+        $d['productInfos'] = $product->fetchsql($db,$str,$str2,$str3,$str4);  
         $d['companyInfos'] = $company->listCompany($db);
         $d['categoryInfos'] = $category->listCategory($db);
+        if($str3!=""){
+            $d['str3']=$str3;
+           
+        }
+        if($str4!=""){
+            $d['str4']=$str4;
+        }
         if(intval($str)==true){
           $d['cate_id1']=$str;
-        
-         
         }
         if(intval($str2)==true){
           $d['comp_id1']=$str2;
