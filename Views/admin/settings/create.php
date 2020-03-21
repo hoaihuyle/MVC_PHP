@@ -35,24 +35,54 @@
                     <h5 class="card-header">Validation Types</h5>
                     <div class="card-body">
                         <form id="validationform" data-parsley-validate="" novalidate="" method="POST">
-                            <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right ">Tên cài đặt<span class="text-danger">*</span></label>
-                                <div class="col-12 col-sm-8 col-lg-6">
-                                    <input name="name_menu" type="text" required="" placeholder="Nhập tên Menu" class="form-control text-primary">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label text-sm-right">Trạng thái</label>
-                                <div class="col-sm-6">
-                                    <div class="custom-controls-stacked">
-                                        <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
-                                            <label class="be-checkbox custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" checked><span class="custom-control-label">Hiện</span>
-                                            </label>
-                                        </div>
+                            <div id="close_select_input">
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Chọn Từ khóa<span class="text-danger">*</span></label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <select class="form-control" name="menu_id" id="input-select">
+                                        <option value="0">Từ khóa</option>
+                                        <option value="add_new">Thêm mới</option>
+                                        <?php  
+                                            foreach($settingInfos as $setting){
+                                        ?>
+                                            <option value="<?php echo $setting['key_sett']; ?>"> <?php echo $setting['key_sett'] ?> </option> ;
+                                        <?php
+                                        }
+                                        ?>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
+
+                            <div id="add_input_New">
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right ">Nhập Từ khóa<span class="text-danger">*</span></label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input name="name_menu" type="text" required="" placeholder="Từ khóa" class="form-control text-primary">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="group_Append">
+                                <div class="form-group row input_containt_key">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right ">Nhập Nội dung cho từ khóa</label>
+                                    <div class="col-10 col-sm-8 col-lg-6">
+                                        <input name="name_menu" type="text" required="" placeholder="Xin hãy nhập nội dung" class="form-control text-primary">
+                                    </div>
+                                    <div class="col-1 del_work">
+                                        <a>
+                                            <img src="/lib/imageBoth/close.svg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="btn_Action" class="form-group row">
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right" for="add_btn_New">Nhấn nút để thêm mới</label>
+                                <div id="add_NewInput" class="col-10 col-sm-8 col-lg-6 float-right">
+                                    <a class="d-inline float-right" id="add_btn_New">
+                                        <img src="/lib/imageBoth/plus.svg" alt="add new input">
+                                    </a>
+                                </div>
+                           </div>
                             <div class="form-group row text-right">
                                 <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
                                     <button type="submit" class="btn btn-space btn-primary">Tạo mới</button>
