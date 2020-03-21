@@ -12,10 +12,7 @@ class loginController extends Controller
       }
       else
       $this->render($this->index.__FUNCTION__);
-  }
-  function aaaa(){
-    $this->render('admin/login/index');
-  }
+  } 
   function postLogin(){ 
     require(ROOT.$this->login);
     $log = new loginService();
