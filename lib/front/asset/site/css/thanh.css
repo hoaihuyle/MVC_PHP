@@ -28,7 +28,8 @@ img{width: 100%; height:auto}
 
 /* chitietsp */
 
-.breadcrumbs{ padding: 20px 0 5px 0; margin: 0;}
+.breadcrumbs{ padding: 15px 0 5px 0; margin: 0;}
+.breadcrumbs .container{padding: 0;}
 .breadcrumbs .items{font-size: 1.2rem; color: #a3a3a3; margin: 0 -15px; padding: 0; list-style: none none;}
 .breadcrumbs .items>li { display: inline-block; vertical-align: top; }
 .breadcrumbs .item { margin: 0; }
@@ -38,18 +39,19 @@ img{width: 100%; height:auto}
 .breadcrumbs a:visited {color: #333;text-decoration: none;}
 .breadcrumbs a {color: #333;text-decoration: none;}
 .breadcrumbs .product{padding: 0; margin-bottom: 0!important;}
-.breadcrumbs .items .item strong{font-weight: 700; color: #7d7d7d}
+.breadcrumbs .items .item strong{font-weight: 700; color: #7d7d7d} 
 .breadcrumbs .items .item a:after {  content: '\f105'; display: inline-block; font-family: FontAwesome; font-style: normal; font-weight: normal; font-variant: normal; font-synthesis: weight style; font-stretch: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-feature-settings: normal;  line-height: 1;  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;  text-align: center; font-size: 14px; padding: 0 10px; }
 #detail .title-cm{margin: 0;}
-#detail .cs-flex{margin-top: 15px;}
+/* #detail .cs-flex{margin-top: 15px;} */
 #detail .product-options-bottom { float: left; display: block; width: 100% } 
 .nutrition_facts{margin-top: 15px}
 
 /* //aboutus */
 #maincontent { padding: 5px 0;}
+#maincontent .container{padding: 0}
 #maincontent .page-title-wrapper{font-size: 138.5%; color: #222; font-weight: 700; text-transform: uppercase;margin-bottom: 35px;}
-#maincontent .col-lg-9.col-md-9.col-sm-12.col-xs-12{margin-left: -15px}
-#maincontent .col-lg-3.col-md-3.col-sm-12.col-xs-12{margin-right: -15px;}
+#maincontent .col-lg-9.col-md-9.col-sm-12.col-xs-12{margin-left: -15px; padding-right: 0;}
+#maincontent .col-lg-3.col-md-3.col-sm-12.col-xs-12{margin-right: -15px;padding-left: 0;}
 .page-title{font-size: 138.5%; color: #222;  font-weight: 700; text-transform: uppercase;}
 .page-main tbody tr td{ padding: 8px 10px; vertical-align: top;max-width: 100%;}
 .page-main .alert strong{font-weight: bold; }
@@ -73,18 +75,64 @@ img{width: 100%; height:auto}
 
 /* product */
 .products{padding: 30px 0;  min-height: 500px;}
-.products .col2-layout .col-lg-3.col-md-3.col-sm-12.col-xs-12{margin-right: 0!important;}
 .products .col2-layout .col-lg-9.col-md-9.col-sm-12.col-xs-12{margin-left: 0!important;}
 .products .catalog-product{height: auto;}
 .products .category-cms h1{font-size: 40px;margin: 40px 0;}
 .product .image:hover .pane-tool-button{justify-content:center; width: 100%;}
+#detail .cs-flex.cs-col-lg-9.cs-wrap.product-detail-left{padding-left: 0;}
 /* search */
 .pagination{text-align: center; margin-bottom: 40px;}
 
 /* edit user */
-
+.ui-spinner .ui-spinner-button{width: 30px }
 .editUser{display: flex; justify-content: space-around; width: 100%}
 .editUser .image_user{width: 50%; text-align: center;}
 .editUser form{width: 100%}
 
+.old{text-decoration: line-through;font-size: 14px;color: #acacac;line-height: 26px; font-weight: 700; margin-left: 5px; }
 
+/* about-us */
+#aboutUs .container {padding: 20px 0;}
+#aboutUs .col-lg-9.col-md-9.col-sm-12.col-xs-12{padding-left: 0;}
+#aboutUs .col-lg-3.col-md-3.col-sm-12.col-xs-12{padding-top: 40px}
+#aboutUs .main{padding-top: 10px}
+.quantity { position: relative; width: 100% }
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button{-webkit-appearance: none; margin: 0;}
+
+input[type=number] {-moz-appearance: textfield; }
+
+.quantity input {text-align:center;width: 100%;height: 42px; line-height: 1.65;float: left;display: block; padding: 0!important; margin: 0; padding-left: 20px; border: 1px solid #eee; }
+
+.quantity input:focus { outline: 0;}
+
+.quantity-nav { float: left; position: relative; height: 42px;}
+
+.quantity-button { position: relative; cursor: pointer; border-left: 1px solid #eee; width: 20px; text-align: center; color: #333; font-size: 13px; font-family: "Trebuchet MS", Helvetica, sans-serif !important; line-height: 1.7; -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); -webkit-user-select: none;
+    -moz-user-select: none; -ms-user-select: none;
+    -o-user-select: none; user-select: none;
+}
+
+.quantity-button.quantity-up {
+    position: absolute;
+    height: 50%;
+    top: 0;
+    border-bottom: 1px solid #eee;
+}
+
+.quantity-button.quantity-down {
+    position: absolute;
+    bottom: -1px;
+    height: 50%;
+}
+
+/* cart */
+.countCart{
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}

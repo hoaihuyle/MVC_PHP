@@ -3,7 +3,7 @@
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="d-xl-none d-lg-none" href="admin/index">Dashboard</a>
+                    <a class="d-xl-none d-lg-none" href="admin/index">Bảng điều khiển</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -13,7 +13,7 @@
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="/admin/index" ><i class="fas fa-home"></i>Dashboard </a>
+                                <a class="nav-link" href="/admin/index" ><i class="fas fa-home"></i>Bảng điều khiển </a>
                                 <!--
                                 <a class="nav-link active" href="admin/index" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
                                  <div id="submenu-1" class="collapse submenu" style="">

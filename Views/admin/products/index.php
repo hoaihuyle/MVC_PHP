@@ -102,6 +102,8 @@
                                     <tr>
                                         <th style="text-align: center;">Id</th>
                                         <th style="text-align: center;">Tên</th>
+                                        <th style="text-align: center;">Giá</th>
+                                        <th style="text-align: center;">HSX</th>
                                         <th style="text-align: center;">Ảnh</th>
                                         <th style="text-align: center;">Ngày tạo</th>
                                         <th style="text-align: center;">Người tạo</th>
@@ -117,7 +119,13 @@
                                     ?>
                                         <tr>
                                             <td align="center"><?php echo $product['id_prod']; ?></td>
-                                            <td align="center"><?php echo $product['name_prod']; ?></td>
+                                            <td ><?php echo $product['name_prod']; ?></td>
+                                            <td align="center"><?php echo $product['price']; ?> VNĐ</td>
+
+                                            <?php  foreach($companyInfos as $company){ if( $company['id_comp']== $product['comp_id']){ ?>
+                                            <td align="center"><?php echo $company['name_comp']; ?></td>
+                                            <?php } } ?>
+
                                             <td align="center"><img class="rounded" height="45" width="45" class="" src="<?php echo isset($product['image'])?'/uploads/products/'.$product['image']:'/uploads/noimage.jpg'; ?>"> </td>
                                             <td align="center"><?php echo $product['created']; ?></td>
                                             <td align="center"><?php echo ($product['user_created']!=0)?$product['user_created']:'admin'; ?></td>
@@ -135,6 +143,8 @@
                                     <tr>
                                         <th style="text-align: center;">Id</th>
                                         <th style="text-align: center;">Tên</th>
+                                        <th style="text-align: center;">Giá</th>
+                                        <th style="text-align: center;">HSX</th>
                                         <th style="text-align: center;">Ảnh</th>
                                         <th style="text-align: center;">Ngày tạo</th>
                                         <th style="text-align: center;">Người tạo</th>

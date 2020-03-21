@@ -43,12 +43,15 @@ class loginController extends Controller
           else {
               $_SESSION['error'] = 'Sai tên đăng nhập hoặc mật khẩu';
                header("Location: " . $_SERVER['HTTP_REFERER']);
+              // $this->render('/login');
+
           }
       }
       else
       {
           $_SESSION['error'] = 'Mật khẩu số điện thoại không được để trống';
           header("Location: " . $_SERVER["HTTP_REFERER"]);
+          // $this->render('/login');
       }
 
     }
@@ -56,6 +59,7 @@ class loginController extends Controller
     {
         $_SESSION['error'] = 'Không thể đăng nhập';
         header("Location: " . $_SERVER["HTTP_REFERER"]);
+        // $this->render('/login');
     }
   }
 

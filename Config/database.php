@@ -15,6 +15,7 @@ $db = new Database();
         public function __construct()
         {
 
+            // $this->link =  mysqli_connect("localhost","root","","codosupp") or die ("Kết nối thất bại thử lại sau - Connect Fail, please try agian late !");
             // $this->link = mysqli_connect("cit.cit","root","","cit_db") or die ();
             $this->link =  mysqli_connect("localhost","root","","codosupp") or die ("Kết nối thất bại thử lại sau - Connect Fail, please try agian late !");
             mysqli_set_charset($this->link,"utf8");
@@ -417,17 +418,16 @@ $db = new Database();
         }
 
 
-        public  function fetchJoneDetail($table , $sql ,$page = 0,$total ,$pagi )
+        public  function fetchJoneDetail($sql ,$page = 0,$total ,$pagi )
         {
             $result = mysqli_query($this->link,$sql) or die("Lỗi truy vấn fetchJone ---- " .mysqli_error($this->link));
-
             $sotrang = ceil($total / $pagi);
             $start = ($page - 1 ) * $pagi ;
-            $sql .= " LIMIT $start,$pagi";
-
+            $sql .= " LIMIT $start,$pagi";       
             $result = mysqli_query($this->link , $sql);
             $data = [];
-            $data = [ "page" => $sotrang];
+            // $data = [ "page" => $sotrang];
+            
             if( $result)
             {
                 while ($num = mysqli_fetch_assoc($result))

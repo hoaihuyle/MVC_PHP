@@ -12,14 +12,17 @@
           </div>
           <div class="catalog-product" style="width: 100%">
               <h3 class="title-cm"> <span>MỤC SẢN PHẨM</span> </h3> 
+             
               <div class="tree-view">
                 <ul class="catalog mc-tree-view" style="display: block;">
                   <?php foreach($categoryInfos as $cate){ ?>
-                  <li class="mc-state-collapsed"><a href="/home/category/<?php echo $cate['id_cate'] ?>"><?php echo $cate['name_cate'] ?></a>
+                  <li class="mc-state-collapsed"> 
+                  <a  <?php if( $_SERVER['REQUEST_URI'] == '/home/category?cate_id='.$cate['id_cate'].'&page=1'): ?>style="color: red" <?php endif ?> href="/home/category?cate_id=<?php echo $cate['id_cate']?>&page=1"><?php echo $cate['name_cate'] ?></a>
                     <!-- <ul class="mc-tree-view" style="display: block;">
                       <li class="mc-state-expanded"><a href="h/whey-protein-blend">Whey Protein Blend </a>
                       </li> 
                     </ul> -->
+                    
                     <button class="mc-toggle"></button>
                   </li> 
                   <?php } ?>
@@ -53,44 +56,6 @@
                         <label for="th_30" class="item">BPI Sports</label>
                         <input name="th[]" type="checkbox" id="th_30" class="check-box-pro" value="30">
                       </li>
-                    </ul>
-                  </div>
-                </div>
-                <p class="title-cm"> <span title="Trọng lượng">Trọng lượng</span> 
-                </p>
-                <div class="title-line"></div>
-                <p></p>
-                <div class="tree-view">
-                  <div class="layout-scroll">
-                    <ul class="chose-size cs-flex cs-wrap">
-                      <div>
-                        <label class="item" for="160">2,27kg (5lbs)</label>
-                        <input name="p_1[]" type="checkbox" id="160" class="check-box-pro" value="60">
-                      </div>
-                      <div>
-                        <label class="item" for="162">900g (2lbs)</label>
-                        <input name="p_1[]" type="checkbox" id="162" class="check-box-pro" value="62">
-                      </div>
-                      <div>
-                        <label class="item" for="163">4.5kg (10lbs)</label>
-                        <input name="p_1[]" type="checkbox" id="163" class="check-box-pro" value="63">
-                      </div>
-                      <div>
-                        <label class="item" for="165">1.8kg (4lbs)</label>
-                        <input name="p_1[]" type="checkbox" id="165" class="check-box-pro" value="65">
-                      </div>
-                      <div>
-                        <label class="item" for="166">5kg (11lbs)</label>
-                        <input name="p_1[]" type="checkbox" id="166" class="check-box-pro" value="66">
-                      </div>
-                      <div>
-                        <label class="item" for="167">2.5kg (5.5lbs)</label>
-                        <input name="p_1[]" type="checkbox" id="167" class="check-box-pro" value="67">
-                      </div>
-                      <div>
-                        <label class="item" for="170">1kg (2,2lbs)</label>
-                        <input name="p_1[]" type="checkbox" id="170" class="check-box-pro" value="70">
-                      </div>
                     </ul>
                   </div>
                 </div>
@@ -223,10 +188,7 @@
                       </div>
                     </ul>
                   </div>
-                </div>
-                <p class="title-cm"> <span title="Serving Size">Serving Size</span> 
-                </p>
-                <div class="title-line"></div>
+                </div> 
                 <p></p>
                 <div class="tree-view">
                   <div class="layout-scroll">
@@ -238,63 +200,6 @@
                     </ul>
                   </div>
                 </div>
-                <p class="title-cm"> <span title="Servings Per Container">Servings Per Container</span> 
-                </p>
-                <div class="title-line"></div>
-                <p></p>
-                <div class="tree-view">
-                  <div class="layout-scroll">
-                    <ul class="chose-size cs-flex cs-wrap">
-                      <div>
-                        <label class="item" for="12114">71+</label>
-                        <input name="p_12[]" type="checkbox" id="12114" class="check-box-pro" value="114">
-                      </div>
-                      <div>
-                        <label class="item" for="12118">27+</label>
-                        <input name="p_12[]" type="checkbox" id="12118" class="check-box-pro" value="118">
-                      </div>
-                      <div>
-                        <label class="item" for="12119">141+</label>
-                        <input name="p_12[]" type="checkbox" id="12119" class="check-box-pro" value="119">
-                      </div>
-                      <div>
-                        <label class="item" for="12122">38+</label>
-                        <input name="p_12[]" type="checkbox" id="12122" class="check-box-pro" value="122">
-                      </div>
-                      <div>
-                        <label class="item" for="12124">khoảng 103</label>
-                        <input name="p_12[]" type="checkbox" id="12124" class="check-box-pro" value="124">
-                      </div>
-                      <div>
-                        <label class="item" for="12133">khoảng 200</label>
-                        <input name="p_12[]" type="checkbox" id="12133" class="check-box-pro" value="133">
-                      </div>
-                      <div>
-                        <label class="item" for="12189">40+</label>
-                        <input name="p_12[]" type="checkbox" id="12189" class="check-box-pro" value="189">
-                      </div>
-                      <div>
-                        <label class="item" for="12190">100</label>
-                        <input name="p_12[]" type="checkbox" id="12190" class="check-box-pro" value="190">
-                      </div>
-                      <div>
-                        <label class="item" for="12203">khoảng 42</label>
-                        <input name="p_12[]" type="checkbox" id="12203" class="check-box-pro" value="203">
-                      </div>
-                      <div>
-                        <label class="item" for="12207">45</label>
-                        <input name="p_12[]" type="checkbox" id="12207" class="check-box-pro" value="207">
-                      </div>
-                      <div>
-                        <label class="item" for="12353">khoảng 69</label>
-                        <input name="p_12[]" type="checkbox" id="12353" class="check-box-pro" value="353">
-                      </div>
-                    </ul>
-                  </div>
-                </div>
-                <p class="title-cm"> <span title="Thành phần chính">Thành phần chính</span> 
-                </p>
-                <div class="title-line"></div>
                 <p></p>
                 <div class="tree-view">
                   <div class="layout-scroll">
@@ -314,40 +219,6 @@
                       <div>
                         <label class="item" for="13360">Protein trải dài</label>
                         <input name="p_13[]" type="checkbox" id="13360" class="check-box-pro" value="360">
-                      </div>
-                    </ul>
-                  </div>
-                </div>
-                <p class="title-cm"> <span title="Điểm Bodybuilding.com">Điểm Bodybuilding.com</span> 
-                </p>
-                <div class="title-line"></div>
-                <p></p>
-                <div class="tree-view">
-                  <div class="layout-scroll">
-                    <ul class="chose-size cs-flex cs-wrap">
-                      <div>
-                        <label class="item" for="14140">9.3</label>
-                        <input name="p_14[]" type="checkbox" id="14140" class="check-box-pro" value="140">
-                      </div>
-                      <div>
-                        <label class="item" for="14157">8.7</label>
-                        <input name="p_14[]" type="checkbox" id="14157" class="check-box-pro" value="157">
-                      </div>
-                      <div>
-                        <label class="item" for="14162">9.8</label>
-                        <input name="p_14[]" type="checkbox" id="14162" class="check-box-pro" value="162">
-                      </div>
-                      <div>
-                        <label class="item" for="14195">9.4</label>
-                        <input name="p_14[]" type="checkbox" id="14195" class="check-box-pro" value="195">
-                      </div>
-                      <div>
-                        <label class="item" for="14196">9.2</label>
-                        <input name="p_14[]" type="checkbox" id="14196" class="check-box-pro" value="196">
-                      </div>
-                      <div>
-                        <label class="item" for="14359">8.1</label>
-                        <input name="p_14[]" type="checkbox" id="14359" class="check-box-pro" value="359">
                       </div>
                     </ul>
                   </div>
@@ -398,7 +269,7 @@
 					<div class="column main">              
             <h3 class="title-cm"> 
               <span><?php echo $Cate['name_cate'] ?> </span> 
-              <span class="description mr-auto">(Hiển thị 1 - 42/11 sản phẩm)</span> 
+              <span class="description mr-auto">(Hiển thị <?php echo $totalPage != 0 ? $countShow : 0 ?> - <?php if($total >= 9 ):?> 9/ <?php endif ?><?php echo $total ?> sản phẩm)</span>
               <div class="filter-price"> 
                 <label for="filter_price">Sắp xếp</label> 
                 <select name="filter_price" id="filter_price"> 
@@ -429,34 +300,33 @@
                     </div>
                     <img class="lazy" alt="<?php echo $p['name_prod'] ?>" title="<?php echo $p['name_prod'] ?>" src="/uploads/products/<?php echo $p['image'] ?>" style="">
                   </a> <a href="/home/product/<?php echo $p['id_prod'] ?>" class="title"><?php echo $p['name_prod'] ?></a>  <span style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;"><?php echo $p['uses_prod'] ?></span>
-                  <div class="star" total="5" point="5"><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i>
+                  <div class="star" total="5" point="5">
                   </div>
-                  <div class="price"> <span class="main"><?php echo $p['price'] ?></span>  <span class="old"><?php echo $p['price_manu'] ?></span> 
+                  <div class="price"> <span class="main"><?php echo number_format( $p['price'], 0 ,'','.' ) ?> VND </span>  <span class="old"><?php echo number_format( $p['price_manu'], 0 ,'','.' ) ?> VND</span>
                   </div>
                 </div> 
-                <!-- <div class="product product-catalog cs-col-6 cs-col-md-4">
-                  <div class="label-deal-product">-18%</div>
-                  <div class="time-deal-product" time="7015"> <span><i class="far fa-clock"></i> <span class="display-time">01:56:56</span></span>
-                  </div>
-                  <a href="/myprotein-impact-whey-protein-1kg-44-servings-1112.html" class="image cs-flex flex-align-center flex-content-center">
-                    <div class="pane-tool-button cs-flex">
-                      <button class="pr-10 pl-10 mr-5">Xem chi tiết</button>
-                      <button class="mr-5 btn-popup-detail" smell="2" current="/whey-protein-blend" base="/" product="77"><i class="fas fa-eye"></i>
-                      </button>
-                      <button class="redirect-login" url="/dang-nhap.html"><i class="far fa-heart"></i>
-                      </button>
-                    </div>
-                    <img class="lazy" alt="Impact whey protein 1kg 44 servings" title="Impact whey protein 1kg 44 servings" src=" lib/front/upload/product/catalog/mass_fusion_12lbs_5_4kg__phien_ban_moi__image_catalog_1582008615.jpg" style="">
-                  </a> <a href="/myprotein-impact-whey-protein-1kg-44-servings-1112.html" class="title">Impact whey protein 1kg 44 servings</a>  <span style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;">Chỉ 15.000đ 1 muỗng và đây là loại whey được nhiều người lựa chọn nhất</span> 
-                  <div class="star" total="5" point="4"><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5 light"></i><i class="far fa-star mr-5"></i>
-                  </div>
-                  <div class="price"> <span class="main">530.000đ</span>  <span class="old">650.000đ</span> 
-                  </div>
-                </div> -->
+
                 <?php endforeach ?>
-               </div>  
-             <div class="pagination cs-flex"> <strong>1</strong><a href="tim-kiemcadd.html?page=45" data-ci-pagination-page="2">2</a><a href="tim-kiem9907.html?page=90" data-ci-pagination-page="3">3</a><a href="tim-kiemcadd.html?page=45" data-ci-pagination-page="2" rel="next"><i class="fa fa-angle-double-right"></i></a><a href="tim-kiem9d64.html?page=270" data-ci-pagination-page="7">Trang cuối</a> 
-				    </div>
+               </div>
+              <div class="pagination cs-flex">
+                  <?php if($activePage  != 1): ?>
+                <a class="first" href="<?php echo '/home/category?cate_id='.$Cate['id_cate'].'&page=1'; ?>" data-ci-pagination-page="1">Trang đầu</a>
+
+                <a class="prev" data-ci-pagination-page="2" rel="prev">
+                <i class="fa fa-angle-double-left"></i></a>
+                  <?php endif ?>
+                <?php   for ($i=0; $i < $totalPage; $i++) {  ?>
+                  <a class="page-item <?php echo ($activePage == $i+1)?'active':'' ?>" href="<?php echo '/home/category?cate_id='.$Cate['id_cate'].'&page='.($i+1); ?>" data-ci-pagination-page="<?php echo ($i+1); ?>"><?php echo $i+1; ?></a>
+                <?php } ?>
+
+                  <?php if($activePage != $totalPage && $totalPage != 0): ?>
+                <a class="next" data-ci-pagination-page="2" rel="next">
+                <i class="fa fa-angle-double-right"></i></a>
+
+                <a class="end" href="<?php echo '/home/category?cate_id='.$Cate['id_cate'].'&page='.$i; ?>" data-ci-pagination-page="<?php echo $totalPag-1; ?>">Trang cuối</a>
+              </div>
+                        <?php endif ?>
+            
 					</div>
 				</div>
 			</div>
