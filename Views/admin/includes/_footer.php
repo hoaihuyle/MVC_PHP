@@ -61,3 +61,24 @@
 </body>
  
 </html>
+
+<script type="text/javascript">
+            var d=new Date();
+            var month=d.getMonth()+1;
+            var firstDay = new Date(d.getFullYear(), d.getMonth(), 1);
+            var lastday=new Date(d.getFullYear(),month,0);
+             $(function(){
+                        $('#datetimepicker6').datetimepicker({
+                            defaultDate:firstDay,
+                            format:'DD-MM-YYYY'
+                        });
+                    });
+
+               $(function(){
+                        $('#datetimepicker8').datetimepicker({
+                            defaultDate: lastday,
+                            format:'DD-MM-YYYY'
+                        });
+                    });
+
+</script>
