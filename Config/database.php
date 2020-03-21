@@ -1,6 +1,8 @@
 <?php  
 $db = new Database();
     session_start();
+
+    
     /**
     * 
     */
@@ -17,7 +19,7 @@ $db = new Database();
 
             // $this->link =  mysqli_connect("localhost","root","","codosupp") or die ("Kết nối thất bại thử lại sau - Connect Fail, please try agian late !");
             // $this->link = mysqli_connect("cit.cit","root","","cit_db") or die ();
-            $this->link =  mysqli_connect("qbhol6k6vexd5qjs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com","idc1h0rveicx5l94","sf996cqouxdwcghn","ngg5g9y1jletgi0d") or die ("Kết nối thất bại thử lại sau - Connect Fail, please try agian late !");
+            $this->link =  mysqli_connect("localhost","root","","codosupp") or die ("Kết nối thất bại thử lại sau - Connect Fail, please try agian late !");
             mysqli_set_charset($this->link,"utf8");
         }
  
@@ -224,6 +226,38 @@ $db = new Database();
             $sql = "SELECT * FROM {$table} WHERE $val ";
             $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn fetchID " .mysqli_error($this->link));
             return mysqli_fetch_assoc($result);
+        }
+
+        //$id = array 'name' => 'val'
+        public function fetchArr($table , $val)
+        {
+            $sql = "SELECT * FROM {$table} WHERE $val";
+            $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn fetchID " .mysqli_error($this->link));
+            $data = [];
+            if( $result)
+            {
+                while ($num = mysqli_fetch_assoc($result))
+                {
+                    $data[] = $num;
+                }
+            }
+            return $data;
+        }
+
+        //$id = array 'name' => 'val'
+        public function fetchMax($table, $column , $limit)
+        {
+            $sql = "SELECT * FROM {$table} ORDER BY {$column} LIMIT $limit ";
+            $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn fetchID " .mysqli_error($this->link));
+            $data = [];
+            if( $result)
+            {
+                while ($num = mysqli_fetch_assoc($result))
+                {
+                    $data[] = $num;
+                }
+            }
+            return $data;
         }
         
         //lấy toàn bộ dữ liệu của id có trong bảng
