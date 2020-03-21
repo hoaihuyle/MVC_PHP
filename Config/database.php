@@ -1,6 +1,8 @@
 <?php  
 $db = new Database();
     session_start();
+
+    
     /**
     * 
     */
@@ -14,6 +16,7 @@ $db = new Database();
 
         public function __construct()
         {
+
             // $this->link =  mysqli_connect("localhost","root","","codosupp") or die ("Kết nối thất bại thử lại sau - Connect Fail, please try agian late !");
             // $this->link = mysqli_connect("cit.cit","root","","cit_db") or die ();
             $this->link =  mysqli_connect("localhost","root","","codosupp") or die ("Kết nối thất bại thử lại sau - Connect Fail, please try agian late !");
@@ -28,6 +31,7 @@ $db = new Database();
          */
         public function insert($table, array $data)
         {
+            
             //code
             $sql = "INSERT INTO {$table} ";
             $columns = implode(',', array_keys($data));
@@ -115,6 +119,8 @@ $db = new Database();
             $num = mysqli_num_rows($result);
             return $num;
         }
+
+
         /**
          * [delete description] hàm delete
          * @param  $table      [description]
@@ -129,6 +135,34 @@ $db = new Database();
             mysqli_query($this->link,$sql) or die (" Lỗi Truy Vấn delete   --- " .mysqli_error($this->link));
             return mysqli_affected_rows($this->link);
         }
+        public function WhereOneTable($table, array $data1,array $conditions){
+            $sql="SELECT * FROM {$table} WHERE ";
+            for($x=0;$x<count($data1);$x++){
+                 $sql.=$data1[$x].'=';
+                for($y=$x;$y<=$x;$y++){
+                    if(count($conditions)-$y!=1){
+                      $sql.=$conditions[$y]."AND";
+                    }
+                    else{
+                         $sql.=$conditions[$y];
+                    }
+                }
+            }
+                echo $sql ;
+                
+                $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn fetchID " .mysqli_error($this->link));
+                    $data = [];
+                    if( $result)
+                    {
+                        while ($num = mysqli_fetch_assoc($result))
+                        {
+                            $data[] = $num;
+                        }
+                    }
+                    return $data;
+            }
+                
+
         /**
          * delete array 
          */
@@ -158,6 +192,7 @@ $db = new Database();
             }
             return $data;
         }
+
         /**
          * FetchSql just return result
          */
@@ -191,6 +226,38 @@ $db = new Database();
             $sql = "SELECT * FROM {$table} WHERE $val ";
             $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn fetchID " .mysqli_error($this->link));
             return mysqli_fetch_assoc($result);
+        }
+
+        //$id = array 'name' => 'val'
+        public function fetchArr($table , $val)
+        {
+            $sql = "SELECT * FROM {$table} WHERE $val";
+            $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn fetchID " .mysqli_error($this->link));
+            $data = [];
+            if( $result)
+            {
+                while ($num = mysqli_fetch_assoc($result))
+                {
+                    $data[] = $num;
+                }
+            }
+            return $data;
+        }
+
+        //$id = array 'name' => 'val'
+        public function fetchMax($table, $column , $limit)
+        {
+            $sql = "SELECT * FROM {$table} ORDER BY {$column} LIMIT $limit ";
+            $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn fetchID " .mysqli_error($this->link));
+            $data = [];
+            if( $result)
+            {
+                while ($num = mysqli_fetch_assoc($result))
+                {
+                    $data[] = $num;
+                }
+            }
+            return $data;
         }
         
         //lấy toàn bộ dữ liệu của id có trong bảng
@@ -324,19 +391,24 @@ $db = new Database();
          * */
         public  function fetchJones($table,$sql,$total = 1,$page,$row ,$pagi = true )
         {
+            
             $data = [];
+
             if ($pagi == true )
             {
                 $sotrang = ceil($total / $row);
                 $start = ($page - 1 ) * $row ;
                 $sql .= " LIMIT $start,$row ";
                 $data = [ "page" => $sotrang];
+              
+               
                 $result = mysqli_query($this->link,$sql) or die("Lỗi truy vấn fetchJone ---- " .mysqli_error($this->link));
             }
             else
             {
                 $result = mysqli_query($this->link,$sql) or die("Lỗi truy vấn fetchJone ---- " .mysqli_error($this->link));
             }
+            
             if( $result)
             {
                 while ($num = mysqli_fetch_assoc($result))
@@ -344,11 +416,13 @@ $db = new Database();
                     $data[] = $num;
                 }
             }
+            
             return $data;
         }
 
         public  function fetchJone($table,$sql ,$page = 0,$row ,$pagi = false )
         {
+            
             $data = [];
             // _debug($sql);die;
             if ($pagi == true )
@@ -376,6 +450,7 @@ $db = new Database();
             // _debug($data);
             return $data;
         }
+
 
         public  function fetchJoneDetail($sql ,$page = 0,$total ,$pagi )
         {
