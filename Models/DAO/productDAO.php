@@ -20,23 +20,119 @@ class ProductDAO extends Model
         }
          
     }
-    public function  fetchsql($db,$cate_id,$comp_id){
+    public function  fetchsql($db,$cate_id,$comp_id,$str3,$str4){
          
          $sql="SELECT * FROM products WHERE ";    
-        if($cate_id==0&&$comp_id!=0){
+        if($cate_id==0&&$comp_id!=0&&$str3==""&&$str4==""){
             $sql.="comp_id='".$comp_id."'";
             return $db->fetchsql($sql);
         } 
-        if($comp_id==0&&$cate_id!=0){
+         if($cate_id==0&&$comp_id!=0&&$str3!=""&&$str4==""){
+            $sql.="comp_id='".$comp_id."'".' AND ';
+            $str5=explode("-", $str3);
+            $str3=$str5[2]."/".$str5[1]."/".$str5[0];
+            $sql.="created>='".$str3."'";
+            return $db->fetchsql($sql);
+        } 
+        if($cate_id==0&&$comp_id!=0&&$str3==""&&$str4!=""){
+            $sql.="comp_id='".$comp_id."'".' AND ';
+            $str6=explode("-", $str4);
+            $str4=$str6[2]."/".$str6[1]."/".$str6[0];
+            $sql.="created<='".$str4."'";
+            return $db->fetchsql($sql);
+        } 
+        if($cate_id==0&&$comp_id!=0&&$str3!=""&&$str4!=""){
+            $sql.="comp_id='".$comp_id."'".' AND ';
+            $str6=explode("-", $str3);
+            $str4=$str6[2]."/".$str6[1]."/".$str6[0];
+            $str5=explode("-", $str3);
+            $str3=$str5[2]."/".$str5[1]."/".$str5[0];
+            $sql.="created<='".$str4."'".' AND ';
+            $sql.="created>='".$str3."'";
+            return $db->fetchsql($sql);
+        } 
+        if($comp_id==0&&$cate_id!=0&&$str3==""&&$str4==""){
             $sql.="cate_id='".$cate_id."'";
+            
             return $db->fetchsql($sql);
         }
-        if($comp_id!=0&&$cate_id!=0){
+        if($comp_id==0&&$cate_id!=0&&$str3==""&&$str4!=""){
+            $sql.="cate_id='".$cate_id."'".' AND ';
+            $str6=explode("-", $str3);
+            $str4=$str6[2]."/".$str6[1]."/".$str6[0];
+            $sql.="created<='".$str4."'";
+            return $db->fetchsql($sql);
+        }
+        if($comp_id==0&&$cate_id!=0&&$str3!=""&&$str4==""){
+            $sql.="cate_id='".$cate_id."'".' AND ';
+            $str5=explode("-", $str3);
+            $str3=$str5[2]."/".$str5[1]."/".$str5[0];
+            $sql.="created>='".$str3."'";
+            return $db->fetchsql($sql);
+        }
+        if($comp_id==0&&$cate_id!=0&&$str3!=""&&$str4!=""){
+            $sql.="cate_id='".$cate_id."'".' AND ';
+            $str6=explode("-", $str4);
+            $str4=$str6[2]."/".$str6[1]."/".$str6[0];
+            $str5=explode("-", $str3);
+            $str3=$str5[2]."/".$str5[1]."/".$str5[0];
+            $sql.="created>='".$str3."'".' AND ';
+            $sql.="created<='".$str4."'";
+          
+            return $db->fetchsql($sql);
+        }
+        if($comp_id!=0&&$cate_id!=0&&$str3==""&&$str4==""){
             $sql.="cate_id='".$cate_id."'".' AND '."comp_id='".$comp_id."'";
              return $db->fetchsql($sql);
         }
-        else{
+         if($comp_id!=0&&$cate_id!=0&&$str3!=""&&$str4==""){
+            $sql.="cate_id='".$cate_id."'".' AND '."comp_id='".$comp_id."'".' AND ';
+            $str5=explode("-", $str3);
+            $str3=$str5[2]."/".$str5[1]."/".$str5[0];
+            $sql.="created>='".$str3."'";
+             return $db->fetchsql($sql);
+        }
+        if($comp_id!=0&&$cate_id!=0&&$str3==""&&$str4!=""){
+            $sql.="cate_id='".$cate_id."'".' AND '."comp_id='".$comp_id."'".' AND ';
+            $str6=explode("-", $str4);
+            $str3=$str6[2]."/".$str6[1]."/".$str6[0];
+            $sql.="created<='".$str3."'";
+             return $db->fetchsql($sql);
+        }
+         if($comp_id!=0&&$cate_id!=0&&$str3!=""&&$str4!=""){
+            $sql.="cate_id='".$cate_id."'".' AND '."comp_id='".$comp_id."'".' AND ';
+            $str6=explode("-", $str3);
+            $str4=$str6[2]."/".$str6[1]."/".$str6[0];
+            $str5=explode("-", $str3);
+            $str3=$str5[2]."/".$str5[1]."/".$str5[0];
+            $sql.="created<='".$str4."'".' AND ';
+            $sql.="created>='".$str3."'";
+             return $db->fetchsql($sql);
+        }
+        if($comp_id==0&&$cate_id==0&&$str3==""&&$str4=="")
+        {
             $sql.='1';
+            return $db->fetchsql($sql);
+        }
+        if($comp_id==0&&$cate_id==0&&$str3==""&&$str4!="")
+        {   $str5=explode("-", $str4);
+            $str4=$str5[2]."/".$str5[1]."/".$str5[0];
+            $sql.="created<='".$str4."'";
+            return $db->fetchsql($sql);
+        }   
+        if($comp_id==0&&$cate_id==0&&$str3!=""&&$str4==""){
+            $str5=explode("-", $str3);
+            $str3=$str5[2]."/".$str5[1]."/".$str5[0];
+            $sql.="created>='".$str3."'";
+            return $db->fetchsql($sql);
+        }
+        if($comp_id==0&&$cate_id==0&&$str3!=""&&$str4!=""){
+            $str5=explode("-", $str3);
+            $str3=$str5[2]."/".$str5[1]."/".$str5[0];
+            $str6=explode("-", $str4);
+            $str4=$str5[2]."/".$str6[1]."/".$str6[0];
+            $sql.="created>='".$str3."'".' AND  ';
+            $sql.="created<='".$str4."'";
             return $db->fetchsql($sql);
         }
 

@@ -64,6 +64,7 @@ class ProductService extends Service{
         return $product->listsProduct($db, $table, $col, $id);
     }
 
+
      /** 
      * List category by ID 
      * @id_cate 
@@ -83,11 +84,10 @@ class ProductService extends Service{
     /** 
      * Seach > nhi?u di?u ki?n
      */
-    public function  fetchsql($db,$cate_id,$comp_id){
+    function  fetchsql($db,$cate_id,$comp_id,$str3,$str4){
          $product = new ProductDAO();
-         $products =  $product-> fetchsql($db,$cate_id,$comp_id);
+         $products =  $product-> fetchsql($db,$cate_id,$comp_id,$str3,$str4);
          return $products;
     } 
- 
-}
+}    
 ?>
