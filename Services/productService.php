@@ -58,13 +58,13 @@ class ProductService extends Service{
         $product = new ProductDAO();
         return $product->getCate($db,$table, $id);
     }
-
+    /**
+     * Lists all product
+     */
     function listsProduct($db, $table, $col, $id){
         $product = new ProductDAO();
         return $product->listsProduct($db, $table, $col, $id);
     }
-
-
      /** 
      * List category by ID 
      * @id_cate 
@@ -75,6 +75,10 @@ class ProductService extends Service{
 
         return $categories;
     }
+    /**
+     * List product in each page
+     * parameter: @db, @table, @col: column where, @id: value where, @page: number page, @total: total of page, @pagi: 
+     */
     function listsProductPagi($db, $table, $col, $id, $page, $total, $pagi)
     {
         $product = new ProductDAO();
