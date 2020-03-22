@@ -94,7 +94,7 @@
                </div>
                <div class="cs-col-12 cs-col-lg-6 cs-flex flex-column ">
                   <!-- Form search --> 
-                  <form action=" front/tim-kiem" class="form-search cs-flex flex" method="get"> <input name="tukhoa" type="text" class="flex" style="font-size: 15px;" placeholder="Tìm sản phẩm và Enter..." value=""> <button> <i class="fa fa-search"></i> </button> </form>
+                  <form action="/home/search" class="form-search cs-flex flex" method="get"> <input name="tukhoa" type="text" class="flex" style="font-size: 15px;" placeholder="Tìm sản phẩm và Enter..." value=""> <button> <i class="fa fa-search"></i> </button> </form>
                   <!-- End form search --> <!-- Sugges --> 
                   <div class="cs-flex sugges hidden-top-bar">
                      <div class="label mr-10">Gợi ý: </div>
