@@ -75,7 +75,7 @@
                             </div>
                             <div class="cs-flex">
                                 <div class="square-radio cs-flex">
-                                    <p style="width: 100%;" class="properties_info">Hương vị: <span class="color-teal">Chọn bên dưới</span></p>
+                                    <p style="width: 100%;" class="properties_info">Hương vị: <span class="color-teal">Chọn bên dưới( Nếu có)</span></p>
 
                                     <?php if(isset($set)): foreach($set as $s): ?>
                                     <?php if($s['sett_key'] === 'taste_iso'): ?>
@@ -96,14 +96,26 @@
                                         </table>
                                     </div>
                                     <!--Liệt kê thuộc tính sản phẩm tại đây-->
-                                    <select id="choice_properties1" onchange="ChoiceProperties1(event)" style="padding: 8px 5px; font-size: 14px; margin-bottom: 10px;">
+                                    <!-- <select id="choice_properties1" onchange="ChoiceProperties1(event)" style="padding: 8px 5px; font-size: 14px; margin-bottom: 10px;">
                                         <option>=> Xin mời chọn Hương vị</option> 
-                                        <?php if(isset($set)): foreach($set as $s): ?>
-                                            <?php if($s['sett_key'] === 'taste_iso'): ?>
-                                                <option value="#<?php echo $s['id_sett'] ?>"><?php echo $s['key_display'] ?></option> 
-                                            <?php endif ?>
-                                        <?php endforeach; endif?>
-                                    </select> 
+                                        <?php 
+                                        // if(isset($set)): foreach($set as $s): 
+                                        ?>
+                                            <?php 
+                                            // if($s['sett_key'] === 'taste_iso'): 
+                                            ?>
+                                                <option value="#<?php
+                                                //  echo $s['id_sett'] ?>"><?php 
+                                                // echo $s['key_display'] 
+                                                 ?></option> 
+                                            <?php 
+                                            // endif 
+                                            ?>
+                                        <?php 
+                                    // endforeach; 
+                                    // endif
+                                    ?>
+                                    </select>  -->
                                     
 
                                     <div class="cs-flex mt-10 action-cart-product" style="margin-bottom: 10px;"> <a href="/home/cart" class="button-cm mt-5 not-disable add-cart" value="<?php echo $prod[0]['id_prod'] ?>" style="text-align:center;border-radius: 5px; background: #39b17f; border: 1px #39b17f solid;"> <span style="text-transform: uppercase; color: #FFF; font-size: 18px;">Mua ngay</span><br /><span style="font-size: 12px; font-weight: normal; color: #FFF;">Giao hàng thanh toán tại nhà</span></a> </div>
@@ -115,7 +127,9 @@
                                 </div>
                                 <div class="title-line"></div>
                             </div>
-                            <div class="cs-flex mt-10"> <input class="spinner input-spin" name="quantity" value="1"> <button type="button" class="redirect-login" url="dang-nhap"><i class="far fa-heart"></i></button> </div>
+                            <div class="cs-flex mt-10" style="height:40px"> <input class="spinner input-spin" name="quantity" value="1"> 
+                            <!-- <button type="button"  class="redirect-login" url="dang-nhap"><i class="far fa-heart"></i></button>  -->
+                            </div>
                             <?php if($prod[0]['discount'] != 0): ?>
                                <span style="color:#505350; font-size: 24px" >Tổng giá: </span> <span class="cm-red font-s-25 product-price" style="margin-top: 13px; display: inline-block" price="<?php echo number_format( ((100 - $prod[0]['discount']) * $prod[0]['price'])/100 , 0 ,'','.' )?>"><?php echo number_format( ((100 - $prod[0]['discount']) * $prod[0]['price'])/100 , 0 ,'','.'  ) ?> VND </span>
                             <?php else: ?>
@@ -207,14 +221,26 @@
                                 <p style="padding: 0; margin: 0;">Cam kết hàng chất lượng 100%, phát hiện hàng giả đền 100 lần, giá tốt nhất, ship toàn quốc nhanh nhất, đặt hàng siêu nhanh chỉ mất 20 giây</p>
                             </div>
                             <!--Liệt kê thuộc tính sản phẩm tại đây-->
-                            <select id="choice_properties2" onchange="ChoiceProperties2(event)" style="padding: 8px 5px; font-size: 14px; margin-bottom: 10px;">
-                                <option>=> Xin mời chọn Hương vị</option>
-                                <?php if(isset($set)): foreach($set as $s): ?>
-                                    <?php if($s['sett_key'] === 'taste_iso'): ?>
-                                        <option value="#<?php echo $s['id_sett'] ?>"><?php echo $s['key_display'] ?></option> 
-                                    <?php endif ?>
-                                <?php endforeach; endif?>
-                            </select>
+                            <!-- <select id="choice_properties2" onchange="ChoiceProperties2(event)" style="padding: 8px 5px; font-size: 14px; margin-bottom: 10px;">
+                                <option> => Xin mời chọn Hương vị <= </option>
+                                <?php 
+                                // if(isset($set)): foreach($set as $s): 
+                                ?>
+                                    <?php 
+                                    // if($s['sett_key'] === 'taste_iso'): 
+                                    ?>
+                                        <option value="#<?php 
+                                        // echo $s['id_sett'] ?>"><?php
+                                        //  echo $s['key_display'] 
+                                        ?></option> 
+                                    <?php 
+                                    // endif 
+                                    ?>
+                                <?php
+                            //  endforeach; 
+                            //  endif
+                             ?>
+                            </select> -->
                                
                             <!--Liệt kê quà tặng tại đây-->
                             <div class="cs-flex mt-10 action-cart-product" style="margin-bottom: 10px;"> <a href="/home/cart"  class="button-cm mt-5 not-disable add-cart" value="<?php echo $prod[0]['id_prod'] ?>"  style="border-radius: 5px; background: #288ad6; border: 1px #0099b2 solid; text-align: center"> <span style="text-transform: uppercase; color: #FFF; font-size: 18px;">Mua ngay</span><br /><span style="font-size: 12px; font-weight: normal; color: #FFF;">Giao hàng thanh toán tại nhà</span></a> </div>
