@@ -1,0 +1,2 @@
+cpannel: codoeedp
+pass codosupp.website
