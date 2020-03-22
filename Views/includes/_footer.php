@@ -79,7 +79,7 @@
       <script src="/lib/front/asset/site/js/validation1.js"></script>
       <script src="/lib/front/asset/site/magic/jquery.magic.js"></script>  
       <script src="/lib/front/asset/site/modal/jquery.modal.min.js"></script>
-	  <script src="/lib/front/asset/site/js/thanh.js"></script> 
+	  <script src="/lib/front/asset/site/js/thanh.js?sizefile=<?php echo md5_file(ROOT."/lib/front/asset/site/js/thanh.js");?>"></script> 
       <script>$('.slider-ads-top').bxSlider({auto: true,pager: false,autoHover: true,mode: 'horizontal',controls: false,pause: 10000});</script> <!-- End Top Banner --> 
       <script> $(function() { $('.lazy').Lazy();});</script> 
       <script>
