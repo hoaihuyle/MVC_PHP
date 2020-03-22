@@ -181,6 +181,8 @@ $db = new Database();
         // truy vấn dữ liệu trong bảng - tùy chọn
         public function fetchsql($sql)
         {
+        //     var_dump($sql);
+        // die();
             $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn sql " .mysqli_error($this->link));
             $data = [];
             if( $result)
@@ -191,7 +193,7 @@ $db = new Database();
                 }
             }
             return $data;
-        }
+        } 
 
         /**
          * FetchSql just return result

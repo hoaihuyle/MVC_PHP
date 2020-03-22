@@ -76,7 +76,13 @@
                             <div class="cs-flex">
                                 <div class="square-radio cs-flex">
                                     <p style="width: 100%;" class="properties_info">Hương vị: <span class="color-teal">Chọn bên dưới</span></p>
-                                    <input class="radio-input" type="radio" name="p_2" id="2_246" value="246" namepro="Hương vị: Watermelon"> <label id="select_type_2_246" class="radio-label inventory" for="2_246" text="Watermelon">Watermelon</label> <input class="radio-input" type="radio" name="p_2" id="2_416" value="416" namepro="Hương vị: Lemonlime"> <label id="select_type_2_416" class="radio-label inventory" for="2_416" text="Lemonlime">Lemonlime</label> <input class="radio-input" type="radio" name="p_2" id="2_240" value="240" namepro="Hương vị: Blue Raspberry"> <label id="select_type_2_240" class="radio-label inventory" for="2_240" text="Blue Raspberry">Blue Raspberry</label>
+
+                                    <?php if(isset($set)): foreach($set as $s): ?>
+                                    <?php if($s['sett_key'] === 'taste_iso'): ?>
+                                        <input class="radio-input" type="radio" name="p_2" id="<?php echo $s['id_sett'] ?>" value="<?php echo $s['id_sett'] ?>" namepro="Hương vị: <?php echo $s['key_display'] ?>"> 
+                                        <label id="<?php echo $s['id_sett'] ?>" class="radio-label inventory" for="<?php echo $s['id_sett'] ?>" text="<?php echo $s['key_display'] ?>"><?php echo $s['key_display'] ?></label>  
+                                    <?php endif; ?>
+                                    <?php endforeach; endif?>
                                 </div>
                             </div>
                             <div id="temp_mobile_addtocart" style="display: none;">
@@ -91,14 +97,15 @@
                                     </div>
                                     <!--Liệt kê thuộc tính sản phẩm tại đây-->
                                     <select id="choice_properties1" onchange="ChoiceProperties1(event)" style="padding: 8px 5px; font-size: 14px; margin-bottom: 10px;">
-                                        <option>=> Xin mời chọn Hương vị</option>
-                                        0
-                                        <option value="#select_type_2_246">Watermelon</option>
-                                        <option value="#select_type_2_416">Lemonlime</option>
-                                        <option value="#select_type_2_240">Blue Raspberry</option>
-                                    </select>
-                                    <!--Liệt kê quà tặng tại đây-->
-                                    <p style="text-align: center; padding: 0; cursor: pointer; font-weight: bold; margin-bottom: -2px; color: #ff009b;" onclick="getDetailInventory('194');"><i class="fa fa-search" aria-hidden="true"></i> Check kho trước khi mua</p>
+                                        <option>=> Xin mời chọn Hương vị</option> 
+                                        <?php if(isset($set)): foreach($set as $s): ?>
+                                            <?php if($s['sett_key'] === 'taste_iso'): ?>
+                                                <option value="#<?php echo $s['id_sett'] ?>"><?php echo $s['key_display'] ?></option> 
+                                            <?php endif ?>
+                                        <?php endforeach; endif?>
+                                    </select> 
+                                    
+
                                     <div class="cs-flex mt-10 action-cart-product" style="margin-bottom: 10px;"> <a href="/home/cart" class="button-cm mt-5 not-disable add-cart" value="<?php echo $prod[0]['id_prod'] ?>" style="text-align:center;border-radius: 5px; background: #39b17f; border: 1px #39b17f solid;"> <span style="text-transform: uppercase; color: #FFF; font-size: 18px;">Mua ngay</span><br /><span style="font-size: 12px; font-weight: normal; color: #FFF;">Giao hàng thanh toán tại nhà</span></a> </div>
 
                                     <div style="background: #e87c29; text-align: center; border-radius: 5px; margin-top: 10px;">
@@ -150,17 +157,25 @@
                                             <tr>
                                                 <th style="text-align: right; font-weight: 550; background: #eee; border-left: none;">Hương vị</th>
                                                 <td style="border-right: none;">
-                                                    <ul>
-                                                        <li>Watermelon</li>
-                                                        <li>Lemonlime</li>
-                                                        <li>Blue Raspberry</li>
+                                                    <ul> 
+                                                        <?php if(isset($set)): foreach($set as $s): ?>
+                                                            <?php if($s['sett_key'] === 'taste_iso'): ?>
+                                                                <li><?php echo $s['key_display'] ?></li> 
+                                                            <?php endif ?>
+                                                        <?php endforeach; endif?>
                                                     </ul>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th style="text-align: right; font-weight: 550; background: #eee; border-left: none;">Xuất xứ</th>
                                                 <td style="border-right: none;">
-                                                    <ul> </ul>
+                                                    <ul> 
+                                                        <?php if(isset($set)): foreach($set as $s): ?>
+                                                            <?php if($s['sett_key'] === 'trademark'): ?>
+                                                                <li><?php echo $s['key_display'] ?></li> 
+                                                            <?php endif ?>
+                                                        <?php endforeach; endif?>
+                                                    </ul>
                                                 </td>
                                             </tr>
                                         </table>
@@ -194,11 +209,13 @@
                             <!--Liệt kê thuộc tính sản phẩm tại đây-->
                             <select id="choice_properties2" onchange="ChoiceProperties2(event)" style="padding: 8px 5px; font-size: 14px; margin-bottom: 10px;">
                                 <option>=> Xin mời chọn Hương vị</option>
-                                0
-                                <option value="#select_type_2_246">Watermelon</option>
-                                <option value="#select_type_2_416">Lemonlime</option>
-                                <option value="#select_type_2_240">Blue Raspberry</option>
+                                <?php if(isset($set)): foreach($set as $s): ?>
+                                    <?php if($s['sett_key'] === 'taste_iso'): ?>
+                                        <option value="#<?php echo $s['id_sett'] ?>"><?php echo $s['key_display'] ?></option> 
+                                    <?php endif ?>
+                                <?php endforeach; endif?>
                             </select>
+                               
                             <!--Liệt kê quà tặng tại đây-->
                             <div class="cs-flex mt-10 action-cart-product" style="margin-bottom: 10px;"> <a href="/home/cart"  class="button-cm mt-5 not-disable add-cart" value="<?php echo $prod[0]['id_prod'] ?>"  style="border-radius: 5px; background: #288ad6; border: 1px #0099b2 solid; text-align: center"> <span style="text-transform: uppercase; color: #FFF; font-size: 18px;">Mua ngay</span><br /><span style="font-size: 12px; font-weight: normal; color: #FFF;">Giao hàng thanh toán tại nhà</span></a> </div>
 
