@@ -94,11 +94,16 @@
                </div>
                <div class="cs-col-12 cs-col-lg-6 cs-flex flex-column ">
                   <!-- Form search --> 
-                  <form action="/home/search" class="form-search cs-flex flex" method="get"> <input name="tukhoa" type="text" class="flex" style="font-size: 15px;" placeholder="Tìm sản phẩm và Enter..." value=""> <button> <i class="fa fa-search"></i> </button> </form>
+                  <form action="/home/search" class="form-search cs-flex flex" method="get"> 
+                     <input name="tukhoa" type="text" class="flex" style="font-size: 15px;" placeholder="Tìm sản phẩm và Enter..." value=""> 
+                  <button> <i class="fa fa-search"></i> </button> </form>
                   <!-- End form search --> <!-- Sugges --> 
                   <div class="cs-flex sugges hidden-top-bar">
                      <div class="label mr-10">Gợi ý: </div>
-                     <div style="white-space: nowrap;overflow:hidden;width:calc(100% - 50px)"> <a href="front/tim-kiem9172?tukhoa=Bcaa" class=" mr-5">Bcaa,</a> <a href="front/tim-kiemd0fd?tukhoa=Mass" class=" mr-5">Mass,</a> <a href="front/tim-kiem9b33?tukhoa=whey" class=" mr-5">whey,</a> <a href="front/tim-kiem792d?tukhoa=Iso%20100" class=" mr-5">Iso 100,</a> <a href="front/tim-kiem2ed3?tukhoa=rule%201" class=" mr-5">rule 1,</a> .v.v. </div>
+                     <div style="white-space: nowrap;overflow:hidden;width:calc(100% - 50px)"> <a href="/home/search?tukhoa=Bcaa" class=" mr-5">Bcaa,</a> 
+                     <a href="/home/search?tukhoa=Mass" class=" mr-5">Mass,</a> <a href="/home/search?tukhoa=whey" class=" mr-5">whey,</a> 
+                     <a href="/home/search?tukhoa=Iso" class=" mr-5">Iso 100,</a> <a href="/home/search?tukhoa=rule" class=" mr-5">rule 1,
+                  </a> .v.v. </div>
                   </div>
                   <!-- End sugges --> 
                </div>
