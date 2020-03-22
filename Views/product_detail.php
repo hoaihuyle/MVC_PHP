@@ -12,12 +12,6 @@
                             <div class="cs-flex flex-content-center inline" style="margin: 5px 0 0 0;">
                                 <div class="cs-flex mb-10">
                                     <div class="fb-like" data-href="bcaa-312-30-servings.html" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="true"> </div>
-                                    <div style="padding-left: 5px">
-                                        <a href="#" class="twitter-share-button" rel="nofollow">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                                    </div>
-                                    <div style="padding-left: 5px">
-                                        <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="150"></div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="cs-flex flex-content-center" style="border-top: 1px #CCC solid; text-align: justify; line-height: 25px; margin-top: 10px; margin-bottom: 20px; padding-top: 10px;"> <i itemprop="description"> <?php echo $prod[0]['uses_prod'] ?> </i> </div>
@@ -46,12 +40,20 @@
                             <div class="mt-5" id="static_rating" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating"> <span class="star mt-10" total="5" point="5"></span> <span class="color-red" itemprop="ratingValue">5</span> trên <span itemprop="bestRating">5</span> <span> (<a href="#comment_form"><span itemprop="ratingCount">1</span> đánh giá)</a> </span> </div>
                             <div style="color: #7E7474; font-size: 13px; margin-top: 6px;">Đã có 2,787 lượt xem sp này</div>
                             <div class="title-cm mt-10 cm-red">
-                        <span class="cm-red font-s-25 product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer" price="<?php echo $prod[0]['price'] ?>">
-                           <span itemprop="price" class="cm-red" content="<?php echo number_format( $prod[0]['price'], 0 ,'','.' ) ?>"><?php echo number_format( $prod[0]['price'], 0 ,'','.' ) ?></span><span itemprop="priceCurrency" class="cm-red" content="VND"> VND</span>
-                            <div class="price"><span class="old"><?php echo number_format($prod[0]['price_manu'],0,'','.') ?> VND</span></div>
-                           <meta itemprop="price" content="<?php echo number_format( $prod[0]['price'], 0 ,'','.' ) ?>">
-                           <meta itemprop="priceCurrency" content="VND">
-                        </span>
+                            <span color: #505350>Giá sản phẩm:</span>
+                                <?php if($prod[0]['discount'] != 0) :?>
+                                    <span class="cm-red font-s-25 product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer" price="<?php echo $prod[0]['price'] ?>">
+                                    <span itemprop="price" class="cm-red" content="<?php echo number_format( ((100 - $prod[0]['discount']) * $prod[0]['price'])/100 , 0 ,'','.' ) ?>"> <?php echo number_format( ((100 - $prod[0]['discount']) * $prod[0]['price'])/100 , 0 ,'','.' ) ?></span><span itemprop="priceCurrency" class="cm-red" content="VND"> VND</span>
+                                    <div class="price"><span color: #505350> Giá giảm:  </span><span class="old">- <?php echo number_format($prod[0]['price'],0,'','.') ?> VND</span></div>
+                                    <meta itemprop="price" content="<?php echo number_format((100 - $prod[0]['disocunt'] * $prod[0]['price'])/100, 0 ,'','.' ) ?>">
+                                    <meta itemprop="priceCurrency" content="VND">
+                                    </span> 
+                                <?php else: ?>
+                                    <span class="cm-red font-s-25 product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer" price="<?php echo $prod[0]['price'] ?>">
+                                    <span itemprop="price" class="cm-red" content="<?php echo number_format( $prod[0]['price'] , 0 ,'','.' ) ?>"><?php echo number_format( $prod[0]['price'], 0 ,'','.' ) ?></span><span itemprop="priceCurrency" class="cm-red" content="VND"> VND</span>
+                                    <meta itemprop="price" content="<?php echo number_format( $prod[0]['price'], 0 ,'','.' ) ?>">
+                                    <meta itemprop="priceCurrency" content="VND">
+                                <?php endif ?>              
                             </div>
                             <!--Liệt kê các sản phẩm có trong combo tại đây (nếu có)--> <!--Cho trọng lượng vào đây-->
                             <div id="mobile_addtocart"></div>
@@ -97,7 +99,7 @@
                                     </select>
                                     <!--Liệt kê quà tặng tại đây-->
                                     <p style="text-align: center; padding: 0; cursor: pointer; font-weight: bold; margin-bottom: -2px; color: #ff009b;" onclick="getDetailInventory('194');"><i class="fa fa-search" aria-hidden="true"></i> Check kho trước khi mua</p>
-                                    <div class="cs-flex mt-10 action-cart-product" style="margin-bottom: 10px;"> <button class="button-cm mt-5 not-disable add-cart" style="border-radius: 5px; background: #39b17f; border: 1px #39b17f solid;"> <span style="text-transform: uppercase; color: #FFF; font-size: 18px;">Mua ngay</span><br /><span style="font-size: 12px; font-weight: normal; color: #FFF;">Giao hàng thanh toán tại nhà</span></button> </div>
+                                    <div class="cs-flex mt-10 action-cart-product" style="margin-bottom: 10px;"> <a href="/home/cart" class="button-cm mt-5 not-disable add-cart" value="<?php echo $prod[0]['id_prod'] ?>" style="text-align:center;border-radius: 5px; background: #39b17f; border: 1px #39b17f solid;"> <span style="text-transform: uppercase; color: #FFF; font-size: 18px;">Mua ngay</span><br /><span style="font-size: 12px; font-weight: normal; color: #FFF;">Giao hàng thanh toán tại nhà</span></a> </div>
 
                                     <div style="background: #e87c29; text-align: center; border-radius: 5px; margin-top: 10px;">
                                         <p style="padding: 10px 0; margin: 0; color: #FFF; font-size: 15px;"><i class="fa fa-gift" style="color: #FFF;"></i> <span style="color: #FFF; cursor: pointer; line-height: 22px;">GIÁO ÁN TẬP GYM </span><br /><span style="font-size: 12px; font-weight: normal; color: #FFF;">được TẶNG kèm khi mua sp này</span></p>
@@ -107,7 +109,11 @@
                                 <div class="title-line"></div>
                             </div>
                             <div class="cs-flex mt-10"> <input class="spinner input-spin" name="quantity" value="1"> <button type="button" class="redirect-login" url="dang-nhap"><i class="far fa-heart"></i></button> </div>
-                            <span class="cm-red font-s-25 product-price" style="margin-top: 13px; display: inline-block" price="<?php echo $prod[0]['price'] ?>"><?php echo number_format( $prod[0]['price'], 0 ,'','.' ) ?> VND </span>
+                            <?php if($prod[0]['discount'] != 0): ?>
+                               <span style="color:#505350; font-size: 24px" >Tổng giá: </span> <span class="cm-red font-s-25 product-price" style="margin-top: 13px; display: inline-block" price="<?php echo number_format( ((100 - $prod[0]['discount']) * $prod[0]['price'])/100 , 0 ,'','.' )?>"><?php echo number_format( ((100 - $prod[0]['discount']) * $prod[0]['price'])/100 , 0 ,'','.'  ) ?> VND </span>
+                            <?php else: ?>
+                                <span style="color:#505350; font-size: 24px" >Tổng giá: </span> <span class="cm-red font-s-25 product-price" style="margin-top: 13px; display: inline-block" price="<?php echo $prod[0]['price'] ?>"><?php echo number_format( $prod[0]['price'], 0 ,'','.' ) ?> VND </span>
+                            <?php endif ?>
                             <div class="cs-flex mt-10 action-cart-product"> <a class="button-cm mt-5 not-disable add-cart" value="<?php echo $prod[0]['id_prod'] ?>" style="text-align: center" > <span style="text-transform: uppercase; color: #FFF; font-size: 18px;">Thêm vào giỏ hàng</span><br /><span style="font-size: 12px; padding-top: 6px; font-weight: normal; color: #FFF;">Cam kết hàng chính hãng, thật 100%</span></a> </div>
                             <div class="contact-phone">
                                 <div style="background: #288AD6; text-align: center; margin-top: 10px; padding: 5px;">
@@ -194,7 +200,7 @@
                                 <option value="#select_type_2_240">Blue Raspberry</option>
                             </select>
                             <!--Liệt kê quà tặng tại đây-->
-                            <div class="cs-flex mt-10 action-cart-product" style="margin-bottom: 10px;"> <button class="button-cm mt-5 not-disable add-cart" style="border-radius: 5px; background: #288ad6; border: 1px #0099b2 solid;"> <span style="text-transform: uppercase; color: #FFF; font-size: 18px;">Mua ngay</span><br /><span style="font-size: 12px; font-weight: normal; color: #FFF;">Giao hàng thanh toán tại nhà</span></button> </div>
+                            <div class="cs-flex mt-10 action-cart-product" style="margin-bottom: 10px;"> <a href="/home/cart"  class="button-cm mt-5 not-disable add-cart" value="<?php echo $prod[0]['id_prod'] ?>"  style="border-radius: 5px; background: #288ad6; border: 1px #0099b2 solid; text-align: center"> <span style="text-transform: uppercase; color: #FFF; font-size: 18px;">Mua ngay</span><br /><span style="font-size: 12px; font-weight: normal; color: #FFF;">Giao hàng thanh toán tại nhà</span></a> </div>
 
                             <div style="background: #e87c29; text-align: center; border-radius: 5px; margin-top: 10px;">
                                 <p style="padding: 10px 0; margin: 0; color: #FFF; font-size: 15px;"><i class="fa fa-gift" style="color: #FFF;"></i> <span style="color: #FFF; cursor: pointer; line-height: 22px;">GIÁO ÁN TẬP GYM </span><br /><span style="font-size: 12px; font-weight: normal; color: #FFF;">được TẶNG kèm khi mua sp này</span></p>
@@ -241,59 +247,28 @@
                         </div>
                         <div id="product_interest">
                             <h3 class="title-cm mt-20 mb-20">
-                                <span>Có thể bạn quan tâm</span>
+                                <span>Sản phẩm giảm giá</span>
                                 <div class="title-line"></div>
                             </h3>
-                            <div class="box-product-mini index mb-20">
-                                <a href="/home/product/1" class="image"> <img class="lazy" data-src="/lib/front/upload/product/catalog/alpha_amino_30_serving_image_catalog_1571041916.jpg" alt="Alpha Amino 30 serving" title="Alpha Amino 30 serving"> </a>
+                            <?php if(isset($prod_discount)): foreach($prod_discount as $ls): ?>
+                            <div class=" item product slider-product box-product-mini index mb-20"> 
+
+                                <?php if($ls['discount'] > 0) : ?><div style="position: absolute; top: -10px; right: 15px" class="label-deal-product">-<?php echo $ls['discount'] ?>%</div>
+                                <?php endif ?>
+
+
+                                <a href="/home/product/<?php echo $ls['id_prod'] ?>" class="image"> <img class="lazy" data-src="/uploads/products/<?php echo $ls['image'] ?>" alt="<?php echo $ls['name_prod'] ?>" title="<?php echo $ls['name_prod'] ?>"> </a>
                                 <div class="about pl-10">
-                                    <a href="/home/product/1" class="title mt-0 p-0 mb-0 cm-font">Alpha Amino 30 serving</a>
+                                    <a href="/home/product/<?php echo $ls['id_prod'] ?>" class="title mt-0 p-0 mb-0 cm-font"><?php echo $ls['name_prod'] ?></a>
                                     <div class="status">
                                         <div class="star mt-0" total="5" point="5"></div>
                                     </div>
-                                    <p class="mt-0 cm-red">290.000₫ <span style="text-decoration: line-through; color: #acacac;">550.000đ</span> </p>
+                                    <p class="mt-0 cm-red"><?php echo number_format( ((100 - $ls['discount']) * $ls['price'])/100 , 0 ,'','.' ) ?>đ<span style="text-decoration: line-through; color: #acacac;"><?php echo number_format($ls['price'],0,'','.') ?>đ</span> </p>
                                 </div>
+                            
+
                             </div>
-                            <div class="box-product-mini index mb-20">
-                                <a href="/home/product/1" class="image"> <img class="lazy" data-src="/lib/front/upload/product/catalog/nutrex_eaa_hydration_30_servings_image_catalog_1569321987.jpg" alt="Nutrex EAA Hydration 30 servings" title="Nutrex EAA Hydration 30 servings"> </a>
-                                <div class="about pl-10">
-                                    <a href="/home/product/1" class="title mt-0 p-0 mb-0 cm-font">Nutrex EAA Hydration 30 servings</a>
-                                    <div class="status">
-                                        <div class="star mt-0" total="5" point="0"></div>
-                                    </div>
-                                    <p class="mt-0 cm-red">750.000₫ <span style="text-decoration: line-through; color: #acacac;">850.000đ</span> </p>
-                                </div>
-                            </div>
-                            <div class="box-product-mini index mb-20">
-                                <a href="/home/product/1" class="image"> <img class="lazy" data-src="/lib/front/upload/product/catalog/musclepharm_bcaa_60_servings_image_catalog_1562669350.jpg" alt="MusclePharm BCAA 60 servings" title="MusclePharm BCAA 60 servings"> </a>
-                                <div class="about pl-10">
-                                    <a href="/home/product/1" class="title mt-0 p-0 mb-0 cm-font">MusclePharm BCAA 60 servings</a>
-                                    <div class="status">
-                                        <div class="star mt-0" total="5" point="0"></div>
-                                    </div>
-                                    <p class="mt-0 cm-red">650.000₫ </p>
-                                </div>
-                            </div>
-                            <div class="box-product-mini index mb-20">
-                                <a href="/home/product/1" class="image"> <img class="lazy" data-src="/lib/front/upload/product/catalog/best_bcaa__14_servings__image_catalog_1562925626.jpg" alt="Best BCAA 14 servings" title="Best BCAA 14 servings"> </a>
-                                <div class="about pl-10">
-                                    <a href="/home/product/1" class="title mt-0 p-0 mb-0 cm-font">Best BCAA 14 servings</a>
-                                    <div class="status">
-                                        <div class="star mt-0" total="5" point="0"></div>
-                                    </div>
-                                    <p class="mt-0 cm-red">280.000₫ </p>
-                                </div>
-                            </div>
-                            <div class="box-product-mini index mb-20">
-                                <a href="/home/product/1" class="image"> <img class="lazy" data-src="/lib/front/upload/product/catalog/mutant_bcaa_30_servings_image_catalog_1562402874.jpg" alt="Mutant BCAA 30 servings" title="Mutant BCAA 30 servings"> </a>
-                                <div class="about pl-10">
-                                    <a href="/home/product/1" class="title mt-0 p-0 mb-0 cm-font">Mutant BCAA 30 servings</a>
-                                    <div class="status">
-                                        <div class="star mt-0" total="5" point="3"></div>
-                                    </div>
-                                    <p class="mt-0 cm-red">600.000₫ <span style="text-decoration: line-through; color: #acacac;">700.000đ</span> </p>
-                                </div>
-                            </div>
+                            <?php endforeach; endif?>
                         </div>
                     </div>
                 </div>
@@ -302,114 +277,51 @@
         <input class="is_mobile" name="is_mobile" type="hidden" value="0">
     </form>
     </div>
+    
     <div class="session">
         <div class="main-content">
-            <div class="title-nav"> <a href="javascript:;" class="hover-color">SẢN PHẨM LIÊN QUAN</a> </div>
-            <div class="slider-magic cs-flex" numColumn='[ {"num": 5, "width": 900}, {"num": 3, "width": 500}, {"num": 2, "width": 400}, {"num": 2, "width": 0} ]' isPager="false" classItems="product">
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/bpi-sports-best-bcaa-30-servings.jpg" alt="BPI Sports Best BCAA 30 Servings" title="BPI Sports Best BCAA 30 Servings"> </a> <a href="/home/product/1" class="title">BPI Sports Best BCAA 30 Servings</a>
-                    <div class="star" total="5" point="5"></div>
-                    <div class="price"> <span class="main">550.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/scivation_xtend_bcaa_90_servings_image_catalog_1582015416.jpg" alt="Scivation Xtend BCAA 90 servings" title="Scivation Xtend BCAA 90 servings"> </a> <a href="/home/product/1" class="title">Scivation Xtend BCAA 90 servings</a>
-                    <div class="star" total="5" point="5"></div>
-                    <div class="price"> <span class="main">1.290.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/bpi_sports_best_bcaa_60_servings_image_catalog_1582015984.jpg" alt="BPI Sports Best BCAA 60 Servings" title="BPI Sports Best BCAA 60 Servings"> </a> <a href="/home/product/1" class="title">BPI Sports Best BCAA 60 Servings</a>
-                    <div class="star" total="5" point="5"></div>
-                    <div class="price"> <span class="main">790.000đ</span> <span class="old">850.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/myprotein-bcaa-2-1-1-500g-100-servings.jpg" alt="MyProtein BCAA 500g 100 servings" title="MyProtein BCAA 500g 100 servings"> </a> <a href="/home/product/1" class="title">MyProtein BCAA 500g 100 servings</a>
-                    <div class="star" total="5" point="5"></div>
-                    <div class="price"> <span class="main">650.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/scivation_xtend_bcaa_30_servings_image_catalog_1577958591.jpg" alt="Scivation Xtend BCAA 30 servings" title="Scivation Xtend BCAA 30 servings"> </a> <a href="/home/product/1" class="title">Scivation Xtend BCAA 30 servings</a>
-                    <div class="star" total="5" point="5"></div>
-                    <div class="price"> <span class="main">590.000đ</span> <span class="old">650.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/best-bcaa-shredded-25-servings.jpg" alt="Best bcaa shredded 25 servings" title="Best bcaa shredded 25 servings"> </a> <a href="/home/product/1" class="title">Best bcaa shredded 25 servings</a>
-                    <div class="star" total="5" point="5"></div>
-                    <div class="price"> <span class="main">550.000đ</span> <span class="old">590.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <div class="label-deal-product">-14%</div>
-                    <div class="time-deal-product"time="383153"> <span><i class="far fa-clock"></i> <span class="display-time"></span></span> </div>
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/anabolic_state_70_servings_image_catalog_1583374330.jpg" alt="Anabolic State 70 servings" title="Anabolic State 70 servings"> </a> <a href="/home/product/1" class="title">Anabolic State 70 servings</a>
-                    <div class="star" total="5" point="5"></div>
-                    <div class="price"> <span class="main">990.000đ</span> <span class="old">1.150.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/myprotein_bcaa_1kg__200_servings__image_catalog_1563263041.jpg" alt="MyProtein BCAA 1kg (200 servings)" title="MyProtein BCAA 1kg (200 servings)"> </a> <a href="/home/product/1" class="title">MyProtein BCAA 1kg (200 servings)</a>
-                    <div class="star" total="5" point="5"></div>
-                    <div class="price"> <span class="main">1.090.000đ</span> <span class="old">1.150.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/mutant_bcaa_90_servings_image_catalog_1563186691.jpg" alt="Mutant BCAA 90 servings" title="Mutant BCAA 90 servings"> </a> <a href="/home/product/1" class="title">Mutant BCAA 90 servings</a>
-                    <div class="star" total="5" point="5"></div>
-                    <div class="price"> <span class="main">1.250.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <div class="label-deal-product">-6%</div>
-                    <div class="time-deal-product"time="383153"> <span><i class="far fa-clock"></i> <span class="display-time"></span></span> </div>
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/anabolic_state_30_servings_image_catalog_1583375364.jpg" alt="Anabolic State 30 servings" title="Anabolic State 30 servings"> </a> <a href="/home/product/1" class="title">Anabolic State 30 servings</a>
-                    <div class="star" total="5" point="5"></div>
-                    <div class="price"> <span class="main">650.000đ</span> <span class="old">690.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/xtend-energy-bcaas-30-servings.jpg" alt="Xtend Energy BCAAs 30 servings" title="Xtend Energy BCAAs 30 servings"> </a> <a href="/home/product/1" class="title">Xtend Energy BCAAs 30 servings</a>
-                    <div class="star" total="5" point="5"></div>
-                    <div class="price"> <span class="main">590.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/mutant_bcaa_30_servings_image_catalog_1562402874.jpg" alt="Mutant BCAA 30 servings" title="Mutant BCAA 30 servings"> </a> <a href="/home/product/1" class="title">Mutant BCAA 30 servings</a>
-                    <div class="star" total="5" point="3"></div>
-                    <div class="price"> <span class="main">600.000đ</span> <span class="old">700.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/optimum-bcaa-1000-400-vien.jpg" alt="Optimum BCAA 1000 400 Viên" title="Optimum BCAA 1000 400 Viên"> </a> <a href="/home/product/1" class="title">Optimum BCAA 1000 400 Viên</a>
-                    <div class="star" total="5" point="5"></div>
-                    <div class="price"> <span class="main">850.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/optimum-bcaa-1000-200-vien.jpg" alt="Optimum BCAA 1000 200 viên" title="Optimum BCAA 1000 200 viên"> </a> <a href="/home/product/1" class="title">Optimum BCAA 1000 200 viên</a>
-                    <div class="star" total="5" point="5"></div>
-                    <div class="price"> <span class="main">500.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <div class="label-deal-product">-12%</div>
-                    <div class="time-deal-product"time="383153"> <span><i class="far fa-clock"></i> <span class="display-time"></span></span> </div>
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/nutrex_eaa_hydration_30_servings_image_catalog_1569321987.jpg" alt="Nutrex EAA Hydration 30 servings" title="Nutrex EAA Hydration 30 servings"> </a> <a href="/home/product/1" class="title">Nutrex EAA Hydration 30 servings</a>
-                    <div class="star" total="5" point="0"></div>
-                    <div class="price"> <span class="main">750.000đ</span> <span class="old">850.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/ibcaa-gonutrition-1kg-200-serving.jpg" alt="iBcaa GoNutrition 1kg (200 serving)" title="iBcaa GoNutrition 1kg (200 serving)"> </a> <a href="/home/product/1" class="title">iBcaa GoNutrition 1kg (200 serving)</a>
-                    <div class="star" total="5" point="5"></div>
-                    <div class="price"> <span class="main">1.090.000đ</span> <span class="old">1.150.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/best_bcaa__14_servings__image_catalog_1562925626.jpg" alt="Best BCAA 14 servings" title="Best BCAA 14 servings"> </a> <a href="/home/product/1" class="title">Best BCAA 14 servings</a>
-                    <div class="star" total="5" point="0"></div>
-                    <div class="price"> <span class="main">280.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/alpha_amino_30_serving_image_catalog_1571041916.jpg" alt="Alpha Amino 30 serving" title="Alpha Amino 30 serving"> </a> <a href="/home/product/1" class="title">Alpha Amino 30 serving</a>
-                    <div class="star" total="5" point="5"></div>
-                    <div class="price"> <span class="main">290.000đ</span> <span class="old">550.000đ</span> </div>
-                </div>
-                <div class="product slider-product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img class="lazy" data-src="/lib/front/upload/product/catalog/musclepharm_bcaa_60_servings_image_catalog_1562669350.jpg" alt="MusclePharm BCAA 60 servings" title="MusclePharm BCAA 60 servings"> </a> <a href="/home/product/1" class="title">MusclePharm BCAA 60 servings</a>
-                    <div class="star" total="5" point="0"></div>
-                    <div class="price"> <span class="main">650.000đ</span> </div>
-                </div>
-            </div>
+            <div class="title-nav"> <a class="hover-color">SẢN PHẨM LIÊN QUAN</a> </div>
+
+            <div id="listProdlienquan" class="owl-carousel owl-theme ">
+                
+                    <?php if(isset($listProdLienquan)): foreach($listProdLienquan as $ls): ?>
+                        <div class="item product slider-product "> 
+                            <?php if($ls['discount'] > 0) : ?><div class="label-deal-product">-<?php echo $ls['discount'] ?>%</div> 
+                            <?php endif ?>
+                            
+                            
+
+                            <a class="image cs-flex flex-align-center flex-content-center"> 
+                            <div class="pane-tool-button cs-flex"> 
+                                <button class="pr-10 pl-10 mr-5 redirect-login" url="/home/product/<?php echo $ls['id_prod'] ?>">Xem chi tiết</button> 
+                                <button class="">
+                                    <i class="fas fa-shopping-cart add-cart" value="<?php echo $ls['id_prod'] ?>"></i>
+                                </button>
+                            </div> 
+                            <img class="lazy" style="max-width: 200px"  data-src="/uploads/products/<?php echo $ls['image'] ?>" alt="<?php echo $ls['name_prod'] ?>" title="<?php echo $ls['name_prod'] ?>"> 
+                            </a> <a href="/home/product/<?php echo $ls['id_prod'] ?>" class="title"><?php echo $ls['name_prod'] ?></a>
+                            <div class="star" total="5" point="5"></div> 
+                            <?php if($ls['discount'] != 0): ?>
+                            <span class="price"  price="<?php echo $ls[0]['price'] ?>">
+                                            <span  class="main" content="<?php echo number_format( ((100 - $ls['discount']) * $ls['price'])/100 , 0 ,'','.' )?>">
+                                                <?php echo number_format( ((100 - $ls['discount']) * $ls['price'])/100 , 0 ,'','.' )?>
+                                            </span>
+                                            <span   class="main" content="VND"> đ</span>
+                                            <span class="old"> - <?php echo number_format($ls['price'],0,'','.') ?> đ</span> 
+                            </span> 
+                            <?php else: ?>
+                                <div class="price"> <span class="main"><?php echo number_format($ls['price'],0,'','.') ?>đ</span> </div>
+                            <?php endif ?>
+ 
+                        </div> 
+                    <?php endforeach; endif; ?>
+
+
+                
+            </div> 
         </div>
-    </div>
+    </div> 
+
     <div id="myModalInventory" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
@@ -456,65 +368,48 @@
             </form>
         </div>
     </div>
-    <script>var maxHeight = 0;$('.main_effect_content').each(function(){if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }});$('.main_effect_content').height(maxHeight);</script> <script src="/lib/front/asset/site/js/scrsnxtproduct13860.js?v=1"></script> <script src="/lib/front/asset/site/js/jquery.easing.min.js"></script> <script src="/lib/front/asset/site/js/jquery.easy-ticker.js"></script>
+    <!-- <script>var maxHeight = 0;$('.main_effect_content').each(function(){if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }});$('.main_effect_content').height(maxHeight);</script> <script src="/lib/front/asset/site/js/scrsnxtproduct13860.js?v=1"></script> <script src="/lib/front/asset/site/js/jquery.easing.min.js"></script> <script src="/lib/front/asset/site/js/jquery.easy-ticker.js"></script> -->
     <div class="session">
         <div class="main-content">
-            <div class="title-nav"> <a href="javascript:;" class="hover-color">Sản phẩm bạn đã xem</a> </div>
-            <div class="slider-magic cs-flex" numColumn=' [ {"num": 5, "width": 900}, {"num": 3, "width": 500}, {"num": 2, "width": 400}, {"num": 2, "width": 0} ]' isPager="false" classItems="product">
-                <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/super_mass_gainer_12lbs___xtend_bcaa_90_servings_image_catalog_1564559625.jpg" alt="Super Mass Gainer 12lbs + Xtend BCAA 90 servings" title="Super Mass Gainer 12lbs + Xtend BCAA 90 servings"> </a> <a href="/home/product/1" class="title">Super Mass Gainer 12lbs + Xtend BCAA 90 servings</a>
-                    <div class="star" total="5" point="0"></div>
-                    <div class="price"> <span class="main">2.450.000đ</span> <span class="old">2.600.000đ</span> </div>
-                </div>
-                <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/true_gain_12lbs___best_bcaa_30_servings_image_catalog_1583306553.jpg" alt="True Gain 12lbs + Best BCAA 30 servings" title="True Gain 12lbs + Best BCAA 30 servings"> </a> <a href="/home/product/1" class="title">True Gain 12lbs + Best BCAA 30 servings</a>
-                    <div class="star" total="5" point="0"></div>
-                    <div class="price"> <span class="main">1.640.000đ</span> <span class="old">1.740.000đ</span> </div>
-                </div>
-                <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/true_gainer_12lbs___xtend_bcaa_90sers_image_catalog_1563785432.jpg" alt="True Gain 12lbs + Xtend BCAA 90 servings" title="True Gain 12lbs + Xtend BCAA 90 servings"> </a> <a href="/home/product/1" class="title">True Gain 12lbs + Xtend BCAA 90 servings</a>
-                    <div class="star" total="5" point="0"></div>
-                    <div class="price"> <span class="main">2.240.000đ</span> <span class="old">2.490.000đ</span> </div>
-                </div>
-                <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/on_isolate_5lbs___xtend_bcaa_90_servings_image_catalog_1565077755.jpg" alt="ON isolate 5lbs + Xtend BCAA 90 servings" title="ON isolate 5lbs + Xtend BCAA 90 servings"> </a> <a href="/home/product/1" class="title">ON isolate 5lbs + Xtend BCAA 90 servings</a>
-                    <div class="star" total="5" point="0"></div>
-                    <div class="price"> <span class="main">2.700.000đ</span> <span class="old">2.950.000đ</span> </div>
-                </div>
-                <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/whey_gold_2lbs___best_bcaa_30_servings_image_catalog_1564712699.png" alt="Whey Gold 2lbs + Best BCAA 30 servings" title="Whey Gold 2lbs + Best BCAA 30 servings"> </a> <a href="/home/product/1" class="title">Whey Gold 2lbs + Best BCAA 30 servings</a>
-                    <div class="star" total="5" point="0"></div>
-                    <div class="price"> <span class="main">1.240.000đ</span> <span class="old">1.340.000đ</span> </div>
-                </div>
-                <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/whey_gold_2lbs___best_bcaa_60sers_image_catalog_1564018284.jpg" alt="Whey Gold 2lbs + Best BCAA 60 servings" title="Whey Gold 2lbs + Best BCAA 60 servings"> </a> <a href="/home/product/1" class="title">Whey Gold 2lbs + Best BCAA 60 servings</a>
-                    <div class="star" total="5" point="0"></div>
-                    <div class="price"> <span class="main">1.480.000đ</span> <span class="old">1.580.000đ</span> </div>
-                </div>
-                <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/iso_100_5lbs___best_bcaa_30_sers_image_catalog_1564135786.jpg" alt="Iso 100 5lbs + Best BCAA 30 servings" title="Iso 100 5lbs + Best BCAA 30 servings"> </a> <a href="/home/product/1" class="title">Iso 100 5lbs + Best BCAA 30 servings</a>
-                    <div class="star" total="5" point="0"></div>
-                    <div class="price"> <span class="main">2.300.000đ</span> <span class="old">2.450.000đ</span> </div>
-                </div>
-                <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/whey_gold_10lbs___best_bcaa_30sers_image_catalog_1563963207.jpg" alt="Whey Gold 10lbs + Best BCAA 30 servings" title="Whey Gold 10lbs + Best BCAA 30 servings"> </a> <a href="/home/product/1" class="title">Whey Gold 10lbs + Best BCAA 30 servings</a>
-                    <div class="star" total="5" point="0"></div>
-                    <div class="price"> <span class="main">3.000.000đ</span> <span class="old">3.200.000đ</span> </div>
-                </div>
-                <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/musclepharm_bcaa_60_servings_image_catalog_1562669350.jpg" alt="MusclePharm BCAA 60 servings" title="MusclePharm BCAA 60 servings"> </a> <a href="/home/product/1" class="title">MusclePharm BCAA 60 servings</a>
-                    <div class="star" total="5" point="0"></div>
-                    <div class="price"> <span class="main">650.000đ</span> </div>
-                </div>
-                <div class="product cs-col-6 cs-col-xs-6 cs-col-md-2-4">
-                    <a href="/home/product/1" class="image cs-flex flex-align-center flex-content-center"> <img src="/lib/front/upload/product/catalog/best_bcaa__14_servings__image_catalog_1562925626.jpg" alt="Best BCAA 14 servings" title="Best BCAA 14 servings"> </a> <a href="/home/product/1" class="title">Best BCAA 14 servings</a>
-                    <div class="star" total="5" point="0"></div>
-                    <div class="price"> <span class="main">280.000đ</span> </div>
-                </div>
-                <script>
-                    if($(window).width() <= 769) {$(".slider-child-catalog").remove();}
-                </script>
-            </div>
+            <div class="title-nav"> <a href="javascript:;" class="hover-color">Sản phẩm mua nhiều</a> </div>
+            
+            <div id="listProdXem" class="owl-carousel owl-theme ">
+                
+                <?php if(isset($sp_views)): foreach($sp_views as $ls): ?>
+                    <div class="item product slider-product "> 
+                        <?php if($ls['discount'] > 0) : ?><div class="label-deal-product">-<?php echo $ls['discount'] ?>%</div> 
+                        <?php endif ?>
+                         
+                        <a class="image cs-flex flex-align-center flex-content-center"> 
+                        <div class="pane-tool-button cs-flex"> 
+                            <button class="pr-10 pl-10 mr-5 redirect-login" url="/home/product/<?php echo $ls['id_prod'] ?>">Xem chi tiết</button> 
+                            <button class="">
+                                <i class="fas fa-shopping-cart add-cart" value="<?php echo $ls['id_prod'] ?>"></i>
+                            </button>
+                        </div>
+                        <img class="lazy" style="max-width: 200px"  data-src="/uploads/products/<?php echo $ls['image'] ?>" alt="<?php echo $ls['name_prod'] ?>" title="<?php echo $ls['name_prod'] ?>"> 
+                        </a> <a href="/home/product/<?php echo $ls['id_prod'] ?>" class="title"><?php echo $ls['name_prod'] ?></a>
+                        <div class="star" total="5" point="5"></div> 
+                        <?php if($ls['discount'] != 0): ?>
+                        <span class="price"  price="<?php echo $ls[0]['price'] ?>">
+                                        <span  class="main" content="<?php echo number_format( ((100 - $ls['discount']) * $ls['price'])/100 , 0 ,'','.' )?>">
+                                            <?php echo number_format( ((100 - $ls['discount']) * $ls['price'])/100 , 0 ,'','.' )?>
+                                        </span>
+                                        <span   class="main" content="VND"> đ</span>
+                                        <span class="old"> - <?php echo number_format($ls['price'],0,'','.') ?> đ</span> 
+                        </span> 
+                        <?php else: ?>
+                            <div class="price"> <span class="main"><?php echo number_format($ls['price'],0,'','.') ?>đ</span> </div>
+                        <?php endif ?>
+
+                    </div> 
+                <?php endforeach; endif; ?>
+
+
+            
+        </div> 
+
+
         </div>
     </div>
 

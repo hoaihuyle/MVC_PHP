@@ -98,11 +98,11 @@
          </div>
       </div>
       
-      <div class="session" style="margin-bottom: 15px;">
+      <div id="thuonghieu" class="session" style="margin-bottom: 15px;">
          <div class="main-content">
             <div class="title-nav"> <a href="lib/front/javascript:;" class="hover-color">Thương Hiệu</a> </div>
                <div class="cs-flex p-10 flex-content-center"> 
-                 <div class="owl-carousel">
+                 <div id = "thuonghieuCal" class="owl-carousel">
                   <div class="label" style="margin: 5px"> <a href="/"> <img class="grayscale lazy" data-src="https://www.thol.com.vn/media/magentothem/brandslider/nutrex.jpg" width="150" alt="Optimum Nutrition" title="Optimum Nutrition"> </a> </div>
                   <div class="label" style="margin: 5px"> <a href="/"> <img class="grayscale lazy" data-src="https://www.thol.com.vn/media/magentothem/brandslider/thol-135.jpg" width="150" alt="Muscletech" title="Muscletech"> </a> </div>
                   <div class="label" style="margin: 5px"> <a href="/"> <img class="grayscale lazy" data-src="https://www.thol.com.vn/media/magentothem/brandslider/LABRADA.jpg" width="150" alt="AST Sports" title="AST Sports"> </a> </div>

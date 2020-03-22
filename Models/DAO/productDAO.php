@@ -174,5 +174,8 @@ class ProductDAO extends Model
     public function listProductViews($db, $table, $column , $limit){
         return $db->fetchMax($table, $column , $limit);
     }
+    public function listProdiscount($db, $table, $where){
+        return $db->fetchArr($table, $where);
+    }
 }
 ?>
