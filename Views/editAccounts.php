@@ -13,7 +13,7 @@
                         </br>
                       <span style="color: red"><?php if(isset($nofitication)) echo $nofitication ?></span>
                     </div>
-                    <form id="form_register" action="/account/postEditUser" method="POST">
+                    <form action="/account/postEditUser" method="POST">
                      <label class="label-cm mt-10" for="">Họ &amp; Tên <span style="color:red">*</span></label> 
                      <input required="" class="input-cm" name="name_acco" autocomplete="off" type="text" placeholder="Nhập tên khách hàng" value="<?php echo $user['name_acco'] ?>" style="font-size: 15px;">
                      <label class="label-cm mt-10" for="">Email <span style="color:red">*</span></label> 

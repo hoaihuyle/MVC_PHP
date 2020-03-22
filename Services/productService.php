@@ -108,5 +108,11 @@ class ProductService extends Service{
          $products =  $product-> fetchsql($db,$cate_id,$comp_id,$str3,$str4);
          return $products;
     } 
+
+    function listProdiscount($db, $table, $where){
+        $product = new ProductDAO();
+        $products =  $product->listProdiscount($db,$table, $where);
+        return $products;
+    }
 }    
 ?>
