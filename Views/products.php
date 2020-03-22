@@ -290,14 +290,12 @@
                     <div class="time-deal-product" time="7015"> <span><i class="far fa-clock"></i> <span class="display-time">01:56:56</span></span>
                     </div>
                     <?php endif ?>
-                  <a href="/home/product/<?php echo $p['id_prod'] ?>" class="image cs-flex flex-align-center flex-content-center" style="width:255px; height: 255px; display: inline-block; padding: 10px">
+                  <a class="image cs-flex flex-align-center flex-content-center" style="width:255px; height: 255px; display: inline-block; padding: 10px">
                     <div class="pane-tool-button cs-flex">
-                      <button class="pr-10 pl-10 mr-5">Xem chi tiết</button>
-                      <button class="mr-5 btn-popup-detail" smell="2" current="/whey-protein-blend" base="/" product="83"><i class="fas fa-eye"></i>
+                      <button class="pr-10 pl-10 mr-5 redirect-login" url="/home/product/<?php echo $p['id_prod'] ?>">Xem chi tiết</button> 
+                      <button  class="add-cart" value="<?php echo $p['id_prod'] ?>" ><i class="fas fa-shopping-cart " ></i>
                       </button>
-                      <button class="redirect-login" url="/dang-nhap.html"><i class="far fa-heart"></i>
-                      </button>
-                    </div>
+                    </div> 
                     <img class="lazy" alt="<?php echo $p['name_prod'] ?>" title="<?php echo $p['name_prod'] ?>" src="/uploads/products/<?php echo $p['image'] ?>" style="">
                   </a> <a href="/home/product/<?php echo $p['id_prod'] ?>" class="title"><?php echo $p['name_prod'] ?></a>  <span style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;"><?php echo $p['uses_prod'] ?></span>
                   <div class="star" total="5" point="5">
