@@ -40,8 +40,8 @@
                   <a class="image cs-flex flex-align-center flex-content-center">
                   <div class="pane-tool-button cs-flex"> 
                      <button class="pr-10 pl-10 mr-5 redirect-login" url="/home/product/<?php echo $sp['id_prod'] ?>">Xem chi tiết</button> 
-                     <button class="">
-                        <i class="fas fa-shopping-cart add-cart" value="<?php echo $sp['id_prod'] ?>"></i>
+                     <button class="add-cart" value="<?php echo $sp['id_prod'] ?>"">
+                        <i class="fas fa-shopping-cart " ></i>
                      </button>
                   </div>
                      <img class="lazy" data-src="/uploads/products/<?php echo $sp['image'] ?>" alt="<?php echo $sp['name_prod'] ?>" title="<?php echo $sp['name_prod'] ?>"> 
@@ -77,8 +77,8 @@
                   <a  class="image cs-flex flex-align-center flex-content-center">
                   <div class="pane-tool-button cs-flex"> 
                      <button class="pr-10 pl-10 mr-5 redirect-login" url="/home/product/<?php echo $p['id_prod'] ?>">Xem chi tiết</button> 
-                     <button class="">
-                        <i class="fas fa-shopping-cart add-cart" value="<?php echo $p['id_prod'] ?>"></i>
+                     <button class=" add-cart"  value="<?php echo $p['id_prod'] ?>">
+                        <i class="fas fa-shopping-cart"></i>
                      </button>
                   </div>
                      <img class="lazy" data-src="/uploads/products/<?php echo $p['image'] ?>" alt="<?php echo $p['name_prod'] ?>" title="<?php echo $p['name_prod'] ?>"> 

@@ -294,8 +294,8 @@
                             <a class="image cs-flex flex-align-center flex-content-center"> 
                             <div class="pane-tool-button cs-flex"> 
                                 <button class="pr-10 pl-10 mr-5 redirect-login" url="/home/product/<?php echo $ls['id_prod'] ?>">Xem chi tiết</button> 
-                                <button class="">
-                                    <i class="fas fa-shopping-cart add-cart" value="<?php echo $ls['id_prod'] ?>"></i>
+                                <button class="add-cart" value="<?php echo $ls['id_prod'] ?>">
+                                    <i class="fas fa-shopping-cart " ></i>
                                 </button>
                             </div> 
                             <img class="lazy" style="max-width: 200px"  data-src="/uploads/products/<?php echo $ls['image'] ?>" alt="<?php echo $ls['name_prod'] ?>" title="<?php echo $ls['name_prod'] ?>"> 
@@ -383,8 +383,8 @@
                         <a class="image cs-flex flex-align-center flex-content-center"> 
                         <div class="pane-tool-button cs-flex"> 
                             <button class="pr-10 pl-10 mr-5 redirect-login" url="/home/product/<?php echo $ls['id_prod'] ?>">Xem chi tiết</button> 
-                            <button class="">
-                                <i class="fas fa-shopping-cart add-cart" value="<?php echo $ls['id_prod'] ?>"></i>
+                            <button class="add-cart" value="<?php echo $ls['id_prod'] ?>">
+                                <i class="fas fa-shopping-cart " ></i>
                             </button>
                         </div>
                         <img class="lazy" style="max-width: 200px"  data-src="/uploads/products/<?php echo $ls['image'] ?>" alt="<?php echo $ls['name_prod'] ?>" title="<?php echo $ls['name_prod'] ?>"> 
