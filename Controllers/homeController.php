@@ -54,6 +54,11 @@ class HomeController extends Controller
         $data = ['count' => $prod['prod'][0]['count'] + 1];
         $update = $product->editProduct($db, $id, $data );
         $prod['CateName'] = $product->getCate($db,'categories','id_cate ='.$prod['prod'][0]['cate_id']);
+        $prod['listProdLienquan'] = $product->prodCateWhere($db, 'products', 'cate_id ='.$prod['CateName']['id_cate'].' limit 15');
+        $prod['sp_views'] = $product->listProductViews($db, 'products', 'count' ,10); 
+        $prod['prod_discount'] = $product->listProdiscount($db, 'products', 'discount > 0 limit 5');
+        // $this->helper->_debug($prod);
+        // die();
         $this->set($prod);
         $this->render('product_detail');
     }
@@ -66,12 +71,12 @@ class HomeController extends Controller
         require(ROOT . $this->service);
         $product = new ProductService();  
         $prod = $product->findProduct($db,$id); 
-        if($prod != null){
-            if($prod[0]['count']!=0){
-                // echo "<script>alert('Sản phẩm đã hết, vui lòng lựa chọn sản phẩm khác!!'); location=' /'</script> ";
-            }
-            else
-            {
+        // if($prod != null){
+            // if($prod[0]['count']!=0){
+            //     // echo "<script>alert('Sản phẩm đã hết, vui lòng lựa chọn sản phẩm khác!!'); location=' /'</script> ";
+            // }
+            // else
+            // {
                 if(! isset($_SESSION['cart'][$id]))//$id là key phân biệt các sp với nhau
                 {
                     //tạo mới giỏ hàng
@@ -87,11 +92,11 @@ class HomeController extends Controller
                     $_SESSION['cart'][$id]['qty'] += 1;
                     //cập nhật giỏ hàng
                 }
-            }
-        }
-        else {
-             echo "Sản phẩm không tồn tại, vui lòng lựa chọn sản phẩm khác!!'); location='/'";
-        }
+            // }
+        // }
+        // else {
+        //      echo "Sản phẩm không tồn tại, vui lòng lựa chọn sản phẩm khác!!'); location='/'";
+        // }
         // echo 'Sản phẩm đã được thêm vào giỏ hàng'; 
         echo count($_SESSION['cart']);
 }
