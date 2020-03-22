@@ -129,5 +129,14 @@ class HomeController extends Controller
     function aboutUs(){
         $this->render('about_us'); 
     }
+
+    function search($name){ 
+        require(ROOT . $this->service);
+        $product = new ProductService();
+        $prod['product'] = $product->listProdiscount($db, 'products', " name_prod LIKE '%".$name."%'"); 
+        $prod['sp_views'] = $product->listProductViews($db, 'products', 'count' ,10); 
+        $this->set($prod);
+        $this->render('search');
+    }
 }
 ?>
