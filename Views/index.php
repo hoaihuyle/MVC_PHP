@@ -6,8 +6,8 @@
             <img class="item" src="https://landing.cfyc.com.vn/storage/app/media/Banner%20Califresh%202019/desktop%20copy.png" alt="Mass Fusion" title="Mass Fusion"></a> 
             <a href="/home/product/1">
             <img class="item" src="https://landing.cfyc.com.vn/storage/app/media/Referal/header%20website%20VN.jpg" alt="Up your mass" title="Up your mass"></a> 
-            <a href="lib/front/whey-gold-standard-5lbs-2-27kg--57">
-            <img class="item" src="lib/front/upload/banner/banner-web-2.jpg" alt="whey gold " title="whey gold "></a> 
+            <a href="/lib/front/whey-gold-standard-5lbs-2-27kg--57">
+            <img class="item" src="/lib/front/upload/banner/banner-web-2.jpg" alt="whey gold " title="whey gold "></a> 
          </div>
       </div>
       
@@ -30,7 +30,7 @@
       
       <div class="session">
          <div class="main-content">
-            <div class="title-nav"> <a href="lib/front/#" class="hover-color">Sản phẩm xem nhiều</a> </div>
+            <div class="title-nav"> <a href="/lib/front/#" class="hover-color">Sản phẩm xem nhiều</a> </div>
             <div class="cs-flex" classItems="product">
                 <?php if(isset($sp_views)): foreach($sp_views as $sp): ?>
                <div class="product slider-home cs-col-6 cs-col-xs-6 cs-col-md-3">
@@ -59,7 +59,7 @@
          <div class="main-content ads">
             <div class="cs-flex">
                <div class="cs-col-sm-6 mb-10 image-ads-left"> <a href="/home/product/1" class="animation-image"><img class="img-responsive lazy" data-src="https://www.thol.com.vn/pub/media/wysiwyg/banner/10_-_2_Biovite.jpg" alt="Top các loại sữa tăng cân" title="Top các loại sữa tăng cân"></a> </div>
-               <div href="front/c152/whey-protein-tang-co" class="cs-col-sm-6 mb-10 image-ads-right"> <a href="lib/front/c152/whey-protein-tang-co" class="animation-image"><img class="img-responsive lazy" data-src="https://www.thol.com.vn/pub/media/wysiwyg/banner/eea_lipo6_blck.jpg" alt="Top các loại whey protein" title="Top các loại whey protein"></a> </div>
+               <div href="front/c152/whey-protein-tang-co" class="cs-col-sm-6 mb-10 image-ads-right"> <a href="/lib/front/c152/whey-protein-tang-co" class="animation-image"><img class="img-responsive lazy" data-src="https://www.thol.com.vn/pub/media/wysiwyg/banner/eea_lipo6_blck.jpg" alt="Top các loại whey protein" title="Top các loại whey protein"></a> </div>
             </div>
          </div>
       </div>
@@ -100,7 +100,7 @@
       
       <div id="thuonghieu" class="session" style="margin-bottom: 15px;">
          <div class="main-content">
-            <div class="title-nav"> <a href="lib/front/javascript:;" class="hover-color">Thương Hiệu</a> </div>
+            <div class="title-nav"> <a href="/lib/front/javascript:;" class="hover-color">Thương Hiệu</a> </div>
                <div class="cs-flex p-10 flex-content-center"> 
                  <div id = "thuonghieuCal" class="owl-carousel">
                   <div class="label" style="margin: 5px"> <a href="/"> <img class="grayscale lazy" data-src="https://www.thol.com.vn/media/magentothem/brandslider/nutrex.jpg" width="150" alt="Optimum Nutrition" title="Optimum Nutrition"> </a> </div>
