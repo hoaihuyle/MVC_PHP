@@ -2,6 +2,7 @@
 class HomeController extends Controller
 { 
     var $service = 'Services/productService.php';  
+    var $setting = 'Services/settingService.php';
     function __construct(){ 
         parent::__construct();
         $this->callMenu();
@@ -32,6 +33,8 @@ class HomeController extends Controller
         $page = isset($pag)?$pag:0;
         require(ROOT . $this->service);
         $product = new ProductService(); 
+        require(ROOT . $this->setting);
+        $setting = new SettingService(); 
 
         $prod['Cate'] = $product->getCate($db,'categories','id_cate ='.$id);
         $prod['total'] = count($product->listsProduct($db,'products','cate_id', $id, $page));
@@ -39,17 +42,16 @@ class HomeController extends Controller
         $prod['totalPage'] = ceil($prod['total']/$pagi);
         $prod['activePage']=$pag;
         $prod['total'] % $pagi == 0 ? $prod['countShow'] = $pagi : $prod['countShow'] = $prod['total'] % $pagi ;
-
-        // die();
-        // $this->helper->_debug($prod);
-//         die();
+        $prod['set'] = $setting->listSetting($db); 
         $this->set($prod);
         $this->render('products');
     }
 
     function product($id){
         require(ROOT . $this->service);
-        $product = new ProductService();  
+        $product = new ProductService();   
+        require(ROOT . $this->setting);
+        $setting = new SettingService();
         $prod['prod'] = $product->findProduct($db,$id);
         $data = ['count' => $prod['prod'][0]['count'] + 1];
         $update = $product->editProduct($db, $id, $data );
@@ -57,7 +59,9 @@ class HomeController extends Controller
         $prod['listProdLienquan'] = $product->prodCateWhere($db, 'products', 'cate_id ='.$prod['CateName']['id_cate'].' limit 15');
         $prod['sp_views'] = $product->listProductViews($db, 'products', 'count' ,10); 
         $prod['prod_discount'] = $product->listProdiscount($db, 'products', 'discount > 0 limit 5');
-        // $this->helper->_debug($prod);
+        $prod['set'] = $setting->selectWhere($db, "SELECT * FROM setting_product join setting on setting_product.sett_key = setting.key_sett WHERE setting_product.prod_id =".$prod['prod'][0]['id_prod'] );
+
+        // $this->helper->_debug($prod['set']);
         // die();
         $this->set($prod);
         $this->render('product_detail');
