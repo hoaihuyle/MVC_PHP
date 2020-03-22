@@ -6,6 +6,12 @@ class Router
     static public function parse($url, $request)
     {
         $url = trim($url);
+        $explode_url = explode('/', $url);
+        $parUrl = explode('?',$url);
+        if(count($parUrl)>1)
+        if(strpos($parUrl[1], '?') !== true && count($explode_url)==2) {
+            $url=$parUrl[0];
+        }
 
         //default index https://cit.cit/
         if ($url == "/"||$url == "/index")
@@ -17,7 +23,7 @@ class Router
         else
         {
             // https://cit.cit/{url} -> controller is url, action defaut index
-            $explode_url = explode('/', $url);
+           
             $explode_url = array_slice($explode_url, 1);
             if(!isset($explode_url[1])) {
                 $request->controller =  $explode_url[0];
