@@ -48,7 +48,17 @@
                   </a>
                   <a href="/home/product/<?php echo $sp['id_prod'] ?>" class="title"><?php echo $sp['name_prod'] ?></a> <span style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;"><?php echo $sp['uses_prod'] ?></span> 
                   <div class="star" total="5" point="5"></div>
-                  <div class="price"> <span class="main"><?php echo number_format($sp['price'], 0, '', '.') ?>đ</span><span class="old"><?php echo number_format($sp['price_manu'], 0,'', '.') ?>đ</span> </div>
+                  <?php if($sp['discount'] != 0): ?>
+                        <span class="price"  price="<?php echo $sp[0]['price'] ?>">
+                                        <span  class="main" content="<?php echo number_format( ((100 - $sp['discount']) * $sp['price'])/100 , 0 ,'','.' )?>">
+                                            <?php echo number_format( ((100 - $sp['discount']) * $sp['price'])/100 , 0 ,'','.' )?>
+                                        </span>
+                                        <span   class="main" content="VND"> đ</span>
+                                        <span class="old"> - <?php echo number_format($sp['price'],0,'','.') ?> đ</span> 
+                        </span> 
+                        <?php else: ?>
+                            <div class="price"> <span class="main"><?php echo number_format($sp['price'],0,'','.') ?>đ</span> </div>
+							<?php endif ?>
                </div>
                 <?php endforeach; endif; ?>
 
@@ -85,7 +95,17 @@
                   </a>
                   <a href="/home/product/1" class="title"><?php echo $p['name_prod'] ?></a> <span style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;"><?php echo $p['uses_prod'] ?></span> 
                   <div class="star" total="5" point="5"></div>
-                  <div class="price"><?php echo number_format($p['price'], 0, '', '.') ?>đ</span><span class="old"><?php echo number_format($p['price_manu'], 0,'', '.') ?>đ</span> </div>
+                  <?php if($p['discount'] != 0): ?>
+                        <span class="price"  price="<?php echo $p[0]['price'] ?>">
+                                        <span  class="main" content="<?php echo number_format( ((100 - $p['discount']) * $p['price'])/100 , 0 ,'','.' )?>">
+                                            <?php echo number_format( ((100 - $p['discount']) * $p['price'])/100 , 0 ,'','.' )?>
+                                        </span>
+                                        <span   class="main" content="VND"> đ</span>
+                                        <span class="old"> - <?php echo number_format($p['price'],0,'','.') ?> đ</span> 
+                        </span> 
+                        <?php else: ?>
+                            <div class="price"> <span class="main"><?php echo number_format($p['price'],0,'','.') ?>đ</span> </div>
+							<?php endif ?>
                </div>
                   <?php  endforeach; endif ?>
             </div>

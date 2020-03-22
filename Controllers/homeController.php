@@ -99,7 +99,22 @@ class HomeController extends Controller
         // }
         // echo 'Sản phẩm đã được thêm vào giỏ hàng'; 
         echo count($_SESSION['cart']);
-}
+    }
+
+    function updateCart(){
+        // var_dump($_POST['idProd'][0]); 
+        // die();
+        if(!empty($_POST)){
+            $to['tongtienup'] = $_POST['tongtienup'];
+            for($i = 0; $i< count($_POST['idProd']); $i++){
+                if(isset($_SESSION['cart'][$_POST['idProd'][$i]])){  
+                    $_SESSION['cart'][$_POST['idProd'][$i]]['qty'] = $_POST['quality'][$i];//số lượng
+                }
+            }
+            $this->set($to); 
+        } 
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+    }
 
     function Cart(){
         $this->render('card');
@@ -113,6 +128,15 @@ class HomeController extends Controller
 
     function aboutUs(){
         $this->render('about_us'); 
+    }
+
+    function search($name){ 
+        require(ROOT . $this->service);
+        $product = new ProductService();
+        $prod['product'] = $product->listProdiscount($db, 'products', " name_prod LIKE '%".$name."%'"); 
+        $prod['sp_views'] = $product->listProductViews($db, 'products', 'count' ,10); 
+        $this->set($prod);
+        $this->render('search');
     }
 }
 ?>
