@@ -1,4 +1,4 @@
-<?php $tongtien = 0; $stt = 1 ?>
+<?php  $tongtien = 0; $stt = 1 ?>
 <div class="session" id="card-shop">
    <div class="main-content">
       <div class="cs-flex cs-col-12">
@@ -7,7 +7,7 @@
          </div>
          <!-- DesKtop HTML -->
          <div class="table-desktop">
-            <form action="/site/cart/update" method="post">
+            <form action="/home/updateCart" method="post">
                <table class="customers">
                   <tbody>
                      <tr>
@@ -25,19 +25,23 @@
                            <?php foreach($_SESSION['cart'] as $key=>$cart): ?>
 
                            <tr class="row-cart">
-                              <td class="ta-center"><?php echo $stt ?></td>
-                              <td> <a href="/home/product/<?php echo $key ?>" class="m-auto cs-flex"> <img class="m-auto lazy" alt="<?php echo $cart['name_prod'] ?>" src="/uploads/products/<?php echo $cart['image'] ?>" style=""> </a> </td>
+                              <td class="ta-center"><?php echo $stt ?>
+                                 <input style="display:none" type="text" name="idProd[]" id="" value="<?php echo $key ?>">
+                              </td>
+                              <td class="img_image"> <a id=" <?php echo $key ?>" href="/home/product/<?php echo $key ?>" class="m-auto cs-flex"> <img class="m-auto lazy" alt="<?php echo $cart['name_prod'] ?>" src="/uploads/products/<?php echo $cart['image'] ?>" style=""> </a> </td>
                               <td class="">
                                  <b><?php echo $cart['name_prod'] ?> </b>
                                  <p style="font-style: italic; font-size: 12px;"></p>
                               </td>
-                              <td class="color-red ta-center"><input type="hidden" class="id_price" value="<?php echo $cart['price_old']; ?>"> <?php echo number_format( $cart['price_old'], 0 ,'','.' ) ?>đ</td>
+                              <td class="color-red ta-center"><input type="hidden" class="id_price" value="<?php echo $cart['price_old']; ?>"> <?php echo number_format( $cart['price_old'], 0 ,'','.' ) ?>đ
+                              </td>
                               <td class="color-red ta-center">
-                                 <span class="id_discount text-danger"><?php echo $cart['discount'] ?></span>% = <?php echo number_format( $cart['price_old'] - $cart['price']  , 0 ,'','.' ) ?>đ
+                                 <span class="id_discount text-danger" ><?php echo $cart['discount'] ?></span>% = <?php echo number_format( $cart['price_old'] - $cart['price']  , 0 ,'','.' ) ?>đ
+                                 
                               </td>
                               <td class="ta-center">
                                  <div class="quantity">
-                                    <input type="number" min="1" max="100" step="1" class="id_quality" name="quality" value="<?php echo $cart['qty'] ?>">
+                                    <input type="number" min="1" max="100" step="1" class="id_quality" name="quality[]" value="<?php echo $cart['qty'] ?>">
                                  </div>
                               </td>
                               <td class="color-red ta-center row-cart-amount"><span class="id_total_price text-danger"> <?php echo number_format($cart['price'] * $cart['qty'], 0,'','.') ?> </span> ₫</td>
@@ -50,8 +54,13 @@
                      <tr>
                         <td colspan="4" align="right" style="border-right: none "> <b> <span>Tổng tiền thanh toán:</span> </b> </td>
                         <td colspan="6" align="right" style="border-left: none;">
-                           <input id="totalAmount" type="hidden" value="<?php echo $tongtien; ?>"> <strong> 
-                           <span class="mr-5 color-red total_cart_span total-cart-amount"><?php echo number_format($tongtien, 0, '', '.') ?></span>
+                           <input id="totalAmount" type="hidden" value="<?php  echo $tongtien;?>" name="tongtienup" > <strong> 
+                              <?php if(isset($tongtienup)): ?>
+                                 <span class="mr-5 color-red total_cart_span total-cart-amount"><?php echo number_format($tongtienup, 0, '', '.') ?></span>
+                              <?php else: ?>
+                                 <span class="mr-5 color-red total_cart_span total-cart-amount"><?php echo number_format($tongtien, 0, '', '.') ?></span>
+                              <?php endif; ?>
+                           
                            <span class="text-danger"> đ </span></strong> 
                      </td>
                      </tr>
