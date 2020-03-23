@@ -134,6 +134,13 @@ class SettingService extends Service{
 
         return $settings;
     }
+
+    function selectWhere($db, $where){
+        $setting = new SettingDAO();
+        $settings =  $setting->selectWhere($db, $where); 
+
+        return $settings;
+    }
 }
 
 ?>

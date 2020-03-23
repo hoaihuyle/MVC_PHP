@@ -8,7 +8,7 @@ img{width: 100%; height:auto}
 .from-blog .list-blog .blog-inner .blog-img .date span{color:#909090; font-size: 184.6%; font-weight: 700;	display: block; line-height: 100%;}
 .from-blog .list-blog .blog-inner .blog-tit{padding: 12px 0 8px}
 .from-blog .list-blog .blog-inner .blog-tit a{color: #222; font-size: 107.7%; font-weight: 700;}
-.owl-nav button{
+#thuonghieu .owl-nav button{
 	width: 40px;
     height: 30px; 
     text-align: center;
@@ -22,10 +22,12 @@ img{width: 100%; height:auto}
 		display: inline-block;
  
 }
-.owl-nav button span{font-size:25px; line-height: 24px;}
-.owl-nav{text-align: center; margin: 35px 0 65px;}
-.bx-viewport a .item{max-height: 550px; height:100%; image-rendering: pixelated; object-fit: cover; object-position: 0 0;}
-
+#thuonghieu .owl-nav button span{font-size:25px; line-height: 24px;}
+#thuonghieu.owl-nav{text-align: center; margin: 35px 0 65px;}
+#thuonghieu .bx-viewport a .item{max-height: 550px; height:100%; image-rendering: pixelated; object-fit: cover; object-position: 0 0;}
+#thuonghieuCal{text-align: center}
+#thuonghieuCal .owl-nav {padding-top: 20px;}
+#thuonghieu .main-content{margin-bottom: 50px}
 /* chitietsp */
 
 .breadcrumbs{ padding: 15px 0 5px 0; margin: 0;}
@@ -136,3 +138,8 @@ input[type=number] {-moz-appearance: textfield; }
     font-weight: bold;
     color: red;
 }
+/* index */
+.owl-carousel .owl-item,#listProdlienquan .owl-dots .owl-dot .active {background: #fff!important}
+ 
+/* .pagination  */
+.pagination .active {background:#f35f64; color: #fff; border-radius: 5px;}

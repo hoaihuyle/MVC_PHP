@@ -13,8 +13,9 @@
       <link rel="stylesheet" href="/lib/front/asset/site/css/owl.theme.default.min.css">
       <link rel="stylesheet" href="/lib/front/asset/site/modal/jquery.modal.min.css" />
       <link rel="stylesheet" href="/lib/front/asset/site/css/stylelist13860.css">
-      <link rel="stylesheet" href="/lib/front/asset/site/css/thanh.css">
-      <link rel="stylesheet" href="/lib/css/lib.css">
+      <link rel="stylesheet" href="/lib/front/asset/site/css/thanh.css?sizefile=<?php echo md5_file(ROOT."/lib/front/asset/site/css/thanh.css");?>">
+      <link rel="stylesheet" href="/lib/front/asset/site/css/respon.css?sizefile=<?php echo md5_file(ROOT."/lib/front/asset/site/css/respon.css");?>">
+      <!-- <link rel="stylesheet" href="/lib/css/lib.css"> -->
       <meta http-equiv="content-language" content="vi" />
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,7 +48,7 @@
          <div class="top-bar hidden-top-bar">
             <div class="main-content cs-flex">
                <div class="cs-col-12 cs-col-sm-6 cs-flex"> 
-                <a href="/front/tel:0779417827" rel="nofollow" class="connect cs-flex flex-row flex-align-center mr-20">
+                <a href="tel:0779417827" rel="nofollow" class="connect cs-flex flex-row flex-align-center mr-20">
                  <span><i class="fas fa-phone-square"></i> Hotline: 077.941.7827</span>
                 </a>
                 <a href="https://www.facebook.com/codosupp/" target="_blank" rel="nofollow" class="connect cs-flex flex-row flex-align-center mr-20">
@@ -93,20 +94,25 @@
                </div>
                <div class="cs-col-12 cs-col-lg-6 cs-flex flex-column ">
                   <!-- Form search --> 
-                  <form action=" front/tim-kiem" class="form-search cs-flex flex" method="get"> <input name="tukhoa" type="text" class="flex" style="font-size: 15px;" placeholder="Tìm sản phẩm và Enter..." value=""> <button> <i class="fa fa-search"></i> </button> </form>
+                  <form action="/home/search" class="form-search cs-flex flex" method="get"> 
+                     <input name="tukhoa" type="text" class="flex" style="font-size: 15px;" placeholder="Tìm sản phẩm và Enter..." value=""> 
+                  <button> <i class="fa fa-search"></i> </button> </form>
                   <!-- End form search --> <!-- Sugges --> 
                   <div class="cs-flex sugges hidden-top-bar">
                      <div class="label mr-10">Gợi ý: </div>
-                     <div style="white-space: nowrap;overflow:hidden;width:calc(100% - 50px)"> <a href="front/tim-kiem9172?tukhoa=Bcaa" class=" mr-5">Bcaa,</a> <a href="front/tim-kiemd0fd?tukhoa=Mass" class=" mr-5">Mass,</a> <a href="front/tim-kiem9b33?tukhoa=whey" class=" mr-5">whey,</a> <a href="front/tim-kiem792d?tukhoa=Iso%20100" class=" mr-5">Iso 100,</a> <a href="front/tim-kiem2ed3?tukhoa=rule%201" class=" mr-5">rule 1,</a> .v.v. </div>
+                     <div style="white-space: nowrap;overflow:hidden;width:calc(100% - 50px)"> <a href="/home/search?tukhoa=Bcaa" class=" mr-5">Bcaa,</a> 
+                     <a href="/home/search?tukhoa=Mass" class=" mr-5">Mass,</a> <a href="/home/search?tukhoa=whey" class=" mr-5">whey,</a> 
+                     <a href="/home/search?tukhoa=Iso" class=" mr-5">Iso 100,</a> <a href="/home/search?tukhoa=rule" class=" mr-5">rule 1,
+                  </a> .v.v. </div>
                   </div>
                   <!-- End sugges --> 
                </div>
                <div class="cs-col-3 cs-flex">
                   <!-- Box icon --> 
-                  <a href="#" class="hidden-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center ml-auto">
+                  <!-- <a href="#" class="hidden-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center ml-auto">
                      <i class="far fa-heart"></i> 
                      <div class="box-content"> Yêu thích </div>
-                  </a>
+                  </a> -->
                   <!-- End box icon --> <!-- Box icon --> 
                   <a href="/home/cart" class="hidden-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center ml-20 cart">
                      <i class="fas fa-shopping-cart"></i> 

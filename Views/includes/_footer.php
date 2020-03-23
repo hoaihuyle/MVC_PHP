@@ -70,7 +70,7 @@
       <script src="/lib/front/asset/site/js/jquery-3.2.1.min.js"></script>
       <script src="/lib/front/asset/site/js/bootstrap.min.js"></script>
       <script src="/lib/front/asset/site/js/slider/jquery.bxslider.min.js"></script>
-      
+      <script src="/lib/front/asset/site/js/scrsnxtproduct13860.js?v=1"></script>
       <script src="/lib/front/asset/site/js/jquery-ui.min.js"></script>
       <script src="/lib/front/asset/site/js/owl.carousel.min.js"></script>
       <script src="/lib/front/asset/site/js/jquery.lazy.min.js"></script>
@@ -79,8 +79,7 @@
       <script src="/lib/front/asset/site/js/validation1.js"></script>
       <script src="/lib/front/asset/site/magic/jquery.magic.js"></script>  
       <script src="/lib/front/asset/site/modal/jquery.modal.min.js"></script>
-	  <script src="/lib/front/asset/site/js/thanh.js"></script
-	  <script src="/lib/js/custom.js"></script>
+	  <script src="/lib/front/asset/site/js/thanh.js?sizefile=<?php echo md5_file(ROOT."/lib/front/asset/site/js/thanh.js");?>"></script> 
       <script>$('.slider-ads-top').bxSlider({auto: true,pager: false,autoHover: true,mode: 'horizontal',controls: false,pause: 10000});</script> <!-- End Top Banner --> 
       <script> $(function() { $('.lazy').Lazy();});</script> 
       <script>

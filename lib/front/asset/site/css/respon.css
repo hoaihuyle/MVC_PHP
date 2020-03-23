@@ -1,0 +1,77 @@
+/*// Extra large devices (large desktops, 1200px and up)*/
+/*xl*/
+/* Responsive style */
+@media (max-width: 1200px) {
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+@media (min-width: 768px){
+	
+}
+
+@media (max-width: 767.98px){
+
+}
+
+@media(min-width: 576px){
+
+}
+
+@media(max-width: 576px){
+    .countCart { top: -15px; }
+    /* Atuhor @huy Table horizontally */
+    .table-desktop{
+        display: block;
+        zoom: 0.6;
+    }
+    .card_table{
+        border-collapse: collapse;
+        width: 300px;
+        overflow-x: scroll;
+        display: block;
+    }
+    
+    .card_table thead {
+        background-color: #EFEFEF;
+    }
+    
+    .card_table thead,
+    .card_table tbody {
+        display: block;
+    }
+    
+    .card_table tbody {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        /* height: 140px; */
+    }
+    
+    .card_table td,
+    .card_table th {
+        min-width: 100px;
+        height: 25px;
+        border: dashed 1px lightblue;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100px;
+    }
+    .title-cm h3{
+        font-size: 20px;
+    }
+    .tr_total_price .content_total_price span{
+        float: left;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+
+@media (max-width: 420px) {
+
+}

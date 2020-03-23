@@ -42,9 +42,13 @@ class SettingDAO extends Model
     function listSettingWhere($db){
         return $db->fetchWhere('setting', "'flag' = '0'");
     }
+
+    function selectWhere($db, $where){
+        return $db->fetchsql($where);
+    }
+ 
     function findSettingkey_sett($db,$key){
      $sql="SELECT * FROM setting WHERE key_sett='".$key."'";
       return $db->fetchsql($sql);
     }
- 
 }

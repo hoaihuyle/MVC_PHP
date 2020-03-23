@@ -17,7 +17,7 @@ class signupController extends Controller
         $this->render("signup");
     }
 
-    function postRegister(){
+    function postRegister(){ 
       require(ROOT.$this->regis);
       $register = new registerService();
       if(isset($_POST)){ 

@@ -13,7 +13,16 @@ class ProductService extends Service{
         $products =  $product->fetchAll($db); 
         return $products;
     }
+/**
+     * List all product by where
+     */
+    function prodCateWhere($db, $table, $where){
 
+        $product = new ProductDAO();
+        $products =  $product->prodCateWhere($db, $table, $where); 
+        return $products;
+    }
+   
     /** 
      * List product by ID
      */
@@ -65,6 +74,12 @@ class ProductService extends Service{
         $product = new ProductDAO();
         return $product->listsProduct($db, $table, $col, $id);
     }
+    function listProductViews($db, $table,$column, $limit){
+        $product = new ProductDAO();
+        return $product->listProductViews($db, $table, $column, $limit);
+    }
+
+
      /** 
      * List category by ID 
      * @id_cate 
@@ -93,5 +108,11 @@ class ProductService extends Service{
          $products =  $product-> fetchsql($db,$cate_id,$comp_id,$str3,$str4);
          return $products;
     } 
+
+    function listProdiscount($db, $table, $where){
+        $product = new ProductDAO();
+        $products =  $product->listProdiscount($db,$table, $where);
+        return $products;
+    }
 }    
 ?>
