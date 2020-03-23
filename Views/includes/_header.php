@@ -109,10 +109,10 @@
                </div>
                <div class="cs-col-3 cs-flex">
                   <!-- Box icon --> 
-                  <a href="#" class="hidden-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center ml-auto">
+                  <!-- <a href="#" class="hidden-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center ml-auto">
                      <i class="far fa-heart"></i> 
                      <div class="box-content"> Yêu thích </div>
-                  </a>
+                  </a> -->
                   <!-- End box icon --> <!-- Box icon --> 
                   <a href="/home/cart" class="hidden-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center ml-20 cart">
                      <i class="fas fa-shopping-cart"></i> 

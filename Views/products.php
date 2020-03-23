@@ -28,6 +28,7 @@
                   <?php } ?>
                 </ul>
               </div>
+              <!-- search thương hiệu/huowngvi/
               <form action="" method="get">
                 <p class="title-cm"> <span>Thương hiệu</span> 
                 </p>
@@ -81,7 +82,7 @@
                     </ul>
                   </div>
                 </div>
-              </form>
+              </form> -->
             </div>
 				</div>
 				<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
