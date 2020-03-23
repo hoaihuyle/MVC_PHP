@@ -63,6 +63,12 @@
                                         <input name="key_sett" type="text" placeholder="Từ khóa" class="form-control text-primary">
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right ">Nhập tên đại diện cho từ khóa<span class="text-danger">*</span></label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input name="name_display" type="text" placeholder="Tên đại diện cho Từ khóa" class="form-control text-primary">
+                                    </div>
+                                </div>
                             </div>
                             <div id="group_Append">
                                 <div class="form-group row input_containt_key">
