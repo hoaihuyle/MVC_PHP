@@ -40,15 +40,17 @@
                                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Chọn Từ khóa<span class="text-danger">*</span></label>
                                     <div class="col-12 col-sm-8 col-lg-6">
                                         <select class="form-control" name="menu_id" id="input-select">
-                                        <option value="0">Từ khóa</option>
-                                        <option value="add_new">Thêm mới</option>
+                                        <option value="0"> Chọn từ khóa </option> 
+                                         <option value="add_new">Thêm mới</option>
                                         <?php  
-                                            foreach($settingInfos as $setting){
+                                            foreach($settingInfos as $setting){ 
+                                            
                                         ?>
-                                            <option value="<?php echo $setting['key_sett']; ?>"> <?php echo $setting['key_sett'] ?> </option> ;
+                                            <option value="<?php echo $setting; ?>"> <?php echo $setting ?> </option> 
                                         <?php
-                                        }
+                                       } 
                                         ?>
+                                        
                                         </select>
                                     </div>
                                 </div>
@@ -58,7 +60,7 @@
                                 <div class="form-group row">
                                     <label class="col-12 col-sm-3 col-form-label text-sm-right ">Nhập Từ khóa<span class="text-danger">*</span></label>
                                     <div class="col-12 col-sm-8 col-lg-6">
-                                        <input name="name_menu" type="text" required="" placeholder="Từ khóa" class="form-control text-primary">
+                                        <input name="key_sett" type="text" placeholder="Từ khóa" class="form-control text-primary">
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +68,7 @@
                                 <div class="form-group row input_containt_key">
                                     <label class="col-12 col-sm-3 col-form-label text-sm-right ">Nhập Nội dung cho từ khóa</label>
                                     <div class="col-10 col-sm-8 col-lg-6">
-                                        <input name="name_menu" type="text" required="" placeholder="Xin hãy nhập nội dung" class="form-control text-primary">
+                                        <input name="key_display" type="text" required="" placeholder="Xin hãy nhập nội dung" class="form-control text-primary">
                                     </div>
                                     <div class="col-1 del_work">
                                         <a>

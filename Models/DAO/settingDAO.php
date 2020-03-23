@@ -7,7 +7,7 @@ class SettingDAO extends Model
     }
 
     public function fetchByCol($db,$id){
-        return $db->fetchByCol('setting','id_setting',$id);
+        return $db->fetchByCol('setting','id_sett',$id);
     }
 
     function fetchByColOther($db){
@@ -23,7 +23,7 @@ class SettingDAO extends Model
 
     public function update($db, $id, $data){
 
-        return $db->update('setting', $data, array('id_setting'=>$id));
+        return $db->update('setting', $data, array('id_sett'=>$id));
     }
 
     public function insert($db, $data){
@@ -33,7 +33,7 @@ class SettingDAO extends Model
 
     public function delete($db, $id){
 
-        return $db->delete('setting', $id, 'id_setting'); 
+        return $db->delete('setting', $id, 'id_sett'); 
     }
 
     /**
@@ -42,6 +42,9 @@ class SettingDAO extends Model
     function listSettingWhere($db){
         return $db->fetchWhere('setting', "'flag' = '0'");
     }
+    function findSettingkey_sett($db,$key){
+     $sql="SELECT * FROM setting WHERE key_sett='".$key."'";
+      return $db->fetchsql($sql);
+    }
  
 }
-?>
