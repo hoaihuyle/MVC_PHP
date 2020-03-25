@@ -1,14 +1,49 @@
-.active{ background-color: #ec2c1e !important;color: white !important;}
-.disabled{
-  color: currentColor;
-  cursor: not-allowed;
-  opacity: 0.5;
-  text-decoration: none;
+.active {
+    background-color: #ec2c1e !important;
+    color: white !important;
 }
-#add_input_New{display: none;}
-.del_work{margin: 0; padding: 5px; text-align: center;}
-#add_NewInput{ margin: 15px 0}
-#add_NewInput:hover, #add_NewInput label:hover, .del_work:hover, .del_work label:hover{cursor: pointer;}
-.del_work a{width: 25px; height: 25px; display: inline-block}
-#add_NewInput a{width: 32px; height: 32px; display: inline-block}
-#add_NewInput img, .del_work img{width: 100%}
+
+.disabled {
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+#add_input_New {
+    display: none;
+}
+
+.del_work {
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+}
+
+#add_NewInput {
+    margin: 15px 0
+}
+
+#add_NewInput:hover,
+#add_NewInput label:hover,
+.del_work:hover,
+.del_work label:hover {
+    cursor: pointer;
+}
+
+.del_work a {
+    width: 25px;
+    height: 25px;
+    display: inline-block
+}
+
+#add_NewInput a {
+    width: 32px;
+    height: 32px;
+    display: inline-block
+}
+
+#add_NewInput img,
+.del_work img {
+    width: 100%
+}

@@ -127,9 +127,7 @@
                 
                 <div class="product product-catalog cs-col-6 cs-col-md-4">
                   <?php if($p['discount'] > 0) :?>
-                    <div class="label-deal-product">-<?php echo $p['discount'] ?>%</div>
-                    <div class="time-deal-product" time="7015"> <span><i class="far fa-clock"></i> <span class="display-time">01:56:56</span></span>
-                    </div>
+                    <div class="label-deal-product">-<?php echo $p['discount'] ?>%</div> 
                     <?php endif ?>
                   <a class="image cs-flex flex-align-center flex-content-center" style="width:255px; height: 255px; display: inline-block; padding: 10px">
                     <div class="pane-tool-button cs-flex">
@@ -181,4 +179,3 @@
 		</div>
 	</div>
 </main>
- 
