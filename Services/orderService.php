@@ -8,7 +8,11 @@ class orderService extends Service{
     $order =  $order->addOrder($db,$table, $dt); 
     return $order;
   }
-    
+  function getIdOrder($db,$table, $column){
+    $order = new orderDAO();
+    $order =  $order->getIdOrder($db,$table, $column); 
+    return $order;
+  }
    
 }    
 ?>
