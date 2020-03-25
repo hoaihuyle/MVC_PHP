@@ -70,6 +70,21 @@ class SettingService extends Service{
         
         return $a;
     }
+    function listSetting2($db){
+
+        $setting = new SettingDAO();
+        $settings =  $setting->fetchAll($db);
+
+        //settings => Array A
+        // Array B
+        $b=[];
+        for($x=0;$x<count($settings);$x++){
+        $b[$settings[$x]['key_sett']]= $settings[$x]['name_display'];
+        }
+
+        
+        return $b;
+    }
     function listSetting($db){
 
         $setting = new SettingDAO();

@@ -55,7 +55,7 @@
               <div class="title-cm mt-10 cm-red">
                 <span color: #505350>Giá sản phẩm:</span>
                 <?php if($prod[0]['discount'] != 0) :?>
-                <span class="cm-red font-s-25 product-price" itemprop="offers" itemscope
+                <span class="cm-red font-s-25 a-product-price" itemprop="offers" itemscope
                   itemtype="http://schema.org/Offer" price="<?php echo $prod[0]['price'] ?>">
                   <span itemprop="price" class="cm-red"
                     content="<?php echo number_format( ((100 - $prod[0]['discount']) * $prod[0]['price'])/100 , 0 ,'','.' ) ?>">
