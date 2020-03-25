@@ -1,4 +1,49 @@
-      <div id="main_banner" class="slider">
+      <div class="Slide_header">
+        <div class="main-content  row" style="margin: 0 auto; height: 100%">
+          <div class="col-sm-3">
+
+            <div class="catalog-product" style="width: 100%">
+              <h3 class="title-cm"> <span>DANH MỤC SẢN PHẨM</span> </h3>
+
+              <div class="tree-view">
+                <ul class="catalog mc-tree-view" style="display: block;">
+                  <?php foreach($categoryInfos as $key => $cate): if($key < 10): ?>
+                  <li class="mc-state-collapsed">
+                    <a
+                      href="/home/category?cate_id=<?php echo $cate['id_cate']?>&page=1"><?php echo $cate['name_cate'] ?></a>
+                    <button class="mc-toggle"></button>
+                  </li>
+                  <?php endif; endforeach ?>
+                </ul>
+              </div>
+            </div>
+
+
+
+          </div>
+          <div id="slide_banner" class="owl-carousel owl-theme col-sm-9 autoHeightClass" style="width: 100%; ">
+            <div class="item" style="height: 450px; object-fit: cover; width: 900px">
+              <img style="height: 100%; object-fit: cover; image-rendering: pixelated;"
+                src="https://landing.cfyc.com.vn/storage/app/media/Referal/header%20website%20VN.jpg" alt="Hydropure"
+                title="Hydropure">
+            </div>
+            <div class="item" style="height: 450px; object-fit: cover; width: 900px" ">
+            <img  style=" height: 100%; object-fit: cover; image-rendering: pixelated;"
+              src="https://landing.cfyc.com.vn/storage/app/media/Banner%20Califresh%202019/desktop%20copy.png"
+              alt="Mass Fusion" title="Mass Fusion">
+            </div>
+            <div class="item" style="height: 450px; object-fit: cover; width: 900px">
+              <img style="height: 100%; object-fit: cover; image-rendering: pixelated;"
+                src="https://landing.cfyc.com.vn/storage/app/media/Referal/header%20website%20VN.jpg" alt="Up your mass"
+                title="Up your mass">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- mobile -->
+      <div id="main_banner" class="slider" style="display: none">
         <div class="slider-magic banner" numColumn='[{"num": 1, "width": 0}]' classItems="item" isControls="true"
           isPager="true">
           <a href="/home/product/1">
@@ -16,6 +61,12 @@
         </div>
       </div>
 
+
+      <!-- end mobile -->
+
+
+
+      <!-- end mobile -->
       <div class="marketing">
         <!-- <script>$('.slider-magic').bxSlider({ auto: true, autoHover: true, pause: 10000});</script>  -->
         <div class="main-content cs-flex">
