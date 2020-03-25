@@ -199,6 +199,7 @@ class ProductController extends Controller
        
         if (!empty($_POST))
         {
+
             if (!$_FILES['image']['size']=='')
             {
             //upload ảnh
@@ -242,16 +243,17 @@ class ProductController extends Controller
                 "barcode"=>$_POST["barcode"],
                 "description"=>$_POST["description"],
                 "price_manu"=>$_POST["price_manu"],
-                "image"=>$_POST["image"]
+                "image"=>$_POST["image"],
                  ) ;
-            if ($product->editProduct($db, $id, $data))
-            {   if($product->deleteSet_Product($db,$id)){
-                    foreach ($_POST["menu_id"] as $value) {
-                        $data4=["prod_id"=>$id,"sett_key"=>$value];
-                        $product->createSett_Product($db,$data4);
-                    }
-                    header("Location: " . WEBROOT . $this->redIndex);
+            if ($product->editProduct($db, $id, $data) || isset($_POST['id_sett']))
+            {   
+                $product->deleteSet_Product($db,$id);
+                foreach ($_POST["id_sett"] as $value) {
+                    $data4=["prod_id"=>$id,"sett_key"=>$value];
+                    $product->createSett_Product($db,$data4);
                 }
+
+                header("Location: " . WEBROOT . $this->redIndex);
             }
             else{
                 if(isset($message)){ $d['error']=$message; }else $d['error'] = " <div class='message p-3 bg-danger text-white'> Cập nhập thông tin không thành công</div>";

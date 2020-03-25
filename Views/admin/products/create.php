@@ -114,12 +114,12 @@
                                 <div class="custom-controls-stacked">
                                     <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
                                         <label class="be-checkbox custom-control custom-checkbox">
-                                            <input name="flag" type="checkbox" class="custom-control-input" value="1"><span class="custom-control-label">Ẩn</span>
+                                            <input type="checkbox" class="custom-control-input" checked><span class="custom-control-label">Hiện</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
-                        </div>    
+                        </div>
 
                         <div class="form-group row">
                             <label class="col-12 col-sm-3 col-form-label text-sm-right ">Hình ảnh</label>

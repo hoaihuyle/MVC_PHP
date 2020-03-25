@@ -37,9 +37,9 @@ class ProductService extends Service{
      * Update product by ID
      */
     function editProduct($db, $id,$data){
+       
         $product = new ProductDAO();
         $products =  $product->update($db, $id, $data ); 
-
         return $products;
     }
 
