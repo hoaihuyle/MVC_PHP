@@ -261,6 +261,13 @@ $db = new Database();
             }
             return $data;
         }
+        //select count max
+        public function fetchMaxId($table,$column)
+        {
+            $sql = "SELECT Max({$column}) FROM {$table}";
+            $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn fetchID " .mysqli_error($this->link));
+            return mysqli_fetch_assoc($result);
+        }
         
         //lấy toàn bộ dữ liệu của id có trong bảng
         public function fetchID($table , $id)

@@ -24,9 +24,7 @@ class HomeController extends Controller
         $prod['splienquan'] = $product->listProdiscount($db, 'products','discount > 0 limit 20');
         // $this->helper->_debug($prod['prod_cate']);
         // die();
-
-        // $this->helper->_debug($prod['prod_cate']);
-        // die();
+ 
         $this->set($prod);
         $this->render("index");
     }
@@ -147,8 +145,6 @@ class HomeController extends Controller
     }
 
     function saveCart(){ 
-        // $this->helper->_debug($_SESSION['cart']);
-        // die();
         require(ROOT . $this->none);
         $none = new noneService();   
         require(ROOT . $this->order);
@@ -159,7 +155,9 @@ class HomeController extends Controller
             $dt['email'] = $_POST['email'];
             $dt['address'] = $_POST['address'];
             $none_id = $none->addClient($db, 'none', $dt);
+            $order_id = $order->getIdOrder($db, 'orders','id_orde');
             foreach($_SESSION['cart'] as $key => $cart){
+                $od['id_orde'] = $order_id['Max(id_orde)'] + 1;
                 $od['prod_id'] = $key;  
                 $od['none_id'] = $none_id;
                 $od['realPrice'] = $cart['price'];
@@ -175,7 +173,9 @@ class HomeController extends Controller
     function cartAccount(){
         require(ROOT . $this->order);
         $order = new orderService(); 
+        $order_id = $order->getIdOrder($db, 'orders','id_orde'); 
         foreach($_SESSION['cart'] as $key => $cart){
+            $od['id_orde'] = $order_id['Max(id_orde)'] + 1;
             $od['prod_id'] = $key;  
             $od['acco_id'] = $_SESSION['name_id'];
             $od['realPrice'] = $cart['price'];
