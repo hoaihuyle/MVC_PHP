@@ -34,10 +34,10 @@
                             <div class="card-body">
                                 <h5 class="text-muted">Tổng doanh thu</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1">12099 VND  </h1>
+                                    <h1 class="mb-1"><?php echo number_format( $static['max'], 0 ,'','.' ) ?> đ </h1>
                                 </div>
                                 <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                    <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>
+                                    <!-- <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span> -->
                                 </div>
                             </div>
                             <div id="sparkline-revenue"></div>
@@ -46,12 +46,12 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="text-muted">Tổng sản phẩm</h5>
+                                <h5 class="text-muted">Tổng sản phẩm được đặt hàng</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1">50</h1>
+                                    <h1 class="mb-1"><?php echo ( $static['count'] ) ?></h1>
                                 </div>
                                 <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                    <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>
+                                    <!-- <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span> -->
                                 </div>
                             </div>
                             <div id="sparkline-revenue2"></div>
@@ -62,10 +62,10 @@
                             <div class="card-body">
                                 <h5 class="text-muted">Tổng đơn hàng</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1">10</h1>
+                                    <h1 class="mb-1"><?php echo ( $static['order'] ) ?></h1>
                                 </div>
                                 <div class="metric-label d-inline-block float-right text-primary font-weight-bold">
-                                    <span>N/A</span>
+                                    <!-- <span>N/A</span> -->
                                 </div>
                             </div>
                             <div id="sparkline-revenue3"></div>
@@ -76,10 +76,10 @@
                             <div class="card-body">
                                 <h5 class="text-muted">Số tài khoản </h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1">10</h1>
+                                    <h1 class="mb-1"><?php echo $account ?></h1>
                                 </div>
                                 <div class="metric-label d-inline-block float-right text-secondary font-weight-bold">
-                                    <span>N/A</span>
+                                    <!-- <span>N/A</span> -->
                                 </div>
                             </div>
                             <div id="sparkline-revenue4"></div>

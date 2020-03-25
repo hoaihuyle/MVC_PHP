@@ -139,7 +139,7 @@
                     data-src="https://www.thol.com.vn/pub/media/wysiwyg/banner/10_-_2_Biovite.jpg"
                     alt="Top các loại sữa tăng cân" title="Top các loại sữa tăng cân"></a> </div>
               <div href="front/c152/whey-protein-tang-co" class="cs-col-sm-6 mb-10 image-ads-right"> <a
-                  href="/lib/front/c152/whey-protein-tang-co" class="animation-image"><img class="img-responsive lazy"
+                  href="#" class="animation-image"><img class="img-responsive lazy"
                     data-src="https://www.thol.com.vn/pub/media/wysiwyg/banner/eea_lipo6_blck.jpg"
                     alt="Top các loại whey protein" title="Top các loại whey protein"></a> </div>
             </div>

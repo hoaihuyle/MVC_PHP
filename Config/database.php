@@ -114,7 +114,7 @@ $db = new Database();
         }
         public function countTable($table)
         {
-            $sql = "SELECT id FROM  {$table}";
+            $sql = "SELECT * FROM  {$table}";
             $result = mysqli_query($this->link, $sql) or die("Lỗi Truy Vấn countTable----" .mysqli_error($this->link));
             $num = mysqli_num_rows($result);
             return $num;
@@ -223,6 +223,7 @@ $db = new Database();
 
         //lấy toàn bộ dữ liệu với điều kiện có trong bảng
         //$id = array 'name' => 'val'
+        //return a record
         public function fetchWhere($table , $val)
         {
             $sql = "SELECT * FROM {$table} WHERE $val ";
@@ -231,6 +232,7 @@ $db = new Database();
         }
 
         //$id = array 'name' => 'val'
+        //return array
         public function fetchArr($table , $val)
         {
             $sql = "SELECT * FROM {$table} WHERE $val";
@@ -297,6 +299,22 @@ $db = new Database();
             return $sql;
         }
 
+         /**
+         * String query active join between two table
+         * read all col in table 1
+         * read few col in table 2 throw array parameter
+         * return string
+         */
+        public function queryJoin2($tableAll, $tableJoin, $col1, $col2)
+        {
+
+
+            $sql = "SELECT * FROM {$tableAll} as tb1 
+            JOIN {$tableJoin} as tb2 
+            ON tb1.{$col1} = tb2.{$col2} ";
+            return $sql;
+        }
+
         /**
          * Parameter $sql: the query to excute
          * return array
@@ -336,10 +354,12 @@ $db = new Database();
         }
 
         //lấy toàn bộ dữ liệu ở 1 bảng có 1 trường ở trong bảng với điều kiện
-        public function fetchAllTb1JoinWhere($tableAll, $tableJoin, $fore, $col, $clause)
+        public function fetchAllTb1JoinWhere($tableAll, $tableJoin, $col1, $col2, $clause)
         {
-            $sql = $this -> queryJoin($tableAll, $tableJoin, $fore, $col);
-            $sql .= "WHERE {$col} >= {$clause} ";
+            $sql = $this -> queryJoin2($tableAll, $tableJoin, $col1, $col2);
+            $sql .= "WHERE {$clause} ";
+            // var_dump($sql);
+            // die();
             $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn fetchAllTb1JoinWhere " .mysqli_error($this->link).$sql);
             $data = [];
             if( $result)

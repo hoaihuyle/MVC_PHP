@@ -38,74 +38,9 @@
                             <table id="example2" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Garrett Winters</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>63</td>
-                                        <td>2011/07/25</td>
-                                        <td>$170,750</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ashton Cox</td>
-                                        <td>Junior Technical Author</td>
-                                        <td>San Francisco</td>
-                                        <td>66</td>
-                                        <td>2009/01/12</td>
-                                        <td>$86,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cedric Kelly</td>
-                                        <td>Senior Javascript Developer</td>
-                                        <td>Edinburgh</td>
-                                        <td>22</td>
-                                        <td>2012/03/29</td>
-                                        <td>$433,060</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Airi Satou</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>33</td>
-                                        <td>2008/11/28</td>
-                                        <td>$162,700</td>
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                            <table id="example2" class="table table-striped table-bordered" style="width:100%">
-                                <thead>
-                                    <tr>
                                         <th style="text-align: center;">Id</th>
-                                        <th style="text-align: center;">Tên</th>
-                                        <th style="text-align: center;">Ngày tạo</th>
-                                        <th style="text-align: center;">Người tạo</th>
+                                        <th style="text-align: center;">GIÁ TRỊ</th>
+                                        <th style="text-align: center;">TỪ KHÓA</th>
                                         <th style="text-align: center;">Trạng thái</th>
                                         <th style="text-align: center;">Chỉnh sửa</th>
                                         <th style="text-align: center;">Xóa</th>
@@ -117,9 +52,8 @@
                                     ?>
                                         <tr>
                                             <td align="center"><?php echo $setting['id_sett']; ?></td>
-                                            <td align="center"><?php echo $setting['key_sett']; ?></td>
-                                            <td align="center"><?php echo $setting['created']; ?></td>
-                                            <td align="center"><?php echo isset($setting['user_created'])?$setting['user_created']:'admin'; ?></td>
+                                            <td align="center"><?php echo $setting['key_display']; ?></td>
+                                            <td align="center"><?php echo $setting['key_sett']; ?> <?php echo isset($setting['name_display'])?' -'.$setting['name_display']:'' ?></td>
                                             <td align="center"><?php echo ($setting['flag']==0)?'Hiển thị':'Đã xóa'; ?></td>
                                             <td align="center"><a href="/setting/edit/<?php echo $setting['id_sett']; ?>"><img src="/lib/admin/images/edit.png" width="25"></a></td>
                                             <td align="center"><a href="/setting/delete/<?php echo $setting['id_sett']; ?>" onclick="return confirm('Dữ liệu của bạn sẽ bị mất, bạn chắc chắn chứ ?')" ><img src="/lib/admin/images/delete.png" width="25"></a></td>
@@ -131,9 +65,8 @@
                                 <tfoot>
                                     <tr>
                                         <th style="text-align: center;">Id</th>
-                                        <th style="text-align: center;">Tên</th>
-                                        <th style="text-align: center;">Ngày tạo</th>
-                                        <th style="text-align: center;">Người tạo</th>
+                                        <th style="text-align: center;">GIÁ TRỊ</th>
+                                        <th style="text-align: center;">TỪ KHÓA</th>
                                         <th style="text-align: center;">Trạng thái</th>
                                         <th style="text-align: center;">Chỉnh sửa</th>
                                         <th style="text-align: center;">Xóa</th>
