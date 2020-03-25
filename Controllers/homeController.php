@@ -3,6 +3,8 @@ class HomeController extends Controller
 { 
     var $service = 'Services/productService.php';  
     var $setting = 'Services/settingService.php';
+    var $none = 'Services/noneService.php';
+    var $order = 'Services/orderService.php';
     function __construct(){ 
         parent::__construct();
         $this->callMenu();
@@ -141,6 +143,45 @@ class HomeController extends Controller
         $prod['sp_views'] = $product->listProductViews($db, 'products', 'count' ,10); 
         $this->set($prod);
         $this->render('search');
+    }
+
+    function saveCart(){ 
+        // $this->helper->_debug($_SESSION['cart']);
+        // die();
+        require(ROOT . $this->none);
+        $none = new noneService();   
+        require(ROOT . $this->order);
+        $order = new orderService();
+        if(!empty($_POST)){
+            $dt['fullname'] = $_POST['fullname'];
+            $dt['phone'] = $_POST['phone'];
+            $dt['email'] = $_POST['email'];
+            $dt['address'] = $_POST['address'];
+            $none_id = $none->addClient($db, 'none', $dt);
+            foreach($_SESSION['cart'] as $key => $cart){
+                $od['prod_id'] = $key;  
+                $od['none_id'] = $none_id;
+                $od['realPrice'] = $cart['price'];
+                $od['quality'] = $cart['qty'];
+                $prod['order'] = $order->addOrder($db, 'orders', $od);
+            }
+            unset($_SESSION['cart']);
+            header("Location: " . $_SERVER["HTTP_REFERER"]); 
+        }
+        else header("Location: " . $_SERVER["HTTP_REFERER"]);
+    }
+    function cartAccount(){
+        require(ROOT . $this->order);
+        $order = new orderService(); 
+        foreach($_SESSION['cart'] as $key => $cart){
+            $od['prod_id'] = $key;  
+            $od['acco_id'] = $_SESSION['name_id'];
+            $od['realPrice'] = $cart['price'];
+            $od['quality'] = $cart['qty'];
+            $prod['order'] = $order->addOrder($db, 'orders', $od);
+        }
+        unset($_SESSION['cart']);
+        header("Location: " . $_SERVER["HTTP_REFERER"]); 
     }
 }
 ?>

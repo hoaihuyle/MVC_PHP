@@ -34,8 +34,7 @@
             <div class="cs-flex" classItems="product">
                 <?php if(isset($sp_views)): foreach($sp_views as $sp): ?>
                <div class="product slider-home cs-col-6 cs-col-xs-6 cs-col-md-3">
-                  <?php if($sp['discount'] > 0): ?> <div class="label-deal-product"><?php echo $sp['discount'] ?></div>
-                  <div class="time-deal-product" time="384847"> <span><i class="far fa-clock"></i> <span class="display-time"></span></span> </div>
+                  <?php if($sp['discount'] > 0): ?> <div class="label-deal-product">-<?php echo $sp['discount'] ?>%</div> 
                   <?php endif ?>
                   <a class="image cs-flex flex-align-center flex-content-center">
                   <div class="pane-tool-button cs-flex"> 
@@ -81,8 +80,7 @@
                <?php if($pc['cate'] != null): foreach($pc['cate'] as $p): ?>
                
                <div class="product slider-home cs-col-6 cs-col-xs-6 cs-col-md-3">
-                  <?php if($p['discount'] > 0) : ?><div class="label-deal-product"><?php echo $p['discount'] ?></div>
-                  <div class="time-deal-product" time="384847"> <span><i class="far fa-clock"></i> <span class="display-time"></span></span> </div>
+                  <?php if($p['discount'] > 0) : ?><div class="label-deal-product">-<?php echo $p['discount'] ?>%</div> 
                   <?php endif ?>
                   <a  class="image cs-flex flex-align-center flex-content-center">
                   <div class="pane-tool-button cs-flex"> 

@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="/lib/front/asset/site/css/fontawesome/css/all.css">
       <link rel="stylesheet" href="/lib/front/asset/site/css/owl.carousel.min.css">
       <link rel="stylesheet" href="/lib/front/asset/site/css/owl.theme.default.min.css">
-      <link rel="stylesheet" href="/lib/front/asset/site/modal/jquery.modal.min.css" />
+      <!-- <link rel="stylesheet" href="/lib/front/asset/site/modal/jquery.modal.min.css" /> -->
       <link rel="stylesheet" href="/lib/front/asset/site/css/stylelist13860.css">
       <link rel="stylesheet" href="/lib/front/asset/site/css/thanh.css?sizefile=<?php echo md5_file(ROOT."/lib/front/asset/site/css/thanh.css");?>">
       <link rel="stylesheet" href="/lib/front/asset/site/css/respon.css?sizefile=<?php echo md5_file(ROOT."/lib/front/asset/site/css/respon.css");?>">
