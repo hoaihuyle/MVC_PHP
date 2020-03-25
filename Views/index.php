@@ -116,6 +116,49 @@
          </div>
       </div>
       
+      <!-- combo sản phẩm -->
+      <div class="session">
+    <div class="main-content">
+      <div class="title-nav"> <a class="hover-color">COMBO KHUYẾN MÃI</a> </div>
+      <div id="combokuyenmai" class="owl-carousel owl-theme ">
+        <?php if(isset($splienquan)): foreach($splienquan as $ls): ?>
+        <div class="item product slider-product ">
+          <?php if($ls['discount'] > 0) : ?><div class="label-deal-product">-<?php echo $ls['discount'] ?>%</div>
+          <?php endif ?> 
+          <a class="image cs-flex flex-align-center flex-content-center">
+            <div class="pane-tool-button cs-flex">
+              <button class="pr-10 pl-10 mr-5 redirect-login" url="/home/product/<?php echo $ls['id_prod'] ?>">Xem chi
+                tiết</button>
+              <button class="add-cart" value="<?php echo $ls['id_prod'] ?>">
+                <i class="fas fa-shopping-cart "></i>
+              </button>
+            </div>
+            <img class="lazy" style="max-width: 200px" data-src="/uploads/products/<?php echo $ls['image'] ?>"
+              alt="<?php echo $ls['name_prod'] ?>" title="<?php echo $ls['name_prod'] ?>">
+          </a> <a href="/home/product/<?php echo $ls['id_prod'] ?>" class="title"><?php echo $ls['name_prod'] ?></a>
+          <div class="star" total="5" point="5"></div>
+          <?php if($ls['discount'] != 0): ?>
+          <span class="price" price="<?php echo $ls[0]['price'] ?>">
+            <span class="main"
+              content="<?php echo number_format( ((100 - $ls['discount']) * $ls['price'])/100 , 0 ,'','.' )?>">
+              <?php echo number_format( ((100 - $ls['discount']) * $ls['price'])/100 , 0 ,'','.' )?>
+            </span>
+            <span class="main" content="VND"> đ</span>
+            <span class="old"> - <?php echo number_format($ls['price'],0,'','.') ?> đ</span>
+          </span>
+          <?php else: ?>
+          <div class="price"> <span class="main"><?php echo number_format($ls['price'],0,'','.') ?>đ</span> </div>
+          <?php endif ?>
+
+        </div>
+        <?php endforeach; endif; ?> 
+      </div>
+
+    </div>
+  </div>
+      
+
+
       <div id="thuonghieu" class="session" style="margin-bottom: 15px;">
          <div class="main-content">
             <div class="title-nav"> <a href="/lib/front/javascript:;" class="hover-color">Thương Hiệu</a> </div>
