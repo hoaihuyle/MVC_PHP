@@ -151,14 +151,13 @@
                         <div class="form-group row">
                             <label class="col-12 col-sm-3 col-form-label text-sm-right">Chọn Từ khóa</label>
                             <div class="col-12 col-sm-8 col-lg-6">
-                                <select class="form-control" name="menu_id[]" id="input-select">
+                                <select class="form-control" name="menu_id[]" id="input-select"  multiple>
                                 <option value="0"> Chọn từ khóa </option> 
                                 <?php  
-                                    // foreach($settingInfos as $setting)
-                                    { 
+                                    for($x=0;$x<count($setting);$x++){
                                     
                                 ?>
-                                    <!-- <option value="<?php echo $setting; ?>"> <?php echo $setting ?> </option>  -->
+                                    <option value="<?php echo $setting1[$x]; ?>"><?php echo $setting[$setting1[$x]];?> </option>  
                                 <?php
                                 } 
                                 ?>

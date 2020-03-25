@@ -114,5 +114,31 @@ class ProductService extends Service{
         $products =  $product->listProdiscount($db,$table, $where);
         return $products;
     }
-}    
-?>
+    public function lastID($db){
+        $product = new ProductDAO();
+        $products =  $product->lastID($db);
+        return $products;
+    } 
+    // setting product 
+    public function createSett_Product($db, $data){
+        $product = new ProductDAO();
+        $products =  $product->insertsett_product($db, $data); 
+        return $products;
+    }
+     function listsett_product($db){
+
+        $product = new ProductDAO();
+        $products =  $product->allsett_product($db); 
+        return $products;
+    }
+    function findSett_Product($db,$id){
+        $product = new ProductDAO();
+        $products =  $product->findSett_Product($db,$id); 
+        return $products;
+    }
+    function deleteSet_Product($db,$id){
+        $product = new ProductDAO();
+        $products =  $product->deleteSet_Product($db,$id); 
+        return $products;
+    }
+}
