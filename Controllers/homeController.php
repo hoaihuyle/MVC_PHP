@@ -3,6 +3,8 @@ class HomeController extends Controller
 { 
     var $service = 'Services/productService.php';  
     var $setting = 'Services/settingService.php';
+    var $none = 'Services/noneService.php';
+    var $order = 'Services/orderService.php';
     function __construct(){ 
         parent::__construct();
         $this->callMenu();
@@ -19,11 +21,10 @@ class HomeController extends Controller
             $p['cate'] = $product->prodCateWhere($db, 'products', 'cate_id ='.$ct['id_cate'].' limit 8');
             $prod['prod_cate'][] = array_merge($ct, $p);
         }
+        $prod['splienquan'] = $product->listProdiscount($db, 'products','discount > 0 limit 20');
         // $this->helper->_debug($prod['prod_cate']);
         // die();
-
-        // $this->helper->_debug($prod['prod_cate']);
-        // die();
+ 
         $this->set($prod);
         $this->render("index");
     }
@@ -60,8 +61,8 @@ class HomeController extends Controller
         $prod['sp_views'] = $product->listProductViews($db, 'products', 'count' ,10); 
         $prod['prod_discount'] = $product->listProdiscount($db, 'products', 'discount > 0 limit 5');
         $prod['set'] = $setting->selectWhere($db, "SELECT * FROM setting_product join setting on setting_product.sett_key = setting.key_sett WHERE setting_product.prod_id =".$prod['prod'][0]['id_prod'] );
-
-        // $this->helper->_debug($prod['set']);
+        
+        // $this->helper->_debug($prod['splienquan']);
         // die();
         $this->set($prod);
         $this->render('product_detail');
@@ -141,6 +142,50 @@ class HomeController extends Controller
         $prod['sp_views'] = $product->listProductViews($db, 'products', 'count' ,10); 
         $this->set($prod);
         $this->render('search');
+    }
+
+    function saveCart(){ 
+        require(ROOT . $this->none);
+        $none = new noneService();   
+        require(ROOT . $this->order);
+        $order = new orderService();
+        if(!empty($_POST)){
+            $dt['fullname'] = $_POST['fullname'];
+            $dt['phone'] = $_POST['phone'];
+            $dt['email'] = $_POST['email'];
+            $dt['address'] = $_POST['address'];
+            $none_id = $none->addClient($db, 'none', $dt);
+            $order_id = $order->getIdOrder($db, 'orders','id_orde');
+            foreach($_SESSION['cart'] as $key => $cart){
+                $od['id_orde'] = $order_id['Max(id_orde)'] + 1;
+                $od['prod_id'] = $key;  
+                $od['none_id'] = $none_id;
+                $od['realPrice'] = $cart['price'];
+                $od['quality'] = $cart['qty'];
+                $prod['order'] = $order->addOrder($db, 'orders', $od);
+            }
+            unset($_SESSION['cart']);
+            echo "<script>alert('sản phẩm được lưu thành công, nhân viên chúng tôi sẽ liên hệ sớm với khách hàng. Cảm ơn!!'); location= '/home/cart'</script>";
+            // header("Location: " . $_SERVER["HTTP_REFERER"]); 
+        }
+        else header("Location: " . $_SERVER["HTTP_REFERER"]);
+    }
+    function cartAccount(){
+        require(ROOT . $this->order);
+        $order = new orderService(); 
+        $order_id = $order->getIdOrder($db, 'orders','id_orde'); 
+        foreach($_SESSION['cart'] as $key => $cart){
+            $od['id_orde'] = $order_id['Max(id_orde)'] + 1;
+            $od['prod_id'] = $key;  
+            $od['acco_id'] = $_SESSION['name_id'];
+            $od['realPrice'] = $cart['price'];
+            $od['quality'] = $cart['qty'];
+            $prod['order'] = $order->addOrder($db, 'orders', $od);
+        }
+        unset($_SESSION['cart']);
+        echo "<script>alert('sản phẩm được lưu thành công, nhân viên chúng tôi sẽ liên hệ sớm với khách hàng. Cảm ơn!!'); location='/home/cart'</script>";
+        // header("Location: " . $_SERVER["HTTP_REFERER"]); 
+        
     }
 }
 ?>
