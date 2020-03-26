@@ -26,7 +26,7 @@
 
             <div class="item" style="height: 450px; object-fit: cover; width: 900px">
             <a href="<?php echo $l['link'] ?>">
-              <img style="height: 100%; object-fit: cover; width: 100%; image-rendering: pixelated;"
+              <img style="height: 100%; object-fit: contain; width: 100%; image-rendering: pixelated; max-width:900px; max-height:450px;"
                 src="/uploads/panels/<?php echo $l['image'] ?>" alt="<?php echo $l['link'] ?>"
                 title="<?php echo $l['link'] ?>">
                 </a>
