@@ -83,7 +83,7 @@
          <div class="content">
             <div class="cs-flex main-content">
                <div class="cs-col-12 cs-col-lg-3 flex-align-center flex-content-center cs-flex">
-                  <!-- Box icon --> <a href="/" class="switch-menu mb-10 show-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center mr-auto"> <i class="fas fa-bars cm-red"> DANH MỤC</i> </a> <!-- End box icon --> 
+                  <!-- Box icon --> <a class="switch-menu mb-10 show-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center mr-auto"> <i class="fas fa-bars cm-red"> DANH MỤC</i> </a> <!-- End box icon --> 
                   <div class="logo"> <a href="/"><img src="/lib/front/upload/logo/logo.jpg" alt="CODO SUPP Thực phẩm bổ sung sức khỏe - Đẳng cấp hoàng gia"></a> </div>
                   <!-- Box icon --> 
                   <a href="/home/cart" class="mb-10 show-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center ml-auto cart">
