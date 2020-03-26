@@ -114,19 +114,19 @@
             <form action="/home/saveCart" method="POST">
               <div class="form-group">
                 <label for="fullname"><span style="color:red">* </span>Tên khách hàng:</label>
-                <input require id="fullname" name="fullname" class="form-control" type="text">
+                <input require id="fullname" placeholder="Vui lòng nhập tên khách hàng" name="fullname" class="form-control" type="text">
               </div>
               <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" name="email" class="form-control" id="email">
+                <input type="email" name="email" placeholder="Vui lòng nhập địa chỉ email" class="form-control" id="email">
               </div>
               <div class="form-group">
                 <label for="phone"><span style="color:red">* </span>Số điện thoại:</label>
-                <input type="number" name="phone" require class="form-control" id="phone">
+                <input type="number" name="phone" placeholder="Vui lòng nhập số điện thoại" require class="form-control" id="phone">
               </div>
               <div class="form-group">
                 <label for="address"><span style="color:red">* </span>Địa chỉ:</label>
-                <textarea name="address" class="form-control" rows="5" id="address"></textarea>
+                <textarea name="address" class="form-control" placeholder="Vui lòng nhập địa chỉ" rows="5" id="address"></textarea>
               </div>
               <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Gửi</button>
