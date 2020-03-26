@@ -25,9 +25,11 @@
             <?php if(isset($slide)) : foreach($slide as $l): ?>
 
             <div class="item" style="height: 450px; object-fit: cover; width: 900px">
+            <a href="<?php echo $l['link'] ?>">
               <img style="height: 100%; object-fit: cover; width: 100%; image-rendering: pixelated;"
                 src="/uploads/panels/<?php echo $l['image'] ?>" alt="<?php echo $l['link'] ?>"
                 title="<?php echo $l['link'] ?>">
+                </a>
             </div>
             <?php endforeach; endif ?>
         </div>
