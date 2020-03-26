@@ -15,6 +15,11 @@
 }
 
 @media (max-width: 767.98px){
+
+    .main-content, #maincontent{
+        padding: 15px;
+    }
+
     .Slide_header .category_bar, .content .logo{
         display: none;
     }
@@ -27,9 +32,18 @@
         padding: 15px;
     }
     .banner-sidebar img{
-        transform: scale(1);
+        transform: scale(0.8);
         -webkit-transform-origin: center;
         transform-origin: center;
+    }
+    #maincontent .col-lg-3.col-md-3.col-sm-12.col-xs-12 {
+        margin-top: -50px;
+    }
+    #loginRegisUser .regisLogin {
+        display: block;
+    }
+    .session .register{
+        width: 100%;
     }
 }
 
