@@ -86,7 +86,7 @@
                <div class="panel"> <a href="lib/front/#" class="/">Trang chủ</a> <a href="#" class="/">Kiến thức Gym</a> <a href="/home/aboutUs" class="hover-color-yellow">Phản ánh, khiếu nại</a> </div>
             </div>
          </div>
-         <div class="phone_bottom" style="bottom: 10px;"><a href="tel:0919013030"><span class="active_phone"><i class="fa fa-phone"></i></span></a></div>
+         <div class="phone_bottom" style="bottom: 10px;"><a href="tel:0779417827"><span class="active_phone"><i class="fa fa-phone"></i></span></a></div>
       </div>
       <div style="padding: 10px;">
          <div style="text-align: center; font-size: 14px;">Tất cả các sản phẩm mà CODO SUPP bán không phải là thuốc, không thể thay thế thuốc chữa bệnh.</div>

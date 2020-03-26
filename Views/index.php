@@ -1,10 +1,8 @@
       <div class="Slide_header">
         <div class="main-content  row" style="margin: 0 auto; height: 100%">
           <div class="col-sm-3 category_bar">
-
             <div class="catalog-product" style="width: 100%">
-              <h3 class="title-cm"> <span>DANH MỤC SẢN PHẨM</span> </h3>
-
+              <h3 class="title-cm"> <span>DANH MỤC SẢN PHẨM</span> </h3> 
               <div class="tree-view">
                 <ul class="catalog mc-tree-view" style="display: block;">
                   <?php foreach($categoryInfos as $key => $cate): if($key < 10): ?>
@@ -16,10 +14,7 @@
                   <?php endif; endforeach ?>
                 </ul>
               </div>
-            </div>
-
-
-
+            </div> 
           </div>
           <div id="slide_banner" class="owl-carousel owl-theme col-sm-9 autoHeightClass" style="width: 100%; ">
             <?php if(isset($slide)) : foreach($slide as $l): ?>
