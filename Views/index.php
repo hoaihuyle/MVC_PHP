@@ -1,6 +1,6 @@
       <div class="Slide_header">
         <div class="main-content  row" style="margin: 0 auto; height: 100%">
-          <div class="col-sm-3">
+          <div class="col-sm-3 category_bar">
 
             <div class="catalog-product" style="width: 100%">
               <h3 class="title-cm"> <span>DANH MỤC SẢN PHẨM</span> </h3>

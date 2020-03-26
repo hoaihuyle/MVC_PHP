@@ -152,7 +152,6 @@
                             <label class="col-12 col-sm-3 col-form-label text-sm-right">Chọn Từ khóa</label>
                             <div class="col-12 col-sm-8 col-lg-6">
                                 <select class="form-control" name="menu_id[]" id="input-select"  multiple>
-                                <option value="0"> Chọn từ khóa </option> 
                                 <?php  
                                     for($x=0;$x<count($setting);$x++){
                                     
@@ -185,7 +184,7 @@
                         <div class="form-group row text-right">
                             <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
                                 <button type="submit" class="btn btn-space btn-primary">Tạo mới</button>
-                                <button type="button" onclick="location.href='/products/index';" class="btn btn-space btn-secondary" >Quay về</button>
+                                <button type="button" onclick="location.href='/product/index';" class="btn btn-space btn-secondary" >Quay về</button>
                             </div>
                         </div>
                     </div>

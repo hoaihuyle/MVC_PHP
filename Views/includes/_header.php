@@ -63,7 +63,7 @@
                 <a href="/signup" class="connect cs-flex flex-row flex-align-center ml-auto"> Đăng nhập </a>
                     <?php else: ?>
 
-                   <a href="#" class="connect cs-flex flex-row flex-align-center ml-auto "> Xin chào: <?php echo $_SESSION['name_acco'] ?> </a>
+                   <a class="connect cs-flex flex-row flex-align-center ml-auto "> Xin chào: <?php echo $_SESSION['name_acco'] ?> </a>
                    <a href="/account/myUser" class="connect cs-flex flex-row flex-align-center"> Tài khoản của tôi </a>
                    <a href="/signup/logout" class="connect cs-flex flex-row flex-align-center"> Đăng xuất </a>
                    <?php endif ?>
@@ -71,18 +71,19 @@
             </div>
          </div>
          <!-- End top bar --> <!--Top Bar User Mobile--> 
-         <div id="topUserMobile"><a href="#" rel="nofollow"><span style="color: #FFF"><i class="fas fa-address-card" style="color: #FFF"></i> Kiểm tra tích điểm</span></a> <a href="/account/myUser"><i class="fas fa-user-shield" style="color: #FFF"></i> Tài khoản của tôi</a> </div>
+         <div id="topUserMobile"><a rel="nofollow"><span style="color: #FFF"><i class="fas fa-address-card" style="color: #FFF"></i> Kiểm tra tích điểm</span></a> <a href="/account/myUser"><i class="fas fa-user-shield" style="color: #FFF"></i> Tài khoản của tôi</a> </div>
          <!--End Top Bar User Mobile--> <!--Top Bar Mobile--> 
          <div id="topMobile" style="background: #00aeef; box-shadow: 0 2px 10px #eae69a; padding: 10px 20px 5px 10px;">
-            <a class="switch-menu" style="cursor: pointer; float: left; width: 23%; margin-top: 8px;" href="front/#"><i class="fas fa-bars" style="color: #FFF;"> MENU</i></a> <a style="float: left; width: 20%" href="/front/index" class="switch-menu mb-10 show-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center mr-auto">
-            <img src="/lib/front/upload/logo/logo.jpg" alt="CODO SUPP Thực phẩm bổ sung sức khỏe - Đẳng cấp hoàng gia" style="width: 80px;"></a> <a style="float: right; width: 53%; margin-top: 8px; color: #FFF; font-weight: bold;" href="/front/home/store" rel="modal:open" class="mb-10 show-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center ml-auto" style="color: #FFF; font-weight: bold;">Bấm xem 6 chi nhánh</a>
+            <a class="switch-menu" style="cursor: pointer; float: right; width: 23%; margin-top: 8px;"><i class="fas fa-bars" style="color: #FFF;"> MENU</i></a> <a style="float: left; width: 20%" class="switch-menu mb-10 show-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center mr-auto">
+            <img src="/lib/front/upload/logo/logo.jpg" alt="CODO SUPP Thực phẩm bổ sung sức khỏe - Đẳng cấp hoàng gia" style="width: 80px;"></a> 
+            <!-- <a style="float: right; width: 53%; margin-top: 8px; color: #FFF; font-weight: bold;" href="/front/home/store" rel="modal:open" class="mb-10 show-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center ml-auto" style="color: #FFF; font-weight: bold;">Bấm xem 6 chi nhánh</a> -->
             <div style="clear: both;"></div>
          </div>
          <!--End Top Bar Mobile--> <!-- Content --> 
          <div class="content">
             <div class="cs-flex main-content">
                <div class="cs-col-12 cs-col-lg-3 flex-align-center flex-content-center cs-flex">
-                  <!-- Box icon --> <a href="#" class="switch-menu mb-10 show-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center mr-auto"> <i class="fas fa-bars cm-red"> DANH MỤC</i> </a> <!-- End box icon --> 
+                  <!-- Box icon --> <a href="/" class="switch-menu mb-10 show-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center mr-auto"> <i class="fas fa-bars cm-red"> DANH MỤC</i> </a> <!-- End box icon --> 
                   <div class="logo"> <a href="/"><img src="/lib/front/upload/logo/logo.jpg" alt="CODO SUPP Thực phẩm bổ sung sức khỏe - Đẳng cấp hoàng gia"></a> </div>
                   <!-- Box icon --> 
                   <a href="/home/cart" class="mb-10 show-top-bar box-icon cs-flex flex-column flex-align-center flex-content-center ml-auto cart">
@@ -131,7 +132,7 @@
                    <?php foreach($menuInfos as $menu){ ?>
                    <?php if($menu['flag'] == 0) :?>
                   <li>
-                     <a href="#" class="cs-flex flex-align-center"><?php echo $menu['name_menu'] ?></a>
+                     <a class="cs-flex flex-align-center"><?php echo $menu['name_menu'] ?></a>
                      <ul>
                          <?php foreach($categoryInfos as $cate) {?>
                              <?php if($cate['menu_id'] == $menu['id_menu'] && $cate['flag'] == 0) : ?>
@@ -152,4 +153,5 @@
         
       </div>
       </div>
+      
       

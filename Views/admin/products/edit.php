@@ -146,7 +146,6 @@
                             <label class="col-12 col-sm-3 col-form-label text-sm-right">Chọn Từ khóa</label>
                             <div class="col-12 col-sm-8 col-lg-6">
                                 <select class="form-control" name="id_sett[]" id="input-select"  multiple>
-                                <option value="0"> Chọn từ khóa </option>
                                 <?php foreach ($sett_product1 as $value){?>
                                  <option selected="true" value="<?php echo $value['sett_key'];?>">
                                   <?php
@@ -187,7 +186,7 @@
                     <div class="form-group row text-right">
                         <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
                             <button type="submit" class="btn btn-space btn-primary">Lưu thay đổi</button>
-                            <button type="button" onclick="location.href='/products/index';" class="btn btn-space btn-secondary" >Quay về</button>
+                            <button type="button" onclick="location.href='/product/index';" class="btn btn-space btn-secondary" >Quay về</button>
                         </div>
                     </div>
                     </form>
