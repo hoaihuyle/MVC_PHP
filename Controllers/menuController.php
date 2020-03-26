@@ -116,5 +116,7 @@ class MenuController extends Controller
         session_destroy();
         header('location: /login');
     }
+
+    
 }
 ?>

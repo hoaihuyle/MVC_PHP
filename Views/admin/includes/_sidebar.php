@@ -194,6 +194,20 @@
                                     </ul>
                                 </div>
                             </li>
+
+                            <li class="nav-item ">
+                                <a class="nav-link" href="admin/index" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fa fa-fw fa-user-circle"></i>Panels <span class="badge badge-success">9</span></a>
+                                 <div id="submenu-9" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/panel/panel">Danh sách</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/panel/create">Thêm mới</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
                           
                         </ul>
                     </div>
