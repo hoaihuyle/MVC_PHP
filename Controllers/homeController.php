@@ -3,6 +3,7 @@ class HomeController extends Controller
 { 
     var $service = 'Services/productService.php';  
     var $setting = 'Services/settingService.php';
+    var $panelService ="Services/panelService.php";
     var $none = 'Services/noneService.php';
     var $order = 'Services/orderService.php';
     function __construct(){ 
@@ -12,6 +13,8 @@ class HomeController extends Controller
     function index()
     {  
         $limit = 8;
+        require(ROOT . $this->panelService);
+        $panel = new panelService();
         require(ROOT . $this->service); 
         $product = new ProductService();  
         $categories = new CategoryService();
@@ -22,6 +25,10 @@ class HomeController extends Controller
             $prod['prod_cate'][] = array_merge($ct, $p);
         }
         $prod['splienquan'] = $product->listProdiscount($db, 'products','discount > 0 limit 20');
+
+        $prod['slide'] = $panel->listPanel($db, 'SELECT * FROM panel where status = 0 LIMIT 5');
+
+
         // $this->helper->_debug($prod['prod_cate']);
         // die();
  

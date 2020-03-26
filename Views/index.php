@@ -22,23 +22,14 @@
 
           </div>
           <div id="slide_banner" class="owl-carousel owl-theme col-sm-9 autoHeightClass" style="width: 100%; ">
-            <div class="item" style="height: 450px; object-fit: cover; width: 900px">
-              <img style="height: 100%; object-fit: cover; image-rendering: pixelated;"
-                src="https://landing.cfyc.com.vn/storage/app/media/Referal/header%20website%20VN.jpg" alt="Hydropure"
-                title="Hydropure">
-            </div>
-            <div class="item" style="height: 450px; object-fit: cover; width: 900px" ">
-            <img  style=" height: 100%; object-fit: cover; image-rendering: pixelated;"
-              src="https://landing.cfyc.com.vn/storage/app/media/Banner%20Califresh%202019/desktop%20copy.png"
-              alt="Mass Fusion" title="Mass Fusion">
-            </div>
-            <div class="item" style="height: 450px; object-fit: cover; width: 900px">
-              <img style="height: 100%; object-fit: cover; image-rendering: pixelated;"
-                src="https://landing.cfyc.com.vn/storage/app/media/Referal/header%20website%20VN.jpg" alt="Up your mass"
-                title="Up your mass">
-            </div>
-          </div>
+            <?php if(isset($slide)) : foreach($slide as $l): ?>
 
+            <div class="item" style="height: 450px; object-fit: cover; width: 900px">
+              <img style="height: 100%; object-fit: cover; width: 100%; image-rendering: pixelated;"
+                src="/uploads/panels/<?php echo $l['image'] ?>" alt="<?php echo $l['link'] ?>"
+                title="<?php echo $l['link'] ?>">
+            </div>
+            <?php endforeach; endif ?>
         </div>
       </div>
 
