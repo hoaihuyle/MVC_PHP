@@ -344,6 +344,7 @@ $db = new Database();
            
             $sql = $this -> queryJoin($tableAll, $tableJoin, $fore, $cols, $cuscol);
             $sql.="ORDER BY {$order} DESC";
+            //$this->link =  mysqli_connect("localhost","codoeedp_root","codosupp.website","codoeedp_db") or die ("Kết nối thất bại thử lại sau - Connect Fail, please try agian late !");
             $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn fetchAllTb1JoinWhere " .mysqli_error($this->link).$sql);
             $data = [];
             if( $result)
