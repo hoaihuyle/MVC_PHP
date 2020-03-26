@@ -4,6 +4,7 @@ class ProductController extends Controller
     var $service ="Services/productService.php";
     var $serviceComp ="Services/companyService.php";
     var $serviceCate ="Services/categoryService.php";
+    var $serviceset ="Services/settingService.php";
     var $red="admin/products/";
     var $redIndex="product/index";
 
@@ -24,9 +25,10 @@ class ProductController extends Controller
 
         require(ROOT . $this->serviceCate);
         $category = new CategoryService();
+        
         $d['productInfos'] = $product->fetchsql($db,$str,$str2,$str3,$str4);  
         $d['companyInfos'] = $company->listCompany($db);
-        $d['categoryInfos'] = $category->listCategory($db);
+        
         if($str3!=""){
             $d['str3']=$str3;
            
@@ -49,16 +51,17 @@ class ProductController extends Controller
 
         require(ROOT . $this->service);
         $product = new ProductService();
-
         require(ROOT . $this->serviceComp);
         $company = new CompanyService();
-
         require(ROOT . $this->serviceCate);
         $category = new CategoryService();
 
+        
         $d['productInfos'] = $product->listProduct($db);  
         $d['companyInfos'] = $company->listCompany($db);
         $d['categoryInfos'] = $category->listCategory($db);
+        $d['setting_product']=$product->listsett_product($db);
+
         $this->set($d);
 
         $this->render($this->red.__FUNCTION__);
@@ -77,10 +80,12 @@ class ProductController extends Controller
 
         require(ROOT . $this->serviceCate);
         $category = new CategoryService();
-
+        require(ROOT . $this->serviceset);
+        $setting = new SettingService();
         $d['companyInfos'] = $company->listCompany($db);
         $d['categoryInfos'] = $category->listCategory($db);
-
+        $d['setting'] = $setting->listSetting2($db);
+        $d['setting1']=array_keys($d['setting']);
         if (!empty($_POST)) 
         {
 
@@ -114,9 +119,32 @@ class ProductController extends Controller
             $_POST['image']= $link_img;
             require(ROOT . $this->service);
             $product = new ProductService();
+            $data= array(
+                "name_prod"=>$_POST['name_prod'],
+                "cate_id"=>$_POST['cate_id'],
+                "comp_id"=>$_POST['comp_id'],
+                "price"=>$_POST['price'],
+                "uses_prod"=>$_POST["uses_prod"],
+                "discount"=>$_POST["discount"],
+                "flag"=>$_POST["flag"],
+                "barcode"=>$_POST["barcode"],
+                "description"=>$_POST["description"],
+                "price_manu"=>$_POST["price_manu"],
+                "image"=>$_POST["image"]
+                 ) ;
 
-            if ($product->createProduct($db, $_POST))
-            {
+            if ($product->createProduct($db, $data))
+            { 
+                $data3=$product->listProduct($db);
+                $id;
+                foreach ($data3 as  $value) {
+                    $id=$value["id_prod"];
+                }
+                foreach ($_POST["menu_id"] as $value) {
+                    
+                    $data4=["prod_id"=>$id,"sett_key"=>$value];
+                    $product->createSett_Product($db,$data4);
+                }
                 header("Location: " . WEBROOT . $this->redIndex);
             }else{
                 unlink(ROOT.'upload/products/'.$img);
@@ -146,13 +174,32 @@ class ProductController extends Controller
 
         require(ROOT . $this->service);
         $product = new ProductService();
-
+        require(ROOT . $this->serviceset);
+        $setting = new SettingService();
         $d['companyInfos'] = $company->listCompany($db);
         $d['categoryInfos'] = $category->listCategory($db);        
         $d['productInfo'] = $product->findProduct($db, $id); 
+        $d['setting'] = $setting->listSetting2($db);
+        $setting1=array_keys($d['setting']);
+        $d['sett_product1']=$product->findSett_Product($db,$id);
+        $sett_product1=$product->findSett_Product($db,$id);
+       
+       foreach($setting1 as $key=> $value){
 
+            for($y=0;$y<count($sett_product1);$y++){
+             if($value==$sett_product1[$y]["sett_key"])
+             {
+                unset($setting1[$key]);
+              }
+            }
+        
+        }
+       
+        $d['setting1']=$setting1;
+       
         if (!empty($_POST))
         {
+
             if (!$_FILES['image']['size']=='')
             {
             //upload ảnh
@@ -185,11 +232,30 @@ class ProductController extends Controller
                     $_POST['image'] = $link_img;
                 }
             }
+            $data= array(
+                "name_prod"=>$_POST['name_prod'],
+                "cate_id"=>$_POST['cate_id'],
+                "comp_id"=>$_POST['comp_id'],
+                "price"=>$_POST['price'],
+                "uses_prod"=>$_POST["uses_prod"],
+                "discount"=>$_POST["discount"],
+                "flag"=>$_POST["flag"],
+                "barcode"=>$_POST["barcode"],
+                "description"=>$_POST["description"],
+                "price_manu"=>$_POST["price_manu"],
+                "image"=>$_POST["image"],
+                 ) ;
+            if ($product->editProduct($db, $id, $data) || isset($_POST['id_sett']))
+            {   
+                $product->deleteSet_Product($db,$id);
+                foreach ($_POST["id_sett"] as $value) {
+                    $data4=["prod_id"=>$id,"sett_key"=>$value];
+                    $product->createSett_Product($db,$data4);
+                }
 
-            if ($product->editProduct($db, $id, $_POST))
-            {
                 header("Location: " . WEBROOT . $this->redIndex);
-            }else{
+            }
+            else{
                 if(isset($message)){ $d['error']=$message; }else $d['error'] = " <div class='message p-3 bg-danger text-white'> Cập nhập thông tin không thành công</div>";
             }
         }

@@ -64,6 +64,14 @@ class AccountService extends Service{
         $account = new AccountDao();
         return $account->checkEmail($db, $table, $request);
       }
+    
+    /**
+     * Count accont
+     */
+    function CountAcount($db){
+        $account = new AccountDao();
+        return $account->CountAcount($db);
+    }
 }
 
 ?>

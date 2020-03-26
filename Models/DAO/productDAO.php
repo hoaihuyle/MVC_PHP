@@ -177,5 +177,24 @@ class ProductDAO extends Model
     public function listProdiscount($db, $table, $where){
         return $db->fetchArr($table, $where);
     }
+    
+    // table setting_product
+   public function insertsett_product($db, $data){
+
+        return $db->insert('setting_product', $data ); 
+    }
+    public function allsett_product($db){
+        return $db->fetchAll('setting_product');
+    }
+    public function findSett_Product($db,$id){
+        $sql="SELECT * FROM  setting_product WHERE prod_id='".$id."'";
+        return $db->fetchsql($sql);
+    }
+    public function deleteSet_Product($db,$id){
+      $sql="prod_id='".$id."'";
+    return $db->deletesql('setting_product', $sql); 
+
+    }
+
 }
 ?>

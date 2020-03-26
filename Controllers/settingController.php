@@ -3,7 +3,7 @@ class SettingController extends Controller
 {
     var $service ="Services/settingService.php";
     var $red="admin/settings/";
-    var $redIndex="settings/index";
+    var $redIndex="setting/index";
 
 
     function __construct()
@@ -25,17 +25,48 @@ class SettingController extends Controller
     }
     // http://domain/cotroler/edit/12
     function create()
-    {
+    { 
+        require(ROOT . $this->service);
+        $news = new SettingService();
+        $d['settingInfos']=$news->listSetting1($db); 
+        $this->set($d);
         if (!empty($_POST))
-        {
-            require(ROOT . $this->service);
-            $news = new SettingService();
-
-            if ($news->createSetting($db, $_POST))
-            {
-                header("Location: " . WEBROOT . $this->redIndex);
+        {    
+            if($_POST['menu_id']=="add_new"){
+                $data=array_values($_POST);
+                $y=1;
+                for($x=3;$x<count($data);$x++)
+                {
+                  $data1=array(
+                    "key_sett"=>$_POST['key_sett'],
+                    "key_display"=>$data[$x],
+                    "key_id"=> $y,
+                    "name_display"=>$_POST['name_display']
+                   );
+                 $y++;
+                 $news->createSetting($db, $data1);
+                }
+                 header('location: /setting/index');
+                
             }
-        }
+            else { 
+               $a=$news->findSettingkey_sett($db,$_POST['menu_id']);
+               $b= count($a)+1;
+               $data=array_values($_POST);
+               for($x=3;$x<count($data);$x++)
+                {
+                  $data1=array(
+                    "key_sett"=>$_POST['menu_id'],
+                    "key_display"=>$data[$x],
+                    "key_id"=> $b,
+                    "name_display"=>$a[0]['name_display']
+                   );
+                 $b++;
+                 $news->createSetting($db, $data1);
+                }
+                 header('location: /setting/index');
+            }
+         }
 
         $this->render($this->red.__FUNCTION__);
     }
@@ -57,6 +88,7 @@ class SettingController extends Controller
         $setting = new SettingService();
 
         $d['settingInfo'] = $setting->findSetting($db, $id); 
+
         
         if (!empty($_POST))
         {

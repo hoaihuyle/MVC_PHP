@@ -105,6 +105,7 @@
                                         <th style="text-align: center;">Giá</th>
                                         <th style="text-align: center;">HSX</th>
                                         <th style="text-align: center;">Ảnh</th>
+                                         <th style="text-align: center;">Từ Khóa</th>
                                         <th style="text-align: center;">Ngày tạo</th>
                                         <th style="text-align: center;">Người tạo</th>
                                         <th style="text-align: center;">Trạng thái</th>
@@ -127,6 +128,14 @@
                                             <?php } } ?>
 
                                             <td align="center"><img class="rounded" height="45" width="45" class="" src="<?php echo isset($product['image'])?'/uploads/products/'.$product['image']:'/uploads/noimage.jpg'; ?>"> </td>
+                                            <td align="center">
+                                            <?php 
+                                                
+                                                for($x=0;$x<count($setting_product);$x++){
+                                                    if($setting_product[$x]['prod_id']==$product['id_prod']){ ?> 
+                                                    <?php echo  $setting_product[$x]['sett_key'] .'<br>';?>
+                                                <?php }}?>
+                                            </td>
                                             <td align="center"><?php echo $product['created']; ?></td>
                                             <td align="center"><?php echo ($product['user_created']!=0)?$product['user_created']:'admin'; ?></td>
                                             <td align="center"><?php echo ($product['flag']==0)?'Hiển thị':'Đã xóa'; ?></td>

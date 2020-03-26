@@ -72,9 +72,9 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="/menu/create">Thêm mới</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <!-- <li class="nav-item">
                                             <a class="nav-link" href="/menu/sort">Sắp xếp menu</a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </li>
@@ -135,23 +135,32 @@
                             </li>
 
                             <li class="nav-item ">
-                                <a class="nav-link" href="admin/index" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fa fa-fw fa-user-circle"></i>Thống kê <span class="badge badge-success">6</span></a>
+                                <a class="nav-link" href="admin/index" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fa fa-fw fa-user-circle"></i>
+                                Thống kê ĐƠN HÀNG <span class="badge badge-success">6</span></a>
                                  <div id="submenu-6" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6-1" aria-controls="submenu-1-2">Đơn hàng <br> (Hiện có) </a>
+                                            <a class="nav-link" href="/statis/account">TÀI KHOẢN</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/statis/user">NGƯỜI DÙNG</a>
+                                        </li>
+                                    </ul>
+                                    <!-- <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6-1" aria-controls="submenu-1-2">Đơn hàng</a>
                                             <div id="submenu-6-1" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="index.html">Theo tài khoản</a>
+                                                        <a class="nav-link" href="index.html">Tài khoản</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="ecommerce-product.html">Theo sản phẩm</a>
+                                                        <a class="nav-link" href="ecommerce-product.html">Khách hàng</a>
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </li>
-                                        <li class="nav-item">
+                                        </li> -->
+                                        <!-- <li class="nav-item">
                                             <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6-2" aria-controls="submenu-6-2">Đơn hàng <br> (Bị bỏ rơi) </a>
                                             <div id="submenu-6-2" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
@@ -163,7 +172,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </li>
+                                        </li> -->
                                         <!-- <li class="nav-item">
                                             <a class="nav-link" href="/account/index">Đơn hàng đang tồn tại</a>
                                         </li>
@@ -177,7 +186,7 @@
                                             <a class="nav-link" href="/account/create">Doanh thu</a>
                                         </li> -->
                                         
-                                    </ul>
+                                    <!-- </ul> -->
                                 </div>
                             </li>
 

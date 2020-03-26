@@ -43,5 +43,9 @@ class AccountDAO extends Model
     public function checkEmail($db, $table, $request){
         return $db->fetchOne($table, "email ='".$request."' ");
       }
+
+    public function CountAcount($db){
+        return $db->countTable("accounts");
+    }
 }
 ?>

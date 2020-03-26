@@ -56,12 +56,45 @@ class SettingService extends Service{
     /**
      * List all setting
      */
+    function listSetting1($db){
+
+        $setting = new SettingDAO();
+        $settings =  $setting->fetchAll($db); 
+        //settings => Array A
+        // Array B
+        $b=[];
+        for($x=0;$x<count($settings);$x++){
+        $b[$x]= $settings[$x]['key_sett'];
+        }
+        $a=array_unique($b);
+        
+        return $a;
+    }
+    function listSetting2($db){
+
+        $setting = new SettingDAO();
+        $settings =  $setting->fetchAll($db);
+
+        //settings => Array A
+        // Array B
+        $b=[];
+        for($x=0;$x<count($settings);$x++){
+        $b[$settings[$x]['key_sett']]= $settings[$x]['name_display'];
+        }
+
+        
+        return $b;
+    }
     function listSetting($db){
 
         $setting = new SettingDAO();
         $settings =  $setting->fetchAll($db); 
+        //settings => Array A
+        // Array B
+              
         return $settings;
     }
+
 
     /**
      * List setting by flag = 0
@@ -81,7 +114,12 @@ class SettingService extends Service{
 
         return $settings;
     }
+    function findSettingkey_sett($db, $key){
+        $setting = new SettingDAO();
+        $settings =  $setting->findSettingkey_sett($db, $key); 
 
+        return $settings;
+    }
      /** 
      * Update setting by ID
      */

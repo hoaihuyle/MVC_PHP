@@ -55,7 +55,7 @@
               <div class="title-cm mt-10 cm-red">
                 <span color: #505350>Giá sản phẩm:</span>
                 <?php if($prod[0]['discount'] != 0) :?>
-                <span class="cm-red font-s-25 product-price" itemprop="offers" itemscope
+                <span class="cm-red font-s-25 a-product-price" itemprop="offers" itemscope
                   itemtype="http://schema.org/Offer" price="<?php echo $prod[0]['price'] ?>">
                   <span itemprop="price" class="cm-red"
                     content="<?php echo number_format( ((100 - $prod[0]['discount']) * $prod[0]['price'])/100 , 0 ,'','.' ) ?>">
@@ -174,10 +174,11 @@
                 </div>
                 <div class="title-line"></div>
               </div>
-              <div class="cs-flex mt-10" style="height:40px"> <input class="spinner input-spin" name="quantity"
+              <div class="cs-flex mt-10" id="detailPrice" style="height:40px"> <input class="spinner input-spin" name="quantity"
                   value="1">
                 <!-- <button type="button"  class="redirect-login" url="dang-nhap"><i class="far fa-heart"></i></button>  -->
               </div>
+              <input type="hidden" class="id_price" value="<?php echo ($prod[0]['price']-$prod[0]['price']*$prod[0]['discount']/100); ?>">
               <?php if($prod[0]['discount'] != 0): ?>
               <span style="color:#505350; font-size: 24px">Tổng giá: </span> <span
                 class="cm-red font-s-25 product-price" style="margin-top: 13px; display: inline-block"

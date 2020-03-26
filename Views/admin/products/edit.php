@@ -142,6 +142,32 @@
 
                     <h5 class="card-header">Thông tin thêm</h5>
                     <div class="card-body">
+                      <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Chọn Từ khóa</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <select class="form-control" name="id_sett[]" id="input-select"  multiple>
+                                <option value="0"> Chọn từ khóa </option>
+                                <?php foreach ($sett_product1 as $value){?>
+                                 <option selected="true" value="<?php echo $value['sett_key'];?>">
+                                  <?php
+                                 echo $setting[$value['sett_key']];
+                                  ?>
+                                </option>
+                                <?php } ?>
+
+                                <?php
+                                    foreach ($setting1 as $value) {
+                                                                                                           
+                                ?>
+                                    <option   value="<?php echo $value; ?>"><?php echo $setting[$value];?> </option>  
+                                <?php
+                                }
+
+                                ?>
+                                
+                                </select>
+                            </div>
+                        </div>
                     <div class="form-group row">
                         <label class="col-12 col-sm-3 col-form-label text-sm-right ">Giá nhà sản xuất</label>
                         <div class="col-12 col-sm-8 col-lg-6">
