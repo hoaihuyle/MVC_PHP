@@ -79,7 +79,7 @@ class HomeController extends Controller
 
     }
 
-    function giohang($id){  
+    function giohang($id, $num){  
         require(ROOT . $this->service);
         $product = new ProductService();  
         $prod = $product->findProduct($db,$id); 
@@ -97,11 +97,11 @@ class HomeController extends Controller
                     $_SESSION['cart'][$id]['discount'] = $prod[0]['discount'];
                     $_SESSION['cart'][$id]['price'] = ((100-$prod[0]['discount']) * $prod[0]['price'])/100;
                     $_SESSION['cart'][$id]['price_old'] = $prod[0]['price'];
-                    $_SESSION['cart'][$id]['qty'] = 1;//số lượng
+                    $_SESSION['cart'][$id]['qty'] = $num;//số lượng
                 }
                 else
                 {
-                    $_SESSION['cart'][$id]['qty'] += 1;
+                    $_SESSION['cart'][$id]['qty'] += $num;
                     //cập nhật giỏ hàng
                 }
             // }
