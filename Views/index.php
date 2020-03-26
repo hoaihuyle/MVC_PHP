@@ -39,18 +39,11 @@
       <div id="main_banner" class="slider" style="display: none">
         <div class="slider-magic banner" numColumn='[{"num": 1, "width": 0}]' classItems="item" isControls="true"
           isPager="true">
-          <a href="/home/product/1">
-            <img class="item" src="https://landing.cfyc.com.vn/storage/app/media/Referal/header%20website%20VN.jpg"
-              alt="Hydropure" title="Hydropure"></a>
-          <a href="/home/product/1">
-            <img class="item"
-              src="https://landing.cfyc.com.vn/storage/app/media/Banner%20Califresh%202019/desktop%20copy.png"
-              alt="Mass Fusion" title="Mass Fusion"></a>
-          <a href="/home/product/1">
-            <img class="item" src="https://landing.cfyc.com.vn/storage/app/media/Referal/header%20website%20VN.jpg"
-              alt="Up your mass" title="Up your mass"></a>
-          <a href="/lib/front/whey-gold-standard-5lbs-2-27kg--57">
-            <img class="item" src="/lib/front/upload/banner/banner-web-2.jpg" alt="whey gold " title="whey gold "></a>
+          <?php if(isset($slide)) : foreach($slide as $l): ?>
+          <a href="<?php echo $l['link'] ?>">
+            <img class="item" src="/uploads/panels/<?php echo $l['image'] ?>"
+              alt="<?php echo $l['link'] ?>" title="<?php echo $l['link'] ?>"></a> 
+            <?php endforeach; endif ?>
         </div>
       </div>
 
