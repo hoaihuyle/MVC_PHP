@@ -45,9 +45,9 @@
 							<?php endif ?>
 					</div>  
 				<?php endforeach; endif;  ?>
-				</div>
+				<!-- </div>
 				<div class="pagination cs-flex"> <strong>1</strong><a href="tim-kiemcadd.html?page=45" data-ci-pagination-page="2">2</a><a href="tim-kiem9907.html?page=90" data-ci-pagination-page="3">3</a><a href="tim-kiemcadd.html?page=45" data-ci-pagination-page="2" rel="next"><i class="fa fa-angle-double-right"></i></a><a href="tim-kiem9d64.html?page=270" data-ci-pagination-page="7">Trang cuối</a> 
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
