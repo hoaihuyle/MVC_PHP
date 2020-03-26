@@ -119,20 +119,37 @@ class ProductController extends Controller
             $_POST['image']= $link_img;
             require(ROOT . $this->service);
             $product = new ProductService();
-            $data= array(
+            // var_dump()
+            if(isset($_POST['flag'])){
+                $data= array(
+                    "name_prod"=>$_POST['name_prod'],
+                    "cate_id"=>$_POST['cate_id'],
+                    "comp_id"=>$_POST['comp_id'],
+                    "price"=>$_POST['price'],
+                    "uses_prod"=>$_POST["uses_prod"],
+                    "discount"=>$_POST["discount"],
+                    "flag"=>$_POST["flag"],
+                    "barcode"=>$_POST["barcode"],
+                    "description"=>$_POST["description"],
+                    "price_manu"=>$_POST["price_manu"],
+                    "image"=>$_POST["image"]
+                        ) ;
+                }
+            else {
+                    $data= array(
                 "name_prod"=>$_POST['name_prod'],
                 "cate_id"=>$_POST['cate_id'],
                 "comp_id"=>$_POST['comp_id'],
                 "price"=>$_POST['price'],
                 "uses_prod"=>$_POST["uses_prod"],
                 "discount"=>$_POST["discount"],
-                "flag"=>$_POST["flag"],
+                "flag"=>0,
                 "barcode"=>$_POST["barcode"],
                 "description"=>$_POST["description"],
                 "price_manu"=>$_POST["price_manu"],
                 "image"=>$_POST["image"]
-                 ) ;
-
+                    ) ;
+            }
             if ($product->createProduct($db, $data))
             { 
                 $data3=$product->listProduct($db);
