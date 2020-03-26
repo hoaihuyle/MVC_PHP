@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2020 at 01:27 AM
+-- Generation Time: Mar 26, 2020 at 04:03 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `banhang`
+-- Database: `codosupp`
 --
 
 -- --------------------------------------------------------
@@ -30,20 +30,23 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `panel` (
   `id` int(11) NOT NULL,
-  `panel` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `sum` int(11) NOT NULL DEFAULT '0',
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '0',
   `creat_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `update_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+  `update_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `link` text COLLATE utf8_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `panel`
 --
 
-INSERT INTO `panel` (`id`, `panel`, `sum`, `creat_at`, `update_at`) VALUES
-(7, 'pn2.png', 1, '2018-12-12 13:56:05', '2018-12-12 13:56:05'),
-(9, 'pn1.jpg', 0, '2018-12-12 13:55:08', '2018-12-12 13:55:08'),
-(16, 'vn.png', 0, '2018-12-12 13:56:08', '2018-12-12 13:56:08');
+INSERT INTO `panel` (`id`, `image`, `status`, `creat_at`, `update_at`, `link`) VALUES
+(19, '2020032622644.jpg', 0, '2020-03-26 02:57:21', '2020-03-26 02:57:21', 'http://ngocthanh06.herokuapp.com/'),
+(20, '2020032634559.jpg', 0, '2020-03-26 02:45:59', '0000-00-00 00:00:00', '123123'),
+(21, '2020032635745.jpg', 0, '2020-03-26 02:57:45', '0000-00-00 00:00:00', 'http://ngocthanh06.herokuapp.com/'),
+(22, '2020032635756.jpg', 0, '2020-03-26 02:58:02', '2020-03-26 02:58:02', 'http://ngocthanh06.herokuapp.com/'),
+(23, '2020032635823.jpg', 0, '2020-03-26 02:58:23', '0000-00-00 00:00:00', '');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +66,7 @@ ALTER TABLE `panel`
 -- AUTO_INCREMENT for table `panel`
 --
 ALTER TABLE `panel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
