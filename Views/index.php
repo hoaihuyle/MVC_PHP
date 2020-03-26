@@ -24,9 +24,9 @@
           <div id="slide_banner" class="owl-carousel owl-theme col-sm-9 autoHeightClass" style="width: 100%; ">
             <?php if(isset($slide)) : foreach($slide as $l): ?>
 
-            <div class="item" style="height: 450px; object-fit: cover; width: 900px">
+            <div class="item" style="height: 450px; width: 900px">
             <a href="<?php echo $l['link'] ?>">
-              <img style="height: 100%; object-fit: contain; width: 100%; image-rendering: pixelated; max-width:900px; max-height:450px;"
+              <img style="height: 100%; object-fit: cover; width: 100%;   max-width:900px; max-height:450px;"
                 src="/uploads/panels/<?php echo $l['image'] ?>" alt="<?php echo $l['link'] ?>"
                 title="<?php echo $l['link'] ?>">
                 </a>
