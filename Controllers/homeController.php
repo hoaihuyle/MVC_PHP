@@ -113,6 +113,40 @@ class HomeController extends Controller
         echo count($_SESSION['cart']);
     }
 
+    function giohang2($id){  
+        require(ROOT . $this->service);
+        $product = new ProductService();  
+        $prod = $product->findProduct($db,$id); 
+        // if($prod != null){
+            // if($prod[0]['count']!=0){
+            //     // echo "<script>alert('Sản phẩm đã hết, vui lòng lựa chọn sản phẩm khác!!'); location=' /'</script> ";
+            // }
+            // else
+            // {
+                if(! isset($_SESSION['cart'][$id]))//$id là key phân biệt các sp với nhau
+                {
+                    //tạo mới giỏ hàng
+                    $_SESSION['cart'][$id]['name_prod'] = $prod[0]['name_prod'];
+                    $_SESSION['cart'][$id]['image'] = $prod[0]['image'];
+                    $_SESSION['cart'][$id]['discount'] = $prod[0]['discount'];
+                    $_SESSION['cart'][$id]['price'] = ((100-$prod[0]['discount']) * $prod[0]['price'])/100;
+                    $_SESSION['cart'][$id]['price_old'] = $prod[0]['price'];
+                    $_SESSION['cart'][$id]['qty'] = 1;//số lượng
+                }
+                else
+                {
+                    $_SESSION['cart'][$id]['qty'] += 1;
+                    //cập nhật giỏ hàng
+                }
+            // }
+        // }
+        // else {
+        //      echo "Sản phẩm không tồn tại, vui lòng lựa chọn sản phẩm khác!!'); location='/'";
+        // }
+        // echo 'Sản phẩm đã được thêm vào giỏ hàng'; 
+        echo count($_SESSION['cart']);
+    }
+
     function updateCart(){
         // var_dump($_POST['idProd'][0]); 
         // die();
