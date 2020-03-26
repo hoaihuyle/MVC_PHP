@@ -31,19 +31,19 @@
                   <div class="cs-col-12 cs-col-sm-12 cs-col-md-4 cs-col-lg-4 item">
                      <div class="about">
                         <h4 class="title">Giới thiệu chung</h4>
-                        <a class="link" href="#">Giới thiệu về CODO SUPP</a> <a class="link" href="/home/aboutUs">Chính sách đổi trả hàng</a> <a class="link" href="/home/aboutUs">Quy định chung</a> <a class="link" href="/home/aboutUs">Liên hệ & khiếu nại</a> 
+                        <a class="link"  >Giới thiệu về CODO SUPP</a> <a class="link" href="/home/aboutUs">Chính sách đổi trả hàng</a> <a class="link" href="/home/aboutUs">Quy định chung</a> <a class="link" href="/home/aboutUs">Liên hệ & khiếu nại</a> 
                      </div>
                   </div>
                   <div class="cs-col-12 cs-col-sm-12 cs-col-md-4 cs-col-lg-4 item">
                      <div class="about">
                         <h4 class="title">Hỗ trợ khách hàng</h4>
-                        <a class="link" href="#">Hướng dẫn đặt hàng</a> <a class="link" href="lib/front/phuong-thuc-thanh-toan-371">Hướng dẫn thanh toán</a> <a class="link" href="/home/aboutUs">Chính sách vận chuyển</a> <a class="link" href="/home/aboutUs">Chính sách bảo mật</a> <a class="link" href="/home/aboutUs">Chính sách bảo hành</a> 
+                        <a class="link"  >Hướng dẫn đặt hàng</a> <a class="link" href="lib/front/phuong-thuc-thanh-toan-371">Hướng dẫn thanh toán</a> <a class="link" href="/home/aboutUs">Chính sách vận chuyển</a> <a class="link" href="/home/aboutUs">Chính sách bảo mật</a> <a class="link" href="/home/aboutUs">Chính sách bảo hành</a> 
                      </div>
                   </div>
                   <div class="cs-col-12 cs-col-sm-12 cs-col-md-4 cs-col-lg-4 item">
                      <div class="about">
                         <h4 class="title">Thông tin cần biết</h4>
-                        <a class="link" href="#">Kiểm tra tích điểm</a> <a class="link" href="/home/aboutUs">Săn hàng giá rẻ</a> <a class="link" href="/home/aboutUs">Kiến thức tập Gym</a> <a class="link" href="/home/aboutUs">Chế độ dinh dưỡng</a> 
+                        <a class="link"  >Kiểm tra tích điểm</a> <a class="link" href="/home/aboutUs">Săn hàng giá rẻ</a> <a class="link" href="/home/aboutUs">Kiến thức tập Gym</a> <a class="link" href="/home/aboutUs">Chế độ dinh dưỡng</a> 
                      </div>
                   </div>
                </div>
@@ -55,12 +55,12 @@
                            <div class="image"> </div>
                            <div class="box">
                               <div class="des">Tư vấn & đặt hàng:</div>
-                              <a class="number" href="#">077.941.7827</a> 
+                              <a class="number" href="tel:0779417827">077.941.7827</a> 
                            </div>
                         </div>
-                        <a class="link" href="#">Phục vụ tất cả các ngày trong tuần</a> <a class="link" href="#">Bắt đầu mở cửa bán hàng từ 8h30</a> <a class="link" href="#">Địa chỉ: 114 Minh Mạng, Phường Thủy Xuân, TP Huế</a> 
+                        <a class="link">Phục vụ tất cả các ngày trong tuần</a> <a class="link">Bắt đầu mở cửa bán hàng từ 8h30</a> <a class="link"  >Địa chỉ: 114 Minh Mạng, Phường Thủy Xuân, TP Huế</a> 
                      </div>
-                     <div><a href="#" style="font-weight: 550; background: #dd9e44; color: #FFF;padding: 5px;margin-top: 8px;display: inline-block;">Danh sách tài khoản ngân hàng</a></div>
+                     <div><a  style="font-weight: 550; background: #dd9e44; color: #FFF;padding: 5px;margin-top: 8px;display: inline-block;">Danh sách tài khoản ngân hàng</a></div>
                      <div class="cs-col-12 cs-col-sm-12 cs-col-md-6 cs-col-lg-6 item">
                         <p style="color: #acacac; margin-bottom: 8px;">Chấp nhận thanh toán</p>
                         <img class="lazy" data-src="/lib/front/upload/images/payment.png" alt="Chấp nhận thanh toán qua thẻ ngân hàng" title="Chấp nhận thanh toán qua thẻ ngân hàng" />
@@ -83,7 +83,7 @@
          <div class="bottom">
             <div class="main-content cs-flex">
                <div class="mr-auto panel"> <span>Copy right ©2020</span> </div>
-               <div class="panel"> <a href="lib/front/#" class="/">Trang chủ</a> <a href="#" class="/">Kiến thức Gym</a> <a href="/home/aboutUs" class="hover-color-yellow">Phản ánh, khiếu nại</a> </div>
+               <div class="panel"> <a href="lib/front/#" class="/">Trang chủ</a> <a   class="/">Kiến thức Gym</a> <a href="/home/aboutUs" class="hover-color-yellow">Phản ánh, khiếu nại</a> </div>
             </div>
          </div>
          <div class="phone_bottom" style="bottom: 10px;"><a href="tel:0779417827"><span class="active_phone"><i class="fa fa-phone"></i></span></a></div>

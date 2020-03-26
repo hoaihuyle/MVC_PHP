@@ -73,7 +73,7 @@
 
         <div class="session">
           <div class="main-content">
-            <div class="title-nav"> <a href="/lib/front/#" class="hover-color">Sản phẩm xem nhiều</a> </div>
+            <div class="title-nav"> <a class="hover-color">Sản phẩm xem nhiều</a> </div>
             <div class="cs-flex" classItems="product">
               <?php if(isset($sp_views)): foreach($sp_views as $sp): ?>
               <div class="product slider-home cs-col-6 cs-col-xs-6 cs-col-md-3">
@@ -120,7 +120,7 @@
                     data-src="https://www.thol.com.vn/pub/media/wysiwyg/banner/10_-_2_Biovite.jpg"
                     alt="Top các loại sữa tăng cân" title="Top các loại sữa tăng cân"></a> </div>
               <div href="front/c152/whey-protein-tang-co" class="cs-col-sm-6 mb-10 image-ads-right"> <a
-                  href="#" class="animation-image"><img class="img-responsive lazy"
+                   class="animation-image"><img class="img-responsive lazy"
                     data-src="https://www.thol.com.vn/pub/media/wysiwyg/banner/eea_lipo6_blck.jpg"
                     alt="Top các loại whey protein" title="Top các loại whey protein"></a> </div>
             </div>
@@ -171,7 +171,7 @@
         <?php endif; endforeach; endif ?>
         <div class="session">
           <div class="main-content ads">
-            <div class="cs-col-12 image-ads"> <a href="#" class="animation-image"> <img class="img-responsive lazy"
+            <div class="cs-col-12 image-ads"> <a class="animation-image"> <img class="img-responsive lazy"
                   data-src="https://www.thol.com.vn/pub/media/wysiwyg/home/home-bottom-banner-wide.jpg"
                   alt="Fanpage lượng like khủng nhất" title="Fanpage lượng like khủng nhất"> </a> </div>
           </div>
