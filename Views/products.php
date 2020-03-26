@@ -157,17 +157,12 @@
               <div class="pagination cs-flex">
                   <?php if($activePage  != 1): ?>
                 <a class="first" href="<?php echo '/home/category?cate_id='.$Cate['id_cate'].'&page=1'; ?>" data-ci-pagination-page="1">Trang đầu</a>
-
-                <a class="prev" data-ci-pagination-page="2" rel="prev">
-                <i class="fa fa-angle-double-left"></i></a>
                   <?php endif ?>
                 <?php   for ($i=0; $i < $totalPage; $i++) {  ?>
                   <a class="page-item <?php echo ($activePage == $i+1)?'active':'' ?>" href="<?php echo '/home/category?cate_id='.$Cate['id_cate'].'&page='.($i+1); ?>" data-ci-pagination-page="<?php echo ($i+1); ?>"><?php echo $i+1; ?></a>
                 <?php } ?>
 
-                  <?php if($activePage != $totalPage && $totalPage != 0): ?>
-                <a class="next" data-ci-pagination-page="2" rel="next">
-                <i class="fa fa-angle-double-right"></i></a>
+                  <?php if($activePage != $totalPage && $totalPage != 0): ?> 
 
                 <a class="end" href="<?php echo '/home/category?cate_id='.$Cate['id_cate'].'&page='.$i; ?>" data-ci-pagination-page="<?php echo $totalPag-1; ?>">Trang cuối</a>
               </div>
