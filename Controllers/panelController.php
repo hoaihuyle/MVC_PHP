@@ -21,7 +21,7 @@ class panelController extends Controller
 
       if(!empty($_POST)){
           if(isset($_FILES["image"]) && !empty($_FILES['image']['name'])){
-            $allowed =  array('gif','png' ,'jpg');
+            $allowed =  array('gif','png' ,'jpg','JPG','PNG');
             $filename = $_FILES['image']['name'];
             $ext = pathinfo($filename, PATHINFO_EXTENSION);
             $messageError = "";
@@ -69,7 +69,7 @@ class panelController extends Controller
       $pan['panel'] = $panel->editPanel($db,'panel', $id);
       if(!empty($_POST)){
         if(isset($_FILES["image"]) && !empty($_FILES['image']['name'])){
-          $allowed =  array('gif','png' ,'jpg');
+          $allowed =  array('gif','png' ,'jpg','JPG','PNG');
           $filename = $_FILES['image']['name'];
           $ext = pathinfo($filename, PATHINFO_EXTENSION);
           $messageError = "";

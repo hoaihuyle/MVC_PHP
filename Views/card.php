@@ -154,7 +154,7 @@
                   Ngoại
                   thương Việt Nam</strong></span><br> Chủ tài khoản: <span style="font-size: medium; font-weight:600">LÊ
                 VIẾT QUANG</span><br>Số tài khoản: <span
-                style="font-size: medium; font-weight:600">161001701893</span><br>VIETCOMBANK<span
+                style="font-size: medium; font-weight:600">0161001701893</span><br>VIETCOMBANK<span
                 style="font-size: medium; font-weight:600"> CHI NHÁNH HUẾ</span></p>
             <span> <b style="color:red">Chú ý:</b> Khách hàng đã có thông tin tài khoản.</br> Vui lòng nhấn <b
                 style="color: red"> xác nhận đặt hàng </b> hoặc <b style="color: red"> Thay đổi thông tin khách hàng

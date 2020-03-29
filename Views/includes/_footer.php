@@ -91,7 +91,34 @@
       <div style="padding: 10px;">
          <div style="text-align: center; font-size: 14px;">Tất cả các sản phẩm mà CODO SUPP bán không phải là thuốc, không thể thay thế thuốc chữa bệnh.</div>
       </div>
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT7Z9S8"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      
+      <!-- Load Facebook SDK for JavaScript -->
       <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v6.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your customer chat code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="119259586150434" theme_color="#7646ff" logged_in_greeting="Bạn cần CODO SUPP hỗ trợ gì không ạ ?" logged_out_greeting="Bạn cần CODO SUPP hỗ trợ gì không ạ ?">
+      </div>
       
       <script src="/lib/front/asset/site/js/jquery-3.2.1.min.js"></script>
       <script src="/lib/front/asset/site/js/bootstrap.min.js"></script>
@@ -106,15 +133,18 @@
       <script src="/lib/front/asset/site/magic/jquery.magic.js"></script>  
       <!-- <script src="/lib/front/asset/site/modal/jquery.modal.min.js"></script> -->
 	  <script src="/lib/front/asset/site/js/thanh.js?sizefile=<?php echo md5_file(ROOT."/lib/front/asset/site/js/thanh.js");?>"></script> 
-      <script>$('.slider-ads-top').bxSlider({auto: true,pager: false,autoHover: true,mode: 'horizontal',controls: false,pause: 10000});</script> <!-- End Top Banner --> 
-      <script> $(function() { $('.lazy').Lazy();});</script> 
-      <script>
+     <script>$('.slider-ads-top').bxSlider({auto: true,pager: false,autoHover: true,mode: 'horizontal',controls: false,pause: 10000});</script> <!-- End Top Banner --> 
+
+     <script> $(function() { $('.lazy').Lazy();});</script> 
+
+     <script>
          window.dataLayer = window.dataLayer || [];
          function gtag(){dataLayer.push(arguments);}
          gtag('js', new Date());
          
          gtag('config', 'UA-105598555-1');
       </script> 
+
       <script>$('.slider-magic').bxSlider({ auto: true, autoHover: true, pause: 10000});</script> 
            
    </body> 
