@@ -26,8 +26,11 @@ class ProductController extends Controller
         require(ROOT . $this->serviceCate);
         $category = new CategoryService();
         
+        
         $d['productInfos'] = $product->fetchsql($db,$str,$str2,$str3,$str4);  
         $d['companyInfos'] = $company->listCompany($db);
+        $d['categoryInfos'] = $category->listCategory($db);
+        $d['setting_product']=$product->listsett_product($db);
         
         if($str3!=""){
             $d['str3']=$str3;

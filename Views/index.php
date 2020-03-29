@@ -21,7 +21,7 @@
 
             <div class="item" style="height: 450px; width: 900px">
             <a href="<?php echo $l['link'] ?>">
-              <img style="height: 100%; object-fit: cover; width: 100%;   max-width:900px; max-height:450px;"
+              <img style="height: 100%; width: 100%;   max-width:900px; max-height:450px;"
                 src="/uploads/panels/<?php echo $l['image'] ?>" alt="<?php echo $l['link'] ?>"
                 title="<?php echo $l['link'] ?>">
                 </a>
@@ -178,7 +178,7 @@
         </div>
 
         <!-- combo sản phẩm -->
-        <div class="session">
+        <!-- <div class="session">
           <div class="main-content">
             <div class="title-nav"> <a class="hover-color">COMBO KHUYẾN MÃI</a> </div>
             <div id="combokuyenmai" class="owl-carousel owl-theme ">
@@ -218,7 +218,7 @@
             </div>
 
           </div>
-        </div>
+        </div> -->
 
 
 
