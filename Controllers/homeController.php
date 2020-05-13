@@ -64,13 +64,13 @@ class HomeController extends Controller
         $data = ['count' => $prod['prod'][0]['count'] + 1];
         $update = $product->editProduct($db, $id, $data );
         $prod['CateName'] = $product->getCate($db,'categories','id_cate ='.$prod['prod'][0]['cate_id']);
-        $prod['listProdLienquan'] = $product->prodCateWhere($db, 'products', 'cate_id ='.$prod['CateName']['id_cate'].' limit 15');
+        if(isset($prod['CateName'])){
+            $prod['listProdLienquan'] = $product->prodCateWhere($db, 'products', 'cate_id ='.$prod['CateName']['id_cate'].' limit 15');
+        }
         $prod['sp_views'] = $product->listProductViews($db, 'products', 'count' ,10); 
         $prod['prod_discount'] = $product->listProdiscount($db, 'products', 'discount > 0 limit 5');
         $prod['set'] = $setting->selectWhere($db, "SELECT * FROM setting_product join setting on setting_product.sett_key = setting.key_sett WHERE setting_product.prod_id =".$prod['prod'][0]['id_prod'] );
-        
-        // $this->helper->_debug($prod['splienquan']);
-        // die();
+    
         $this->set($prod);
         $this->render('product_detail');
     }
