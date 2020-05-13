@@ -115,7 +115,7 @@
         <div class="session" style="margin-bottom: 30px;">
           <div class="main-content ads">
             <div class="cs-flex">
-              <div class="cs-col-sm-6 mb-10 image-ads-left"> <a href="/home/product/1" class="animation-image"><img
+              <div class="cs-col-sm-6 mb-10 image-ads-left"> <a href="#" class="animation-image"><img
                     class="img-responsive lazy"
                     data-src="https://www.thol.com.vn/pub/media/wysiwyg/banner/10_-_2_Biovite.jpg"
                     alt="Top các loại sữa tăng cân" title="Top các loại sữa tăng cân"></a> </div>
@@ -129,7 +129,7 @@
         <?php if(isset($prod_cate)): foreach($prod_cate as $pc): if($pc['cate'] != null): ?>
         <div class="session">
           <div class="main-content">
-            <div class="title-nav"> <a href="/home/product/1" class="hover-color"><?php echo $pc['name_cate']; ?></a>
+            <div class="title-nav"> <a href="/home/product/<?php echo $p['id_prod'] ?>" class="hover-color"><?php echo $pc['name_cate']; ?></a>
             </div>
             <div class="cs-flex" classItems="product">
               <?php if($pc['cate'] != null): foreach($pc['cate'] as $p): ?>
@@ -148,7 +148,7 @@
                   <img class="lazy" data-src="/uploads/products/<?php echo $p['image'] ?>"
                     alt="<?php echo $p['name_prod'] ?>" title="<?php echo $p['name_prod'] ?>">
                 </a>
-                <a href="/home/product/1" class="title"><?php echo $p['name_prod'] ?></a> <span
+                <a href="/home/product/<?php echo $p['id_prod'] ?>" class="title"><?php echo $p['name_prod'] ?></a> <span
                   style="font-size: 13px; margin-bottom: 5px; display: inline-block; line-height: 20px; color: #7B7B7B;"><?php echo $p['uses_prod'] ?></span>
                 <div class="star" total="5" point="5"></div>
                 <?php if($p['discount'] != 0): ?>

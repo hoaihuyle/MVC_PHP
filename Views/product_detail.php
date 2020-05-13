@@ -439,9 +439,6 @@
         <div class="item product slider-product ">
           <?php if($ls['discount'] > 0) : ?><div class="label-deal-product">-<?php echo $ls['discount'] ?>%</div>
           <?php endif ?>
-
-
-
           <a class="image cs-flex flex-align-center flex-content-center">
             <div class="pane-tool-button cs-flex">
               <button class="pr-10 pl-10 mr-5 redirect-login" url="/home/product/<?php echo $ls['id_prod'] ?>">Xem chi
