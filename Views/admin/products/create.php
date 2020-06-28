@@ -114,7 +114,7 @@
                                 <div class="custom-controls-stacked">
                                     <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
                                         <label class="be-checkbox custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" checked><span class="custom-control-label">Hiện</span>
+                                            <input type="checkbox" name="flag" class="custom-control-input" checked><span class="custom-control-label">Hiện</span>
                                         </label>
                                     </div>
                                 </div>
