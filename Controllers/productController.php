@@ -89,9 +89,12 @@ class ProductController extends Controller
         $d['categoryInfos'] = $category->listCategory($db);
         $d['setting'] = $setting->listSetting2($db);
         $d['setting1']=array_keys($d['setting']);
+        
         if (!empty($_POST)) 
         {
-
+            
+            /** Upload image */
+            $link_img=null;
             if(isset($_FILES["image"]) && !empty($_FILES['image']['name'])){
                 $allowed =  array('gif','png' ,'jpg');
                 $filename = $_FILES['image']['name'];
@@ -111,48 +114,38 @@ class ProductController extends Controller
                 }
 
                 if($messageError == ""){
-                    $link_img = $this->helper->uploadImagesThumb($_FILES['image'], 'uploads/products/', 'uploads/products/thumb/');
+                    $link_img = $this->helper->uploadImagesThumb($_FILES['image'], '../uploads/products/', '../uploads/products/thumb/');
                 }else {
                     $message = $messageError;
                 }
-            } else { 
+            }
+            else{
                 $link_img = ''; 
             }
             //add image to POST
-            $_POST['image']= $link_img;
+            $_POST['image']= isset($link_img)?$link_img:'';
+
             require(ROOT . $this->service);
             $product = new ProductService();
-            // var_dump()
-            if(isset($_POST['flag'])){
-                $data= array(
-                    "name_prod"=>$_POST['name_prod'],
-                    "cate_id"=>$_POST['cate_id'],
-                    "comp_id"=>$_POST['comp_id'],
-                    "price"=>$_POST['price'],
-                    "uses_prod"=>$_POST["uses_prod"],
-                    "discount"=>$_POST["discount"],
-                    "flag"=>$_POST["flag"],
-                    "barcode"=>$_POST["barcode"],
-                    "description"=>$_POST["description"],
-                    "price_manu"=>$_POST["price_manu"],
-                    "image"=>$_POST["image"]
-                        ) ;
-                }
-            else {
-                    $data= array(
+
+            if(isset($_POST['flag'])) $flag = 0;
+            else $flag=1;
+            
+            $data= array(
                 "name_prod"=>$_POST['name_prod'],
                 "cate_id"=>$_POST['cate_id'],
                 "comp_id"=>$_POST['comp_id'],
                 "price"=>$_POST['price'],
                 "uses_prod"=>$_POST["uses_prod"],
                 "discount"=>$_POST["discount"],
-                "flag"=>0,
                 "barcode"=>$_POST["barcode"],
                 "description"=>$_POST["description"],
                 "price_manu"=>$_POST["price_manu"],
-                "image"=>$_POST["image"]
-                    ) ;
-            }
+                "image"=>$_POST["image"],
+                "flag"=>$flag
+            );
+
+            //Settings process
             if ($product->createProduct($db, $data))
             { 
                 $data3=$product->listProduct($db);
@@ -161,7 +154,6 @@ class ProductController extends Controller
                     $id=$value["id_prod"];
                 }
                 foreach ($_POST["menu_id"] as $value) {
-                    
                     $data4=["prod_id"=>$id,"sett_key"=>$value];
                     $product->createSett_Product($db,$data4);
                 }
@@ -170,6 +162,7 @@ class ProductController extends Controller
                 unlink(ROOT.'upload/products/'.$img);
                 $d['error'] = " <div class='message p-3 bg-danger text-white'> Cập nhập thông tin không thành công</div>";
             }
+
         }
 
         $this->set($d);
