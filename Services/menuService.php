@@ -1,43 +1,37 @@
 <?php 
-$db = new Database();
-require(ROOT . 'Models/DAO/menuDAO.php');
-class MenuService extends Service{
 
+require(ROOT . 'Models/DAO/menuDAO.php');
+
+class MenuService extends Service
+{
     /**
      * List all child menu
      * return array[][]
      */
-    function listMenuByParent($db){
-       
+    function listMenuByParent($db)
+    {
         $menu = new MenuDAO();
-       
-        $dataPa=[];
-        $dataChil=[];
-        
-        $data[]=[];
-        $menus =  $menu->fetchByColOther($db); 
+
+        $dataPa = $dataChil = $data =[];
+        $menus = $menu->fetchByColOther($db); 
         $i=0; 
 
-        foreach ($menus as $menu){
-            if($menu['parent']==0){
-               $dataPa[] = $menu;
-            }
-            else{
-                $dataChil[] = $menu;
-            }          
+        foreach ($menus as $menu) {
+            $menu['parent'] == 0 ? $dataPa[] = $menu : $dataChil[] = $menu;
             $i++;
         }
 
         $i=0;
         
-        foreach($dataPa as $pa){
+        foreach ($dataPa as $pa) {
             $data[$i] = $pa;
             $arr=[];
-            foreach($dataChil as $child){
-                if($pa['id']==$child['parent'])
-                $arr[] = $child; 
+            
+            foreach ($dataChil as $child) {
+                $pa['id'] == $child['parent'] ? $arr[] = $child : null; 
             }
-            $data[$i]['child']=$arr;
+            
+            $data[$i]['child'] = $arr;
             $i++;
         }
 
@@ -56,26 +50,30 @@ class MenuService extends Service{
     /**
      * List all menu
      */
-    function listMenu($db){
-
+    function listMenu($db)
+    {
         $menu = new MenuDAO();
         $menus =  $menu->fetchAll($db); 
+
         return $menus;
     }
 
     /**
      * List menu by flag = 0
      */
-    function listMenuWhere($db){
+    function listMenuWhere($db)
+    {
         $menu = new MenuDAO();
         $menus =  $menu->fetchAll($db);
+
         return $menus;
     }
 
     /** 
      * List menu by ID
      */
-    function findMenu($db, $id){
+    function findMenu($db, $id)
+    {
         $menu = new MenuDAO();
         $menus =  $menu->fetchByCol($db, $id); 
 
@@ -85,7 +83,8 @@ class MenuService extends Service{
      /** 
      * Update menu by ID
      */
-    function editMenu($db, $id,$data){
+    function editMenu($db, $id,$data)
+    {
         $menu = new MenuDAO();
         $menus =  $menu->update($db, $id, $data ); 
 
@@ -95,7 +94,8 @@ class MenuService extends Service{
     /** 
      * Create menu
      */
-    function createMenu($db, $data){
+    function createMenu($db, $data)
+    {
         $menu = new MenuDAO();
         $menus =  $menu->insert($db, $data ); 
 
@@ -105,12 +105,12 @@ class MenuService extends Service{
     /** 
      * Delete menu by ID
      */
-    function deleteMenu($db, $id){
+    function deleteMenu($db, $id)
+    {
         $menu = new MenuDAO();
         $menus =  $menu->delete($db, $id); 
 
         return $menus;
     }
 }
-
 ?>

@@ -1,22 +1,26 @@
 <?php 
-$db = new Database();
+
 require(ROOT . 'Models/DAO/companyDAO.php');
-class CompanyService extends Service{
+
+class CompanyService extends Service
+{
 
     /**
      * List all company
      */
-    function listCompany($db){
-
+    function listCompany($db)
+    {
         $company = new CompanyDAO();
         $companies =  $company->fetchAll($db); 
+     
         return $companies;
     }
 
     /** 
      * List company by ID
      */
-    function findCompany($db, $id){
+    function findCompany($db, $id)
+    {
         $company = new CompanyDAO();
         $companies =  $company->fetchByCol($db, $id); 
 
@@ -26,7 +30,8 @@ class CompanyService extends Service{
      /** 
      * Update company by ID
      */
-    function editCompany($db, $id,$data){
+    function editCompany($db, $id,$data)
+    {
         $company = new CompanyDAO();
         $companies =  $company->update($db, $id, $data ); 
 
@@ -36,7 +41,8 @@ class CompanyService extends Service{
     /** 
      * Create company
      */
-    function createCompany($db, $data){
+    function createCompany($db, $data)
+    {
         $company = new CompanyDAO();
         $companies =  $company->insert($db, $data ); 
 
@@ -46,7 +52,8 @@ class CompanyService extends Service{
     /** 
      * Delete company by ID
      */
-    function deleteCompany($db, $id){
+    function deleteCompany($db, $id)
+    {
         $company = new CompanyDAO();
         $companies =  $company->delete($db, $id); 
 
