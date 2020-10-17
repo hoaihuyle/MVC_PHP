@@ -1,28 +1,26 @@
 <?php 
-$db = new Database();
-require(ROOT . 'Models/DAO/settingDAO.php');
-class SettingService extends Service{
 
+require(ROOT . 'Models/DAO/settingDAO.php');
+
+class SettingService extends Service
+{
     /**
      * List all child setting
      * return array[][]
      */
-    function listSettingByParent($db){
+    function listSettingByParent($db)
+    {
        
-        $setting = new SettingDAO();
-       
-        $dataPa=[];
-        $dataChil=[];
-        
-        $data[]=[];
-        $settings =  $setting->fetchByColOther($db); 
+        $setting = new SettingDAO();   
+        $dataChil = $data =$dataPa = [];
+
+        $settings = $setting->fetchByColOther($db); 
         $i=0; 
 
-        foreach ($settings as $setting){
-            if($setting['parent']==0){
+        foreach ($settings as $setting) {
+            if ($setting['parent']==0) {
                $dataPa[] = $setting;
-            }
-            else{
+            } else {
                 $dataChil[] = $setting;
             }          
             $i++;
@@ -30,14 +28,15 @@ class SettingService extends Service{
 
         $i=0;
         
-        foreach($dataPa as $pa){
+        foreach ($dataPa as $pa) {
             $data[$i] = $pa;
             $arr=[];
-            foreach($dataChil as $child){
-                if($pa['id']==$child['parent'])
-                $arr[] = $child; 
+
+            foreach ($dataChil as $child) {
+                $pa['id'] == $child['parent'] ? $arr[] = $child : null; 
             }
-            $data[$i]['child']=$arr;
+
+            $data[$i]['child'] = $arr;
             $i++;
         }
 
@@ -56,39 +55,41 @@ class SettingService extends Service{
     /**
      * List all setting
      */
-    function listSetting1($db){
-
+    function listSetting1($db)
+    {
         $setting = new SettingDAO();
-        $settings =  $setting->fetchAll($db); 
+        $settings = $setting->fetchAll($db); 
         //settings => Array A
         // Array B
-        $b=[];
-        for($x=0;$x<count($settings);$x++){
-        $b[$x]= $settings[$x]['key_sett'];
+        $b = [];
+        for ($x = 0; $x < count($settings); $x++) {
+            $b[$x] = $settings[$x]['key_sett'];
         }
-        $a=array_unique($b);
+
+        $a = array_unique($b);
         
         return $a;
     }
-    function listSetting2($db){
 
+    function listSetting2($db)
+    {
         $setting = new SettingDAO();
-        $settings =  $setting->fetchAll($db);
+        $settings = $setting->fetchAll($db);
 
         //settings => Array A
         // Array B
-        $b=[];
-        for($x=0;$x<count($settings);$x++){
-        $b[$settings[$x]['key_sett']]= $settings[$x]['name_display'];
+        $b = [];
+        for ($x = 0; $x < count($settings); $x++) {
+            $b[$settings[$x]['key_sett']] = $settings[$x]['name_display'];
         }
 
-        
         return $b;
     }
-    function listSetting($db){
 
+    function listSetting($db)
+    {
         $setting = new SettingDAO();
-        $settings =  $setting->fetchAll($db); 
+        $settings = $setting->fetchAll($db); 
         //settings => Array A
         // Array B
               
@@ -99,33 +100,38 @@ class SettingService extends Service{
     /**
      * List setting by flag = 0
      */
-    function listSettingWhere($db){
+    function listSettingWhere($db)
+    {
         $setting = new SettingDAO();
-        $settings =  $setting->fetchAll($db);
+        $settings = $setting->fetchAll($db);
+        
         return $settings;
     }
 
     /** 
      * List setting by ID
      */
-    function findSetting($db, $id){
+    function findSetting($db, $id)
+    {
         $setting = new SettingDAO();
-        $settings =  $setting->fetchByCol($db, $id); 
+        $settings = $setting->fetchByCol($db, $id); 
 
         return $settings;
     }
-    function findSettingkey_sett($db, $key){
+    function findSettingkey_sett($db, $key)
+    {
         $setting = new SettingDAO();
-        $settings =  $setting->findSettingkey_sett($db, $key); 
+        $settings = $setting->findSettingkey_sett($db, $key); 
 
         return $settings;
     }
      /** 
      * Update setting by ID
      */
-    function editSetting($db, $id,$data){
+    function editSetting($db, $id,$data)
+    {
         $setting = new SettingDAO();
-        $settings =  $setting->update($db, $id, $data ); 
+        $settings = $setting->update($db, $id, $data); 
 
         return $settings;
     }
@@ -133,9 +139,10 @@ class SettingService extends Service{
     /** 
      * Create setting
      */
-    function createSetting($db, $data){
+    function createSetting($db, $data)
+    {
         $setting = new SettingDAO();
-        $settings =  $setting->insert($db, $data ); 
+        $settings = $setting->insert($db, $data); 
 
         return $settings;
     }
@@ -143,16 +150,18 @@ class SettingService extends Service{
     /** 
      * Delete setting by ID
      */
-    function deleteSetting($db, $id){
+    function deleteSetting($db, $id)
+    {
         $setting = new SettingDAO();
-        $settings =  $setting->delete($db, $id); 
+        $settings = $setting->delete($db, $id); 
 
         return $settings;
     }
 
-    function selectWhere($db, $where){
+    function selectWhere($db, $where)
+    {
         $setting = new SettingDAO();
-        $settings =  $setting->selectWhere($db, $where); 
+        $settings = $setting->selectWhere($db, $where); 
 
         return $settings;
     }
