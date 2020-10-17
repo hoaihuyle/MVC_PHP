@@ -1,27 +1,25 @@
 <?php 
 
+$db = new Database();
 require(ROOT . 'Models/DAO/categoryDAO.php');
+class CategoryService extends Service{
 
-class CategoryService extends Service
-{    
+    
     /**
      * List all category
      */
-    function listCategory($db)
-    {
+    function listCategory($db){
+
         $category = new CategoryDAO();
-        $categories = $category->fetchAll($db); 
-    
+        $categories =  $category->fetchAll($db); 
         return $categories;
     }
      /**
      * List all category by flag = 0
      */
-    function ShowlistCategory($db)
-    { 
+    function ShowlistCategory($db){ 
         $category = new CategoryDAO();
-        $categories = $category->ShowlistCategory($db); 
-    
+        $categories =  $category->ShowlistCategory($db); 
         return $categories;
     }
 
@@ -29,10 +27,9 @@ class CategoryService extends Service
      * List category by ID 
      * @id_cate 
      */
-    function findCategory($db, $id)
-    {
+    function findCategory($db, $id){
         $category = new CategoryDAO();
-        $categories = $category->fetchByCol($db, 'id_cate', $id); 
+        $categories =  $category->fetchByCol($db, 'id_cate', $id); 
 
         return $categories;
     }
@@ -41,10 +38,9 @@ class CategoryService extends Service
      * List category by id
      * @menu_id
      */
-    function findCategoryMenu($db, $id)
-    {
+    function findCategoryMenu($db, $id){
         $category = new CategoryDAO();
-        $categories = $category->fetchByCol($db, 'menu_id', $id); 
+        $categories =  $category->fetchByCol($db, 'menu_id', $id); 
 
         return $categories;
     }
@@ -52,10 +48,9 @@ class CategoryService extends Service
      /** 
      * Update category by ID
      */
-    function editCategory($db, $id,$data)
-    {
+    function editCategory($db, $id,$data){
         $category = new CategoryDAO();
-        $categories = $category->update($db, $id, $data ); 
+        $categories =  $category->update($db, $id, $data ); 
  
         return $categories;
     }
@@ -63,8 +58,7 @@ class CategoryService extends Service
     /** 
      * Create category
      */
-    function createCategory($db, $data)
-    {
+    function createCategory($db, $data){
         $category = new CategoryDAO();
         $categories =  $category->insert($db, $data ); 
 
@@ -74,8 +68,7 @@ class CategoryService extends Service
     /** 
      * Delete category by ID
      */
-    function deleteCategory($db, $id)
-    {
+    function deleteCategory($db, $id){
         $category = new CategoryDAO();
         $categories =  $category->delete($db, $id); 
 

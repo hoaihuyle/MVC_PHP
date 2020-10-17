@@ -1,32 +1,22 @@
 <?php 
 
+$db = new Database();
 require(ROOT . 'Models/DAO/registerDAO.php');
+class registerService extends Service{
 
-class registerService extends Service
-{
-
-  function create($db,$table,$request)
-  {
-      $register = new registerDao(); 
-      $newRegister = $register->create($db, $table, $request);
-      
-      return $newRegister; 
+  function create($db,$table,$request){
+    $register = new registerDao(); 
+    return $register->create($db, $table, $request);
   }
 
-  function checkPhone($db, $table, $request)
-  {
-      $register = new registerDao();
-      $checkPhone = $register->checkPhone($db, $table, $request);
-      
-      return $checkPhone;
+  function checkPhone($db, $table, $request){
+    $register = new registerDao();
+    return $register->checkPhone($db, $table, $request);
   } 
 
-  function checkEmail($db,$table, $request)
-  {
-      $register = new registerDao();
-      $checkEmail = $register->checkEmail($db, $table, $request);
-
-      return $checkEmail;
+  function checkEmail($db,$table, $request){
+    $register = new registerDao();
+    return $register->checkEmail($db, $table, $request);
   }
    
 }

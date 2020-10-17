@@ -1,37 +1,34 @@
 <?php 
-
+$db = new Database();
 require(ROOT . 'Models/DAO/productDAO.php');
-
-class ProductService extends Service
-{    
+class ProductService extends Service{
+ 
+    
     /**
      * List all product
      */
-    function listProduct($db)
-    {
+    function listProduct($db){
+
         $product = new ProductDAO();
-        $products = $product->fetchAll($db); 
-     
+        $products =  $product->fetchAll($db); 
         return $products;
     }
 /**
      * List all product by where
      */
-    function prodCateWhere($db, $table, $where)
-    {
+    function prodCateWhere($db, $table, $where){
+
         $product = new ProductDAO();
-        $products = $product->prodCateWhere($db, $table, $where); 
-     
+        $products =  $product->prodCateWhere($db, $table, $where); 
         return $products;
     }
    
     /** 
      * List product by ID
      */
-    function findProduct($db, $id)
-    {
+    function findProduct($db, $id){
         $product = new ProductDAO();
-        $products = $product->fetchByCol($db, $id); 
+        $products =  $product->fetchByCol($db, $id); 
 
         return $products;
     }
@@ -39,21 +36,19 @@ class ProductService extends Service
      /** 
      * Update product by ID
      */
-    function editProduct($db, $id,$data)
-    {
+    function editProduct($db, $id,$data){
+       
         $product = new ProductDAO();
-        $products = $product->update($db, $id, $data ); 
-
+        $products =  $product->update($db, $id, $data ); 
         return $products;
     }
 
     /** 
      * Create product
      */
-    function createProduct($db, $data)
-    {
+    function createProduct($db, $data){
         $product = new ProductDAO();
-        $products = $product->insert($db, $data ); 
+        $products =  $product->insert($db, $data ); 
 
         return $products;
     }
@@ -61,37 +56,27 @@ class ProductService extends Service
     /** 
      * Delete product by ID
      */
-    function deleteProduct($db, $id)
-    {
+    function deleteProduct($db, $id){
         $product = new ProductDAO();
-        $products = $product->delete($db, $id); 
+        $products =  $product->delete($db, $id); 
 
         return $products;
     }
 
-    function getCate($db,$table, $id)
-    {
+    function getCate($db,$table, $id){
         $product = new ProductDAO();
-        $products = $product->getCate($db,$table, $id);
-        
-        return $products;
+        return $product->getCate($db,$table, $id);
     }
     /**
      * Lists all product
      */
-    function listsProduct($db, $table, $col, $id)
-    {
+    function listsProduct($db, $table, $col, $id){
         $product = new ProductDAO();
-        $products = $product->listsProduct($db, $table, $col, $id);
-
-        return $products;
+        return $product->listsProduct($db, $table, $col, $id);
     }
-    function listProductViews($db, $table,$column, $limit)
-    {
+    function listProductViews($db, $table,$column, $limit){
         $product = new ProductDAO();
-        $products = $product->listProductViews($db, $table, $column, $limit);
-
-        return $products;
+        return $product->listProductViews($db, $table, $column, $limit);
     }
 
 
@@ -99,10 +84,9 @@ class ProductService extends Service
      * List category by ID 
      * @id_cate 
      */
-    function fetchByCateID($db, $id)
-    {
+    function fetchByCateID($db, $id){
         $category = new CategoryDAO();
-        $categories = $category->fetchByCateID($db, 'id_cate', $id); 
+        $categories =  $category->fetchByCateID($db, 'id_cate', $id); 
 
         return $categories;
     }
@@ -114,65 +98,47 @@ class ProductService extends Service
     {
         $product = new ProductDAO();
         $sql = "SELECT * FROM {$table} as tb WHERE $col = $id";
-        $products = $product->listsProductPagi($db, $sql, $page, $total, $pagi);
-
-        return $products;
+        return $product->listsProductPagi($db, $sql, $page, $total, $pagi);
     }
     /** 
      * Seach > nhi?u di?u ki?n
      */
-    function  fetchsql($db,$cate_id,$comp_id,$str3,$str4)
-    {
-        $product = new ProductDAO();
-        $products = $product-> fetchsql($db,$cate_id,$comp_id,$str3,$str4);
-         
-        return $products;
+    function  fetchsql($db,$cate_id,$comp_id,$str3,$str4){
+         $product = new ProductDAO();
+         $products =  $product-> fetchsql($db,$cate_id,$comp_id,$str3,$str4);
+         return $products;
     } 
 
-    function listProdiscount($db, $table, $where)
-    {
+    function listProdiscount($db, $table, $where){
         $product = new ProductDAO();
-        $products = $product->listProdiscount($db,$table, $where);
-
+        $products =  $product->listProdiscount($db,$table, $where);
         return $products;
     }
-    public function lastID($db)
-    {
+    public function lastID($db){
         $product = new ProductDAO();
-        $products = $product->lastID($db);
-
+        $products =  $product->lastID($db);
         return $products;
     } 
     // setting product 
-    public function createSett_Product($db, $data)
-    {
+    public function createSett_Product($db, $data){
         $product = new ProductDAO();
-        $products = $product->insertsett_product($db, $data); 
-
+        $products =  $product->insertsett_product($db, $data); 
         return $products;
     }
+     function listsett_product($db){
 
-    function listsett_product($db)
-    {
         $product = new ProductDAO();
-        $products = $product->allsett_product($db); 
-
+        $products =  $product->allsett_product($db); 
         return $products;
     }
-
-    function findSett_Product($db,$id)
-    {
+    function findSett_Product($db,$id){
         $product = new ProductDAO();
-        $products = $product->findSett_Product($db,$id); 
-
+        $products =  $product->findSett_Product($db,$id); 
         return $products;
     }
-
-    function deleteSet_Product($db,$id)
-    {
+    function deleteSet_Product($db,$id){
         $product = new ProductDAO();
-        $products = $product->deleteSet_Product($db,$id); 
-
+        $products =  $product->deleteSet_Product($db,$id); 
         return $products;
     }
 }
